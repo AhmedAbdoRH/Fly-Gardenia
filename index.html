@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gardenia | Environmental Consulting</title>
+
+  <!-- SEO & Social Media Meta Tags -->
+  <meta name="description"
+    content="Gardenia Environmental Consulting - Leading experts in environmental solutions, sustainability, and compliance." />
+  <meta property="og:title" content="Gardenia | Environmental Consulting" />
+  <meta property="og:description" content="Leading experts in environmental solutions and sustainability." />
+  <meta property="og:image" content="/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts: Inter for English, Cairo for Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#aad546', // Fresh lime green - new brand color
+              emerald: '#aad546', // Same as green for consistency
+              light: '#f5f9ec', // Light lime background
+              accent: '#1d4ed8', // Accessible blue
+              blueLight: '#f0f9ff',
+              dark: '#0f172a', // Slate 900
+              gray: '#334155', // Slate 700 - IMPROVED for accessibility
+              charcoal: '#1e293b', // Slate 800 for headings
+            }
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.8s cubic-bezier(0.2, 0.0, 0.2, 1.0) forwards',
+            'fade-in': 'fadeIn 1s cubic-bezier(0.2, 0.0, 0.2, 1.0) forwards',
+            'scale-slow': 'scaleSlow 25s linear infinite alternate',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            scaleSlow: {
+              '0%': { transform: 'scale(1)' },
+              '100%': { transform: 'scale(1.1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        },
+        container: {
+          center: true,
+          padding: {
+            DEFAULT: '1.5rem',
+            sm: '2rem',
+            lg: '4rem',
+            xl: '5rem',
+            '2xl': '6rem',
+          },
+        },
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+      /* Base size */
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #f8fafc;
+    }
+
+    /* Premium Selection */
+    ::selection {
+      background-color: #aad546;
+      color: #ffffff;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+
+    /* Animation Utilities */
+    .reveal-trigger {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .reveal-trigger.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-1 {
+      transition-delay: 50ms;
+    }
+
+    .stagger-2 {
+      transition-delay: 100ms;
+    }
+
+    .stagger-3 {
+      transition-delay: 150ms;
+    }
+
+    .stagger-4 {
+      transition-delay: 200ms;
+    }
+
+    /* Glass Utilities - simplified for mobile performance */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .glass-dark {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 768px) {
+      .reveal-trigger {
+        transition-duration: 0.6s;
+      }
+    }
+
+    /* Arabic typography improvements */
+    [dir="rtl"] p,
+    [dir="rtl"] .leading-relaxed {
+      line-height: 1.9;
+    }
+
+    [dir="rtl"] h1,
+    [dir="rtl"] h2,
+    [dir="rtl"] h3 {
+      line-height: 1.3;
+    }
+
+    /* Floating Leaf Animations */
+    @keyframes leafDrift {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      25% {
+        transform: translateY(-12px) rotate(2deg);
+      }
+
+      50% {
+        transform: translateY(-5px) rotate(-1deg);
+      }
+
+      75% {
+        transform: translateY(8px) rotate(-2deg);
+      }
+    }
+
+    @keyframes leafSway {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      33% {
+        transform: translateX(6px);
+      }
+
+      66% {
+        transform: translateX(-4px);
+      }
+    }
+
+    .leaf-animate {
+      animation:
+        leafDrift var(--leaf-duration, 10s) ease-in-out infinite,
+        leafSway calc(var(--leaf-duration, 10s) * 1.3) ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .leaf-animate {
+        animation: none;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script>
+    // Optimized Intersection Observer
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.05,
+        rootMargin: "0px 0px -10% 0px" // Trigger slightly earlier
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      window.observeReveals = () => {
+        // Add a small delay to allow React to render
+        setTimeout(() => {
+          document.querySelectorAll('.reveal-trigger:not(.active)').forEach(el => observer.observe(el));
+        }, 100);
+      };
+    });
+  </script>
+</body>
+
+</html>
