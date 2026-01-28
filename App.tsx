@@ -10,7 +10,7 @@ import { TypeWriter } from './components/TypeWriter';
 import { Mail, Phone, CheckCircle, ArrowUpRight, Target, Eye, HandHeart, ArrowRight, Quote } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [lang, setLang] = useState<Language>('ar'); // Default to Arabic
+  const [lang, setLang] = useState<Language>('en'); // Default to English
 
   const toggleLang = () => {
     setLang(prev => prev === 'en' ? 'ar' : 'en');
