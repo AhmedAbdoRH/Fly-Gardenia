@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ContentData } from '../types';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
   content: ContentData['hero'];
@@ -42,8 +43,8 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up opacity-0 w-full sm:w-auto" style={{ animationDelay: '0.7s' }}>
-            <a
-              href="#services"
+            <Link
+              to="/services"
               className="group relative inline-flex items-center justify-center gap-3 bg-brand-emerald text-white px-8 py-4 rounded-full font-bold text-base md:text-lg overflow-hidden transition-all active:scale-95 touch-manipulation"
             >
               <span className="relative z-10">{content.cta}</span>
@@ -51,14 +52,14 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
                 <ArrowRight size={18} strokeWidth={2.5} />
               </span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-            </a>
+            </Link>
 
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-base md:text-lg text-white border-2 border-white/20 hover:bg-white/10 active:bg-white/20 backdrop-blur-sm transition-colors touch-manipulation"
             >
               {lang === 'en' ? 'Contact Us' : 'تواصل معنا'}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

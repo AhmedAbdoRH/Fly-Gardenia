@@ -37,11 +37,11 @@
               green: '#aad546', // Fresh lime green - new brand color
               emerald: '#aad546', // Same as green for consistency
               light: '#f5f9ec', // Light lime background
-              accent: '#1d4ed8', // Accessible blue
-              blueLight: '#f0f9ff',
-              dark: '#0f172a', // Slate 900
-              gray: '#334155', // Slate 700 - IMPROVED for accessibility
-              charcoal: '#1e293b', // Slate 800 for headings
+              accent: '#2e7d32', // Garden green
+              blueLight: '#f1f8e9', // Very light green
+              dark: '#1f582e', // Deep Green
+              gray: '#3a7a4a', // Muted green for text
+              charcoal: '#164223', // Darker green for headings
             }
           },
           animation: {
@@ -265,6 +265,15 @@
       };
     });
   </script>
+  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" xmlns="http://www.w3.org/2000/svg"
+    version="1.1">
+    <defs>
+      <filter id="watercolor-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" />
+      </filter>
+    </defs>
+  </svg>
 </body>
 
 </html>
