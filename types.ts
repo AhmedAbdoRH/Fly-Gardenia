@@ -9,6 +9,7 @@ export interface ServiceItem {
 export interface ValueItem {
   title: string;
   description: string;
+  iconName: string;
 }
 
 export interface ContentData {

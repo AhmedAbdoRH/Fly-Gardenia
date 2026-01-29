@@ -6,6 +6,7 @@ import { TypeWriter } from '../components/TypeWriter';
 import { ContentData } from '../types';
 import { Link } from 'react-router-dom';
 import { CONTENT } from '../constants';
+import { ScrollSequence } from '../components/ScrollSequence';
 
 interface HomeProps {
     content: ContentData;
@@ -17,28 +18,50 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
         <>
             <Hero content={t.hero} lang={lang} />
 
-            {/* About Summary */}
-            <section className="py-20 md:py-32 watercolor-bg">
-                <div className="container mx-auto relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-                        <div className="w-full lg:w-1/2">
-                            <span className="text-brand-green font-bold tracking-[0.2em] uppercase text-xs mb-4 block">{t.nav.about}</span>
-                            <h2 className="text-3xl md:text-5xl font-black text-brand-charcoal mb-6 leading-tight">{t.about.title}</h2>
-                            <p className="text-lg text-brand-gray mb-8 leading-relaxed">{t.about.mainText}</p>
-                            <Link to="/about" className="inline-flex items-center gap-2 text-brand-green font-bold hover:gap-4 transition-all group">
-                                {lang === 'en' ? 'Learn More' : 'اقرأ المزيد'}
-                                <ArrowRight size={20} className={lang === 'ar' ? 'rotate-180' : ''} />
-                            </Link>
-                        </div>
-                        <div className="w-full lg:w-1/2 relative">
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <img
-                                    src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2813&auto=format&fit=crop"
-                                    alt="Environmental Consulting"
-                                    className="w-full h-[400px] object-cover"
-                                />
-                            </div>
-                        </div>
+            {/* About Section - Full Width Video Integration */}
+            <section className="py-24 md:py-32 bg-white overflow-hidden">
+                <div className="container mx-auto px-4 mb-12 text-center">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-brand-green font-bold tracking-wider mb-4 uppercase reveal-trigger">{t.about.title}</h2>
+                        <h3 className="text-4xl md:text-5xl font-black text-brand-dark mb-4 leading-tight reveal-trigger stagger-1">
+                            {lang === 'ar' ? 'نحن نبني مستقبلاً مستداماً' : 'Building a Sustainable Future'}
+                        </h3>
+                    </div>
+                </div>
+
+                {/* Full Width Scroll Sequence Container */}
+                <div className="w-full relative group/scroll-sequence">
+                    <div
+                        className="relative w-full h-[50vh] md:h-[70vh] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] overflow-hidden"
+                    >
+                        <ScrollSequence
+                            frameCount={40}
+                            path="/video_frames"
+                            prefix="video_"
+                            extension="jpg"
+                            className="w-full h-full"
+                        />
+                        <div className="absolute inset-0 bg-brand-dark/5 pointer-events-none z-10 transition-colors duration-1000 group-hover/scroll-sequence:bg-transparent"></div>
+                    </div>
+
+                    {/* Floating Decorative Elements */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-green/5 blur-[120px] -z-10 rounded-full scale-150 animate-pulse-slow"></div>
+                </div>
+
+                <div className="container mx-auto px-4 mt-16 text-center">
+                    <div className="max-w-3xl mx-auto">
+                        <p className="text-xl md:text-2xl text-brand-gray leading-relaxed mb-10 reveal-trigger stagger-1">
+                            {lang === 'ar'
+                                ? 'حلول استشارية بيئية وعلمية متكاملة لدعم التنمية الصناعية المستدامة منذ عام 2008.'
+                                : 'Integrated environmental and scientific consulting solutions to support sustainable industrial development since 2008.'}
+                        </p>
+                        <Link
+                            to="/about"
+                            className="inline-flex items-center gap-3 bg-brand-green text-white px-10 py-4 rounded-full font-bold hover:scale-105 hover:shadow-xl hover:shadow-brand-green/20 transition-all reveal-trigger stagger-2"
+                        >
+                            {lang === 'ar' ? 'اكتشف المزيد عنا' : 'Discover more about us'}
+                            <ArrowRight size={22} className={lang === 'ar' ? 'rotate-180' : ''} />
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -51,12 +74,25 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                         <p className="text-gray-400">{t.services.description}</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {t.services.items.slice(0, 4).map((service, idx) => (
-                            <div key={idx} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
-                                <div className="text-brand-green mb-6">{getIcon(service.iconName)}</div>
-                                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                                <p className="text-gray-400 text-sm">{service.description}</p>
+                            <div key={idx} className={`group relative bg-[#1c1c1c] p-8 md:p-10 rounded-[2rem] border border-brand-green/50 shadow-[0_20px_50px_rgba(170,213,70,0.15)] -translate-y-2 transition-all duration-700 overflow-hidden reveal-trigger stagger-${idx + 1} hover:-translate-y-3 hover:border-brand-green/80 hover:shadow-brand-green/30`}>
+                                {/* Layered Premium Glows - Strongly visible by default */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.08] via-transparent to-brand-green/[0.12] pointer-events-none"></div>
+                                <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.2] rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
+                                <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-brand-emerald/[0.1] rounded-full blur-[100px] pointer-events-none"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex justify-between items-start mb-10">
+                                        <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center border border-white/30 transition-all duration-500 shrink-0 scale-110 group-hover:scale-125 group-hover:bg-white/30">
+                                            {getIcon(service.iconName, "w-8 h-8 md:w-10 md:h-10 text-white stroke-current")}
+                                        </div>
+                                        <span className="text-4xl font-black text-white/20 group-hover:text-white/40 transition-colors duration-500">0{idx + 1}</span>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-brand-green mb-4 tracking-tight drop-shadow-[0_0_8px_rgba(170,213,70,0.3)]">{service.title}</h3>
+                                    <p className="text-white leading-relaxed text-base md:text-lg font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first">{service.description}</p>
+                                </div>
+                                <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-brand-green via-brand-emerald to-transparent transform scale-x-100 transition-all duration-500 origin-left"></div>
                             </div>
                         ))}
                     </div>

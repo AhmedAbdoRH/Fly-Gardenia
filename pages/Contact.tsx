@@ -20,7 +20,7 @@ export const Contact: React.FC<ContactProps> = ({ content, lang }) => {
             <PageHero
                 title={t.nav.contact}
                 subtitle={t.contact.subtitle}
-                bgImage="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2670&auto=format&fit=crop"
+                bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
             />
 
             <section className="py-20 md:py-32 relative bg-brand-dark">

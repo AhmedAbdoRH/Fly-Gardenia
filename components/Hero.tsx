@@ -19,9 +19,9 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-transparent z-10" />
 
         <img
-          src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2641&auto=format&fit=crop"
-          alt="Forest and Industry"
-          className="w-full h-full object-cover animate-scale-slow opacity-80 md:opacity-100"
+          src="/hero-bg.png"
+          alt="Sustainable Industry"
+          className="w-full h-full object-cover animate-scale-slow opacity-90 md:opacity-100"
         />
       </div>
 

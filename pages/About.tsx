@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { Target, Eye, HandHeart, Quote, CheckCircle } from 'lucide-react';
+import { Target, Eye, Quote, CheckCircle } from 'lucide-react';
 import { ContentData } from '../types';
 import { TypeWriter } from '../components/TypeWriter';
 import { PageHero } from '../components/PageHero';
+import { getIcon } from '../components/Icons';
 
 interface AboutProps {
     content: ContentData;
@@ -21,74 +22,60 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
             <PageHero
                 title={t.nav.about}
                 subtitle={t.about.mainText}
-                bgImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2813&auto=format&fit=crop"
+                bgImage="/about-bg.png"
             />
 
             {/* About Content */}
-            <section className="py-20 md:py-32 watercolor-bg">
+            <section className="pt-10 md:pt-16 pb-20 md:pb-32 watercolor-bg">
                 <div className="container mx-auto relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-                        {/* Text Column */}
-                        <div className="w-full lg:w-5/12">
-                            <h2 className="reveal-trigger text-3xl md:text-5xl lg:text-6xl font-black text-brand-charcoal mb-6 md:mb-10 leading-[1.1]">{t.about.title}</h2>
+                    {/* Logo Section */}
+                    <div className="flex flex-col items-center text-center mb-20 reveal-trigger">
+                        <div className="relative group mb-12">
+                            <div className="absolute inset-0 bg-brand-green/20 rounded-full blur-[100px] scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10"></div>
+                            <img
+                                src="/logo-full.png"
+                                alt="Gardenia Logo"
+                                className="max-w-[280px] md:max-w-[450px] w-full h-auto drop-shadow-[0_0_30px_rgba(170,213,70,0.1)] animate-float"
+                            />
+                        </div>
+                        <div className="max-w-3xl">
+                            <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
+                                {t.about.subText}
+                            </p>
+                        </div>
+                    </div>
 
-                            <div className="reveal-trigger prose prose-lg text-brand-gray leading-relaxed mb-8 md:mb-12">
-                                <p className="font-semibold text-brand-charcoal text-lg md:text-xl mb-4">{t.about.mainText}</p>
-                                <p className="text-base md:text-lg">{t.about.subText}</p>
+                    {/* Vision & Mission Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto reveal-trigger stagger-1">
+                        {/* Vision Card */}
+                        <div className="group relative bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl shadow-gray-200/60 transition-all duration-500 border border-brand-green/10 overflow-hidden flex flex-col md:flex-row gap-6 items-start">
+                            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-brand-light to-transparent rounded-bl-[100%]"></div>
+                            <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center transition-all duration-500 shrink-0 shadow-lg scale-110 rotate-3 z-10">
+                                <Eye className="w-8 h-8" strokeWidth={1.5} />
                             </div>
-
-                            <div className="flex flex-col gap-4 md:gap-6">
-                                {/* Vision Card */}
-                                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                                    <div className="flex items-center gap-4 mb-3">
-                                        <div className="p-2 bg-brand-light rounded-lg text-brand-green">
-                                            <Eye className="w-6 h-6" />
-                                        </div>
-                                        <h3 className="font-bold text-lg text-brand-charcoal">{t.about.visionTitle}</h3>
-                                    </div>
-                                    <TypeWriter
-                                        key={`vision-${lang}`}
-                                        text={t.about.visionText}
-                                        speed={25}
-                                        className="text-sm text-brand-gray leading-relaxed"
-                                    />
-                                </div>
-
-                                {/* Mission Card */}
-                                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                                    <div className="flex items-center gap-4 mb-3">
-                                        <div className="p-2 bg-brand-light rounded-lg text-brand-accent">
-                                            <Target className="w-6 h-6" />
-                                        </div>
-                                        <h3 className="font-bold text-lg text-brand-charcoal">{t.about.missionTitle}</h3>
-                                    </div>
-                                    <TypeWriter
-                                        key={`mission-${lang}`}
-                                        text={t.about.missionText}
-                                        speed={25}
-                                        className="text-sm text-brand-gray leading-relaxed"
-                                    />
-                                </div>
+                            <div className="relative z-10">
+                                <h3 className="text-2xl md:text-3xl font-bold text-brand-charcoal mb-4 tracking-tight">
+                                    {t.about.visionTitle}
+                                </h3>
+                                <p className="text-brand-gray leading-relaxed text-lg font-medium">
+                                    {t.about.visionText}
+                                </p>
                             </div>
                         </div>
 
-                        {/* Image Column */}
-                        <div className="w-full lg:w-7/12 relative lg:pt-24 reveal-trigger stagger-2">
-                            <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl">
-                                <img
-                                    src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2813&auto=format&fit=crop"
-                                    alt="Environmental Consulting"
-                                    className="w-full h-[400px] md:h-[600px] object-cover"
-                                />
-
-                                <div className="md:absolute md:bottom-8 md:-left-8 z-20 bg-white p-6 md:p-8 rounded-none md:rounded-2xl shadow-none md:shadow-xl border-t md:border-t-0 md:border-l-8 border-brand-green w-full md:max-w-xs">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <Quote className="text-brand-green fill-brand-green/20" size={24} />
-                                    </div>
-                                    <p className="text-brand-charcoal font-medium italic leading-relaxed text-sm md:text-base">
-                                        "We believe that sustainability goes beyond regulatory compliance."
-                                    </p>
-                                </div>
+                        {/* Mission Card */}
+                        <div className="group relative bg-[#1a1a1a] p-8 md:p-10 rounded-[2rem] shadow-2xl transition-all duration-500 border border-brand-emerald/20 overflow-hidden text-white flex flex-col md:flex-row gap-6 items-start">
+                            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-green/20 rounded-full blur-[80px] pointer-events-none"></div>
+                            <div className="w-16 h-16 rounded-2xl bg-brand-emerald text-white flex items-center justify-center transition-all duration-500 shrink-0 shadow-2xl scale-110 -rotate-3 backdrop-blur-sm z-10">
+                                <Target className="w-8 h-8" strokeWidth={1.5} />
+                            </div>
+                            <div className="relative z-10">
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
+                                    {t.about.missionTitle}
+                                </h3>
+                                <p className="text-gray-100 leading-relaxed text-lg font-medium">
+                                    {t.about.missionText}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -108,17 +95,25 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {t.values.items.map((val, idx) => (
-                            <div key={idx} className={`glass-dark p-6 md:p-10 rounded-2xl md:rounded-3xl hover:bg-white/5 transition-all duration-300 reveal-trigger stagger-${(idx % 3) + 1}`}>
-                                <div className="flex items-center justify-between mb-6">
-                                    <div className="p-3 bg-white/5 rounded-xl text-brand-emerald">
-                                        <HandHeart className="w-6 h-6 md:w-8 md:h-8" />
+                            <div key={idx} className={`group relative bg-[#1c1c1c] p-8 md:p-10 rounded-[2rem] border border-brand-emerald/30 shadow-2xl shadow-brand-emerald/15 hover:border-brand-emerald/60 hover:shadow-brand-emerald/30 hover:-translate-y-2 transition-all duration-700 overflow-hidden reveal-trigger stagger-${(idx % 3) + 1}`}>
+                                {/* Premium Layered Glows */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/[0.04] via-transparent to-brand-green/[0.06] pointer-events-none"></div>
+                                <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-emerald/[0.15] rounded-full blur-[80px] pointer-events-none group-hover:bg-brand-emerald/[0.25] transition-all duration-700 animate-pulse-slow"></div>
+                                <div className="absolute -top-24 -left-24 w-60 h-60 bg-brand-green/[0.08] rounded-full blur-[70px] pointer-events-none group-hover:bg-brand-green/[0.15] transition-all duration-700"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex items-center justify-between mb-8">
+                                        <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md text-white flex items-center justify-center border border-white/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-white/20">
+                                            {getIcon(val.iconName, "w-7 h-7 text-white")}
+                                        </div>
+                                        <span className="text-4xl font-black text-white/[0.1] group-hover:text-white/[0.2] transition-colors duration-500">0{idx + 1}</span>
                                     </div>
-                                    <span className="text-3xl md:text-4xl font-black text-white/10">0{idx + 1}</span>
+                                    <h3 className="text-xl md:text-2xl font-bold text-brand-emerald mb-4 tracking-tight group-hover:text-white transition-colors">{val.title}</h3>
+                                    <p className="text-gray-200 leading-relaxed text-base group-hover:text-white transition-colors duration-300">{val.description}</p>
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold mb-3">{val.title}</h3>
-                                <p className="text-gray-400 leading-relaxed text-sm md:text-base">{val.description}</p>
+                                <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-brand-emerald via-brand-green to-transparent transform scale-x-100 group-hover:h-2 transition-all duration-500 origin-left"></div>
                             </div>
                         ))}
                     </div>

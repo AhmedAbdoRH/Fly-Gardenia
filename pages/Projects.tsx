@@ -20,7 +20,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
             <PageHero
                 title={t.nav.projects}
                 subtitle={t.projects.description}
-                bgImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2813&auto=format&fit=crop"
+                bgImage="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2670&auto=format&fit=crop"
             />
 
             {/* Projects Section */}

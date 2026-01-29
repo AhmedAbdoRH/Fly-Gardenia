@@ -17,7 +17,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "About Gardenia",
-      mainText: "Gardenia for Environmental Consulting is an Egyptian environmental consulting firm established in 2008, specializing in providing integrated environmental and scientific consulting solutions for industrial facilities, governmental entities, and development projects across Egypt and the region.",
+      mainText: "Expert environmental and scientific consulting solutions for sustainable industrial development since 2008.",
       subText: "We support our clients in achieving full compliance with local and international environmental regulations while enhancing environmental performance. We rely on a team of certified experts with over 20 years of experience, supported by a track record with organizations like USAID, UNDP, GEF, and JICA.",
       visionTitle: "Our Vision",
       visionText: "To be a leading regional firm in environmental consulting and a trusted partner for achieving compliance and sustainable industrial development.",
@@ -28,12 +28,12 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "Our Values",
       description: "Our values guide every aspect of our work and shape our relationships with clients.",
       items: [
-        { title: "Compliance & Integrity", description: "Dedicated to full compliance with regulations while minimizing operational disruptions." },
-        { title: "Practical Solutions", description: "Delivering implementable solutions tailored to each factory’s conditions." },
-        { title: "Sustainability", description: "Environmental protection is an opportunity to enhance efficiency and reduce costs." },
-        { title: "Quality & Accuracy", description: "Upholding the highest standards of scientific accuracy in all studies." },
-        { title: "Long-Term Partnership", description: "Supporting clients from planning through ongoing operations." },
-        { title: "Capacity Building", description: "Empowering industrial teams to ensure long-term performance." }
+        { title: "Compliance & Integrity", description: "Dedicated to full compliance with regulations while minimizing operational disruptions.", iconName: "Compliance" },
+        { title: "Practical Solutions", description: "Delivering implementable solutions tailored to each factory’s conditions.", iconName: "Practical" },
+        { title: "Sustainability", description: "Environmental protection is an opportunity to enhance efficiency and reduce costs.", iconName: "Sustainability" },
+        { title: "Quality & Accuracy", description: "Upholding the highest standards of scientific accuracy in all studies.", iconName: "Quality" },
+        { title: "Long-Term Partnership", description: "Supporting clients from planning through ongoing operations.", iconName: "Partnership" },
+        { title: "Capacity Building", description: "Empowering industrial teams to ensure long-term performance.", iconName: "Training" }
       ]
     },
     services: {
@@ -124,7 +124,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "من نحن",
-      mainText: "جاردينيا للاستشارات البيئية هي شركة مصرية متخصصة في الاستشارات البيئية والعلمية، تأسست عام 2008، وتعمل على دعم المصانع والمنشآت الصناعية والجهات الحكومية لتحقيق الامتثال الكامل للتشريعات البيئية المحلية والدولية.",
+      mainText: "حلول استشارية بيئية وعلمية متكاملة لدعم التنمية الصناعية المستدامة منذ عام 2008.",
       subText: "نعتمد على فريق من الخبراء والاستشاريين المعتمدين بخبرة تمتد لأكثر من 20 عاماً، مع سجل حافل من المشروعات المنفذة بالتعاون مع منظمات دولية مثل USAID و UNDP و GEF و JICA.",
       visionTitle: "رؤيتنا",
       visionText: "نسعى لأن نكون من الشركات الرائدة إقليمياً في مجال الاستشارات البيئية، والشريك الموثوق للمصانع في تحقيق الامتثال البيئي والتنمية الصناعية النظيفة.",
@@ -135,12 +135,12 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "قيمنا",
       description: "قيمنا هي الأساس الذي يُبنى عليه كل عملنا وعلاقاتنا بعملائنا.",
       items: [
-        { title: "الالتزام والامتثال", description: "نلتزم بتطبيق القوانين البيئية بدقة ونساعد عملاءنا على تحقيق الامتثال الكامل." },
-        { title: "الحلول العملية", description: "نقدم حلول بيئية عملية قابلة للتطبيق مع مراعاة طبيعة نشاط كل مصنع." },
-        { title: "الاستدامة", description: "نؤمن أن حماية البيئة فرصة لتحسين الكفاءة التشغيلية وتقليل التكاليف." },
-        { title: "الجودة والدقة", description: "نحرص على أعلى معايير الجودة والدقة العلمية في كل دراسة وتقرير." },
-        { title: "الشراكة طويلة المدى", description: "لسنا مجرد استشاري، بل شريك استراتيجي يدعم العميل من التخطيط حتى التشغيل." },
-        { title: "بناء القدرات", description: "نهتم بتدريب وتأهيل فرق العمل الصناعية لضمان استمرارية الأنظمة." }
+        { title: "الالتزام والامتثال", description: "نلتزم بتطبيق القوانين البيئية بدقة ونساعد عملاءنا على تحقيق الامتثال الكامل.", iconName: "Compliance" },
+        { title: "الحلول العملية", description: "نقدم حلول بيئية عملية قابلة للتطبيق مع مراعاة طبيعة نشاط كل مصنع.", iconName: "Practical" },
+        { title: "الاستدامة", description: "نؤمن أن حماية البيئة فرصة لتحسين الكفاءة التشغيلية وتقليل التكاليف.", iconName: "Sustainability" },
+        { title: "الجودة والدقة", description: "نحرص على أعلى معايير الجودة والدقة العلمية في كل دراسة وتقرير.", iconName: "Quality" },
+        { title: "الشراكة طويلة المدى", description: "لسنا مجرد استشاري، بل شريك استراتيجي يدعم العميل من التخطيط حتى التشغيل.", iconName: "Partnership" },
+        { title: "بناء القدرات", description: "نهتم بتدريب وتأهيل فرق العمل الصناعية لضمان استمرارية الأنظمة.", iconName: "Training" }
       ]
     },
     services: {

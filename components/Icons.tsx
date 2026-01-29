@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FileSearch,
   FolderCog,
@@ -8,10 +7,17 @@ import {
   HardHat,
   Infinity,
   Presentation,
-  Leaf
+  Leaf,
+  Scale,
+  Zap,
+  Sprout,
+  CheckCircle2,
+  Handshake,
+  GraduationCap
 } from 'lucide-react';
 
 export const IconMap: Record<string, any> = {
+  // Services
   FileText: FileSearch,
   FolderOpen: FolderCog,
   Trash2: Recycle,
@@ -19,15 +25,21 @@ export const IconMap: Record<string, any> = {
   Award: BadgeCheck,
   ShieldCheck: HardHat,
   RefreshCcw: Infinity,
-  Users: Presentation
+  Users: Presentation,
+  // Values
+  Compliance: Scale,
+  Practical: Zap,
+  Sustainability: Sprout,
+  Quality: CheckCircle2,
+  Partnership: Handshake,
+  Training: GraduationCap
 };
 
-export const getIcon = (name: string) => {
+export const getIcon = (name: string, className?: string) => {
   const Icon = IconMap[name] || Leaf;
-  // Use currentColor for stroke and add color classes for better contrast and hover interaction.
   return (
     <Icon
-      className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 drop-shadow-sm stroke-current"
+      className={className || "w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 drop-shadow-sm stroke-current"}
       strokeWidth={1.6}
       aria-hidden="true"
       focusable="false"

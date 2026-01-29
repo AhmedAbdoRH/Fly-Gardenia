@@ -8,7 +8,7 @@ interface PageHeroProps {
 
 export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, bgImage }) => {
     return (
-        <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-brand-dark">
+        <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-brand-dark pb-12 md:pb-20">
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-brand-dark/60 z-10" />
                 {bgImage && (
@@ -19,7 +19,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, bgImage }) 
                     />
                 )}
             </div>
-            <div className="container relative z-20 mx-auto px-4 text-center">
+            <div className="container relative z-20 mx-auto px-4 text-center pt-48 md:pt-64 pb-16 md:pb-32">
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4 animate-fade-up">
                     {title}
                 </h1>

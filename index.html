@@ -48,10 +48,19 @@
             'fade-up': 'fadeUp 0.8s cubic-bezier(0.2, 0.0, 0.2, 1.0) forwards',
             'fade-in': 'fadeIn 1s cubic-bezier(0.2, 0.0, 0.2, 1.0) forwards',
             'scale-slow': 'scaleSlow 25s linear infinite alternate',
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 12s ease-in-out infinite',
+            'pulse-slow': 'breathe 20s ease-in-out infinite',
+            'subtle-zoom': 'subtleZoom 30s ease-in-out infinite alternate',
           },
           keyframes: {
+            subtleZoom: {
+              '0%': { transform: 'scale(1.1) opacity(0.8)' },
+              '100%': { transform: 'scale(1.2) opacity(1)' },
+            },
+            breathe: {
+              '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+              '50%': { opacity: '0.6', transform: 'scale(1.05)' },
+            },
             fadeUp: {
               '0%': { opacity: '0', transform: 'translateY(20px)' },
               '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -124,8 +133,8 @@
     /* Animation Utilities */
     .reveal-trigger {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      transform: translateY(30px);
+      transition: opacity 1.2s cubic-bezier(0.2, 0.0, 0.2, 1.0), transform 1.2s cubic-bezier(0.2, 0.0, 0.2, 1.0);
       will-change: opacity, transform;
     }
 
@@ -135,19 +144,19 @@
     }
 
     .stagger-1 {
-      transition-delay: 50ms;
-    }
-
-    .stagger-2 {
-      transition-delay: 100ms;
-    }
-
-    .stagger-3 {
       transition-delay: 150ms;
     }
 
+    .stagger-2 {
+      transition-delay: 300ms;
+    }
+
+    .stagger-3 {
+      transition-delay: 450ms;
+    }
+
     .stagger-4 {
-      transition-delay: 200ms;
+      transition-delay: 600ms;
     }
 
     /* Glass Utilities - simplified for mobile performance */
