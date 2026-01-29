@@ -82,6 +82,11 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.2] rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
                                 <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-brand-emerald/[0.1] rounded-full blur-[100px] pointer-events-none"></div>
 
+                                {/* Background Watermark Icon - Professional Transparent Version */}
+                                <div className="absolute -bottom-12 -right-12 w-80 h-80 text-brand-green/[0.04] group-hover:text-brand-green/[0.08] transition-all duration-1000 transform group-hover:scale-110 group-hover:-rotate-12 pointer-events-none z-0">
+                                    {getIcon(service.iconName, "w-full h-full stroke-[0.5]")}
+                                </div>
+
                                 <div className="relative z-10">
                                     <div className="flex justify-between items-start mb-10">
                                         <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center border border-white/30 transition-all duration-500 shrink-0 scale-110 group-hover:scale-125 group-hover:bg-white/30">

@@ -77,6 +77,11 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                         <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.25] rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
                                         <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-brand-emerald/[0.15] rounded-full blur-[100px] pointer-events-none"></div>
 
+                                        {/* Background Watermark Icon - Professional Transparent Version */}
+                                        <div className="absolute -bottom-16 -right-16 w-96 h-96 text-brand-green/[0.03] group-hover:text-brand-green/[0.06] transition-all duration-1000 transform group-hover:scale-110 group-hover:-rotate-12 pointer-events-none z-0">
+                                            {getIcon(service.iconName, "w-full h-full stroke-[0.3]")}
+                                        </div>
+
                                         {/* Mouse Glow Follower */}
                                         <div className="mouse-glow opacity-30"></div>
 
