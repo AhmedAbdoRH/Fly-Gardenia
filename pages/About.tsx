@@ -20,25 +20,27 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
     return (
         <div className="min-h-screen">
             <PageHero
-                title={t.nav.about}
-                subtitle={t.about.mainText}
+                title={
+                    <img
+                        src="/logo-full.png"
+                        alt="Gardenia"
+                        className="h-32 md:h-48 w-auto mx-auto object-contain drop-shadow-2xl animate-fade-up"
+                    />
+                }
                 bgImage="/about-bg.png"
+                titleTop
             />
 
             {/* About Content */}
             <section className="pt-10 md:pt-16 pb-20 md:pb-32 watercolor-bg">
                 <div className="container mx-auto relative z-10">
-                    {/* Logo Section */}
+                    {/* Intro Text Section */}
                     <div className="flex flex-col items-center text-center mb-20 reveal-trigger">
-                        <div className="relative group mb-12">
-                            <div className="absolute inset-0 bg-brand-green/20 rounded-full blur-[100px] scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10"></div>
-                            <img
-                                src="/logo-full.png"
-                                alt="Gardenia Logo"
-                                className="max-w-[280px] md:max-w-[450px] w-full h-auto drop-shadow-[0_0_30px_rgba(170,213,70,0.1)] animate-float"
-                            />
-                        </div>
-                        <div className="max-w-3xl">
+                        <div className="max-w-4xl mx-auto space-y-8">
+                            <p className="text-2xl md:text-4xl font-bold text-brand-charcoal leading-tight">
+                                {t.about.mainText}
+                            </p>
+                            <div className="w-24 h-1 bg-brand-green mx-auto rounded-full"></div>
                             <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
                                 {t.about.subText}
                             </p>
