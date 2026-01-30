@@ -55,11 +55,13 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                                                 CONTENT.ar.projects.items[idx]
                                             }.jpg`}
                                         alt={project}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
                                     />
+                                    {/* Brand Color Overlay - Medium Green #2e7d32 */}
+                                    <div className="absolute inset-0 bg-[#2e7d32]/60 transition-all duration-700 group-hover:opacity-0 group-hover:scale-110"></div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                                     <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug">{project}</h3>
+                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug z-10">{project}</h3>
                                     </div>
                                 </div>
                             ))}

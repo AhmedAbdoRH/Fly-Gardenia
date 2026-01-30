@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { CheckCircle } from 'lucide-react';
+import { FlaskConical, Utensils, Pill, BrickWall, Package, Zap, Factory, Landmark } from 'lucide-react';
 import { ContentData } from '../types';
 import { getIcon } from '../components/Icons';
 import { PageHero } from '../components/PageHero';
@@ -16,6 +16,17 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
         window.scrollTo(0, 0);
     }, []);
 
+    const industryIcons = [
+        FlaskConical, // Chemical
+        Utensils,     // Food
+        Pill,         // Pharma
+        BrickWall,    // Cement/Building
+        Package,      // Plastic/Packaging
+        Zap,          // Energy
+        Factory,      // New Projects
+        Landmark      // Government
+    ];
+
     return (
         <div className="min-h-screen">
             <PageHero
@@ -25,7 +36,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
             />
 
             {/* Services Section */}
-            <section className="py-24 md:py-32 watercolor-bg">
+            <section className="py-24 md:py-32 bg-brand-dark text-white relative overflow-hidden">
                 {/* Background Accents */}
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(170,213,70,0.05)_0%,transparent_100%)] pointer-events-none"></div>
                 <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-green/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -33,7 +44,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
 
                 <div className="container mx-auto relative z-10 px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20 md:mb-28 reveal-trigger">
-                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-dark mb-8 leading-[1.05]">
+                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-[1.05]">
                             {t.services.title.split(' ').map((word, i) => (
                                 <span key={i} className={i === t.services.title.split(' ').length - 1 ? "text-brand-green" : ""}>
                                     {word}{' '}
@@ -70,7 +81,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                 }}
                             >
                                 <div className="card-3d-wrap h-full relative transition-transform duration-500 ease-out">
-                                    <div className="relative h-full bg-[#1c1c1c] rounded-[2rem] p-8 md:p-10 -translate-y-2 border border-brand-green/50 shadow-[0_20px_50px_rgba(170,213,70,0.15)] overflow-hidden flex flex-col z-10 hover:-translate-y-3 hover:border-brand-green/80 transition-all duration-700">
+                                    <div className="relative h-full bg-white/5 backdrop-blur-xl rounded-[3rem] p-8 md:p-10 -translate-y-2 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] overflow-hidden flex flex-col z-10 hover:-translate-y-3 hover:border-brand-green/50 hover:bg-white/10 transition-all duration-700">
 
                                         {/* Layered Premium Glows - Strongly visible by default */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.1] via-transparent to-brand-green/[0.15] pointer-events-none"></div>
@@ -134,14 +145,17 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                             </h2>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {t.industries.items.map((item, idx) => (
-                                    <div key={idx} className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-gray-100 hover:border-brand-green/30 hover:shadow-lg hover:shadow-brand-green/5 transition-all duration-300 group text-left ltr:text-left rtl:text-right">
-                                        <div className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-green shadow-sm shrink-0 group-hover:scale-110 group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
-                                            <CheckCircle size={18} />
+                                {t.industries.items.map((item, idx) => {
+                                    const Icon = industryIcons[idx % industryIcons.length];
+                                    return (
+                                        <div key={idx} className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-gray-100 hover:border-brand-green/30 hover:shadow-lg hover:shadow-brand-green/5 transition-all duration-300 group text-left ltr:text-left rtl:text-right">
+                                            <div className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-green shadow-sm shrink-0 group-hover:scale-110 group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                                                <Icon size={18} />
+                                            </div>
+                                            <span className="font-bold text-brand-charcoal text-sm md:text-base group-hover:text-brand-green transition-colors">{item}</span>
                                         </div>
-                                        <span className="font-bold text-brand-charcoal text-sm md:text-base group-hover:text-brand-green transition-colors">{item}</span>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>

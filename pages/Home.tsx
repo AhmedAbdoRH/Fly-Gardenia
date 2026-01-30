@@ -6,7 +6,6 @@ import { TypeWriter } from '../components/TypeWriter';
 import { ContentData } from '../types';
 import { Link } from 'react-router-dom';
 import { CONTENT } from '../constants';
-import { ScrollSequence } from '../components/ScrollSequence';
 
 interface HomeProps {
     content: ContentData;
@@ -34,12 +33,15 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                     <div
                         className="relative w-full h-[50vh] md:h-[70vh] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] overflow-hidden"
                     >
-                        <ScrollSequence
-                            frameCount={40}
-                            path="/video_frames"
-                            prefix="video_"
-                            extension="jpg"
-                            className="w-full h-full"
+                        <video
+                            src="/video.mp4"
+                            autoPlay
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                            onLoadedMetadata={(e) => {
+                                e.currentTarget.playbackRate = 0.8;
+                            }}
                         />
                         <div className="absolute inset-0 bg-brand-dark/5 pointer-events-none z-10 transition-colors duration-1000 group-hover/scroll-sequence:bg-transparent"></div>
                     </div>
@@ -76,7 +78,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {t.services.items.slice(0, 4).map((service, idx) => (
-                            <div key={idx} className={`group relative bg-[#1c1c1c] p-8 md:p-10 rounded-[2rem] border border-brand-green/50 shadow-[0_20px_50px_rgba(170,213,70,0.15)] -translate-y-2 transition-all duration-700 overflow-hidden reveal-trigger stagger-${idx + 1} hover:-translate-y-3 hover:border-brand-green/80 hover:shadow-brand-green/30`}>
+                            <div key={idx} className={`group relative bg-white/5 backdrop-blur-xl p-8 md:p-10 rounded-[3rem] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] -translate-y-2 transition-all duration-700 overflow-hidden reveal-trigger stagger-${idx + 1} hover:-translate-y-3 hover:border-brand-green/50 hover:bg-white/10 hover:shadow-brand-green/20`}>
                                 {/* Layered Premium Glows - Strongly visible by default */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.08] via-transparent to-brand-green/[0.12] pointer-events-none"></div>
                                 <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.2] rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
@@ -148,11 +150,13 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                                 CONTENT.ar.projects.items[idx]
                                             }.jpg`}
                                         alt={project}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
                                     />
+                                    {/* Brand Color Overlay - Medium Green #2e7d32 */}
+                                    <div className="absolute inset-0 bg-[#2e7d32]/60 transition-all duration-700 group-hover:opacity-0 group-hover:scale-110"></div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                                     <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug">{project}</h3>
+                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug z-10">{project}</h3>
                                     </div>
                                 </div>
                             ))}
