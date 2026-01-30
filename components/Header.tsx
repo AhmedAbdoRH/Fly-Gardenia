@@ -31,6 +31,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
     { label: content.about, href: '/about' },
     { label: content.services, href: '/services' },
     { label: content.projects, href: '/projects' },
+    ...(content.partners ? [{ label: content.partners, href: '/partners' }] : []),
     { label: content.contact, href: '/contact' },
   ];
 

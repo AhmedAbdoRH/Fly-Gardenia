@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Target, Eye, Quote, CheckCircle } from 'lucide-react';
-import { ContentData } from '../types';
+import { ContentData, ServiceItem } from '../types';
 import { TypeWriter } from '../components/TypeWriter';
 import { PageHero } from '../components/PageHero';
 import { getIcon } from '../components/Icons';
@@ -12,6 +12,8 @@ interface AboutProps {
 
 export const About: React.FC<AboutProps> = ({ content, lang }) => {
     const t = content;
+    const [showServicesModal, setShowServicesModal] = useState(false);
+    const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -44,6 +46,12 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                             <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
                                 {t.about.subText}
                             </p>
+
+                            <div className="mt-8 flex justify-center">
+                                <button onClick={() => setShowServicesModal(true)} className="inline-flex items-center gap-3 bg-brand-green text-white px-8 py-3 rounded-full font-bold hover:shadow-lg transition-all">
+                                    {lang === 'ar' ? 'تعرف على خدماتنا' : 'Explore our services'}
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -79,6 +87,20 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                     {t.about.missionText}
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Methodology Section */}
+            <section className="py-12 md:py-16 bg-white">
+                <div className="container mx-auto">
+                    <div className="max-w-4xl mx-auto text-center reveal-trigger">
+                        <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal mb-4">{t.about.methodologyTitle}</h3>
+                        <p className="text-lg md:text-xl text-brand-gray leading-relaxed">{t.about.methodologyText}</p>
+                        <div className="mt-8 flex justify-center gap-4">
+                            <img src="/1/team-1.jpg" alt="Team at work" className="w-40 h-28 object-cover rounded-lg shadow-md" />
+                            <img src="/1/team-2.jpg" alt="Site image" className="w-40 h-28 object-cover rounded-lg shadow-md" />
                         </div>
                     </div>
                 </div>
@@ -121,6 +143,88 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     </div>
                 </div>
             </section>
+
+            {/* Partners / Clients Section */}
+            <section className="py-16 md:py-24 bg-white">
+                <div className="container mx-auto">
+                    <div className="max-w-5xl mx-auto text-center mb-8 reveal-trigger">
+                        <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal mb-2">{t.partners?.title ?? (lang === 'ar' ? 'شركاء وعملاء' : 'Partners & Clients')}</h3>
+                        <p className="text-brand-gray">{lang === 'ar' ? 'جهات وحواضن عمل تعاونت مع جاردينيا' : 'Governmental, international and industry partners we have worked with.'}</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div className="p-6 bg-gray-50 rounded-lg">
+                            <h4 className="font-bold mb-3">{lang === 'ar' ? 'جهات حكومية' : 'Government'}</h4>
+                            <ul className="space-y-2 text-sm text-brand-gray">
+                                {(t.partners?.government ?? []).map((it, k) => <li key={k}>{it}</li>)}
+                            </ul>
+                        </div>
+                        <div className="p-6 bg-gray-50 rounded-lg">
+                            <h4 className="font-bold mb-3">{lang === 'ar' ? 'منظمات دولية' : 'International'}</h4>
+                            <ul className="space-y-2 text-sm text-brand-gray">
+                                {(t.partners?.international ?? []).map((it, k) => <li key={k}>{it}</li>)}
+                            </ul>
+                        </div>
+                        <div className="p-6 bg-gray-50 rounded-lg">
+                            <h4 className="font-bold mb-3">{lang === 'ar' ? 'قطاعات صناعية' : 'Sectors'}</h4>
+                            <ul className="space-y-2 text-sm text-brand-gray">
+                                {(t.partners?.industries ?? []).map((it, k) => <li key={k}>{it}</li>)}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Services Modal (triggered from CTA) */}
+            {showServicesModal && (
+                <div className="fixed inset-0 z-50 flex items-start justify-center p-6 overflow-auto bg-black/60">
+                    <div className="bg-white w-full max-w-5xl rounded-2xl p-6 md:p-10">
+                        <div className="flex items-center justify-between mb-6">
+                            <h3 className="text-2xl font-bold">{lang === 'ar' ? 'خدمات جاردينيا' : 'Gardenia Services'}</h3>
+                            <div className="flex items-center gap-2">
+                                <button onClick={() => { setShowServicesModal(false); setSelectedService(null); }} className="text-sm text-gray-500">{lang === 'ar' ? 'إغلاق' : 'Close'}</button>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {t.services.items.map((svc, i) => (
+                                <button key={i} onClick={() => setSelectedService(svc)} className="group relative overflow-hidden rounded-lg border border-gray-200 p-4 text-left hover:shadow-lg transition-all flex gap-4 items-start">
+                                    <div className="w-24 h-24 rounded-md bg-gray-100 flex-shrink-0 overflow-hidden">
+                                        <img src={`/1/service-${i + 1}.jpg`} alt={svc.title} className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/1/service-placeholder.jpg'; }} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="font-bold text-lg mb-1">{svc.title}</h4>
+                                        <p className="text-sm text-brand-gray">{svc.description}</p>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+
+                        {selectedService && (
+                            <div className="mt-6 bg-gray-50 rounded-lg p-6">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <h4 className="text-xl font-bold">{selectedService.title}</h4>
+                                        <p className="mt-3 text-brand-gray">{selectedService.description}</p>
+                                    </div>
+                                    <button onClick={() => setSelectedService(null)} className="text-sm text-gray-600">{lang === 'ar' ? 'إغلاق' : 'Close'}</button>
+                                </div>
+                                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <img src={`/1/service-${t.services.items.indexOf(selectedService) + 1}-detail.jpg`} alt="detail" className="w-full h-48 object-cover rounded-md" onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/1/service-placeholder.jpg'; }} />
+                                    <div className="p-4">
+                                        <p className="text-brand-gray">{selectedService.description}</p>
+                                        <ul className="mt-4 list-disc list-inside text-sm text-brand-gray">
+                                            <li>{lang === 'ar' ? 'خدمة عملية ومقاسة' : 'Practical, measurable service'}</li>
+                                            <li>{lang === 'ar' ? 'تقارير قابلة للاعتماد' : 'Accreditable reports'}</li>
+                                            <li>{lang === 'ar' ? 'دعم فني ومتابعة' : 'Technical support and follow-up'}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
 
             {/* Why Us Section */}
             <section className="py-20 md:py-32 bg-gray-50/50">

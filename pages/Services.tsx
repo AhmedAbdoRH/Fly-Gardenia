@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FlaskConical, Utensils, Pill, BrickWall, Package, Zap, Factory, Landmark } from 'lucide-react';
-import { ContentData } from '../types';
+import { ContentData, ServiceItem } from '../types';
 import { getIcon } from '../components/Icons';
 import { PageHero } from '../components/PageHero';
 
@@ -15,6 +15,8 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const [selectedService, setSelectedService] = React.useState<ServiceItem | null>(null);
 
     const industryIcons = [
         FlaskConical, // Chemical
@@ -54,11 +56,12 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
 
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
                         {t.services.items.map((service, idx) => (
                             <div
                                 key={idx}
                                 className={`group relative h-full perspective-2000 reveal-trigger stagger-${idx + 1}`}
+                                onClick={() => setSelectedService(service)}
                                 onMouseMove={(e) => {
                                     const card = e.currentTarget;
                                     const rect = card.getBoundingClientRect();
@@ -128,6 +131,21 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                             </div>
                         ))}
                     </div>
+
+                    {selectedService && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6">
+                            <div className="max-w-3xl w-full bg-white rounded-2xl p-8">
+                                <div className="flex justify-between items-start">
+                                    <h3 className="text-2xl font-bold">{selectedService.title}</h3>
+                                    <button onClick={() => setSelectedService(null)} className="text-gray-500">إغلاق</button>
+                                </div>
+                                <p className="mt-4 text-gray-700 whitespace-pre-line">{selectedService.description}</p>
+                                <div className="mt-6 text-right">
+                                    <button onClick={() => setSelectedService(null)} className="px-6 py-3 bg-brand-green text-white rounded-full font-bold">حسناً</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                 </div>
             </section>

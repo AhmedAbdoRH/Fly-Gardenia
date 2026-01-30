@@ -15,6 +15,8 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
         window.scrollTo(0, 0);
     }, []);
 
+    const projectList = (t.projects.list && t.projects.list.length > 0) ? t.projects.list : t.projects.items.map((title) => ({ title }));
+
     return (
         <div className="min-h-screen">
             <PageHero
@@ -47,21 +49,16 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                         </div>
 
                         <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                            {t.projects.items.map((project, idx) => (
+                            {projectList.map((project, idx) => (
                                 <div key={idx} className={`group relative overflow-hidden rounded-2xl md:rounded-[2.5rem] h-[300px] md:h-[400px] shadow-md reveal-trigger stagger-${(idx % 2) + 1}`}>
-                                    <img
-                                        src={`/1/${idx === 0 ? CONTENT.ar.projects.items[1] :
-                                            idx === 1 ? CONTENT.ar.projects.items[0] :
-                                                CONTENT.ar.projects.items[idx]
-                                            }.jpg`}
-                                        alt={project}
-                                        className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
-                                    />
+                                    <div className="w-full h-full bg-[url('/1/project-placeholder.jpg')] bg-cover bg-center transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"></div>
                                     {/* Brand Color Overlay - Medium Green #2e7d32 */}
                                     <div className="absolute inset-0 bg-[#2e7d32]/60 transition-all duration-700 group-hover:opacity-0 group-hover:scale-110"></div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                                     <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug z-10">{project}</h3>
+                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug z-10">{project.title}</h3>
+                                        {project.period && <span className="text-xs text-white/80 mt-2">{project.period} — {project.location ?? ''}</span>}
+                                        {project.description && <p className="text-white/90 mt-3 text-sm">{project.description}</p>}
                                     </div>
                                 </div>
                             ))}

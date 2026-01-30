@@ -35,25 +35,42 @@ export const Contact: React.FC<ContactProps> = ({ content, lang }) => {
                                 <h2 className="text-3xl md:text-5xl font-black mb-6">{t.contact.title}</h2>
                                 <p className="text-gray-400 text-base md:text-lg mb-10 leading-relaxed">{t.contact.subtitle}</p>
 
-                                <div className="space-y-8">
-                                    <a href="mailto:info@gardenia.eg" className="flex items-center gap-4 group">
-                                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
-                                            <Mail className="w-5 h-5" />
-                                        </div>
-                                        <div>
-                                            <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.emailLabel}</span>
-                                            <span className="text-lg md:text-xl font-bold">info@gardenia.eg</span>
-                                        </div>
-                                    </a>
-                                    <a href="tel:+20100000000" className="flex items-center gap-4 group">
-                                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
-                                            <Phone className="w-5 h-5" />
-                                        </div>
-                                        <div>
-                                            <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.phoneLabel}</span>
-                                            <span className="text-lg md:text-xl font-bold">+20 100 000 000</span>
-                                        </div>
-                                    </a>
+                                <div className="space-y-6">
+                                    {t.contact.emails?.map((em, i) => (
+                                        <a key={i} href={`mailto:${em}`} className="flex items-center gap-4 group">
+                                            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                                                <Mail className="w-5 h-5" />
+                                            </div>
+                                            <div>
+                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.emailLabel}</span>
+                                                <span className="text-lg md:text-xl font-bold">{em}</span>
+                                            </div>
+                                        </a>
+                                    ))}
+
+                                    {t.contact.phoneNumbers?.map((p, i) => (
+                                        <a key={i} href={`tel:${p.replace(/ /g, '')}`} className="flex items-center gap-4 group">
+                                            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                                                <Phone className="w-5 h-5" />
+                                            </div>
+                                            <div>
+                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.phoneLabel}</span>
+                                                <span className="text-lg md:text-xl font-bold">{p}</span>
+                                            </div>
+                                        </a>
+                                    ))}
+
+                                    {t.contact.address && (
+                                        <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t.contact.address)}`} target="_blank" rel="noreferrer" className="flex items-start gap-4 mt-2">
+                                            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 6.5 11 6.5 11s6.5-5.75 6.5-11c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/></svg>
+                                            </div>
+                                            <div>
+                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{lang === 'ar' ? 'العنوان' : 'Address'}</span>
+                                                <span className="text-lg md:text-xl font-bold">{t.contact.address}</span>
+                                            </div>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
 

@@ -10,6 +10,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Projects } from './pages/Projects';
+import { Partners } from './pages/Partners';
 import { Contact } from './pages/Contact';
 
 // Scroll to top component to handle route changes
@@ -61,6 +62,7 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={<About content={t} lang={lang} />} />
           <Route path="/services" element={<Services content={t} lang={lang} />} />
           <Route path="/projects" element={<Projects content={t} lang={lang} />} />
+          <Route path="/partners" element={<Partners content={t} lang={lang} />} />
           <Route path="/contact" element={<Contact content={t} lang={lang} />} />
         </Routes>
       </main>

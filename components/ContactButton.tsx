@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
-import { MessageCircle, X, Mail, Phone, Send } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { MessageCircle, X, Mail, Phone, Send, ChevronDown } from 'lucide-react';
+import { CONTENT } from '../constants';
 
 export const ContactButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (!ref.current) return;
+      if (e.target instanceof Node && !ref.current.contains(e.target)) setIsOpen(false);
+    };
+    document.addEventListener('click', onDoc);
+    return () => document.removeEventListener('click', onDoc);
+  }, []);
+
+  const contact = CONTENT['ar'].contact as any;
+  const phone = contact?.phoneNumbers?.[0] ?? '';
+  const phoneDigits = phone.replace(/[^+0-9]/g, '');
+  const email = contact?.emails?.[0] ?? '';
 
   return (
     <>
       {/* Main Contact Button - Fixed Bottom Left */}
-      <div className="fixed bottom-8 left-8 z-50">
+      <div className="fixed bottom-8 left-8 z-50" ref={ref}>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="contact-button group"
@@ -29,50 +45,36 @@ export const ContactButton: React.FC = () => {
           <span className="tooltip">تواصل معنا</span>
         </button>
 
-        {/* Contact Options Panel */}
+        {/* Contact Options Panel - Same as Hero dropdown */}
         {isOpen && (
-          <div className="contact-panel">
-            <h3 className="panel-title">تواصل معنا</h3>
-            <p className="panel-subtitle">اختر طريقة التواصل المفضلة</p>
-
-            <div className="contact-options">
-              <a
-                href="mailto:info@gardenia-consulting.com"
-                className="contact-option"
-              >
-                <div className="option-icon">
-                  <Mail size={20} />
+          <div className={`absolute bottom-full left-0 mb-4 w-80 bg-black/40 backdrop-blur-3xl rounded-3xl shadow-3xl z-50 overflow-hidden border border-white/20 animate-fade-in-down transition-all duration-500 ease-out`} style={{boxShadow:'0 20px 40px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1)'}}>
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-brand-green/30 rounded-full blur-3xl opacity-70 pointer-events-none" style={{filter:'blur(32px)'}}></div>
+            <div className="p-4 divide-y divide-white/15">
+              <a href={`tel:${phoneDigits}`} className="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-brand-green/20 hover:scale-[1.03] transition-all group/item">
+                <div className="w-12 h-12 rounded-xl bg-brand-green/30 flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-green/50 transition-colors group-hover/item:scale-110">
+                  <Phone size={22} className="text-brand-green" strokeWidth={2.5} />
                 </div>
-                <div className="option-content">
-                  <span className="option-title">البريد الإلكتروني</span>
-                  <span className="option-subtitle">info@gardenia.com</span>
+                <div className="flex-1 min-w-0">
+                  <div className="font-extrabold text-white text-base group-hover/item:text-brand-green transition-colors">اتصال مباشر</div>
+                  <div className="text-xs text-gray-200/60">اتصل بنا مباشرة</div>
                 </div>
               </a>
-
-              <a
-                href="tel:+201234567890"
-                className="contact-option"
-              >
-                <div className="option-icon">
-                  <Phone size={20} />
+              <a href={`https://wa.me/${phoneDigits.replace(/\+/g, '')}`} target="_blank" rel="noreferrer" className="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-green-900/30 hover:scale-[1.03] transition-all group/item">
+                <div className="w-12 h-12 rounded-xl bg-green-800/40 flex items-center justify-center flex-shrink-0 group-hover/item:bg-green-700/60 transition-colors group-hover/item:scale-110">
+                  <MessageCircle size={22} className="text-green-300" strokeWidth={2.5} />
                 </div>
-                <div className="option-content">
-                  <span className="option-title">الهاتف</span>
-                  <span className="option-subtitle">+20 123 456 7890</span>
+                <div className="flex-1 min-w-0">
+                  <div className="font-extrabold text-white text-base group-hover/item:text-green-300 transition-colors">تواصل من خلال واتساب</div>
+                  <div className="text-xs text-gray-200/60">رسالة فورية</div>
                 </div>
               </a>
-
-              <a
-                href="#contact-form"
-                className="contact-option"
-                onClick={() => setIsOpen(false)}
-              >
-                <div className="option-icon">
-                  <Send size={20} />
+              <a href={`mailto:${email}`} className="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-blue-900/30 hover:scale-[1.03] transition-all group/item">
+                <div className="w-12 h-12 rounded-xl bg-blue-800/40 flex items-center justify-center flex-shrink-0 group-hover/item:bg-blue-700/60 transition-colors group-hover/item:scale-110">
+                  <Mail size={22} className="text-blue-300" strokeWidth={2.5} />
                 </div>
-                <div className="option-content">
-                  <span className="option-title">نموذج التواصل</span>
-                  <span className="option-subtitle">أرسل رسالة سريعة</span>
+                <div className="flex-1 min-w-0">
+                  <div className="font-extrabold text-white text-base group-hover/item:text-blue-300 transition-colors">مراسلة من خلال الايميل</div>
+                  <div className="text-xs text-gray-200/60">أرسل لنا بريداً إلكترونياً</div>
                 </div>
               </a>
             </div>
@@ -189,112 +191,7 @@ export const ContactButton: React.FC = () => {
           transform: translateY(-50%) translateX(4px);
         }
 
-        /* Contact Panel */
-        .contact-panel {
-          position: absolute;
-          bottom: 80px;
-          left: 0;
-          width: 320px;
-          background: white;
-          border-radius: 20px;
-          padding: 24px;
-          box-shadow: 
-            0 10px 40px rgba(0, 0, 0, 0.1),
-            0 20px 80px rgba(0, 0, 0, 0.08);
-          animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          border: 1px solid rgba(170, 213, 70, 0.1);
-        }
-
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .panel-title {
-          font-size: 20px;
-          font-weight: 700;
-          color: #81a32a;
-          margin: 0 0 4px 0;
-          text-align: right;
-        }
-
-        .panel-subtitle {
-          font-size: 14px;
-          color: #6b7280;
-          margin: 0 0 20px 0;
-          text-align: right;
-        }
-
-        /* Contact Options */
-        .contact-options {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .contact-option {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 12px;
-          border-radius: 12px;
-          background: #f9fafb;
-          border: 2px solid transparent;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          cursor: pointer;
-        }
-
-        .contact-option:hover {
-          background: #f5f9ec;
-          border-color: #aad546;
-          transform: translateX(-4px);
-        }
-
-        .option-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #aad546, #96bc38);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          flex-shrink: 0;
-          box-shadow: 0 2px 8px rgba(170, 213, 70, 0.2);
-        }
-
-        .contact-option:hover .option-icon {
-          transform: scale(1.1);
-          box-shadow: 0 4px 12px rgba(170, 213, 70, 0.3);
-        }
-
-        .option-content {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-          text-align: right;
-          flex: 1;
-        }
-
-        .option-title {
-          font-size: 15px;
-          font-weight: 600;
-          color: #1f2937;
-        }
-
-        .option-subtitle {
-          font-size: 13px;
-          color: #6b7280;
-          direction: ltr;
-          text-align: right;
-        }
+        /* Contact Panel - Removed (using Tailwind) */
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -309,8 +206,7 @@ export const ContactButton: React.FC = () => {
           }
 
           .contact-panel {
-            width: calc(100vw - 64px);
-            max-width: 320px;
+            /* Removed - using Tailwind */
           }
 
           .tooltip {
