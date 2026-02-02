@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ContentData } from '../types';
-import { PageHero } from '../components/PageHero';
 import { Calendar, MapPin, Target, User, CheckCircle2, FileText, Building2, Globe, Briefcase, Landmark, ArrowUpRight, ArrowRight } from 'lucide-react';
 
 const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: number }) => {
@@ -44,11 +43,11 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                 rotateX,
                 transformStyle: "preserve-3d",
             }}
-            className="group relative bg-white rounded-[1.5rem] md:rounded-[3.5rem] shadow-xl md:shadow-2xl shadow-gray-200/50 overflow-hidden border-2 md:border-4 border-white hover:shadow-brand-green/20 transition-all duration-700"
+            className="group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl md:shadow-2xl shadow-gray-200/50 overflow-hidden border-2 md:border-4 border-white hover:shadow-brand-green/20 transition-all duration-700"
         >
             <div className="flex flex-col lg:flex-row">
                 {/* Image/Dark Side */}
-                <div className="lg:w-5/12 bg-brand-charcoal relative overflow-hidden min-h-[300px] md:min-h-[500px] lg:min-h-[650px] flex items-center justify-center p-6 md:p-12">
+                <div className="lg:w-5/12 bg-brand-charcoal relative overflow-hidden min-h-[300px] md:min-h-[400px] lg:min-h-[500px] flex items-center justify-center p-6 md:p-10">
                     {/* Background decorative elements */}
                     <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-green/20 via-transparent to-transparent"></div>
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
@@ -77,69 +76,69 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                         )}
                     </motion.div>
                     
-                    <div style={{ transform: "translateZ(80px)" }} className="absolute top-4 md:top-10 left-4 md:left-10 z-20">
-                        <span className="bg-brand-green text-brand-charcoal px-3 md:px-5 py-1 md:py-2 rounded-full text-[9px] md:text-xs font-black uppercase tracking-widest shadow-lg">
+                    <div style={{ transform: "translateZ(80px)" }} className="absolute top-4 md:top-8 left-4 md:left-8 z-20">
+                        <span className="bg-brand-green text-brand-charcoal px-3 md:px-4 py-1 md:py-1.5 rounded-full text-[9px] md:text-xs font-black uppercase tracking-widest shadow-lg">
                             {study.category}
                         </span>
                     </div>
                 </div>
 
                 {/* Content Side */}
-                <div className="lg:w-7/12 p-6 md:p-16 flex flex-col justify-center bg-gradient-to-br from-white to-slate-50">
-                    <div className="mb-6 md:mb-12">
-                        <div className="mb-4 md:mb-8 flex items-center gap-3">
+                <div className="lg:w-7/12 p-6 md:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-slate-50">
+                    <div className="mb-4 md:mb-8">
+                        <div className="mb-3 md:mb-6 flex items-center gap-3">
                             <span className="text-brand-green font-black text-[9px] md:text-xs uppercase tracking-[0.3em]">
                                 {lang === 'ar' ? 'دراسة حالة' : 'CASE STUDY'}
                             </span>
-                            <div className="h-[1px] w-6 md:w-12 bg-brand-green/30"></div>
+                            <div className="h-[px] w-6 md:w-10 bg-brand-green/30"></div>
                         </div>
-                        <h3 className="text-2xl md:text-6xl font-black text-brand-charcoal mb-6 md:mb-10 leading-tight">{study.title}</h3>
+                        <h3 className="text-2xl md:text-4xl font-black text-brand-charcoal mb-4 md:mb-8 leading-tight">{study.title}</h3>
                         
-                        <div className="flex flex-wrap gap-4 md:gap-10 mb-8 md:mb-14">
+                        <div className="flex flex-wrap gap-4 md:gap-8 mb-6 md:mb-10">
                             <div className="flex items-center gap-3 md:gap-4 text-brand-gray group-hover:text-brand-charcoal transition-colors">
-                                <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-2xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
-                                    <Calendar className="w-4 h-4 md:w-6 md:h-6 text-brand-green" />
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
+                                    <Calendar className="w-4 h-4 md:w-5 md:h-5 text-brand-green" />
                                 </div>
-                                <span className="font-bold text-base md:text-xl">{study.period}</span>
+                                <span className="font-bold text-base md:text-lg">{study.period}</span>
                             </div>
                             <div className="flex items-center gap-3 md:gap-4 text-brand-gray group-hover:text-brand-charcoal transition-colors">
-                                <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-2xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
-                                    <MapPin className="w-4 h-4 md:w-6 md:h-6 text-brand-green" />
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
+                                    <MapPin className="w-4 h-4 md:w-5 md:h-5 text-brand-green" />
                                 </div>
-                                <span className="font-bold text-base md:text-xl">{study.location}</span>
+                                <span className="font-bold text-base md:text-lg">{study.location}</span>
                             </div>
                         </div>
 
-                        <div className="inline-flex items-center gap-2 md:gap-3 text-brand-green font-black text-[9px] md:text-sm uppercase tracking-widest mb-3 md:mb-6 px-2.5 md:px-4 py-1 md:py-2 bg-brand-green/5 rounded-lg md:rounded-xl">
-                            <Target className="w-3.5 h-3.5 md:w-5 h-5" />
+                        <div className="inline-flex items-center gap-2 md:gap-3 text-brand-green font-black text-[9px] md:text-xs uppercase tracking-widest mb-3 md:mb-4 px-2.5 md:px-3 py-1 md:py-1.5 bg-brand-green/5 rounded-lg md:rounded-xl">
+                            <Target className="w-3.5 h-3.5 md:w-4 md:h-4" />
                             {lang === 'ar' ? 'الهدف الرئيسي' : 'Main Objective'}
                         </div>
-                        <p className="text-brand-charcoal text-lg md:text-3xl font-bold leading-relaxed">
+                        <p className="text-brand-charcoal text-lg md:text-2xl font-bold leading-relaxed">
                             {study.objective}
                         </p>
                     </div>
 
-                    <div className="mb-6 md:mb-12 p-5 md:p-8 bg-white rounded-[1.25rem] md:rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden group/quote">
-                        <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-brand-green/5 rounded-full -mr-12 md:-mr-16 -mt-12 md:-mt-16 transition-all duration-700 group-hover/quote:scale-150"></div>
-                        <div className="flex items-start gap-3 md:gap-6 relative z-10">
-                            <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-brand-green/10 flex items-center justify-center shrink-0">
-                                <User className="w-4 h-4 md:w-6 h-6 text-brand-green" />
+                    <div className="mb-3 md:mb-5 p-3.5 md:p-4.5 bg-white rounded-[1.25rem] md:rounded-[1.5rem] border-2 border-slate-100 shadow-sm relative overflow-hidden group/quote">
+                        <div className="absolute top-0 right-0 w-24 md:w-24 h-24 md:h-24 bg-brand-green/5 rounded-full -mr-12 md:-mr-12 -mt-12 md:-mt-12 transition-all duration-700 group-hover/quote:scale-150"></div>
+                        <div className="flex items-start gap-3 md:gap-4 relative z-10">
+                            <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-brand-green/10 flex items-center justify-center shrink-0">
+                                <User className="w-4 h-4 md:w-4.5 md:h-4.5 text-brand-green" />
                             </div>
-                            <p className="text-brand-gray text-base md:text-xl italic font-medium leading-relaxed">"{study.participation}"</p>
+                            <p className="text-brand-gray text-xs md:text-sm italic font-medium leading-relaxed">"{study.participation}"</p>
                         </div>
                     </div>
                     
                     {study.details && (
                         <div className="relative">
-                            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
-                                <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-charcoal text-white flex items-center justify-center">
-                                    <FileText className="w-3.5 h-3.5 md:w-5 h-5" />
+                            <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-4">
+                                <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg md:rounded-lg bg-brand-charcoal text-white flex items-center justify-center">
+                                    <FileText className="w-3 md:w-3.5 h-3 md:h-3.5" />
                                 </div>
-                                <h4 className="text-brand-charcoal font-black text-base md:text-xl uppercase tracking-tight">
+                                <h4 className="text-brand-charcoal font-black text-sm md:text-base uppercase tracking-tight">
                                     {lang === 'ar' ? 'أوجه المشاركة والتفاصيل' : 'Participation & Details'}
                                 </h4>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                                 {study.details.map((detail, dIdx) => (
                                     <motion.div 
                                         key={dIdx} 
@@ -147,10 +146,10 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: 0.2 + (dIdx * 0.1) }}
-                                        className="flex items-start gap-3 md:gap-4 p-3.5 md:p-5 rounded-[0.85rem] md:rounded-[1.5rem] bg-white border border-slate-100 hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 group/item"
+                                        className="flex items-start gap-3 md:gap-4 p-2.5 md:p-3 rounded-[0.85rem] md:rounded-[1rem] bg-white border border-slate-100 hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 group/item"
                                     >
-                                        <div className="mt-2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-green shrink-0 shadow-[0_0_10px_rgba(170,213,70,0.4)] group-hover/item:scale-150 transition-transform" />
-                                        <span className="text-brand-gray font-bold text-sm md:text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">{detail}</span>
+                                        <div className="mt-1.5 w-1.5 h-1.5 md:w-1.5 md:h-1.5 rounded-full bg-brand-green shrink-0 shadow-[0_0_10px_rgba(170,213,70,0.4)] group-hover/item:scale-150 transition-transform" />
+                                        <span className="text-brand-gray font-bold text-xs md:text-sm leading-relaxed group-hover:text-brand-charcoal transition-colors">{detail}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -282,9 +281,9 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-slate-50 pt-20 md:pt-32">
+        <div className="min-h-screen bg-slate-50">
             {/* Introduction & Approach */}
-            <section className="py-24 bg-white relative overflow-hidden">
+            <section className="pt-32 pb-24 md:pt-48 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
                 
                 <div className="container mx-auto px-4 relative z-10">

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { FlaskConical, Utensils, Pill, BrickWall, Package, Zap, Factory, Landmark, Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { ContentData, ServiceItem } from '../types';
 import { getIcon } from '../components/Icons';
-import { PageHero } from '../components/PageHero';
 
 interface ServicesProps {
     content: ContentData;
@@ -31,20 +30,22 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
 
     return (
         <div className="min-h-screen">
-            <PageHero
-                title={t.nav.services}
-                bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop"
-            />
-
             {/* Services Section */}
-            <section className="pt-12 pb-24 md:pt-16 md:pb-32 bg-brand-dark text-white relative overflow-hidden">
+            <section className="pt-32 pb-24 md:pt-48 md:pb-32 bg-brand-dark text-white relative overflow-hidden">
                 {/* Background Accents */}
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(170,213,70,0.05)_0%,transparent_100%)] pointer-events-none"></div>
                 <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-green/10 rounded-full blur-[100px] pointer-events-none"></div>
                 <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
 
                 <div className="container mx-auto relative z-10 px-4">
-                    <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16 reveal-trigger">
+                    <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24 reveal-trigger">
+                        <span className="inline-block px-4 py-1.5 mb-6 text-xs font-black uppercase tracking-[0.3em] bg-brand-green/20 text-brand-green rounded-full border border-brand-green/30">
+                            {t.nav.services}
+                        </span>
+                        <h1 className="text-4xl md:text-7xl font-black mb-8 text-white leading-tight">
+                            {t.services.title}
+                        </h1>
+                        <div className="w-24 h-1.5 bg-brand-green mx-auto rounded-full mb-10 shadow-[0_0_20px_rgba(170,213,70,0.4)]"></div>
                         <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-medium">
                             {t.services.description}
                         </p>

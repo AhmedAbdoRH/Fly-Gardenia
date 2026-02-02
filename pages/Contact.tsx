@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { ContentData } from '../types';
-import { PageHero } from '../components/PageHero';
 
 interface ContactProps {
     content: ContentData;
@@ -17,14 +16,18 @@ export const Contact: React.FC<ContactProps> = ({ content, lang }) => {
 
     return (
         <div className="min-h-screen">
-            <PageHero
-                title={t.nav.contact}
-                subtitle={t.contact.subtitle}
-                bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
-            />
-
-            <section className="py-20 md:py-32 relative bg-brand-dark">
+            <section className="pt-32 pb-20 md:pt-48 md:pb-32 relative bg-brand-dark">
                 <div className="absolute top-0 left-0 w-full h-1/2 watercolor-bg md:block hidden"></div>
+
+                <div className="container mx-auto relative z-10 reveal-trigger mb-12 md:mb-20 text-center">
+                    <span className="inline-block px-4 py-1.5 mb-6 text-xs font-black uppercase tracking-[0.3em] bg-brand-green/20 text-brand-green rounded-full border border-brand-green/30">
+                        {t.nav.contact}
+                    </span>
+                    <h1 className="text-4xl md:text-7xl font-black mb-8 text-white leading-tight">
+                        {t.contact.title}
+                    </h1>
+                    <div className="w-24 h-1.5 bg-brand-green mx-auto rounded-full shadow-[0_0_20px_rgba(170,213,70,0.4)]"></div>
+                </div>
 
                 <div className="container mx-auto relative z-10 reveal-trigger">
                     <div className="bg-white md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
