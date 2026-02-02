@@ -39,8 +39,19 @@ export interface ContentData {
     visionText: string;
     missionTitle: string;
     missionText: string;
+    policiesTitle?: string;
+    policiesItems?: string[];
+    specializationsTitle?: string;
+    specializationsItems?: string[];
+    addedValueTitle?: string;
+    addedValueItems?: string[];
     methodologyTitle?: string;
     methodologyText?: string;
+    expertsTitle?: string;
+    expertsIntro?: string;
+    expertsItems?: string[];
+    drAsmaaTitle?: string;
+    drAsmaaBio?: string[];
   };
   values: {
     title: string;
@@ -66,14 +77,38 @@ export interface ContentData {
     items: string[];
     approachTitle: string;
     approachItems: string[];
-    list?: Array<{
+    caseStudiesTitle?: string;
+    caseStudies?: Array<{
       title: string;
-      period?: string;
-      location?: string;
-      client?: string;
-      description?: string;
-      category?: string;
+      period: string;
+      location: string;
+      objective: string;
+      participation: string;
+      details?: string[];
+      category: string;
     }>;
+    projectLists?: Array<{
+      categoryTitle: string;
+      projects: Array<{
+        name: string;
+        client: string;
+        location: string;
+        date: string;
+        image?: string;
+      }>;
+    }>;
+    summaryTableTitle?: string;
+    summaryTable?: Array<{
+      project: string;
+      years: string;
+      funding: string;
+    }>;
+    partnersTitle?: string;
+    partners?: {
+      government: string[];
+      international: string[];
+      industrial: string[];
+    };
   };
   partners?: {
     title: string;

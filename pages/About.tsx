@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Target, Eye, Quote, CheckCircle } from 'lucide-react';
+import { Target, Eye, Quote, CheckCircle, Users, Award, BookOpen, Briefcase } from 'lucide-react';
 import { ContentData, ServiceItem } from '../types';
 import { TypeWriter } from '../components/TypeWriter';
 import { PageHero } from '../components/PageHero';
@@ -89,6 +89,177 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                             </div>
                         </div>
                     </div>
+
+                    {/* Policies & Objectives Section */}
+                    {t.about.policiesTitle && (
+                        <div className="mt-20 max-w-6xl mx-auto reveal-trigger">
+                            <div className="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-xl relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-green to-brand-emerald"></div>
+                                <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                        <CheckCircle className="w-7 h-7 text-brand-green" />
+                                    </div>
+                                    {t.about.policiesTitle}
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {t.about.policiesItems?.map((item, idx) => (
+                                        <div key={idx} className="flex gap-4 items-start group">
+                                            <div className="mt-1.5 w-2 h-2 rounded-full bg-brand-green shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                                            <p className="text-brand-gray text-lg leading-relaxed font-medium group-hover:text-brand-charcoal transition-colors">
+                                                {item}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    {/* Specializations Section */}
+                    {t.about.specializationsTitle && (
+                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                            <div className="bg-brand-charcoal text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-[80px] pointer-events-none"></div>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-xl bg-brand-green/20 flex items-center justify-center">
+                                        <Target className="w-7 h-7 text-brand-green" />
+                                    </div>
+                                    {t.about.specializationsTitle}
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                                    {t.about.specializationsItems?.map((item, idx) => (
+                                        <div key={idx} className="flex gap-4 items-start group">
+                                            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                            <p className="text-gray-300 text-lg leading-relaxed group-hover:text-white transition-colors">
+                                                {item}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Added Value Section */}
+                    {t.about.addedValueTitle && (
+                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-xl relative overflow-hidden">
+                                <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-xl bg-brand-emerald/10 flex items-center justify-center">
+                                        <Quote className="w-7 h-7 text-brand-emerald" />
+                                    </div>
+                                    {t.about.addedValueTitle}
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    {t.about.addedValueItems?.map((item, idx) => (
+                                        <div key={idx} className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-emerald/30 hover:shadow-lg transition-all duration-300">
+                                            <p className="text-brand-gray text-lg leading-relaxed font-medium">
+                                                {item}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Experts Section */}
+                    {t.about.expertsTitle && (
+                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                            <div className="bg-brand-dark text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green to-brand-emerald"></div>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-xl bg-brand-green/20 flex items-center justify-center">
+                                        <Users className="w-7 h-7 text-brand-green" />
+                                    </div>
+                                    {t.about.expertsTitle}
+                                </h3>
+                                <p className="text-xl text-gray-300 mb-10 leading-relaxed font-medium">
+                                    {t.about.expertsIntro}
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    {t.about.expertsItems?.map((item, idx) => (
+                                        <div key={idx} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-green/40 hover:bg-white/10 transition-all duration-300">
+                                            <p className="text-gray-200 leading-relaxed">
+                                                {item}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Dr. Asmaa Profile Section */}
+                    {t.about.drAsmaaTitle && (
+                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                                    {/* Profile Image/Badge */}
+                                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                                        <div className="relative group">
+                                            {/* Animated background frames */}
+                                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                                            
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                                {/* Premium Background for the Photo */}
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                                <div className="absolute top-0 right-0 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                                                
+                                                {/* Abstract Decorative Lines */}
+                                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                                                    <div className="absolute top-10 left-10 w-full h-full border-2 border-brand-green rounded-full"></div>
+                                                </div>
+
+                                                <img 
+                                                    src="/Dr. Asmaa Hammouda.png" 
+                                                    alt="Dr. Asmaa Hammouda" 
+                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                />
+                                            </div>
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                                {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa Hammouda'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-12 w-full space-y-4">
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Award className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'استشاري معتمد (EEAA)' : 'Certified Consultant (EEAA)'}
+                                                </span>
+                                            </div>
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Briefcase className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'استشاري مهندس (نقابة المهندسين)' : 'Consultant Engineer'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Bio Content */}
+                                    <div className="w-full lg:w-2/3">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                                <BookOpen className="w-7 h-7 text-brand-green" />
+                                            </div>
+                                            {t.about.drAsmaaTitle}
+                                        </h3>
+                                        <div className="space-y-4">
+                                            {t.about.drAsmaaBio?.map((item, idx) => (
+                                                <div key={idx} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                        {item}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -98,10 +269,6 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     <div className="max-w-4xl mx-auto text-center reveal-trigger">
                         <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal mb-4">{t.about.methodologyTitle}</h3>
                         <p className="text-lg md:text-xl text-brand-gray leading-relaxed">{t.about.methodologyText}</p>
-                        <div className="mt-8 flex justify-center gap-4">
-                            <img src="/1/team-1.jpg" alt="Team at work" className="w-40 h-28 object-cover rounded-lg shadow-md" />
-                            <img src="/1/team-2.jpg" alt="Site image" className="w-40 h-28 object-cover rounded-lg shadow-md" />
-                        </div>
                     </div>
                 </div>
             </section>
@@ -144,36 +311,6 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                 </div>
             </section>
 
-            {/* Partners / Clients Section */}
-            <section className="py-16 md:py-24 bg-white">
-                <div className="container mx-auto">
-                    <div className="max-w-5xl mx-auto text-center mb-8 reveal-trigger">
-                        <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal mb-2">{t.partners?.title ?? (lang === 'ar' ? 'شركاء وعملاء' : 'Partners & Clients')}</h3>
-                        <p className="text-brand-gray">{lang === 'ar' ? 'جهات وحواضن عمل تعاونت مع جاردينيا' : 'Governmental, international and industry partners we have worked with.'}</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                        <div className="p-6 bg-gray-50 rounded-lg">
-                            <h4 className="font-bold mb-3">{lang === 'ar' ? 'جهات حكومية' : 'Government'}</h4>
-                            <ul className="space-y-2 text-sm text-brand-gray">
-                                {(t.partners?.government ?? []).map((it, k) => <li key={k}>{it}</li>)}
-                            </ul>
-                        </div>
-                        <div className="p-6 bg-gray-50 rounded-lg">
-                            <h4 className="font-bold mb-3">{lang === 'ar' ? 'منظمات دولية' : 'International'}</h4>
-                            <ul className="space-y-2 text-sm text-brand-gray">
-                                {(t.partners?.international ?? []).map((it, k) => <li key={k}>{it}</li>)}
-                            </ul>
-                        </div>
-                        <div className="p-6 bg-gray-50 rounded-lg">
-                            <h4 className="font-bold mb-3">{lang === 'ar' ? 'قطاعات صناعية' : 'Sectors'}</h4>
-                            <ul className="space-y-2 text-sm text-brand-gray">
-                                {(t.partners?.industries ?? []).map((it, k) => <li key={k}>{it}</li>)}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Services Modal (triggered from CTA) */}
             {showServicesModal && (

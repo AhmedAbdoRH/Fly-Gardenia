@@ -1,3 +1,21 @@
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s infinite ease-in-out;
+}
+
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 4s infinite ease-in-out;
+}
+
 /* Global styles */
 
 
@@ -10,6 +28,15 @@
     --brand-dark: #1f582e;
     --brand-gray: #3a7a4a;
     --brand-charcoal: #164223;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(200%) rotate(45deg); }
+}
+
+.animate-shine {
+    animation: shine 2s infinite;
 }
 
 @keyframes shimmer {

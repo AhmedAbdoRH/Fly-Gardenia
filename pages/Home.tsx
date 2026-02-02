@@ -1,18 +1,160 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Hero } from '../components/Hero';
 import { getIcon } from '../components/Icons';
-import { Mail, Phone, CheckCircle, Target, Eye, HandHeart, ArrowRight, Quote } from 'lucide-react';
+import { Mail, Phone, CheckCircle, Target, Eye, HandHeart, ArrowRight, Quote, Building2, Award } from 'lucide-react';
 import { TypeWriter } from '../components/TypeWriter';
 import { ContentData } from '../types';
 import { Link } from 'react-router-dom';
 import { CONTENT } from '../constants';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 interface HomeProps {
     content: ContentData;
     lang: string;
 }
 
+const ProjectCard = ({ project, idx, variants, lang }: { project: any, idx: number, variants: any, lang: string }) => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            variants={variants}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                rotateY,
+                rotateX,
+                transformStyle: "preserve-3d",
+            }}
+            className="group relative overflow-hidden rounded-2xl md:rounded-[2.5rem] h-[300px] md:h-[400px] shadow-lg bg-slate-100 cursor-pointer"
+        >
+            <motion.div
+                style={{
+                    transformStyle: "preserve-3d",
+                    transform: "translateZ(50px)",
+                }}
+                className="absolute inset-0 z-0"
+            >
+                <img
+                    src={project.image || `/studies/study-${idx + 1}.png`}
+                    alt={project.name}
+                    className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                />
+            </motion.div>
+
+            {/* Animated Overlay */}
+            <div className="absolute inset-0 bg-[#2e7d32]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent z-20"></div>
+
+            {/* Content with Slide-up Animation on Hover */}
+            <div 
+                style={{
+                    transform: "translateZ(75px)",
+                }}
+                className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-30 translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+            >
+                <div className="overflow-hidden">
+                    <motion.h3 
+                        className="text-white font-bold text-xl md:text-2xl leading-snug"
+                    >
+                        {project.name}
+                    </motion.h3>
+                </div>
+                <p className="text-white/70 text-sm mt-2 line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    {project.client}
+                </p>
+
+                {/* Decorative Line */}
+                <div className="w-0 group-hover:w-12 h-1 bg-brand-green mt-4 transition-all duration-500 delay-200"></div>
+            </div>
+        </motion.div>
+    );
+};
+
 export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
+    const [projectIndex, setProjectIndex] = useState(0);
+    const allProjects = t.projects.projectLists?.[0]?.projects || [];
+    const totalGroups = Math.ceil(allProjects.length / 4);
+
+    useEffect(() => {
+        if (totalGroups <= 1) return;
+        
+        const interval = setInterval(() => {
+            setProjectIndex((prev) => (prev + 1) % totalGroups);
+        }, 6000); // Change every 6 seconds
+
+        return () => clearInterval(interval);
+    }, [totalGroups]);
+
+    const displayedProjects = allProjects.slice(projectIndex * 4, (projectIndex * 4) + 4);
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                staggerChildren: 0.05,
+                staggerDirection: -1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { 
+            opacity: 0, 
+            y: 30,
+            scale: 0.95
+        },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            scale: 1,
+            transition: {
+                duration: 0.6,
+                ease: [0.215, 0.61, 0.355, 1]
+            }
+        },
+        exit: { 
+            opacity: 0, 
+            y: -20,
+            scale: 0.95,
+            transition: {
+                duration: 0.4
+            }
+        }
+    };
+
     return (
         <>
             <Hero content={t.hero} lang={lang} />
@@ -64,6 +206,102 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                             {lang === 'ar' ? 'اكتشف المزيد عنا' : 'Discover more about us'}
                             <ArrowRight size={22} className={lang === 'ar' ? 'rotate-180' : ''} />
                         </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Leadership Section - Dr. Asmaa Highlight */}
+            <section className="py-24 md:py-32 bg-brand-light relative overflow-hidden">
+                {/* Decorative background elements */}
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-green/5 to-transparent"></div>
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-green/10 rounded-full blur-[100px]"></div>
+
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 max-w-6xl mx-auto">
+                        {/* Image Side */}
+                        <div className="w-full lg:w-5/12 flex justify-center reveal-trigger">
+                            <div className="relative group">
+                                {/* Animated background frames */}
+                                <div className="absolute inset-0 bg-brand-green/20 rounded-[3rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                <div className="absolute inset-0 bg-brand-dark/5 rounded-[3rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                                
+                                <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                    {/* Premium Background for the Photo */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-emerald/5 rounded-full blur-2xl -ml-10 -mb-10"></div>
+                                    
+                                    {/* Abstract Decorative Lines */}
+                                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                                        <div className="absolute top-10 left-10 w-full h-full border-2 border-brand-green rounded-full"></div>
+                                        <div className="absolute top-20 left-20 w-full h-full border-2 border-brand-green rounded-full"></div>
+                                    </div>
+
+                                    <img 
+                                        src="/Dr. Asmaa Hammouda.png" 
+                                        alt="Dr. Asmaa Hammouda" 
+                                        className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* Content Side */}
+                        <div className={`w-full lg:w-7/12 reveal-trigger ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+                            <div className={`flex items-center gap-3 mb-6 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                <div className="w-16 h-[2px] bg-brand-green"></div>
+                                <span className="text-brand-green font-black tracking-widest uppercase text-xs md:text-sm">
+                                    {lang === 'ar' ? 'قيادة علمية خبيرة' : 'Expert Scientific Leadership'}
+                                </span>
+                            </div>
+                            
+                            <div className="mb-8">
+                                <h2 className="text-4xl md:text-6xl font-black text-brand-dark mb-2 leading-[1.1]">
+                                    {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa Hammouda'}
+                                </h2>
+                                <p className="text-xl md:text-2xl text-brand-green font-bold">
+                                    {lang === 'ar' ? 'أستاذ الهندسة الكيميائية والبيئية' : 'Professor of Chemical & Environmental Engineering'}
+                                </p>
+                            </div>
+                            
+                            <div className="relative mb-12">
+                                <Quote className={`absolute -top-8 ${lang === 'ar' ? '-left-8' : '-right-8'} w-16 h-16 text-brand-green/10 ${lang === 'ar' ? '' : '-scale-x-100'}`} />
+                                <p className="text-2xl md:text-3xl text-brand-gray leading-relaxed font-medium italic relative z-10">
+                                    {lang === 'ar' 
+                                        ? 'نعمل على تقديم حلول استشارية تجمع بين الدقة العلمية والخبرة العملية لدعم التنمية الصناعية المستدامة.'
+                                        : 'We work to provide consulting solutions that combine scientific accuracy with practical experience to support sustainable industrial development.'}
+                                </p>
+                            </div>
+                            
+                            <div className={`flex flex-wrap gap-6 mb-12 ${lang === 'ar' ? 'justify-start flex-row-reverse' : ''}`}>
+                                <div className="bg-white px-8 py-5 rounded-[2rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
+                                    <div className="absolute inset-0 bg-brand-green/5 translate-y-full group-hover/badge:translate-y-0 transition-transform duration-300"></div>
+                                    <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center relative z-10">
+                                        <Award className="w-5 h-5 text-brand-green" />
+                                    </div>
+                                    <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+                                        <p className="text-[10px] text-brand-green font-black uppercase tracking-widest mb-0.5">
+                                            {lang === 'ar' ? 'اعتماد دولي' : 'International Certification'}
+                                        </p>
+                                        <p className="font-black text-brand-charcoal">{lang === 'ar' ? 'مستشار وزير البيئة الأسبق' : 'Former Advisor to Minister'}</p>
+                                    </div>
+                                </div>
+                                <div className="bg-white px-8 py-5 rounded-[2rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                    <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
+                                        <CheckCircle className="w-5 h-5 text-brand-green" />
+                                    </div>
+                                    <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
+                                        <p className="text-xs text-brand-gray font-bold uppercase tracking-wider">{lang === 'ar' ? 'الخبرة العملية' : 'Expertise'}</p>
+                                        <p className="font-black text-brand-charcoal">{lang === 'ar' ? '٢٨+ عاماً من الخبرة' : '28+ Years of Experience'}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <Link to="/about" className={`inline-flex items-center gap-4 bg-brand-dark text-white px-10 py-5 rounded-full font-bold hover:bg-brand-green transition-all group ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                {lang === 'ar' ? 'عرض السيرة الذاتية الكاملة' : 'View Full Profile'}
+                                <ArrowRight size={22} className={`transition-transform group-hover:translate-x-2 ${lang === 'ar' ? 'rotate-180 group-hover:-translate-x-2' : ''}`} />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -141,25 +379,79 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                             </div>
                         </div>
 
-                        <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                            {t.projects.items.slice(0, 4).map((project, idx) => (
-                                <div key={idx} className={`group relative overflow-hidden rounded-2xl md:rounded-[2.5rem] h-[300px] md:h-[400px] shadow-md reveal-trigger stagger-${(idx % 2) + 1}`}>
-                                    <img
-                                        src={`/1/${idx === 0 ? CONTENT.ar.projects.items[1] :
-                                            idx === 1 ? CONTENT.ar.projects.items[0] :
-                                                CONTENT.ar.projects.items[idx]
-                                            }.jpg`}
-                                        alt={project}
-                                        className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
-                                    />
-                                    {/* Brand Color Overlay - Medium Green #2e7d32 */}
-                                    <div className="absolute inset-0 bg-[#2e7d32]/60 transition-all duration-700 group-hover:opacity-0 group-hover:scale-110"></div>
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                                    <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                                        <h3 className="text-white font-bold text-xl md:text-2xl leading-snug z-10">{project}</h3>
-                                    </div>
+                        <div className="lg:w-2/3">
+                            <div className="relative min-h-[620px] md:min-h-[850px]" style={{ perspective: "1000px" }}>
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={projectIndex}
+                                        variants={containerVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        exit="exit"
+                                        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full"
+                                    >
+                                        {displayedProjects.map((project, idx) => (
+                                            <ProjectCard 
+                                                key={`${projectIndex}-${idx}`}
+                                                project={project}
+                                                idx={idx}
+                                                variants={itemVariants}
+                                                lang={lang}
+                                            />
+                                        ))}
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
+                            
+                            {/* Pagination Dots - Enhanced Style */}
+                            {totalGroups > 1 && (
+                                <div className="flex justify-center items-center gap-4 mt-12">
+                                    {Array.from({ length: totalGroups }).map((_, i) => (
+                                        <button
+                                            key={i}
+                                            onClick={() => setProjectIndex(i)}
+                                            className="group relative p-2 outline-none"
+                                            aria-label={`Go to project group ${i + 1}`}
+                                        >
+                                            <div className={`h-2 rounded-full transition-all duration-500 ease-out ${
+                                                projectIndex === i 
+                                                ? 'w-12 bg-brand-green shadow-[0_0_15px_rgba(46,125,50,0.4)]' 
+                                                : 'w-2 bg-gray-300 group-hover:bg-gray-400 group-hover:scale-125'
+                                            }`} />
+                                            {projectIndex === i && (
+                                                <motion.div 
+                                                    layoutId="activeDot"
+                                                    className="absolute inset-0 rounded-full border-2 border-brand-green/20 scale-150"
+                                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                                />
+                                            )}
+                                        </button>
+                                    ))}
                                 </div>
-                            ))}
+                            )}
+
+                            {/* View All Button - Clean Prominent Style */}
+                            <div className="flex justify-center mt-16">
+                                <div className="text-center">
+                                    <Link 
+                                        to="/projects" 
+                                        className="inline-flex items-center gap-4 bg-brand-green text-white px-12 py-5 rounded-full font-black text-lg transition-all duration-300 hover:bg-brand-dark shadow-lg shadow-brand-green/20"
+                                    >
+                                        <span className="tracking-tight">
+                                            {lang === 'ar' ? 'استكشف معرض أعمالنا الكامل' : 'Explore Our Full Portfolio'}
+                                        </span>
+                                        
+                                        <div className="flex items-center justify-center w-8 h-8 bg-white/20 rounded-full">
+                                            <ArrowRight size={22} className={`${lang === 'ar' ? 'rotate-180' : ''}`} />
+                                        </div>
+                                    </Link>
+                                    
+                                    {/* Sub-text for extra context */}
+                                    <p className="mt-4 text-brand-gray/60 font-medium text-sm">
+                                        {lang === 'ar' ? 'أكثر من ٢٠ عاماً من الخبرة في الاستشارات البيئية' : 'Over 20 years of expertise in environmental consulting'}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

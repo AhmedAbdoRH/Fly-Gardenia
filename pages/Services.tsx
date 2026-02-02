@@ -84,7 +84,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                 }}
                             >
                                 <div className="card-3d-wrap h-full relative transition-transform duration-500 ease-out">
-                                    <div className="relative h-full bg-white/5 backdrop-blur-xl rounded-[3rem] p-8 md:p-10 -translate-y-2 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] overflow-hidden flex flex-col z-10 hover:-translate-y-3 hover:border-brand-green/50 hover:bg-white/10 transition-all duration-700">
+                                    <div className="relative h-full bg-white/5 backdrop-blur-xl rounded-[3rem] p-8 md:p-10 -translate-y-2 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] overflow-hidden flex flex-col z-10 hover:-translate-y-3 hover:border-brand-green/50 hover:bg-white/10 transition-all duration-700 cursor-pointer">
 
                                         {/* Layered Premium Glows - Strongly visible by default */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.1] via-transparent to-brand-green/[0.15] pointer-events-none"></div>
@@ -119,6 +119,16 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                             <p className="text-white leading-relaxed text-sm md:text-base font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first">
                                                 {service.description}
                                             </p>
+                                            
+                                            {/* Details Hint */}
+                                            {service.details && (
+                                                <div className="pt-4 flex items-center gap-2 text-brand-green text-sm font-bold group-hover:translate-x-2 transition-transform">
+                                                    <span>{lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
+                                                    <div className="w-5 h-5 rounded-full bg-brand-green/20 flex items-center justify-center">
+                                                        <span className="text-xs">→</span>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Bottom Progress Bar */}
@@ -133,15 +143,63 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                     </div>
 
                     {selectedService && (
-                        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6">
-                            <div className="max-w-3xl w-full bg-white rounded-2xl p-8">
-                                <div className="flex justify-between items-start">
-                                    <h3 className="text-2xl font-bold">{selectedService.title}</h3>
-                                    <button onClick={() => setSelectedService(null)} className="text-gray-500">إغلاق</button>
+                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 overflow-hidden">
+                            {/* Backdrop */}
+                            <div 
+                                className="absolute inset-0 bg-brand-charcoal/90 backdrop-blur-md transition-opacity duration-500"
+                                onClick={() => setSelectedService(null)}
+                            ></div>
+                            
+                            {/* Modal Content */}
+                            <div className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-scale-up">
+                                {/* Header */}
+                                <div className="bg-brand-dark text-white p-8 md:p-10 flex justify-between items-center relative">
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green to-brand-emerald"></div>
+                                    <div className="flex items-center gap-6">
+                                        <div className="w-16 h-16 rounded-2xl bg-brand-green/20 flex items-center justify-center border border-brand-green/30">
+                                            {getIcon(selectedService.iconName, "w-8 h-8 text-brand-green")}
+                                        </div>
+                                        <h3 className="text-2xl md:text-3xl font-bold">{selectedService.title}</h3>
+                                    </div>
+                                    <button 
+                                        onClick={() => setSelectedService(null)}
+                                        className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors group"
+                                    >
+                                        <span className="text-2xl group-hover:rotate-90 transition-transform">×</span>
+                                    </button>
                                 </div>
-                                <p className="mt-4 text-gray-700 whitespace-pre-line">{selectedService.description}</p>
-                                <div className="mt-6 text-right">
-                                    <button onClick={() => setSelectedService(null)} className="px-6 py-3 bg-brand-green text-white rounded-full font-bold">حسناً</button>
+                                
+                                {/* Body */}
+                                <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar">
+                                    <p className="text-xl text-brand-charcoal font-bold mb-8 leading-relaxed">
+                                        {selectedService.description}
+                                    </p>
+                                    
+                                    <div className="space-y-6">
+                                        <h4 className="text-brand-green font-black tracking-widest uppercase text-sm">
+                                            {lang === 'ar' ? 'نطاق الخدمة' : 'Service Scope'}
+                                        </h4>
+                                        <div className="grid grid-cols-1 gap-4">
+                                            {(lang === 'ar' ? selectedService.details?.ar : selectedService.details?.en)?.split('\n').map((line, i) => (
+                                                <div key={i} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-2 h-2 rounded-full bg-brand-green shrink-0 group-hover:scale-150 transition-transform"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed font-medium group-hover:text-brand-charcoal transition-colors">
+                                                        {line.replace('• ', '')}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                {/* Footer */}
+                                <div className="p-6 border-t border-gray-100 flex justify-end">
+                                    <button 
+                                        onClick={() => setSelectedService(null)}
+                                        className="px-8 py-3 bg-brand-green text-white rounded-full font-bold hover:shadow-lg hover:shadow-brand-green/20 transition-all active:scale-95"
+                                    >
+                                        {lang === 'ar' ? 'فهمت' : 'Got it'}
+                                    </button>
                                 </div>
                             </div>
                         </div>
