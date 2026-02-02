@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
   const phoneDigits = phone.replace(/[^+0-9]/g, '');
   const email = contact?.emails?.[0] ?? '';
   return (
-    <section className="relative h-[100dvh] min-h-[600px] flex items-center overflow-hidden bg-brand-dark">
+    <section className="relative h-[100dvh] min-h-[600px] flex items-center overflow-hidden bg-brand-dark pt-32 md:pt-48">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         {/* Darker overlays for mobile readability */}
@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
         />
       </div>
 
-      <div className="container relative z-20 mx-auto pt-56 md:pt-64 pb-48 md:pb-64">
+      <div className="container relative z-20 mx-auto pt-32 md:pt-40 pb-48 md:pb-64">
         <div className="max-w-4xl">
           <div className="overflow-hidden mb-4 md:mb-6">
             <div className="flex items-center gap-3 md:gap-4 animate-fade-up opacity-0" style={{ animationDelay: '0.1s' }}>
