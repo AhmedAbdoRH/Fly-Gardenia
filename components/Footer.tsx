@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ content: t, lang }) => {
         <footer className="bg-gray-100 text-brand-gray py-12 md:py-20 border-t border-gray-200">
             <div className="container mx-auto text-center px-4">
                 <div className="mb-8 md:mb-10 flex justify-center">
-                    <img src="/logo-full.png" alt="Gardenia Full Logo" className="h-16 md:h-24 w-auto object-contain" />
+                    <img src="/logo-gardenia.png" alt="Gardenia Full Logo" className="h-20 md:h-32 w-auto object-contain" />
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 mb-8 md:mb-10 text-xs font-bold uppercase tracking-[0.15em] text-brand-charcoal">

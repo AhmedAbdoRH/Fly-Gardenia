@@ -50,47 +50,69 @@ const ProjectCard = ({ project, idx, variants, lang }: { project: any, idx: numb
                 rotateX,
                 transformStyle: "preserve-3d",
             }}
-            className="group relative overflow-hidden rounded-2xl md:rounded-[2.5rem] h-[300px] md:h-[400px] shadow-lg bg-slate-100 cursor-pointer"
+            className="group relative overflow-hidden rounded-[2.5rem] h-[350px] md:h-[450px] shadow-2xl bg-white border-4 border-white cursor-pointer"
         >
+            {/* Background Image Layer */}
             <motion.div
                 style={{
                     transformStyle: "preserve-3d",
-                    transform: "translateZ(50px)",
+                    transform: "translateZ(20px)",
                 }}
                 className="absolute inset-0 z-0"
             >
                 <img
                     src={project.image || `/studies/study-${idx + 1}.png`}
                     alt={project.name}
-                    className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                 />
+                {/* Advanced Gradient Overlay - Darkened with extra depth */}
+                <div className="absolute inset-0 bg-black/40 transition-colors duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent opacity-95 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-brand-green/20 mix-blend-multiply opacity-30 transition-opacity duration-700"></div>
             </motion.div>
 
-            {/* Animated Overlay */}
-            <div className="absolute inset-0 bg-[#2e7d32]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent z-20"></div>
-
-            {/* Content with Slide-up Animation on Hover */}
+            {/* Content Layer */}
             <div 
                 style={{
-                    transform: "translateZ(75px)",
+                    transform: "translateZ(60px)",
                 }}
-                className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-30 translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+                className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-30"
             >
-                <div className="overflow-hidden">
-                    <motion.h3 
-                        className="text-white font-bold text-xl md:text-2xl leading-snug"
-                    >
-                        {project.name}
-                    </motion.h3>
+                {/* Project Badge */}
+                <div className="mb-4 flex items-center gap-3">
+                    <span className="px-3 py-1 rounded-full bg-brand-green/90 backdrop-blur-md text-[10px] font-black text-white uppercase tracking-widest">
+                        {lang === 'ar' ? 'دراسة حالة' : 'Case Study'}
+                    </span>
+                    <div className="h-[1px] w-8 bg-white/30"></div>
                 </div>
-                <p className="text-white/70 text-sm mt-2 line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {project.client}
-                </p>
 
-                {/* Decorative Line */}
-                <div className="w-0 group-hover:w-12 h-1 bg-brand-green mt-4 transition-all duration-500 delay-200"></div>
+                {/* Project Title */}
+                <motion.h3 
+                    className="text-white font-black text-2xl md:text-3xl leading-tight mb-4 drop-shadow-lg"
+                >
+                    {project.name}
+                </motion.h3>
+
+                {/* Project Details (Always Visible) */}
+                <div className="overflow-visible">
+                    <div className="translate-y-0">
+                        <p className="text-white/80 text-base md:text-lg font-medium mb-6 line-clamp-2">
+                            {project.client}
+                        </p>
+                        
+                        {/* Action Link */}
+                        <div className="flex items-center gap-3 text-brand-green font-black text-sm uppercase tracking-tighter">
+                            <span>{lang === 'ar' ? 'تفاصيل المشروع' : 'Project Details'}</span>
+                            <div className="w-8 h-8 rounded-full bg-brand-green text-white flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-transform duration-500">
+                                <ArrowRight size={18} className={lang === 'ar' ? 'rotate-180' : ''} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {/* Premium Corner Accent */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-brand-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
         </motion.div>
     );
 };
@@ -225,11 +247,11 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 <div className="absolute inset-0 bg-brand-green/20 rounded-[3rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
                                 <div className="absolute inset-0 bg-brand-dark/5 rounded-[3rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
                                 
-                                <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-[450px] md:h-[450px] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl z-10">
                                     {/* Premium Background for the Photo */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
-                                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-                                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-emerald/5 rounded-full blur-2xl -ml-10 -mb-10"></div>
+                                    <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-brand-green/10 rounded-full blur-3xl -mr-16 -mt-16 md:-mr-20 md:-mt-20"></div>
+                                    <div className="absolute bottom-0 left-0 w-32 h-32 md:w-48 md:h-48 bg-brand-emerald/5 rounded-full blur-2xl -ml-8 -mb-8 md:-ml-10 md:-mb-10"></div>
                                     
                                     {/* Abstract Decorative Lines */}
                                     <div className="absolute inset-0 opacity-[0.03] pointer-events-none">

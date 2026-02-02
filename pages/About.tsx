@@ -39,19 +39,9 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     {/* Intro Text Section */}
                     <div className="flex flex-col items-center text-center mb-20 reveal-trigger">
                         <div className="max-w-4xl mx-auto space-y-8">
-                            <p className="text-2xl md:text-4xl font-bold text-brand-charcoal leading-tight">
-                                {t.about.mainText}
-                            </p>
-                            <div className="w-24 h-1 bg-brand-green mx-auto rounded-full"></div>
                             <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
                                 {t.about.subText}
                             </p>
-
-                            <div className="mt-8 flex justify-center">
-                                <button onClick={() => setShowServicesModal(true)} className="inline-flex items-center gap-3 bg-brand-green text-white px-8 py-3 rounded-full font-bold hover:shadow-lg transition-all">
-                                    {lang === 'ar' ? 'تعرف على خدماتنا' : 'Explore our services'}
-                                </button>
-                            </div>
                         </div>
                     </div>
 

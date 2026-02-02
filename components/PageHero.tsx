@@ -8,11 +8,11 @@ interface PageHeroProps {
 }
 
 export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, bgImage, titleTop = false }) => {
-    const containerPadding = titleTop ? 'pt-8 md:pt-12' : 'pt-48 md:pt-64';
-    const sectionAlign = titleTop ? 'items-start' : 'items-center';
+    const containerPadding = titleTop ? 'pt-0 md:pt-12' : 'pt-48 md:pt-64';
+    const sectionAlign = titleTop ? 'items-center md:items-start' : 'items-center';
 
     return (
-        <section className={`relative h-[40vh] min-h-[300px] flex ${sectionAlign} justify-center overflow-hidden bg-brand-dark pb-12 md:pb-20`}>
+        <section className={`relative h-[40vh] min-h-[300px] flex ${sectionAlign} justify-center overflow-hidden bg-brand-dark pb-0 md:pb-10`}>
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-brand-dark/60 z-10" />
                 {bgImage && (
@@ -23,8 +23,8 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, bgImage, ti
                     />
                 )}
             </div>
-            <div className={`container relative z-20 mx-auto px-4 text-center ${containerPadding} pb-16 md:pb-32`}>
-                <h1 className={`text-4xl md:text-6xl font-black text-white mb-4 animate-fade-up ${titleTop ? 'mt-4' : ''}`}>
+            <div className={`container relative z-20 mx-auto px-4 text-center ${containerPadding} pb-0 md:pb-16`}>
+                <h1 className={`text-4xl md:text-6xl font-black text-white mb-4 animate-fade-up ${titleTop ? 'mt-0 md:mt-4' : ''}`}>
                     {title}
                 </h1>
                 {subtitle && (

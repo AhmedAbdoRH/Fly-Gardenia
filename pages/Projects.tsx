@@ -1,12 +1,278 @@
 import React, { useEffect } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ContentData } from '../types';
 import { PageHero } from '../components/PageHero';
-import { Calendar, MapPin, Target, User, CheckCircle2, FileText, Building2, Globe, Briefcase, Landmark, ArrowUpRight } from 'lucide-react';
+import { Calendar, MapPin, Target, User, CheckCircle2, FileText, Building2, Globe, Briefcase, Landmark, ArrowUpRight, ArrowRight } from 'lucide-react';
 
-interface ProjectsProps {
-    content: ContentData;
-    lang: string;
-}
+const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: number }) => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: idx * 0.1 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                rotateY,
+                rotateX,
+                transformStyle: "preserve-3d",
+            }}
+            className="group relative bg-white rounded-[1.5rem] md:rounded-[3.5rem] shadow-xl md:shadow-2xl shadow-gray-200/50 overflow-hidden border-2 md:border-4 border-white hover:shadow-brand-green/20 transition-all duration-700"
+        >
+            <div className="flex flex-col lg:flex-row">
+                {/* Image/Dark Side */}
+                <div className="lg:w-5/12 bg-brand-charcoal relative overflow-hidden min-h-[300px] md:min-h-[500px] lg:min-h-[650px] flex items-center justify-center p-6 md:p-12">
+                    {/* Background decorative elements */}
+                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-green/20 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+                    
+                    <motion.div 
+                        style={{ 
+                            transformStyle: "preserve-3d", 
+                            transform: "translateZ(50px)" 
+                        }}
+                        className="relative z-10 w-full h-full flex items-center justify-center"
+                    >
+                        {study.image && (
+                            <div className="relative group/book h-full w-full flex items-center justify-center">
+                                {/* Book Shadow/Glow */}
+                                <div className="absolute inset-0 bg-brand-green/20 blur-[60px] rounded-full scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                                
+                                <img 
+                                    src={study.image} 
+                                    alt={study.title} 
+                                    className="max-w-full max-h-full object-contain shadow-[20px_20px_60px_rgba(0,0,0,0.5)] rounded-sm transform group-hover:scale-105 group-hover:-rotate-2 transition-all duration-700 relative z-10 border border-white/10"
+                                />
+                                
+                                {/* Reflection effect */}
+                                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20"></div>
+                            </div>
+                        )}
+                    </motion.div>
+                    
+                    <div style={{ transform: "translateZ(80px)" }} className="absolute top-4 md:top-10 left-4 md:left-10 z-20">
+                        <span className="bg-brand-green text-brand-charcoal px-3 md:px-5 py-1 md:py-2 rounded-full text-[9px] md:text-xs font-black uppercase tracking-widest shadow-lg">
+                            {study.category}
+                        </span>
+                    </div>
+                </div>
+
+                {/* Content Side */}
+                <div className="lg:w-7/12 p-6 md:p-16 flex flex-col justify-center bg-gradient-to-br from-white to-slate-50">
+                    <div className="mb-6 md:mb-12">
+                        <div className="mb-4 md:mb-8 flex items-center gap-3">
+                            <span className="text-brand-green font-black text-[9px] md:text-xs uppercase tracking-[0.3em]">
+                                {lang === 'ar' ? 'دراسة حالة' : 'CASE STUDY'}
+                            </span>
+                            <div className="h-[1px] w-6 md:w-12 bg-brand-green/30"></div>
+                        </div>
+                        <h3 className="text-2xl md:text-6xl font-black text-brand-charcoal mb-6 md:mb-10 leading-tight">{study.title}</h3>
+                        
+                        <div className="flex flex-wrap gap-4 md:gap-10 mb-8 md:mb-14">
+                            <div className="flex items-center gap-3 md:gap-4 text-brand-gray group-hover:text-brand-charcoal transition-colors">
+                                <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-2xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
+                                    <Calendar className="w-4 h-4 md:w-6 md:h-6 text-brand-green" />
+                                </div>
+                                <span className="font-bold text-base md:text-xl">{study.period}</span>
+                            </div>
+                            <div className="flex items-center gap-3 md:gap-4 text-brand-gray group-hover:text-brand-charcoal transition-colors">
+                                <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-2xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
+                                    <MapPin className="w-4 h-4 md:w-6 md:h-6 text-brand-green" />
+                                </div>
+                                <span className="font-bold text-base md:text-xl">{study.location}</span>
+                            </div>
+                        </div>
+
+                        <div className="inline-flex items-center gap-2 md:gap-3 text-brand-green font-black text-[9px] md:text-sm uppercase tracking-widest mb-3 md:mb-6 px-2.5 md:px-4 py-1 md:py-2 bg-brand-green/5 rounded-lg md:rounded-xl">
+                            <Target className="w-3.5 h-3.5 md:w-5 h-5" />
+                            {lang === 'ar' ? 'الهدف الرئيسي' : 'Main Objective'}
+                        </div>
+                        <p className="text-brand-charcoal text-lg md:text-3xl font-bold leading-relaxed">
+                            {study.objective}
+                        </p>
+                    </div>
+
+                    <div className="mb-6 md:mb-12 p-5 md:p-8 bg-white rounded-[1.25rem] md:rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden group/quote">
+                        <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-brand-green/5 rounded-full -mr-12 md:-mr-16 -mt-12 md:-mt-16 transition-all duration-700 group-hover/quote:scale-150"></div>
+                        <div className="flex items-start gap-3 md:gap-6 relative z-10">
+                            <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-brand-green/10 flex items-center justify-center shrink-0">
+                                <User className="w-4 h-4 md:w-6 h-6 text-brand-green" />
+                            </div>
+                            <p className="text-brand-gray text-base md:text-xl italic font-medium leading-relaxed">"{study.participation}"</p>
+                        </div>
+                    </div>
+                    
+                    {study.details && (
+                        <div className="relative">
+                            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
+                                <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-charcoal text-white flex items-center justify-center">
+                                    <FileText className="w-3.5 h-3.5 md:w-5 h-5" />
+                                </div>
+                                <h4 className="text-brand-charcoal font-black text-base md:text-xl uppercase tracking-tight">
+                                    {lang === 'ar' ? 'أوجه المشاركة والتفاصيل' : 'Participation & Details'}
+                                </h4>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                                {study.details.map((detail, dIdx) => (
+                                    <motion.div 
+                                        key={dIdx} 
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.2 + (dIdx * 0.1) }}
+                                        className="flex items-start gap-3 md:gap-4 p-3.5 md:p-5 rounded-[0.85rem] md:rounded-[1.5rem] bg-white border border-slate-100 hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 group/item"
+                                    >
+                                        <div className="mt-2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-green shrink-0 shadow-[0_0_10px_rgba(170,213,70,0.4)] group-hover/item:scale-150 transition-transform" />
+                                        <span className="text-brand-gray font-bold text-sm md:text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">{detail}</span>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+            <div className="absolute bottom-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-brand-green/5 rounded-full blur-3xl -mb-24 md:-mb-32 -mr-24 md:-mr-32 pointer-events-none"></div>
+        </motion.div>
+    );
+};
+
+const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, idx: number }) => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.05 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                rotateY,
+                rotateX,
+                transformStyle: "preserve-3d",
+            }}
+            className="group bg-white rounded-[1.25rem] md:rounded-[2.5rem] border-2 md:border-4 border-white shadow-lg md:shadow-xl hover:shadow-2xl hover:shadow-brand-green/10 transition-all duration-500 overflow-hidden flex flex-col md:flex-row h-full hover:-translate-y-2"
+        >
+            {/* Image Area */}
+            <div className="relative w-full md:w-64 lg:w-80 shrink-0 bg-brand-charcoal overflow-hidden flex items-center justify-center p-4 md:p-8">
+                {/* Decorative background */}
+                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-green/10 via-transparent to-transparent"></div>
+                
+                <motion.div
+                    style={{ 
+                        transformStyle: "preserve-3d", 
+                        transform: "translateZ(30px)" 
+                    }}
+                    className="h-48 md:h-72 w-full relative z-10 flex items-center justify-center"
+                >
+                    {project.image ? (
+                        <div className="relative group/project-book h-full flex items-center justify-center">
+                            {/* Glow */}
+                            <div className="absolute inset-0 bg-brand-green/20 blur-[40px] rounded-full scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            
+                            <img 
+                                src={project.image} 
+                                alt={project.name}
+                                className="max-h-full max-w-full object-contain shadow-[10px_10px_30px_rgba(0,0,0,0.4)] rounded-sm group-hover:scale-110 group-hover:-rotate-1 transition-all duration-700 border border-white/10"
+                            />
+                        </div>
+                    ) : (
+                        <div className="flex flex-col items-center justify-center text-brand-green/20">
+                            <Building2 className="w-12 h-12 md:w-20 md:h-20 mb-2" />
+                            <span className="text-[8px] font-bold uppercase tracking-widest opacity-50">No Cover</span>
+                        </div>
+                    )}
+                </motion.div>
+                
+                <div style={{ transform: "translateZ(50px)" }} className="absolute top-3 left-3 z-20 bg-brand-green text-brand-charcoal px-2.5 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-lg">
+                    {project.date}
+                </div>
+            </div>
+
+            {/* Content Area */}
+            <div style={{ transform: "translateZ(40px)" }} className="p-5 md:p-10 flex flex-col flex-grow justify-between relative bg-white">
+                <div>
+                    <h4 className="font-black text-base md:text-2xl text-brand-charcoal mb-3 md:mb-6 group-hover:text-brand-green transition-colors leading-tight">
+                        {project.name}
+                    </h4>
+                    
+                    <div className="space-y-2.5 md:space-y-4 mb-4 md:mb-8">
+                        <div className="flex items-center gap-3 md:gap-4 text-brand-gray font-bold">
+                            <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-brand-green/10 transition-colors">
+                                <User size={14} className="text-brand-green" />
+                            </div>
+                            <span className="text-sm md:text-lg line-clamp-1">{project.client}</span>
+                        </div>
+                        <div className="flex items-center gap-3 md:gap-4 text-brand-gray font-bold">
+                            <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-brand-green/10 transition-colors">
+                                <MapPin size={14} className="text-brand-green" />
+                            </div>
+                            <span className="text-sm md:text-lg line-clamp-1">{project.location}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-3 text-brand-green font-black text-[9px] md:text-xs uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-500">
+                    <span>{lang === 'ar' ? 'عرض التفاصيل' : 'VIEW DETAILS'}</span>
+                    <ArrowRight size={12} className={lang === 'ar' ? 'rotate-180' : ''} />
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
     const t = content;
@@ -16,13 +282,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-slate-50">
-            <PageHero
-                title={t.nav.projects}
-                subtitle={t.projects.description}
-                bgImage="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop"
-            />
-
+        <div className="min-h-screen bg-slate-50 pt-20 md:pt-32">
             {/* Introduction & Approach */}
             <section className="py-24 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
@@ -36,9 +296,11 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                             {t.projects.title}
                         </h2>
                         <div className="w-24 h-1.5 bg-brand-green mx-auto rounded-full mb-8 animate-fade-up opacity-0" style={{ animationDelay: '0.3s' }}></div>
-                        <p className="text-xl text-brand-gray leading-relaxed font-light animate-fade-up opacity-0" style={{ animationDelay: '0.4s' }}>
-                            {t.projects.description}
-                        </p>
+                        {t.projects.description && (
+                            <p className="text-xl text-brand-gray leading-relaxed font-light animate-fade-up opacity-0" style={{ animationDelay: '0.4s' }}>
+                                {t.projects.description}
+                            </p>
+                        )}
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -96,87 +358,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
 
                         <div className="space-y-20">
                             {t.projects.caseStudies.map((study, idx) => (
-                                <div key={idx} className="group relative bg-white rounded-[3rem] shadow-xl shadow-gray-200/50 overflow-hidden border border-white/50 hover:shadow-2xl hover:shadow-brand-green/10 transition-all duration-700">
-                                    <div className="flex flex-col lg:flex-row">
-                                        {/* Image/Dark Side */}
-                                        <div className="lg:w-2/5 bg-brand-charcoal relative overflow-hidden min-h-[400px] lg:min-h-full">
-                                            {/* Background Image if available */}
-                                            {study.image && (
-                                                <div className="absolute inset-0 z-0">
-                                                    <img 
-                                                        src={study.image} 
-                                                        alt={study.title} 
-                                                        className="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-1000"
-                                                    />
-                                                    <div className="absolute inset-0 bg-brand-charcoal/80 mix-blend-multiply"></div>
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent"></div>
-                                                </div>
-                                            )}
-                                            
-                                            <div className="absolute top-8 left-8 right-8 flex justify-between items-start z-10">
-                                                <span className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                                                    {study.category}
-                                                </span>
-                                            </div>
-
-                                            <div className="relative z-10 p-10 h-full flex flex-col justify-end">
-                                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">{study.title}</h3>
-                                                
-                                                <div className="space-y-5 border-t border-white/10 pt-8">
-                                                    <div className="flex items-center gap-4 text-gray-300 group-hover:text-white transition-colors">
-                                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                                                            <Calendar className="w-5 h-5 text-brand-green" />
-                                                        </div>
-                                                        <span className="font-medium text-lg">{study.period}</span>
-                                                    </div>
-                                                    <div className="flex items-center gap-4 text-gray-300 group-hover:text-white transition-colors">
-                                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                                                            <MapPin className="w-5 h-5 text-brand-green" />
-                                                        </div>
-                                                        <span className="font-medium text-lg">{study.location}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Content Side */}
-                                        <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center">
-                                            <div className="mb-10">
-                                                <h4 className="text-brand-green font-bold text-lg mb-4 flex items-center gap-3">
-                                                    <Target className="w-6 h-6" />
-                                                    {lang === 'ar' ? 'الهدف الرئيسي' : 'Main Objective'}
-                                                </h4>
-                                                <p className="text-brand-charcoal text-xl md:text-2xl font-medium leading-relaxed">
-                                                    {study.objective}
-                                                </p>
-                                            </div>
-
-                                            <div className="mb-10 p-6 bg-brand-light/50 rounded-2xl border border-brand-green/10">
-                                                <div className="flex items-start gap-4">
-                                                    <User className="w-6 h-6 text-brand-green shrink-0 mt-1" />
-                                                    <p className="text-brand-gray italic font-medium">{study.participation}</p>
-                                                </div>
-                                            </div>
-                                            
-                                            {study.details && (
-                                                <div>
-                                                    <h4 className="text-brand-charcoal font-bold text-lg mb-6 flex items-center gap-3">
-                                                        <FileText className="w-6 h-6 text-brand-green" />
-                                                        {lang === 'ar' ? 'أوجه المشاركة والتفاصيل' : 'Participation & Details'}
-                                                    </h4>
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                        {study.details.map((detail, dIdx) => (
-                                                            <div key={dIdx} className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                                                                <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0 shadow-[0_0_8px_rgba(170,213,70,0.8)]" />
-                                                                <span className="text-brand-gray font-medium leading-relaxed">{detail}</span>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
+                                <CaseStudyCard key={idx} study={study} lang={lang} idx={idx} />
                             ))}
                         </div>
                     </div>
@@ -197,77 +379,22 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                             </h2>
                         </div>
 
-                        <div className="space-y-12">
+                        <div className="space-y-20">
                             {t.projects.projectLists.map((list, lIdx) => (
                                 <div key={lIdx} className="relative">
-                                    <div className="flex items-center gap-6 mb-10">
-                                        <div className="w-14 h-14 rounded-2xl bg-brand-charcoal text-white flex items-center justify-center shadow-lg shadow-brand-charcoal/10 shrink-0">
-                                            <Building2 className="w-7 h-7" />
+                                    <div className="flex items-center gap-6 mb-12">
+                                        <div className="w-16 h-16 rounded-[1.5rem] bg-brand-charcoal text-white flex items-center justify-center shadow-2xl shadow-brand-charcoal/20 shrink-0 border-2 border-brand-green/20">
+                                            <Building2 className="w-8 h-8 text-brand-green" />
                                         </div>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-brand-charcoal relative">
+                                        <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal relative">
                                             {list.categoryTitle}
-                                            <span className="absolute -bottom-3 right-0 w-2/3 h-1 bg-brand-green rounded-full opacity-30"></span>
+                                            <span className="absolute -bottom-4 right-0 w-full h-1.5 bg-brand-green rounded-full opacity-20"></span>
                                         </h3>
                                     </div>
 
-                                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
                                         {list.projects.map((project, pIdx) => (
-                                            <div key={pIdx} className="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-brand-green/5 transition-all duration-500 overflow-hidden flex flex-col md:flex-row h-full hover:-translate-y-1">
-                                                {/* Image Area - Thumbnail style */}
-                                                <div className="relative w-full md:w-48 lg:w-56 shrink-0 bg-slate-50 overflow-hidden">
-                                                    {project.image ? (
-                                                        <div className="h-48 md:h-full relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-                                                            <img 
-                                                                src={project.image} 
-                                                                alt={project.name}
-                                                                className="w-full h-full object-cover"
-                                                            />
-                                                            <div className="absolute inset-0 bg-brand-charcoal/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="h-48 md:h-full flex items-center justify-center text-brand-green/20">
-                                                            <Building2 className="w-16 h-16" />
-                                                        </div>
-                                                    )}
-                                                    {/* Floating Date Badge */}
-                                                    <div className="absolute top-4 left-4 md:top-auto md:bottom-4 md:left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-[10px] font-black text-brand-charcoal shadow-sm uppercase tracking-tighter">
-                                                        {project.date}
-                                                    </div>
-                                                </div>
-
-                                                {/* Content Area */}
-                                                <div className="p-6 md:p-8 flex flex-col flex-grow justify-between relative">
-                                                    <div>
-                                                        <h4 className="font-bold text-lg md:text-xl text-brand-charcoal mb-4 group-hover:text-brand-green transition-colors leading-snug">
-                                                            {project.name}
-                                                        </h4>
-                                                        
-                                                        <div className="space-y-3 mb-6">
-                                                            <div className="flex items-center gap-3 text-sm text-brand-gray font-medium">
-                                                                <div className="w-8 h-8 rounded-full bg-brand-light flex items-center justify-center shrink-0">
-                                                                    <User size={14} className="text-brand-green" />
-                                                                </div>
-                                                                <span className="line-clamp-1">{project.client}</span>
-                                                            </div>
-                                                            <div className="flex items-center gap-3 text-sm text-brand-gray font-medium">
-                                                                <div className="w-8 h-8 rounded-full bg-brand-light flex items-center justify-center shrink-0">
-                                                                    <MapPin size={14} className="text-brand-green" />
-                                                                </div>
-                                                                <span className="line-clamp-1">{project.location}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="flex items-center justify-between pt-4 border-t border-gray-50">
-                                                        <span className="text-[10px] font-bold text-brand-gray/40 uppercase tracking-widest">
-                                                            {lang === 'ar' ? 'تفاصيل المشروع' : 'Project Details'}
-                                                        </span>
-                                                        <div className="w-8 h-8 rounded-full bg-brand-light group-hover:bg-brand-green group-hover:text-white transition-all duration-500 flex items-center justify-center text-brand-green">
-                                                            <ArrowUpRight size={16} />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <ProjectListItem key={pIdx} project={project} lang={lang} idx={pIdx} />
                                         ))}
                                     </div>
                                 </div>

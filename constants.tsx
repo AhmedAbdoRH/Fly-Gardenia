@@ -7,7 +7,6 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       about: "About Us",
       services: "Services",
       projects: "Experience",
-      partners: "Partners",
       contact: "Contact",
       langLabel: "العربية"
     },
@@ -18,8 +17,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "About Gardenia",
-      mainText: "Gardenia for Environmental and Scientific Consulting aims to provide integrated consulting solutions to industry in its various sectors, institutions, bodies, and government agencies in the fields of environmental management, pollution control, waste management of all kinds, and environmental and social impact assessment.",
-      subText: "The company possesses extensive experience in environmental work through a team of environmental experts, university professors, and certified consultants from the Egyptian Syndicate of Engineers, the Environmental Affairs Agency, and the Egyptian Ministry of Environment. The environmental team is led by Professor Dr. Asmaa Hammouda, Professor of Chemical Engineering, Environmental Engineering, and Materials, who has more than 28 years of academic and consulting experience in environmental engineering, environmental impact assessment, hazardous and solid waste management, and environmental sanitation for various factories, companies, and facilities.",
+      mainText: "",
+      subText: "Gardenia combines practical expertise with academic depth through a team of elite consultants certified by the Egyptian Ministry of Environment and the Syndicate of Engineers, alongside specialized university professors. Led by Professor Dr. Asmaa Hammouda, Professor of Chemical and Environmental Engineering with over 28 years of experience, we deliver innovative solutions in environmental impact assessment, hazardous waste management, and integrated environmental sanitation for major industrial facilities.",
       visionTitle: "Our Vision",
       visionText: "To be a leading regional firm in environmental consulting and a trusted partner for achieving compliance and sustainable industrial development.",
       missionTitle: "Our Mission",
@@ -93,7 +92,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     services: {
       title: "Our Services",
-      description: "Integrated solutions designed to help industrial facilities achieve compliance and minimize risks.",
+      description: "Gardenia for Environmental and Scientific Consulting aims to provide integrated consulting solutions to industry in its various sectors, institutions, bodies, and government agencies in the fields of environmental management, pollution control, waste management of all kinds, and environmental and social impact assessment.",
       items: [
         {
           title: "Environmental Studies (ESIA)",
@@ -168,7 +167,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     projects: {
       title: "Projects & Experience",
-      description: "A track record of high-impact environmental projects locally and internationally, collaborating with global funding organizations and major industrial entities.",
+      description: "",
       items: [
         "Hazardous & solid waste management (POPs, IWEX)",
         "Environmental & Social Impact Assessments (ESIA)",
@@ -201,6 +200,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           location: "6th of October Industrial City",
           objective: "Help industries exchange and reuse industrial waste through an online database, reducing waste and promoting a circular economy.",
           participation: "Dr. Asmaa Hammouda served as the Environmental Expert.",
+          image: "/studies/study-4.png",
           details: [
             "Field visits and data collection for 812 factories.",
             "Preparation of guidelines for waste types and recycling methods.",
@@ -215,6 +215,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           location: "Beni Suef University (Funded by ASRT)",
           objective: "Investigate Nano-catalytic decomposition of waste Polypropylene (PP) and Polyethylene (PE) for fuel generation through Pyrolysis and Gasification.",
           participation: "Prof. Dr. Asmaa Hammouda was the Principal Investigator (PI) who formulated the idea and implemented the prototype reactor.",
+          image: "/studies/study-2.png",
           category: "Innovation & Research"
         }
       ],
@@ -417,7 +418,6 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       about: "من نحن",
       services: "خدماتنا",
       projects: "خبراتنا",
-      partners: "شركاء",
       contact: "تواصل معنا",
       langLabel: "English"
     },
@@ -428,8 +428,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "من نحن",
-      mainText: "تستهدف جاردينيا للاستشارات البيئية والعلمية تقديم حلول استشارية متكاملة للصناعة بقطاعاتها المختلفة والمؤسسات والهيئات والجهات الحكومية في مجلات الادارة البيئية والحد من التلوث وادارة المخلفات بجميع انواعها وتقييم الاثر البيئي والاجتماعي.",
-      subText: "تمتلك الشركة خبرة واسعة في مجال العمل البيئي من خلال فريق من خبراء العمل البيئى والأساتذة الجامعيين والاستشاريين المعتمدين من نقابة المهندسين المصرية وجهاز البيئة ووزارة البيئة المصرية. يدير فريق العمل البيئي الأستاذة الدكتورة أسماء حمودة، أستاذ الهندسة الكيميائية وهندسة البيئة والمواد، والتي تمتلك أكثر من 28 عامًا من الخبرة الأكاديمية والاستشارية في مجال الهندسة البيئية وتقييم الاثر البيئي وادارة المخلفات الخطرة والصلبة ومجال الاصححاح البيئي للمصانع والشركات والمنشآت المختلفة.",
+      mainText: "",
+      subText: "تجمع جاردينيا بين الخبرة العملية والعمق الأكاديمي، من خلال فريق عمل يضم نخبة من الاستشاريين المعتمدين لدى وزارة البيئة المصرية ونقابة المهندسين، إلى جانب أساتذة جامعيين متخصصين. تحت قيادة الأستاذة الدكتورة أسماء حمودة، أستاذ الهندسة الكيميائية والبيئية بخبرة تتجاوز 28 عاماً، نقدم حلولاً مبتكرة في تقييم الأثر البيئي، إدارة المخلفات الخطرة، والاصحاح البيئي المتكامل للمنشآت الصناعية الكبرى.",
       visionTitle: "رؤيتنا",
       visionText: "نسعى لأن نكون من الشركات الرائدة إقليمياً في مجال الاستشارات البيئية، والشريك الموثوق للمصانع في تحقيق الامتثال البيئي والتنمية الصناعية النظيفة.",
       missionTitle: "رسالتنا",
@@ -505,7 +505,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     services: {
       title: "خدماتنا",
-      description: "حلول متكاملة مصممة لمساعدة المنشآت الصناعية على تحقيق الامتثال وتقليل المخاطر.",
+      description: "تستهدف جاردينيا للاستشارات البيئية والعلمية تقديم حلول استشارية متكاملة للصناعة بقطاعاتها المختلفة والمؤسسات والهيئات والجهات الحكومية في مجلات الادارة البيئية والحد من التلوث وادارة المخلفات بجميع انواعها وتقييم الاثر البيئي والاجتماعي.",
       items: [
         {
           title: "الدراسات البيئية (ESIA)",
@@ -580,7 +580,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     projects: {
       title: "خبراتنا ومشاريعنا",
-      description: "تمتلك جاردينيا سجل حافل من المشاريع البيئية ذات الأثر الملموس محلياً ودولياً، بالتعاون مع منظمات التمويل العالمية والكيانات الصناعية الكبرى.",
+      description: "",
       items: [
         "إدارة المخلفات الصلبة والخطرة (POPs, IWEX)",
         "دراسات تقييم الأثر البيئي والاجتماعي (ESIA)",
@@ -613,6 +613,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           location: "مدينة 6 أكتوبر الصناعية",
           objective: "مساعدة الصناعات على تبادل وإعادة استخدام المخلفات الصناعية من خلال قاعدة بيانات ومنصة إلكترونية لربط المصانع، مما يقلل النفايات ويعزز الاقتصاد الدائري.",
           participation: "د. أسماء حمودة، والتي عملت كخبير بيئي بالمشروع.",
+          image: "/studies/study-4.png",
           details: [
             "زيارات ميدانية وتجميع بيانات لعدد 812 مصنعاً.",
             "إعداد الأدلة الإرشادية لأنواع المخلفات وطرق تدويرها.",
@@ -627,6 +628,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           location: "جامعة بني سويف (بتمويل من أكاديمية البحث العلمي والتكنولوجيا)",
           objective: "البحث في التحلل الحفزي النانوي لمخلفات البولي بروبيلين (PP) والبولي إيثيلين (PE) لإنتاج الوقود من خلال عمليات التحلل الحراري والتغويز.",
           participation: "أ.د أسماء حمودة، الباحث الرئيسي للمشروع، قامت بصياغة الفكرة وتطبيق المشروع وعمل نموذج أولي لمفاعل تحويل المخلفات.",
+          image: "/studies/study-2.png",
           category: "الابتكار والبحث العلمي"
         }
       ],
