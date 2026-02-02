@@ -39,18 +39,18 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
     <>
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${isScrolled || location.pathname !== '/'
-          ? 'bg-brand-dark/95 backdrop-blur-md shadow-md border-white/10 py-2'
-          : 'bg-transparent border-transparent py-4 md:py-8'
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-gray-100 py-1'
+          : 'bg-white border-gray-100 py-3 md:py-6'
           }`}
       >
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo Area */}
           <Link to="/" className="flex items-center gap-3 group z-50 relative">
-            <div className="relative h-10 md:h-12 w-auto flex items-center justify-center">
+            <div className="relative h-16 md:h-24 w-auto flex items-center justify-center">
               <img
-                src="/logo.png"
+                src="/logo-gardenia.png"
                 alt="Gardenia Logo"
-                className="h-full w-auto object-contain drop-shadow-sm"
+                className="h-full w-auto object-contain drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.parentElement?.classList.add('fallback-logo');
@@ -64,14 +64,14 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center bg-white/5 backdrop-blur-sm rounded-full p-1 border border-white/10 hover:bg-white/10 transition-all">
+          <nav className="hidden md:flex items-center bg-gray-50/50 backdrop-blur-sm rounded-full p-1 border border-gray-100 hover:bg-gray-100/50 transition-all">
             {navLinks.map((link) => (
               <NavLink
                 key={link.label}
                 to={link.href}
                 className={({ isActive }) => `px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 ${isActive
-                    ? 'bg-brand-green text-white shadow-lg'
-                    : (isScrolled || location.pathname !== '/' ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-white hover:bg-white/20')
+                    ? 'bg-brand-green text-white shadow-lg shadow-brand-green/20'
+                    : 'text-brand-charcoal/80 hover:text-brand-green hover:bg-white/50'
                   }`}
               >
                 {link.label}
@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
 
             <button
               onClick={toggleLang}
-              className={`ml-2 flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-sm bg-white text-brand-dark hover:bg-brand-light`}
+              className={`ml-2 flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-sm bg-brand-green text-white hover:bg-brand-accent`}
             >
               <Globe size={14} />
               {content.langLabel}
@@ -92,8 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
             {/* Direct Language Toggle for Mobile */}
             <button
               onClick={toggleLang}
-              className={`p-2.5 rounded-full transition-all flex items-center gap-2 font-bold text-[10px] tracking-tight uppercase ${isScrolled || isMenuOpen || location.pathname !== '/' ? 'bg-brand-dark text-white' : 'bg-black/40 text-white backdrop-blur-md'
-                }`}
+              className={`p-2.5 rounded-full transition-all flex items-center gap-2 font-bold text-[10px] tracking-tight uppercase bg-brand-green text-white shadow-sm`}
             >
               <Globe size={16} />
               <span>{lang === 'en' ? 'AR' : 'EN'}</span>
@@ -102,8 +101,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
             {/* Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2.5 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-brand-emerald ${isScrolled || isMenuOpen || location.pathname !== '/' ? 'bg-gray-100 text-gray-900' : 'bg-black/20 text-white backdrop-blur-md'
-                }`}
+              className={`p-2.5 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-brand-emerald bg-gray-100 text-gray-900 shadow-sm`}
               aria-label="Toggle Menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

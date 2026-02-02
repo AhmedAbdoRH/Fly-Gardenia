@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Target, Eye, Quote, CheckCircle, Users, Award, BookOpen, Briefcase } from 'lucide-react';
 import { ContentData, ServiceItem } from '../types';
 import { TypeWriter } from '../components/TypeWriter';
-import { PageHero } from '../components/PageHero';
 import { getIcon } from '../components/Icons';
 
 interface AboutProps {
@@ -21,24 +21,121 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
 
     return (
         <div className="min-h-screen">
-            <PageHero
-                title={
-                    <img
-                        src="/logo-full.png"
-                        alt="Gardenia"
-                        className="h-32 md:h-48 w-auto mx-auto object-contain drop-shadow-2xl animate-fade-up"
+            {/* New Hero with Logo */}
+            <section className="relative pt-32 pb-8 md:pt-48 md:pb-12 watercolor-bg overflow-hidden">
+                {/* Dynamic Background Elements */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <motion.div 
+                        animate={{ 
+                            scale: [1, 1.3, 1],
+                            rotate: [0, 45, 0],
+                            opacity: [0.4, 0.6, 0.4]
+                        }}
+                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                        className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#d4ff70]/20 rounded-full blur-[120px]"
                     />
-                }
-                bgImage="/about-bg.png"
-                titleTop
-            />
+                    <motion.div 
+                        animate={{ 
+                            scale: [1.3, 1, 1.3],
+                            rotate: [0, -45, 0],
+                            opacity: [0.3, 0.5, 0.3]
+                        }}
+                        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                        className="absolute top-1/2 -right-32 w-[700px] h-[700px] bg-[#e6ffad]/15 rounded-full blur-[150px]"
+                    />
+                    <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30"></div>
+                </div>
+
+                <div className="container mx-auto relative z-10 text-center">
+                    <div className="flex flex-col items-center justify-center reveal-trigger">
+                        {/* New Logo Gardenia with enhanced effects */}
+                        <div className="relative">
+                            {/* Rotating Ring Effect - Slower and more prominent */}
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-[-60px] md:inset-[-100px] border-[1.5px] border-[#aad546]/30 rounded-full border-dashed"
+                            />
+                            <motion.div
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-[-100px] md:inset-[-160px] border-[1px] border-[#d4ff70]/20 rounded-full border-dashed"
+                            />
+                            
+                            {/* Enhanced Central Glow - Slower pulse */}
+                            <motion.div 
+                                animate={{ 
+                                    scale: [1.5, 1.8, 1.5],
+                                    opacity: [0.3, 0.5, 0.3]
+                                }}
+                                transition={{ 
+                                    duration: 8,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute inset-0 bg-[#d4ff70]/30 blur-[100px] rounded-full"
+                            />
+                            
+                            {/* Floating Logo Container - Slower and more dramatic */}
+                            <motion.div
+                                animate={{ 
+                                    y: [0, -25, 0],
+                                }}
+                                transition={{ 
+                                    duration: 10,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="relative z-10"
+                            >
+                                <img
+                                    src="/logo-gardenia.png"
+                                    alt="Gardenia Logo"
+                                    className="h-56 md:h-96 w-auto object-contain drop-shadow-[0_35px_60px_rgba(170,213,70,0.4)]"
+                                />
+                            </motion.div>
+
+                            {/* Decorative Particles - Slower and larger */}
+                            {[...Array(6)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="absolute w-2.5 h-2.5 bg-[#d4ff70]/60 rounded-full blur-[1px]"
+                                    animate={{
+                                        x: [0, Math.cos(i * 60) * 220, 0],
+                                        y: [0, Math.sin(i * 60) * 220, 0],
+                                        opacity: [0, 0.8, 0],
+                                        scale: [0, 2, 0]
+                                    }}
+                                    transition={{
+                                        duration: 12 + i * 2,
+                                        repeat: Infinity,
+                                        delay: i * 1,
+                                        ease: "easeInOut"
+                                    }}
+                                    style={{
+                                        top: '50%',
+                                        left: '50%',
+                                        marginLeft: '-5px',
+                                        marginTop: '-5px'
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* About Content */}
-            <section className="pt-10 md:pt-16 pb-20 md:pb-32 watercolor-bg">
+            <section className="pt-4 md:pt-6 pb-20 md:pb-32 watercolor-bg">
                 <div className="container mx-auto relative z-10">
                     {/* Intro Text Section */}
                     <div className="flex flex-col items-center text-center mb-20 reveal-trigger">
                         <div className="max-w-4xl mx-auto space-y-8">
+                            {t.about.mainText && (
+                                <h2 className="text-3xl md:text-5xl font-black text-brand-charcoal mb-6 leading-tight">
+                                    {t.about.mainText}
+                                </h2>
+                            )}
                             <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
                                 {t.about.subText}
                             </p>

@@ -121,8 +121,8 @@
 .watercolor-bg {
     position: relative;
     overflow: hidden;
-    background-color: #f9f9f9;
-    /* Base paper color */
+    background-color: #fcfdf7;
+    /* Light lime base color */
     z-index: 1;
 }
 
@@ -135,14 +135,14 @@
     pointer-events: none;
 
     background-image:
-        /* Green paint layer */
-        radial-gradient(circle at 80% 20%, rgba(165, 214, 167, 0.4) 0%, transparent 50%),
-        /* Pale yellow layer */
-        radial-gradient(circle at 20% 80%, rgba(255, 249, 196, 0.3) 0%, transparent 60%);
+        /* Lime paint layer */
+        radial-gradient(circle at 80% 20%, rgba(212, 255, 112, 0.25) 0%, transparent 50%),
+        /* Pale lemon layer */
+        radial-gradient(circle at 20% 80%, rgba(230, 255, 173, 0.2) 0%, transparent 60%);
 
     /* Apply the distortion magic only to this color layer */
-    filter: url(#watercolor-filter) contrast(1.2) brightness(1.05);
-    opacity: 0.8;
+    filter: url(#watercolor-filter) contrast(1.1) brightness(1.02);
+    opacity: 0.9;
 }
 
 /* Texture layer (separated to not be distorted by the watercolor filter) */

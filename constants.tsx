@@ -17,7 +17,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "About Gardenia",
-      mainText: "",
+      mainText: "Gardenia for Environmental Consulting",
       subText: "Gardenia combines practical expertise with academic depth through a team of elite consultants certified by the Egyptian Ministry of Environment and the Syndicate of Engineers, alongside specialized university professors. Led by Professor Dr. Asmaa Hammouda, Professor of Chemical and Environmental Engineering with over 28 years of experience, we deliver innovative solutions in environmental impact assessment, hazardous waste management, and integrated environmental sanitation for major industrial facilities.",
       visionTitle: "Our Vision",
       visionText: "To be a leading regional firm in environmental consulting and a trusted partner for achieving compliance and sustainable industrial development.",
@@ -428,7 +428,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "من نحن",
-      mainText: "",
+      mainText: "عن جاردينيا للإستشارات البيئية",
       subText: "تجمع جاردينيا بين الخبرة العملية والعمق الأكاديمي، من خلال فريق عمل يضم نخبة من الاستشاريين المعتمدين لدى وزارة البيئة المصرية ونقابة المهندسين، إلى جانب أساتذة جامعيين متخصصين. تحت قيادة الأستاذة الدكتورة أسماء حمودة، أستاذ الهندسة الكيميائية والبيئية بخبرة تتجاوز 28 عاماً، نقدم حلولاً مبتكرة في تقييم الأثر البيئي، إدارة المخلفات الخطرة، والاصحاح البيئي المتكامل للمنشآت الصناعية الكبرى.",
       visionTitle: "رؤيتنا",
       visionText: "نسعى لأن نكون من الشركات الرائدة إقليمياً في مجال الاستشارات البيئية، والشريك الموثوق للمصانع في تحقيق الامتثال البيئي والتنمية الصناعية النظيفة.",
