@@ -28,6 +28,7 @@ export interface ContentData {
   };
   hero: {
     title: string;
+    titleSuffixes?: string[];
     subtitle: string;
     cta: string;
   };

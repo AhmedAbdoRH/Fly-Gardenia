@@ -11,8 +11,14 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       langLabel: "العربية"
     },
     hero: {
-      title: "Environmental consulting for compliance & sustainability",
-      subtitle: "Since 2008 Gardenia has provided tailored environmental services for factories and agencies — impact assessments, waste & carbon reporting (CBAM), and ISO management systems.",
+      title: "Factories and establishments for",
+      titleSuffixes: [
+        "Environmental & Social Impact Assessment",
+        "Integrated Waste Management",
+        "Carbon Footprint & CBAM Reporting",
+        "Quality Management Systems"
+      ],
+      subtitle: "",
       cta: "Explore Our Services"
     },
     about: {
@@ -422,8 +428,14 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       langLabel: "English"
     },
     hero: {
-      title: "استشارات بيئية للامتثال والاستدامة",
-      subtitle: "جاردينيا تقدم منذ عام 2008 خدمات مخصصة للمصانع والمنشآت الصناعية والجهات الحكومية تشمل تقييم الأثر البيئي، إدارة المخلفات، تقارير البصمة الكربونية و CBAM، وأنظمة الإدارة والجودة ISO — بمنهج عملي وتقارير دقيقة قابلة للاعتماد.",
+      title: "نقدم للمصانع والمنشآت خدمات",
+      titleSuffixes: [
+        "تقييم الأثر البيئي والاجتماعي",
+        "الإدارة المتكاملة للمخلفات",
+        "تقارير البصمة الكربونية وCBAM",
+        "نظم إدارة الجودة"
+      ],
+      subtitle: "",
       cta: "اطلب استشارة"
     },
     about: {

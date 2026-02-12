@@ -3,6 +3,7 @@ import { ArrowRight, Phone, MessageCircle, Mail, ChevronDown } from 'lucide-reac
 import { ContentData } from '../types';
 import { Link } from 'react-router-dom';
 import { CONTENT } from '../constants';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeroProps {
   content: ContentData['hero'];
@@ -11,7 +12,17 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
   const [open, setOpen] = useState(false);
+  const [suffixIndex, setSuffixIndex] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (content.titleSuffixes && content.titleSuffixes.length > 0) {
+      const interval = setInterval(() => {
+        setSuffixIndex((prev) => (prev + 1) % content.titleSuffixes!.length);
+      }, 3500);
+      return () => clearInterval(interval);
+    }
+  }, [content.titleSuffixes]);
 
   useEffect(() => {
     const onDoc = (e: MouseEvent) => {
@@ -52,7 +63,23 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 md:mb-8 leading-[1.05] md:leading-[0.98] tracking-tight animate-fade-up opacity-0" style={{ animationDelay: '0.3s' }}>
-            {content.title}
+            <span className="block mb-2 text-white/90">{content.title}</span>
+            {content.titleSuffixes && content.titleSuffixes.length > 0 && (
+              <div className="h-[2.4em] md:h-[2.2em] relative overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={suffixIndex}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="block text-brand-emerald py-1"
+                  >
+                    {content.titleSuffixes[suffixIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            )}
           </h1>
 
           <p className="text-base sm:text-lg md:text-2xl text-gray-200 mb-8 md:mb-12 font-medium leading-relaxed max-w-xl md:max-w-2xl animate-fade-up opacity-0" style={{ animationDelay: '0.5s' }}>
