@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
     if (content.titleSuffixes && content.titleSuffixes.length > 0) {
       const interval = setInterval(() => {
         setSuffixIndex((prev) => (prev + 1) % content.titleSuffixes!.length);
-      }, 3500);
+      }, 4000);
       return () => clearInterval(interval);
     }
   }, [content.titleSuffixes]);
@@ -69,10 +69,13 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={suffixIndex}
-                    initial={{ y: 40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -40, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    initial={{ y: 15, opacity: 0, filter: 'blur(8px)' }}
+                    animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                    exit={{ y: -15, opacity: 0, filter: 'blur(8px)' }}
+                    transition={{ 
+                      duration: 0.8, 
+                      ease: [0.4, 0, 0.2, 1] // Smoother, standard easing
+                    }}
                     className="block text-brand-emerald py-1"
                   >
                     {content.titleSuffixes[suffixIndex]}
