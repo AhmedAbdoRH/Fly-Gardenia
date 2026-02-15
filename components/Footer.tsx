@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContentData } from '../types';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,10 @@ export const Footer: React.FC<FooterProps> = ({ content: t, lang }) => {
                     <Link to="/contact" className="hover:text-brand-green">{t.nav.contact}</Link>
                 </div>
 
-                <p className="mb-2 font-medium">{t.footer.address}</p>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                    <MapPin size={18} className="text-brand-green" />
+                    <p className="font-medium">{t.footer.address}</p>
+                </div>
                 <p className="opacity-70 text-sm">{t.footer.rights}</p>
             </div>
         </footer>

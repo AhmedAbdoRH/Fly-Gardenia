@@ -136,9 +136,29 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                     {t.about.mainText}
                                 </h2>
                             )}
+                            {t.about.tagline && (
+                                <h3 className="text-xl md:text-2xl font-bold text-brand-green mb-4">
+                                    {t.about.tagline}
+                                </h3>
+                            )}
                             <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
                                 {t.about.subText}
                             </p>
+                            {t.about.introText && (
+                                <p className="text-lg md:text-xl text-brand-gray leading-relaxed">
+                                    {t.about.introText}
+                                </p>
+                            )}
+                            <a 
+                                href="#services" 
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href = '/#services';
+                                }}
+                                className="inline-block mt-6 px-8 py-4 bg-brand-green text-white font-bold rounded-full hover:bg-brand-emerald transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                            >
+                                {lang === 'ar' ? 'تعرف على خدماتنا' : 'Explore Our Services'}
+                            </a>
                         </div>
                     </div>
 
@@ -351,11 +371,24 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
             </section>
 
             {/* Methodology Section */}
-            <section className="py-12 md:py-16 bg-white">
+            <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
                 <div className="container mx-auto">
-                    <div className="max-w-4xl mx-auto text-center reveal-trigger">
-                        <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal mb-4">{t.about.methodologyTitle}</h3>
-                        <p className="text-lg md:text-xl text-brand-gray leading-relaxed">{t.about.methodologyText}</p>
+                    <div className="max-w-5xl mx-auto reveal-trigger">
+                        <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-brand-green/10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                    <svg className="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal">
+                                    {t.about.methodologyTitle}
+                                    {lang === 'ar' && <span className="text-brand-gray text-xl md:text-2xl ml-3">| How We Work</span>}
+                                    {lang === 'en' && <span className="text-brand-gray text-xl md:text-2xl ml-3">| منهجية العمل</span>}
+                                </h3>
+                            </div>
+                            <p className="text-lg md:text-xl text-brand-gray leading-relaxed">{t.about.methodologyText}</p>
+                        </div>
                     </div>
                 </div>
             </section>

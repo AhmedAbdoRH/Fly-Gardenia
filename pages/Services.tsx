@@ -15,7 +15,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
         window.scrollTo(0, 0);
     }, []);
 
-    const [selectedService, setSelectedService] = React.useState<ServiceItem | null>(null);
+    const [flippedIndex, setFlippedIndex] = React.useState<number | null>(null);
 
     const industryIcons = [
         FlaskConical, // Chemical
@@ -51,48 +51,24 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12">
                         {t.services.items.map((service, idx) => (
                             <div
                                 key={idx}
-                                className={`group relative h-full perspective-2000 reveal-trigger stagger-${idx + 1}`}
-                                onClick={() => setSelectedService(service)}
-                                onMouseMove={(e) => {
-                                    const card = e.currentTarget;
-                                    const rect = card.getBoundingClientRect();
-                                    const x = e.clientX - rect.left;
-                                    const y = e.clientY - rect.top;
-                                    const centerX = rect.width / 2;
-                                    const centerY = rect.height / 2;
-                                    const rotateX = ((y - centerY) / centerY) * -10;
-                                    const rotateY = ((x - centerX) / centerX) * 10;
-
-                                    card.style.setProperty('--mouse-x', `${x}px`);
-                                    card.style.setProperty('--mouse-y', `${y}px`);
-
-                                    const wrap = card.querySelector('.card-3d-wrap') as HTMLElement;
-                                    if (wrap) wrap.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                                }}
-                                onMouseLeave={(e) => {
-                                    const wrap = e.currentTarget.querySelector('.card-3d-wrap') as HTMLElement;
-                                    if (wrap) wrap.style.transform = `rotateX(0deg) rotateY(0deg)`;
-                                }}
+                                className={`group relative h-[450px] md:h-[500px] flip-card reveal-trigger stagger-${idx + 1} ${flippedIndex === idx ? 'is-flipped' : ''}`}
+                                onClick={() => setFlippedIndex(flippedIndex === idx ? null : idx)}
                             >
-                                <div className="card-3d-wrap h-full relative transition-transform duration-500 ease-out">
-                                    <div className="relative h-full bg-white/5 backdrop-blur-xl rounded-[3rem] p-8 md:p-10 -translate-y-2 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] overflow-hidden flex flex-col z-10 hover:-translate-y-3 hover:border-brand-green/50 hover:bg-white/10 transition-all duration-700 cursor-pointer">
-
-                                        {/* Layered Premium Glows - Strongly visible by default */}
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front h-full bg-white/5 backdrop-blur-xl p-8 md:p-10 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col cursor-pointer hover:bg-white/10 transition-all duration-700">
+                                        {/* Layered Premium Glows */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.1] via-transparent to-brand-green/[0.15] pointer-events-none"></div>
-                                        <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.25] rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
-                                        <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-brand-emerald/[0.15] rounded-full blur-[100px] pointer-events-none"></div>
+                                        <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.25] rounded-full blur-[100px] pointer-events-none"></div>
 
-                                        {/* Background Watermark Icon - Professional Transparent Version */}
+                                        {/* Background Watermark Icon */}
                                         <div className="absolute -bottom-16 -right-16 w-96 h-96 text-brand-green/[0.03] group-hover:text-brand-green/[0.06] transition-all duration-1000 transform group-hover:scale-110 group-hover:-rotate-12 pointer-events-none z-0">
                                             {getIcon(service.iconName, "w-full h-full stroke-[0.3]")}
                                         </div>
-
-                                        {/* Mouse Glow Follower */}
-                                        <div className="mouse-glow opacity-30"></div>
 
                                         {/* Header: Glass Icon & Number */}
                                         <div className="flex justify-between items-start mb-10 relative z-20">
@@ -108,97 +84,70 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
 
                                         {/* Content */}
                                         <div className="flex-grow space-y-4 relative z-20">
-                                            <h3 className="text-xl md:text-2xl font-bold text-brand-green tracking-tight drop-shadow-[0_0_8px_rgba(170,213,70,0.3)]">
+                                            <h3 className="text-xl md:text-3xl font-bold text-brand-green tracking-tight drop-shadow-[0_0_8px_rgba(170,213,70,0.3)] leading-tight">
                                                 {service.title}
                                             </h3>
-                                            <p className="text-white leading-relaxed text-sm md:text-base font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first">
+                                            <p className="text-white leading-relaxed text-sm md:text-lg font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first">
                                                 {service.description}
                                             </p>
                                             
-                                            {/* Details Hint */}
-                                            {service.details && (
-                                                <div className="pt-4 flex items-center gap-2 text-brand-green text-sm font-bold group-hover:translate-x-2 transition-transform">
-                                                    <span>{lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
-                                                    <div className="w-5 h-5 rounded-full bg-brand-green/20 flex items-center justify-center">
-                                                        <span className="text-xs">→</span>
-                                                    </div>
+                                            <div className="pt-6 flex items-center gap-3 text-brand-green text-sm md:text-base font-bold group-hover:translate-x-2 transition-transform">
+                                                <span>{lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
+                                                <div className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center">
+                                                    <span className={`text-xs transition-transform duration-500 ${lang === 'ar' ? 'rotate-180' : ''}`}>→</span>
                                                 </div>
-                                            )}
+                                            </div>
                                         </div>
 
-                                        {/* Bottom Progress Bar */}
                                         <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-brand-green via-brand-emerald to-transparent transform scale-x-100 transition-all duration-700 origin-left"></div>
                                     </div>
-                                </div>
 
-                                {/* Floating Shadow Overlay */}
-                                <div className="absolute inset-x-8 bottom-0 h-4 bg-brand-green/30 blur-2xl opacity-60 transition-opacity duration-700 rounded-full"></div>
+                                    {/* Back Side */}
+                                    <div className="flip-card-back h-full bg-white p-8 md:p-12 border-2 border-brand-green/30 shadow-2xl flex flex-col cursor-pointer overflow-hidden">
+                                        {/* Background pattern */}
+                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(170,213,70,0.05)_0%,transparent_100%)] pointer-events-none"></div>
+                                        
+                                        <div className="relative z-10 h-full flex flex-col">
+                                            <div className="flex items-center gap-4 mb-8">
+                                                <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center border border-brand-green/20">
+                                                    {getIcon(service.iconName, "w-6 h-6 text-brand-green")}
+                                                </div>
+                                                <h3 className="text-xl md:text-2xl font-bold text-brand-charcoal leading-tight">{service.title}</h3>
+                                            </div>
+
+                                            <div className="flex-grow overflow-y-auto custom-scrollbar pr-2">
+                                                <div className="space-y-4">
+                                                    <h4 className="text-brand-green font-black tracking-widest uppercase text-xs md:text-sm">
+                                                        {lang === 'ar' ? 'نطاق الخدمة' : 'Service Scope'}
+                                                    </h4>
+                                                    <div className="space-y-3">
+                                                        {(lang === 'ar' ? service.details?.ar : service.details?.en)?.split('\n').map((line, i) => (
+                                                            <div key={i} className="flex gap-3 items-start group/line">
+                                                                <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0 group-hover/line:scale-150 transition-transform"></div>
+                                                                <p className="text-brand-gray text-sm md:text-base leading-relaxed font-medium group-hover/line:text-brand-charcoal transition-colors">
+                                                                    {line.replace('• ', '')}
+                                                                </p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+                                                <span className="text-xs font-black text-brand-green/40 uppercase tracking-widest">
+                                                    Gardenia {new Date().getFullYear()}
+                                                </span>
+                                                <button className="text-brand-green text-sm font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+                                                    <span className={`text-xs transition-transform ${lang === 'ar' ? '' : 'rotate-180'}`}>←</span>
+                                                    <span>{lang === 'ar' ? 'رجوع' : 'Back'}</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
-
-                    {selectedService && (
-                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 overflow-hidden">
-                            {/* Backdrop */}
-                            <div 
-                                className="absolute inset-0 bg-brand-charcoal/90 backdrop-blur-md transition-opacity duration-500"
-                                onClick={() => setSelectedService(null)}
-                            ></div>
-                            
-                            {/* Modal Content */}
-                            <div className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-scale-up">
-                                {/* Header */}
-                                <div className="bg-brand-dark text-white p-8 md:p-10 flex justify-between items-center relative">
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green to-brand-emerald"></div>
-                                    <div className="flex items-center gap-6">
-                                        <div className="w-16 h-16 rounded-2xl bg-brand-green/20 flex items-center justify-center border border-brand-green/30">
-                                            {getIcon(selectedService.iconName, "w-8 h-8 text-brand-green")}
-                                        </div>
-                                        <h3 className="text-2xl md:text-3xl font-bold">{selectedService.title}</h3>
-                                    </div>
-                                    <button 
-                                        onClick={() => setSelectedService(null)}
-                                        className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors group"
-                                    >
-                                        <span className="text-2xl group-hover:rotate-90 transition-transform">×</span>
-                                    </button>
-                                </div>
-                                
-                                {/* Body */}
-                                <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar">
-                                    <p className="text-xl text-brand-charcoal font-bold mb-8 leading-relaxed">
-                                        {selectedService.description}
-                                    </p>
-                                    
-                                    <div className="space-y-6">
-                                        <h4 className="text-brand-green font-black tracking-widest uppercase text-sm">
-                                            {lang === 'ar' ? 'نطاق الخدمة' : 'Service Scope'}
-                                        </h4>
-                                        <div className="grid grid-cols-1 gap-4">
-                                            {(lang === 'ar' ? selectedService.details?.ar : selectedService.details?.en)?.split('\n').map((line, i) => (
-                                                <div key={i} className="flex gap-4 items-start group">
-                                                    <div className="mt-2 w-2 h-2 rounded-full bg-brand-green shrink-0 group-hover:scale-150 transition-transform"></div>
-                                                    <p className="text-brand-gray text-lg leading-relaxed font-medium group-hover:text-brand-charcoal transition-colors">
-                                                        {line.replace('• ', '')}
-                                                    </p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                {/* Footer */}
-                                <div className="p-6 border-t border-gray-100 flex justify-end">
-                                    <button 
-                                        onClick={() => setSelectedService(null)}
-                                        className="px-8 py-3 bg-brand-green text-white rounded-full font-bold hover:shadow-lg hover:shadow-brand-green/20 transition-all active:scale-95"
-                                    >
-                                        {lang === 'ar' ? 'فهمت' : 'Got it'}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    )}
 
                 </div>
             </section>

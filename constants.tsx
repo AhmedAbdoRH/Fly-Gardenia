@@ -23,8 +23,10 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     about: {
       title: "About Gardenia",
-      mainText: "Gardenia for Environmental Consulting",
-      subText: "Gardenia combines practical expertise with academic depth through a team of elite consultants certified by the Egyptian Ministry of Environment and the Syndicate of Engineers, alongside specialized university professors. Led by Professor Dr. Asmaa Hammouda, Professor of Chemical and Environmental Engineering with over 28 years of experience, we deliver innovative solutions in environmental impact assessment, hazardous waste management, and integrated environmental sanitation for major industrial facilities.",
+      mainText: "Who We Are?",
+      tagline: "Environmental Consulting Partner Supporting Industrial Decision-Making",
+      subText: "Gardenia for Environmental Consulting is a specialized environmental consulting firm that works with factories, various establishments, and government agencies to provide solutions that support environmental compliance, improve performance, and enhance sustainability.",
+      introText: "Since 2008, Gardenia has been working as a trusted consulting partner in implementing environmental projects with factories and government agencies, relying on a participatory approach that focuses on practical solutions, knowledge transfer, and applying international best practices to achieve real environmental compliance and sustainability.",
       visionTitle: "Our Vision",
       visionText: "To be a leading regional firm in environmental consulting and a trusted partner for achieving compliance and sustainable industrial development.",
       missionTitle: "Our Mission",
@@ -82,7 +84,9 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           "Deputy Project Manager for JICA-funded PCBs Management Project (2005-2007).",
           "Coordinator for National Environmental Inspection Plans at EEAA (1999-2005).",
           "Over 28 years of international experience (USA, Canada, Japan, India, Thailand, Germany)."
-        ]
+        ],
+        methodologyTitle: "How We Work",
+        methodologyText: "At Gardenia, we rely on an organized and clear methodology: studying the facility's situation and understanding its activity, identifying environmental and regulatory requirements and gaps, developing practical solutions that suit operational capabilities, preparing accurate and reliable reports, and providing follow-up and technical support when needed. Our goal is to achieve effective compliance without negatively impacting workflow."
       },
     values: {
       title: "Our Values",
@@ -101,48 +105,75 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       description: "Gardenia for Environmental and Scientific Consulting aims to provide integrated consulting solutions to industry in its various sectors, institutions, bodies, and government agencies in the fields of environmental management, pollution control, waste management of all kinds, and environmental and social impact assessment.",
       items: [
         {
-          title: "Environmental Studies (ESIA)",
-          description: "Comprehensive environmental and social impact assessments to ensure compliance with local and international standards.",
+          title: "Environmental & Social Impact Assessment (ESIA)",
+          description: "We prepare ESIA studies for industrial and development projects, ensuring compliance with local and international environmental laws and requirements.",
           iconName: "FileText",
           details: {
-            en: "• Preparation of Environmental and Social Impact Assessment (ESIA) studies for factories, companies, and various facilities.\n• Implementation of Industrial Development Authority files (Environmental, Technical, Firefighting).\n• Preparation of environmental records and hazardous materials and waste records for various projects in different industrial and service sectors.\n• Preparation of environmental compliance and sanitation studies and pollution reduction studies for various facilities and industries.\n• Preparation of coal use compliance studies for cement factories and reports on coal use.\n• Preparation of annual environmental reports, sustainability reports, and carbon footprint reports for products and facilities (CFP/CBAM).\n• Boiler inspection and issuance of necessary permits and reports.",
-            ar: "• إعداد دراسات تقييم الأثر البيئي والاجتماعي للمصانع والشركات والمنشاءات المختلفة ESIA.\n• تنفيذ الدراسات والملفات الخاصة بهيئة التنمية الصناعية (ملف بيئي – ملف فني – ملف مكافحة الحريق).\n• إعداد السجلات البيئية وسجلات المواد والمخلفات الخطرة للمشاريع المختلفة بالقطاعات الصناعية والخدمية المختلفة.\n• إعداد دراسات توفيق الاوضاع والاصحاح البيئي ودراسات الحد من التلوث للمنشاءات والصناعات المختلفة.\n• إعداد دراسات توفيق أوضاع استخدام الفحم في مصانع الأسمنت والتقارير الخاصة باستخدام الفحم.\n• إعداد تقارير سنوية بيئية وتقارير الاستدامة وتقارير البصمة الكربونية للمنتج والمنشاة CFP/CBAM.\n• فحص Boilers وإصدار التصاريح والتقارير اللازمة."
+            en: "• Preparation of ESIA studies for factories, companies, and various facilities.\n• Ensuring compliance with local and international standards.\n• Facilitating necessary approvals before construction, operation, or expansion.",
+            ar: "• إعداد دراسات تقييم الأثر البيئي والاجتماعي للمصانع والشركات والمنشآت المختلفة ESIA.\n• ضمان التوافق مع المعايير المحلية والدولية.\n• تسهيل الحصول على الموافقات اللازمة قبل الإنشاء أو التشغيل أو التوسعات."
           }
         },
         {
-          title: "Waste Management",
-          description: "Strategic solutions for handling solid and hazardous waste, from strategy development to safe disposal.",
+          title: "Environmental & Technical Files",
+          description: "Preparing and updating environmental and technical files for factories within industrial zones according to regulatory requirements.",
+          iconName: "FolderOpen",
+          details: {
+            en: "• Implementation of Industrial Development Authority (IDA) files.\n• Environmental, Technical, and Firefighting files.\n• Ensuring safe and legal operation of the project.",
+            ar: "• تنفيذ ملفات هيئة التنمية الصناعية (ملف بيئي – ملف فني – ملف مكافحة الحريق).\n• إعداد وتحديث الملفات البيئية والفنية للمصانع.\n• ضمان التشغيل الآمن والقانوني للمشروع."
+          }
+        },
+        {
+          title: "Solid & Hazardous Waste Management",
+          description: "Effective systems for managing solid and hazardous waste, including collection, sorting, storage, and safe disposal.",
           iconName: "Trash2",
           details: {
-            en: "• Preparation of studies for solid and hazardous waste management.\n• Preparation of environmental and social impact studies for hazardous and medical waste incinerators.\n• Preparation and development of strategies for transport, storage, and safe disposal of waste in various sectors.\n• Preparation of industrial waste recycling and circular economy studies (Waste Exchange).\n• Consulting for the design of water and industrial wastewater treatment plants and improving processes within the plants.\n• Preparation of studies including Cleaner Production application mechanisms and Green Chemistry techniques.\n• Preparation of integrated environmental and social impact assessment studies for the transport of hazardous waste at the level of one/two governorates/the entire Republic.\n• Preparation of integrated environmental and social impact assessment studies for solid and hazardous waste landfills.",
-            ar: "• اعداد دراسات لإدارة المخلفات الصلبة والخطرة.\n• اعداد دراسات الاثر البيئي والاجتماعي لمحارق المخلفات الخطرة والطبية.\n• اعداد وتطوير استراتيجيات النقل والتخزين والتخلص الآمن للمخلفات بالقطاعات المختلفة.\n• اعداد دراسات اعادة تدوير المخلفات الصناعية والاقتصاد الدوار Waste Exchange.\n• استشارات تصميم محطات معالجة المياه والصرف الصناعي وتحسين العمليات داخل المحطات.\n• اعداد دراسات تشمل اليات تطبيق Cleaner Production وتقنيات Green Chemistry.\n• اعداد دراسات متكاملة لتقييم الاثر البيئي والاجتماعي لنقل المخلفات الخطرة على مستوى محافظة واحدة/محافظتين/ عموم الجمهورية.\n• اعداد دراسات متكاملة لتقييم الاثر البيئي والاجتماعي لمدافن المخلفات الصلبة والخطرة."
+            en: "• Preparation of studies for solid and hazardous waste management.\n• Strategies for transport, storage, and safe disposal.\n• Reducing environmental risks and operational costs.",
+            ar: "• إعداد دراسات لإدارة المخلفات الصلبة والخطرة.\n• وضع استراتيجيات النقل والتخزين والتخلص الآمن.\n• تقليل المخاطر البيئية وخفض التكاليف التشغيلية."
           }
         },
         {
-          title: "Safety and Security Services",
-          description: "Technical specifications and systems for fire safety, baggage detection, and industrial security.",
-          iconName: "ShieldCheck",
+          title: "Carbon Footprint & CBAM Reporting",
+          description: "Measurement and analysis of carbon footprint for facilities and products, helping factories meet export requirements.",
+          iconName: "Leaf",
           details: {
-            en: "• Preparation of Firefighting & Fire Alarm reports.\n• Implementation of fire systems approved by Civil Defense.\n• Setting technical specifications and preparing reports for safety and security systems.\n• Setting technical specifications for X-Ray and Metal Gate baggage and metal detection devices.\n• Setting technical specifications for firefighting and alarm systems.",
-            ar: "• إعداد تقارير Firefighting & Fire Alarm.\n• تنفيذ أنظمة الحريق المعتمدة من الدفاع المدني.\n• وضع المواصفات الفنية واعداد التقارير الخاصة بانظمة السلامة والامان.\n• وضع المواصفات الفنية لاجهزة الكشف عن الحقائب والكشف عن المعادن X-Ray and Metal Gate.\n• وضع المواصفات الفنية الخاصة بأنظمة مكافحة وانذار الحريق."
+            en: "• Carbon footprint reports for facilities and products (CFP/CBAM).\n• Sustainability reports and emission reduction projects.\n• Preparation for CBAM compliance and European export requirements.",
+            ar: "• تقارير البصمة الكربونية للمنشآت والمنتجات (CFP/CBAM).\n• تقارير الاستدامة ومشاريع خفض الانبعاثات.\n• الاستعداد لتطبيق آلية CBAM ومتطلبات التصدير الأوروبية."
           }
         },
         {
-          title: "Management Systems (ISO)",
-          description: "Implementing global standards for quality, environment, and occupational health and safety.",
+          title: "Quality & Management Systems (ISO)",
+          description: "Implementing global standards for quality, environment, and occupational health and safety (ISO 9001, 14001, 45001).",
           iconName: "Award",
           details: {
-            en: "• Preparation of studies and reports for implementing various quality systems in facilities: ISO 9001, ISO 14001, GHG Protocol, ISO 45001.\n• Environmental Risk Assessment studies (Qualitative & Quantitative).\n• Preparation of studies for implementing Environmental Management Systems (EMS).\n• Preparation of Total Quality Management (TQM) studies for various facilities and industries.",
-            ar: "• اعداد دراسات وتقارير لتطبيق نظم الجودة المختلفة بالمنشاءات ISO 9001, ISO 14001, GHG Protocol, ISO 45001.\n• دراسات إدارة المخاطر البيئية (Environmental Risk Assessment – Qualitative & Quantitative).\n• اعداد دراسات تطبيق نظم الإدارة البيئية (EMS).\n• اعداد دراسات ادارة الجودة الشاملة Total Quality Management للمنشاءات والصناعات المختلفة."
+            en: "• Implementation of ISO 9001, ISO 14001, and ISO 45001 systems.\n• Improving performance efficiency and reducing risks.\n• Enhancing compliance within industrial facilities.",
+            ar: "• تطبيق نظم ISO 9001 وISO 14001 وISO 45001.\n• تحسين كفاءة الأداء وتقليل المخاطر.\n• رفع مستوى الامتثال داخل المنشآت الصناعية."
           }
         },
         {
-          title: "Training & Sustainability",
-          description: "Specialized capacity building programs to empower technical teams in environmental and safety compliance.",
+          title: "Safety & Firefighting Systems",
+          description: "Design and implementation of fire fighting and alarm systems, and occupational health and safety plans.",
+          iconName: "ShieldCheck",
+          details: {
+            en: "• Preparation of Firefighting & Fire Alarm reports.\n• Implementation of fire systems approved by Civil Defense.\n• Boiler inspection and safety specifications.",
+            ar: "• إعداد تقارير أنظمة مكافحة وانذار الحريق.\n• تنفيذ أنظمة الحريق المعتمدة من الدفاع المدني.\n• فحص الغلايات ووضع مواصفات السلامة."
+          }
+        },
+        {
+          title: "Sustainability & Circular Economy",
+          description: "Consulting for sustainability and circular economy practices to reduce waste and improve resource efficiency.",
+          iconName: "RefreshCcw",
+          details: {
+            en: "• Industrial waste recycling and circular economy studies.\n• Cleaner Production and Green Chemistry techniques.\n• Resource optimization and sustainable operation.",
+            ar: "• دراسات إعادة تدوير المخلفات الصناعية والاقتصاد الدوار.\n• تطبيق آليات الإنتاج الأنظف والكيمياء الخضراء.\n• تحسين استخدام الموارد والتشغيل المستدام."
+          }
+        },
+        {
+          title: "Training & Capacity Building",
+          description: "Specialized training programs for industrial cadres in environmental management, safety, and carbon footprinting.",
           iconName: "Users",
           details: {
-            en: "• Training on Environmental Compliance & Industrial Pollution Control.\n• Hazardous and solid waste management.\n• Resource Optimization.\n• Training on how to prepare Carbon Footprint/CBAM reports.\n• Strategies for transitioning to new and renewable energy.\n• Environmental and social impact assessment for projects.\n• How to prepare environmental records and hazardous materials and waste records.\n• Implementing environmental management systems in various facilities.\n• Implementing safety, security, and firefighting systems.",
-            ar: "• تدريب على Environmental Compliance & Industrial Pollution Control.\n• إدارة المخلفات الخطرة والصلبة.\n• Resource Optimization.\n• تدريب حول كيفية اعداد تقارير Carbon Footprint/CBAM.\n• استراتيجيات التحول للطاقة المتجددة والجديدة.\n• تقييم الاثر البيئي والاجتماعي للمشروعات.\n• كيفية اعداد السجلات البيئية وسجلات المواد والمخلفات الخطرة.\n• تطبيق نظم الادارة البيئية بالمنشات المختلفة.\n• تطبيق نظم الامن والسلامة ومكافحة الحريق."
+            en: "• Training on environmental compliance and pollution control.\n• Waste management and quality systems training.\n• Capacity building for engineers and technical teams.",
+            ar: "• تدريب على الامتثال البيئي والحد من التلوث.\n• برامج تدريبية في إدارة المخلفات ونظم الجودة.\n• بناء قدرات المهندسين والكوادر الفنية."
           }
         }
       ]
@@ -414,7 +445,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       formMessage: "How can we help?"
     },
     footer: {
-      rights: "All rights reserved Gardenia Environmental Consulting © 2024",
+      rights: "All rights reserved Gardenia Environmental Consulting © 2026",
       address: "Compound Ashgar Darna - Building A5 - 1st Floor - Maadi - Cairo"
     }
   },
@@ -436,12 +467,14 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "نظم إدارة الجودة"
       ],
       subtitle: "",
-      cta: "اطلب استشارة"
+      cta: "تعرف على خدماتنا"
     },
     about: {
       title: "من نحن",
-      mainText: "عن جاردينيا للإستشارات البيئية",
-      subText: "تجمع جاردينيا بين الخبرة العملية والعمق الأكاديمي، من خلال فريق عمل يضم نخبة من الاستشاريين المعتمدين لدى وزارة البيئة المصرية ونقابة المهندسين، إلى جانب أساتذة جامعيين متخصصين. تحت قيادة الأستاذة الدكتورة أسماء حمودة، أستاذ الهندسة الكيميائية والبيئية بخبرة تتجاوز 28 عاماً، نقدم حلولاً مبتكرة في تقييم الأثر البيئي، إدارة المخلفات الخطرة، والاصحاح البيئي المتكامل للمنشآت الصناعية الكبرى.",
+      mainText: "من نحن؟",
+      tagline: "شريك استشاري بيئي يدعم القرار الصناعي",
+      subText: "Gardenia for Environmental Consulting شركة استشارات بيئية تعمل مع المصانع والمنشات الاقتصادية المختلفة والجهات الحكومية لتقديم حلول تدعم الامتثال البيئي وتحسين الأداء وتقليل المخاطر. نلتزم بتقديم دراسات وتقارير واضحة مبنية على الخبرة والمعايير المحلية والدولية، مع تركيز على النتائج العملية التي تساعد المنشآت على اتخاذ قرارات صحيحة وتنفيذها بكفاءة.",
+      introText: "منذ عام 2008، تعمل جاردينيا كشريك استشاري موثوق في تنفيذ مشروعات بيئية مع المصانع والجهات الحكومية، معتمدة على نهج تشاركي يركز على الحلول العملية، نقل المعرفة، وتطبيق أفضل الممارسات الدولية لتحقيق التزام بيئي واستدامة حقيقية.",
       visionTitle: "رؤيتنا",
       visionText: "نسعى لأن نكون من الشركات الرائدة إقليمياً في مجال الاستشارات البيئية، والشريك الموثوق للمصانع في تحقيق الامتثال البيئي والتنمية الصناعية النظيفة.",
       missionTitle: "رسالتنا",
@@ -520,48 +553,75 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       description: "تستهدف جاردينيا للاستشارات البيئية والعلمية تقديم حلول استشارية متكاملة للصناعة بقطاعاتها المختلفة والمؤسسات والهيئات والجهات الحكومية في مجلات الادارة البيئية والحد من التلوث وادارة المخلفات بجميع انواعها وتقييم الاثر البيئي والاجتماعي.",
       items: [
         {
-          title: "الدراسات البيئية (ESIA)",
-          description: "تقييمات شاملة للأثر البيئي والاجتماعي لضمان الامتثال للمعايير المحلية والدولية.",
+          title: "دراسات تقييم الأثر البيئي والاجتماعي (ESIA)",
+          description: "نقوم بإعداد دراسات تقييم الأثر البيئي والاجتماعي للمشروعات الصناعية والتنموية، بما يضمن توافق المشروع مع القوانين والاشتراطات البيئية المحلية والدولية، ويساعد في الحصول على الموافقات اللازمة قبل الإنشاء أو التشغيل أو التوسعات.",
           iconName: "FileText",
           details: {
-            en: "• Preparation of Environmental and Social Impact Assessment (ESIA) studies for factories and companies.\n• Implementation of Industrial Development Authority files (Environmental, Technical, Firefighting).\n• Preparation of environmental records and hazardous waste records.\n• Environmental compliance and sanitation studies.\n• Coal use studies for cement factories.\n• Annual sustainability and Carbon Footprint (CFP/CBAM) reports.\n• Boiler inspection and reporting.",
-            ar: "• إعداد دراسات تقييم الأثر البيئي والاجتماعي للمصانع والشركات والمنشاءات المختلفة ESIA.\n• تنفيذ الدراسات والملفات الخاصة بهيئة التنمية الصناعية (ملف بيئي – ملف فني – ملف مكافحة الحريق).\n• إعداد السجلات البيئية وسجلات المواد والمخلفات الخطرة للمشاريع المختلفة بالقطاعات الصناعية والخدمية المختلفة.\n• إعداد دراسات توفيق الاوضاع والاصحاح البيئي ودراسات الحد من التلوث للمنشاءات والصناعات المختلفة.\n• إعداد دراسات توفيق أوضاع استخدام الفحم في مصانع الأسمنت والتقارير الخاصة باستخدام الفحم.\n• إعداد تقارير سنوية بيئية وتقارير الاستدامة وتقارير البصمة الكربونية للمنتج والمنشاة CFP/CBAM.\n• فحص Boilers وإصدار التصاريح والتقارير اللازمة."
+            en: "• Preparation of ESIA studies for factories, companies, and various facilities.\n• Ensuring compliance with local and international standards.\n• Facilitating necessary approvals before construction, operation, or expansion.",
+            ar: "• إعداد دراسات تقييم الأثر البيئي والاجتماعي للمصانع والشركات والمنشآت المختلفة ESIA.\n• ضمان التوافق مع المعايير المحلية والدولية.\n• تسهيل الحصول على الموافقات اللازمة قبل الإنشاء أو التشغيل أو التوسعات."
           }
         },
         {
-          title: "إدارة المخلفات",
-          description: "حلول استراتيجية للتعامل مع المخلفات الصلبة والخطرة، من تطوير الاستراتيجيات إلى التخلص الآمن.",
+          title: "إعداد الملفات البيئية والفنية للمشروعات الصناعية",
+          description: "نقدم خدمات إعداد وتحديث الملفات البيئية والفنية للمصانع داخل المناطق الصناعية ، وفقاً لاشتراطات الجهات الرقابية، لضمان تشغيل آمن وقانوني للمشروع والحصول على التراخيص والموافقات المطلوبة.",
+          iconName: "FolderOpen",
+          details: {
+            en: "• Implementation of Industrial Development Authority (IDA) files.\n• Environmental, Technical, and Firefighting files.\n• Ensuring safe and legal operation of the project.",
+            ar: "• تنفيذ ملفات هيئة التنمية الصناعية (ملف بيئي – ملف فني – ملف مكافحة الحريق).\n• إعداد وتحديث الملفات البيئية والفنية للمصانع.\n• ضمان التشغيل الآمن والقانوني للمشروع."
+          }
+        },
+        {
+          title: "إدارة المخلفات الصلبة والخطرة",
+          description: "نساعد المصانع في وضع وتنفيذ أنظمة فعالة لإدارة المخلفات الصلبة والخطرة، تشمل الجمع والفرز والتخزين الآمن وإعادة التدوير أو التخلص الآمن، بما يقلل المخاطر البيئية ويخفض التكاليف التشغيلية.",
           iconName: "Trash2",
           details: {
-            en: "• Solid and hazardous waste management studies.\n• ESIA for hazardous and medical waste incinerators.\n• Transport, storage, and safe disposal strategies.\n• Recycling and Waste Exchange studies.\n• Wastewater treatment plant design and optimization.\n• Cleaner Production and Green Chemistry implementation.\n• ESIA for hazardous waste transport and landfills.",
-            ar: "• اعداد دراسات لإدارة المخلفات الصلبة والخطرة.\n• اعداد دراسات الاثر البيئي والاجتماعي لمحارق المخلفات الخطرة والطبية.\n• اعداد وتطوير استراتيجيات النقل والتخزين والتخلص الآمن للمخلفات بالقطاعات المختلفة.\n• اعداد دراسات اعادة تدوير المخلفات الصناعية والاقتصاد الدوار Waste Exchange.\n• استشارات تصميم محطات معالجة المياه والصرف الصناعي وتحسين العمليات داخل المحطات.\n• اعداد دراسات تشمل اليات تطبيق Cleaner Production وتقنيات Green Chemistry.\n• تقييم الاثر البيئي والاجتماعي لنقل المخلفات الخطرة ولمدافن المخلفات."
+            en: "• Preparation of studies for solid and hazardous waste management.\n• Strategies for transport, storage, and safe disposal.\n• Reducing environmental risks and operational costs.",
+            ar: "• إعداد دراسات لإدارة المخلفات الصلبة والخطرة.\n• وضع استراتيجيات النقل والتخزين والتخلص الآمن.\n• تقليل المخاطر البيئية وخفض التكاليف التشغيلية."
           }
         },
         {
-          title: "خدمات الأمن والسلامة",
-          description: "مواصفات فنية وأنظمة لسلامة الحريق والكشف عن الحقائب والأمن الصناعي.",
-          iconName: "ShieldCheck",
+          title: "حساب البصمة الكربونية والاستدامة لـ CBAM",
+          description: "نقدم خدمات قياس وتحليل البصمة الكربونية للمنشآت الصناعية والبصمة الكربونية للمنتج وتقارير الاستدامة ومشاريع خفض البصمة الكربونية، ووضع خطط خفض الانبعاثات، لمساعدة المصانع على الاستعداد لتطبيق آلية CBAM والالتزام بمتطلبات التصدير للأسواق الأوروبية.",
+          iconName: "Leaf",
           details: {
-            en: "• Firefighting & Fire Alarm reports and systems.\n• Civil Defense approved implementation.\n• Technical specifications for safety and security systems.\n• Specifications for X-Ray and Metal Gate detection devices.\n• Design of fire fighting and alarm systems.",
-            ar: "• إعداد تقارير Firefighting & Fire Alarm.\n• تنفيذ أنظمة الحريق المعتمدة من الدفاع المدني.\n• وضع المواصفات الفنية واعداد التقارير الخاصة بانظمة السلامة والامان.\n• وضع المواصفات الفنية لاجهزة الكشف عن الحقائب والكشف عن المعادن X-Ray and Metal Gate.\n• وضع المواصفات الفنية الخاصة بأنظمة مكافحة وانذار الحريق."
+            en: "• Carbon footprint reports for facilities and products (CFP/CBAM).\n• Sustainability reports and emission reduction projects.\n• Preparation for CBAM compliance and European export requirements.",
+            ar: "• تقارير البصمة الكربونية للمنشآت والمنتجات (CFP/CBAM).\n• تقارير الاستدامة ومشاريع خفض الانبعاثات.\n• الاستعداد لتطبيق آلية CBAM ومتطلبات التصدير الأوروبية."
           }
         },
         {
-          title: "نظم الإدارة (ISO)",
-          description: "تطبيق المعايير العالمية للجودة والبيئة والسلامة والصحة المهنية.",
+          title: "تطبيق أنظمة الجودة والإدارة (ISO 9001 – ISO 14001 – ISO 45001)",
+          description: "نقوم بتصميم وتطبيق أنظمة الإدارة المختلفة مثل: ISO 9001 (إدارة الجودة) ISO 14001 (الإدارة البيئية) ISO 45001 (الصحة والسلامة المهنية) وذلك لتحسين كفاءة الأداء، تقليل المخاطر، ورفع مستوى الامتثال داخل المنشآت الصناعية.",
           iconName: "Award",
           details: {
-            en: "• Implementation of ISO 9001, ISO 14001, ISO 45001.\n• GHG Protocol and Carbon Footprint management.\n• Environmental Risk Assessment (Qualitative & Quantitative).\n• Environmental Management Systems (EMS) studies.\n• Total Quality Management (TQM) implementation.",
-            ar: "• اعداد دراسات وتقارير لتطبيق نظم الجودة المختلفة (ISO 9001, ISO 14001, ISO 45001).\n• تطبيق GHG Protocol وإدارة البصمة الكربونية.\n• دراسات إدارة المخاطر البيئية (Environmental Risk Assessment).\n• اعداد دراسات تطبيق نظم الإدارة البيئية (EMS).\n• اعداد دراسات ادارة الجودة الشاملة (TQM) للمنشآت المختلفة."
+            en: "• Implementation of ISO 9001, ISO 14001, and ISO 45001 systems.\n• Improving performance efficiency and reducing risks.\n• Enhancing compliance within industrial facilities.",
+            ar: "• تطبيق نظم ISO 9001 وISO 14001 وISO 45001.\n• تحسين كفاءة الأداء وتقليل المخاطر.\n• رفع مستوى الامتثال داخل المنشآت الصناعية."
           }
         },
         {
-          title: "التدريب والاستدامة",
-          description: "برامج متخصصة لبناء القدرات وتمكين الفرق الفنية في مجال الامتثال البيئي والسلامة.",
+          title: "أنظمة السلامة المهنية ومكافحة الحريق",
+          description: "نقدم خدمات تصميم ومراجعة وتنفيذ أنظمة مكافحة الحريق والإنذار، بالإضافة إلى إعداد خطط السلامة والصحة المهنية، وفحص الغلايات، بما يضمن بيئة عمل آمنة متوافقة مع الاشتراطات القانونية.",
+          iconName: "ShieldCheck",
+          details: {
+            en: "• Preparation of Firefighting & Fire Alarm reports.\n• Implementation of fire systems approved by Civil Defense.\n• Boiler inspection and safety specifications.",
+            ar: "• إعداد تقارير أنظمة مكافحة وانذار الحريق.\n• تنفيذ أنظمة الحريق المعتمدة من الدفاع المدني.\n• فحص الغلايات ووضع مواصفات السلامة."
+          }
+        },
+        {
+          title: "استشارات الاستدامة والاقتصاد الدائري",
+          description: "نساعد المؤسسات الصناعية على تبني ممارسات الاستدامة والاقتصاد الدائري من خلال تقليل الهدر، تحسين استخدام الموارد، وإعادة الاستفادة من المخلفات، بما ييدعم التشغيل المستدام على المدى الطويل.",
+          iconName: "RefreshCcw",
+          details: {
+            en: "• Industrial waste recycling and circular economy studies.\n• Cleaner Production and Green Chemistry techniques.\n• Resource optimization and sustainable operation.",
+            ar: "• دراسات إعادة تدوير المخلفات الصناعية والاقتصاد الدوار.\n• تطبيق آليات الإنتاج الأنظف والكيمياء الخضراء.\n• تحسين استخدام الموارد والتشغيل المستدام."
+          }
+        },
+        {
+          title: "برامج تدريب وتأهيل للكوادر الصناعية",
+          description: "نقدم برامج تدريب متخصصة للعاملين والإدارات الفنية داخل المصانع، تشمل اعداد دراسات تقييم الاثر البيئي والاجتماعي. اعداد السجل البيئي وسجل الكزاد والمخلفات الخطرة. ، إدارة المخلفات، أنظمة الجودة، السلامة المهنية، والبصمة الكربونية، لضمان استمرارية تطبيق الأنظمة بكفاءة.",
           iconName: "Users",
           details: {
-            en: "• Training on Environmental Compliance & Industrial Pollution Control.\n• Hazardous and solid waste management training.\n• Resource Optimization and Renewable Energy strategies.\n• Carbon Footprint/CBAM reporting training.\n• ESIA training and environmental records preparation.\n• Training on safety and firefighting systems.",
-            ar: "• تدريب على Environmental Compliance & Industrial Pollution Control.\n• تدريب على إدارة المخلفات الخطرة والصلبة.\n• تدريب على Resource Optimization واستراتيجيات الطاقة المتجددة.\n• تدريب حول كيفية اعداد تقارير Carbon Footprint/CBAM.\n• تدريب على تقييم الاثر البيئي والاجتماعي وكيفية اعداد السجلات البيئية.\n• تدريب على تطبيق نظم الادارة البيئية والامن والسلامة ومكافحة الحريق."
+            en: "• Training on environmental compliance and pollution control.\n• Waste management and quality systems training.\n• Capacity building for engineers and technical teams.",
+            ar: "• تدريب على الامتثال البيئي والحد من التلوث.\n• برامج تدريبية في إدارة المخلفات ونظم الجودة.\n• بناء قدرات المهندسين والكوادر الفنية."
           }
         }
       ]
@@ -863,7 +923,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       formMessage: "كيف يمكننا مساعدتك؟"
     },
     footer: {
-      rights: "جميع الحقوق محفوظة جاردينيا للاستشارات البيئية © 2024",
+      rights: "جميع الحقوق محفوظة جاردينيا للاستشارات البيئية © 2026",
       address: "كمبوند أشجار دارنا - عمارة A5 الدور الأول - المعادي - القاهرة"
     }
   }
