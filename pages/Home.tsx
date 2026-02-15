@@ -216,16 +216,14 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
 
                 <div className="container mx-auto px-4 mt-16 text-center">
                     <div className="max-w-3xl mx-auto">
-                        <p className="text-xl md:text-2xl text-brand-gray leading-relaxed mb-10 reveal-trigger stagger-1">
-                            {lang === 'ar'
-                                ? 'حلول استشارية بيئية وعلمية متكاملة لدعم التنمية الصناعية المستدامة منذ عام 2008.'
-                                : 'Integrated environmental and scientific consulting solutions to support sustainable industrial development since 2008.'}
+                        <p className="text-lg md:text-xl text-brand-gray leading-relaxed mb-10 reveal-trigger stagger-1">
+                            {t.about.subText}
                         </p>
                         <Link
-                            to="/about"
+                            to="/services"
                             className="inline-flex items-center gap-3 bg-brand-green text-white px-10 py-4 rounded-full font-bold hover:scale-105 hover:shadow-xl hover:shadow-brand-green/20 transition-all reveal-trigger stagger-2"
                         >
-                            {lang === 'ar' ? 'اكتشف المزيد عنا' : 'Discover more about us'}
+                            {lang === 'ar' ? 'تعرف على خدماتنا' : 'Explore Our Services'}
                             <ArrowRight size={22} className={lang === 'ar' ? 'rotate-180' : ''} />
                         </Link>
                     </div>

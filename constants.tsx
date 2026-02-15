@@ -25,7 +25,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "About Gardenia",
       mainText: "Who We Are?",
       tagline: "Environmental Consulting Partner Supporting Industrial Decision-Making",
-      subText: "Gardenia for Environmental Consulting is a specialized environmental consulting firm that works with factories, various establishments, and government agencies to provide solutions that support environmental compliance, improve performance, and enhance sustainability.",
+      subText: "Gardenia for Environmental Consulting is an environmental consulting firm working with factories, various economic establishments, and government agencies to provide solutions that support environmental compliance, improve performance, and reduce risks. We are committed to providing clear studies and reports based on experience and local and international standards, focusing on practical results that help facilities make informed decisions and implement them efficiently.",
       introText: "Since 2008, Gardenia has been working as a trusted consulting partner in implementing environmental projects with factories and government agencies, relying on a participatory approach that focuses on practical solutions, knowledge transfer, and applying international best practices to achieve real environmental compliance and sustainability.",
       visionTitle: "Our Vision",
       visionText: "To be a leading regional firm in environmental consulting and a trusted partner for achieving compliance and sustainable industrial development.",
