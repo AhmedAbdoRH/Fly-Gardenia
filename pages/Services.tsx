@@ -46,7 +46,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                             {t.services.title}
                         </h1>
                         <div className="w-24 h-1.5 bg-brand-green mx-auto rounded-full mb-10 shadow-[0_0_20px_rgba(170,213,70,0.4)]"></div>
-                        <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-medium">
+                        <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-medium text-justify">
                             {t.services.description}
                         </p>
                     </div>
@@ -124,7 +124,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                                         {(lang === 'ar' ? service.details?.ar : service.details?.en)?.split('\n').map((line, i) => (
                                                             <div key={i} className="flex gap-3 items-start group/line">
                                                                 <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0 group-hover/line:scale-150 transition-transform"></div>
-                                                                <p className="text-brand-gray text-sm md:text-base leading-relaxed font-medium group-hover/line:text-brand-charcoal transition-colors">
+                                                                <p className="text-brand-gray text-sm md:text-base leading-relaxed font-medium group-hover/line:text-brand-charcoal transition-colors text-justify">
                                                                     {line.replace('• ', '')}
                                                                 </p>
                                                             </div>

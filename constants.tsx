@@ -65,7 +65,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         expertsTitle: "Our Experts",
         expertsIntro: "The company relies on an elite group of experts, consultants, and university professors specialized in various environmental fields.",
         expertsItems: [
-          "The team is led by Consultant Engineer Professor Dr. Asmaa Sayed Hammouda, with extensive experience in environmental work with the Egyptian Ministry of Environment, EEAA, and international organizations.",
+          "The team is led by Consultant Engineer Prof. Dr. Asmaa Sayed Hammouda, with extensive experience in environmental work with the Egyptian Ministry of Environment, EEAA, and international organizations.",
           "Broad experience in national and international projects funded by major donors.",
           "Safety, security, and firefighting consultants certified by the Syndicate of Engineers with extensive experience working with the Civil Defense Authority."
         ],
@@ -86,7 +86,14 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           "Over 28 years of international experience (USA, Canada, Japan, India, Thailand, Germany)."
         ],
         methodologyTitle: "How We Work",
-        methodologyText: "At Gardenia, we rely on an organized and clear methodology: studying the facility's situation and understanding its activity, identifying environmental and regulatory requirements and gaps, developing practical solutions that suit operational capabilities, preparing accurate and reliable reports, and providing follow-up and technical support when needed. Our goal is to achieve effective compliance without negatively impacting workflow."
+        methodologyText: [
+          "Studying the facility's situation and understanding its activity.",
+          "Identifying environmental and regulatory requirements and gaps.",
+          "Developing practical solutions that suit operational capabilities.",
+          "Preparing accurate and reliable reports.",
+          "Providing follow-up and technical support when needed.",
+          "Achieving effective compliance without negatively impacting workflow."
+        ]
       },
     values: {
       title: "Our Values",
@@ -517,13 +524,13 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           "خبرات واسعة في مشاريع وطنية ودولية بتمويل من جهات مانحة كبرى.",
           "استشاريو السلامة والأمن ومكافحة الحريق معتمدون من نقابة المهندسين ولهم خبرة طويلة في العمل مع هيئة الحماية المدنية."
         ],
-        drAsmaaTitle: "السيرة الذاتية للدكتورة أسماء حمودة",
+        drAsmaaTitle: "أ.د/ أسماء حمودة",
         drAsmaaBio: [
           "أستاذ الهندسة الكيميائية والهندسة البيئية وهندسة المواد.",
           "رئيس قسم العلوم البيئية والتنمية الصناعية – كلية الدراسات العليا للعلوم المتقدمة – جامعة بني سويف (2017 - حتى الآن).",
           "Director – Department of Environmental Science & Industrial Development (2017-Present).",
           "عضو هيئة تدريس بكلية الدراسات العليا للعلوم المتقدمة بجامعة بني سويف (2013 - حتى الآن).",
-          "عضو مجلس إدارة جمعية أصداء الجايكا اليابانية (منذ 2024).",
+          "عضو مجلس إدارة جمعية أصدقاء الجايكا اليابانية (منذ 2024).",
           "أستاذ زائر بالجامعة الألمانية الدولية (2024–2025).",
           "مستشار وزير البيئة المصري (2012–2013).",
           "مدير إدارة تقييم الأثر البيئي للمشروعات الصناعية بجهاز شئون البيئة المصري (2007-2013).",
@@ -914,8 +921,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       subtitle: "نحن هنا لدعم مصنعك في كل خطوة نحو الامتثال البيئي والاستدامة.",
       emailLabel: "البريد الإلكتروني",
       phoneLabel: "الهاتف",
-      phoneNumbers: ["+2 01003479409", "+2 01021938285", "+2 01096677671", "+2 01067096677"],
-      emails: ["info@gardenia.eg", "asmaa_hamouda@yahoo.com", "asmaa@gardenia.eg"],
+      phoneNumbers: ["+2 01067096677"],
+      emails: ["info@gardenia.eg"],
       address: "كمبوند أشجار دارنا - عمارة A5 الدور الأول - المعادي - القاهرة",
       sendButton: "إرسال الرسالة",
       formName: "الاسم",

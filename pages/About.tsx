@@ -141,11 +141,11 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                     {t.about.tagline}
                                 </h3>
                             )}
-                            <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
+                            <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium text-justify">
                                 {t.about.subText}
                             </p>
                             {t.about.introText && (
-                                <p className="text-lg md:text-xl text-brand-gray leading-relaxed">
+                                <p className="text-lg md:text-xl text-brand-gray leading-relaxed text-justify">
                                     {t.about.introText}
                                 </p>
                             )}
@@ -174,7 +174,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                 <h3 className="text-2xl md:text-3xl font-bold text-brand-charcoal mb-4 tracking-tight">
                                     {t.about.visionTitle}
                                 </h3>
-                                <p className="text-brand-gray leading-relaxed text-lg font-medium">
+                                <p className="text-brand-gray leading-relaxed text-lg font-medium text-justify">
                                     {t.about.visionText}
                                 </p>
                             </div>
@@ -190,7 +190,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
                                     {t.about.missionTitle}
                                 </h3>
-                                <p className="text-gray-100 leading-relaxed text-lg font-medium">
+                                <p className="text-gray-100 leading-relaxed text-lg font-medium text-justify">
                                     {t.about.missionText}
                                 </p>
                             </div>
@@ -259,7 +259,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     {t.about.addedValueItems?.map((item, idx) => (
                                         <div key={idx} className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-emerald/30 hover:shadow-lg transition-all duration-300">
-                                            <p className="text-brand-gray text-lg leading-relaxed font-medium">
+                                            <p className="text-brand-gray text-lg leading-relaxed font-medium text-justify">
                                                 {item}
                                             </p>
                                         </div>
@@ -383,11 +383,18 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                 </div>
                                 <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal">
                                     {t.about.methodologyTitle}
-                                    {lang === 'ar' && <span className="text-brand-gray text-xl md:text-2xl ml-3">| How We Work</span>}
-                                    {lang === 'en' && <span className="text-brand-gray text-xl md:text-2xl ml-3">| منهجية العمل</span>}
                                 </h3>
                             </div>
-                            <p className="text-lg md:text-xl text-brand-gray leading-relaxed">{t.about.methodologyText}</p>
+                            <div className="space-y-4">
+                                {t.about.methodologyText?.map((item, idx) => (
+                                    <div key={idx} className="flex gap-4 items-start group">
+                                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                        <p className="text-brand-gray text-lg leading-relaxed font-medium text-justify group-hover:text-brand-charcoal transition-colors">
+                                            {item}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

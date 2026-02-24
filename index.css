@@ -193,3 +193,7 @@
     position: relative;
     z-index: 2;
 }
+
+.text-justify {
+    text-align: justify;
+}

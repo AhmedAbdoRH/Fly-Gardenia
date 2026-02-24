@@ -47,7 +47,7 @@ export interface ContentData {
     addedValueTitle?: string;
     addedValueItems?: string[];
     methodologyTitle?: string;
-    methodologyText?: string;
+    methodologyText?: string[];
     expertsTitle?: string;
     expertsIntro?: string;
     expertsItems?: string[];

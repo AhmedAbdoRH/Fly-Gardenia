@@ -113,7 +113,7 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                             <Target className="w-3.5 h-3.5 md:w-4 md:h-4" />
                             {lang === 'ar' ? 'الهدف الرئيسي' : 'Main Objective'}
                         </div>
-                        <p className="text-brand-charcoal text-lg md:text-2xl font-bold leading-relaxed">
+                        <p className="text-brand-charcoal text-lg md:text-2xl font-bold leading-relaxed text-justify">
                             {study.objective}
                         </p>
                     </div>
@@ -149,7 +149,7 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                                         className="flex items-start gap-3 md:gap-4 p-2.5 md:p-3 rounded-[0.85rem] md:rounded-[1rem] bg-white border border-slate-100 hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 group/item"
                                     >
                                         <div className="mt-1.5 w-1.5 h-1.5 md:w-1.5 md:h-1.5 rounded-full bg-brand-green shrink-0 shadow-[0_0_10px_rgba(170,213,70,0.4)] group-hover/item:scale-150 transition-transform" />
-                                        <span className="text-brand-gray font-bold text-xs md:text-sm leading-relaxed group-hover:text-brand-charcoal transition-colors">{detail}</span>
+                                        <span className="text-brand-gray font-bold text-xs md:text-sm leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">{detail}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -318,7 +318,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                                 {t.projects.approachItems.map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-4 group/item">
                                         <div className="mt-2 w-2 h-2 rounded-full bg-brand-green group-hover/item:scale-150 group-hover/item:shadow-[0_0_10px_rgba(170,213,70,0.6)] transition-all shrink-0" />
-                                        <span className="text-gray-300 text-lg group-hover/item:text-white transition-colors leading-relaxed">{item}</span>
+                                        <span className="text-gray-300 text-lg group-hover/item:text-white transition-colors leading-relaxed text-justify">{item}</span>
                                     </li>
                                 ))}
                             </ul>

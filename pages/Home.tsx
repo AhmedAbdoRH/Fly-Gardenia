@@ -195,7 +195,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                 {/* Full Width Scroll Sequence Container */}
                 <div className="w-full relative group/scroll-sequence">
                     <div
-                        className="relative w-full h-[50vh] md:h-[70vh] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] overflow-hidden"
+                        className="relative w-full h-[300px] md:h-[70vh] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] overflow-hidden"
                     >
                         <video
                             src="/video.mp4"
@@ -216,7 +216,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
 
                 <div className="container mx-auto px-4 mt-16 text-center">
                     <div className="max-w-3xl mx-auto">
-                        <p className="text-lg md:text-xl text-brand-gray leading-relaxed mb-10 reveal-trigger stagger-1">
+                        <p className="text-lg md:text-xl text-brand-gray leading-relaxed mb-10 reveal-trigger stagger-1 text-justify">
                             {t.about.subText}
                         </p>
                         <Link
