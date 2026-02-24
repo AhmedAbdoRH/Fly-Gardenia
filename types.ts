@@ -35,7 +35,9 @@ export interface ContentData {
   about: {
     title: string;
     mainText: string;
+    tagline?: string;
     subText: string;
+    introText?: string;
     visionTitle: string;
     visionText: string;
     missionTitle: string;

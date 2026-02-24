@@ -69,7 +69,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           "Broad experience in national and international projects funded by major donors.",
           "Safety, security, and firefighting consultants certified by the Syndicate of Engineers with extensive experience working with the Civil Defense Authority."
         ],
-        drAsmaaTitle: "Dr. Asmaa Hammouda's Profile",
+        drAsmaaTitle: "Prof. Dr. Asmaa Hammouda's Profile",
         drAsmaaBio: [
           "Professor of Chemical Engineering, Environmental Engineering, and Materials Engineering.",
           "Head of the Department of Environmental Science and Industrial Development – Faculty of Postgraduate Studies for Advanced Sciences – Beni Suef University (2017-Present).",
@@ -243,7 +243,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           period: "2017–2019",
           location: "6th of October Industrial City",
           objective: "Help industries exchange and reuse industrial waste through an online database, reducing waste and promoting a circular economy.",
-          participation: "Dr. Asmaa Hammouda served as the Environmental Expert.",
+          participation: "Prof. Dr. Asmaa Hammouda served as the Environmental Expert.",
           image: "/studies/study-4.png",
           details: [
             "Field visits and data collection for 812 factories.",
@@ -446,6 +446,9 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       subtitle: "We are ready to support your facility at every step toward environmental compliance.",
       emailLabel: "Email",
       phoneLabel: "Phone",
+      phoneNumbers: ["+2 01067096677"],
+      emails: ["info@gardenia.eg"],
+      address: "Compound Ashgar Darna - Building A5 - 1st Floor - Maadi - Cairo",
       sendButton: "Send Message",
       formName: "Your Name",
       formEmail: "Your Email",
@@ -537,11 +540,18 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           "استشاري معتمد من وزارة البيئة في: إدارة المخلفات الخطرة، إعداد ومراجعة دراسات تقييم الأثر البيئي، ودراسات الحد من التلوث والاصحاح البيئي.",
           "استشاري مهندس من نقابة المهندسين المصرية في مجالات الإدارة البيئية منذ عام 2015.",
           "نائب مدير مشروع إدارة المواد الخطرة (PCBs) الممول من JICA (2005-2007).",
-          "منسق ومسئول إعداد خطط التفتيش البيئي لعموم الجمهورية بجهاز شئون البيئة (1999-2005).",
+          "منسق ومسئول إعداد خطط التفتيش البيئي لجمهورية مصر العربية بجهاز شئون البيئة (1999-2005).",
           "أكثر من 28 عامًا خبرة دولية في مجال العمل البيئي وإدارة المخلفات (الولايات المتحدة، كندا، اليابان، الهند، تايلاند، ألمانيا)."
         ],
         methodologyTitle: "منهجية العمل",
-      methodologyText: "نعتمد في Gardenia على منهجية منظمة وواضحة كدراسة وضع المنشأة وفهم نشاطها وتحديد المتطلبات والفجوات البيئية والتنظيمية ونضع حلول عملية تتناسب مع الإمكانيات التشغيلية مع إعداد تقارير دقيقة وقابلة للاعتماد وتوفير المتابعة والدعم الفني عند الحاجة. هدفنا هو تحقيق التزام فعال دون التأثير السلبي على سير العمل."
+        methodologyText: [
+          "دراسة وضع المنشأة وفهم نشاطها.",
+          "تحديد المتطلبات والفجوات البيئية والتنظيمية.",
+          "تطوير حلول عملية تتناسب مع الإمكانيات التشغيلية.",
+          "إعداد تقارير دقيقة وقابلة للاعتماد.",
+          "توفير المتابعة والدعم الفني عند الحاجة.",
+          "تحقيق التزام فعال دون التأثير السلبي على سير العمل."
+        ]
     },
     values: {
       title: "قيمنا",
