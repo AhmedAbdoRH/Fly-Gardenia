@@ -262,7 +262,7 @@ const DecorativeBranch = ({
 
 const RamadanLanterns = () => {
   return (
-    <div className="fixed top-[64px] md:top-[80px] left-0 w-full h-0 z-[45] pointer-events-none overflow-visible">
+    <div className="fixed top-[120px] md:top-[140px] left-0 w-full h-0 z-[45] pointer-events-none overflow-visible">
       {/* Branches Layer - Handling Mobile vs Desktop distribution */}
       <div className="w-full relative h-0">
         {/* Mobile Branches (Positioned at corners + one in center for better organization) */}
@@ -281,15 +281,15 @@ const RamadanLanterns = () => {
       {/* Lanterns Layer */}
       <div className="w-full relative h-0">
         {/* Right side */}
-        <Lantern x="88%" delay={0.2} scale={0.45} height={15} duration={3.5} />
-        <Lantern x="70%" delay={0.8} scale={0.4} height={35} duration={4.2} />
+        <Lantern x="88%" delay={0.2} scale={0.45} height={25} duration={3.5} />
+        <Lantern x="70%" delay={0.8} scale={0.4} height={45} duration={4.2} />
 
         {/* Center */}
-        <Lantern x="50%" delay={1.8} scale={0.3} height={20} duration={5.5} className="hidden lg:block" />
-        <Lantern x="35%" delay={0.9} scale={0.35} height={40} duration={4.8} className="hidden md:block" />
+        <Lantern x="50%" delay={1.8} scale={0.3} height={30} duration={5.5} className="hidden lg:block" />
+        <Lantern x="35%" delay={0.9} scale={0.35} height={50} duration={4.8} className="hidden md:block" />
 
         {/* Left side */}
-        <Lantern x="12%" delay={0.6} scale={0.4} height={25} duration={4.5} />
+        <Lantern x="12%" delay={0.6} scale={0.4} height={35} duration={4.5} />
       </div>
     </div>
   );
