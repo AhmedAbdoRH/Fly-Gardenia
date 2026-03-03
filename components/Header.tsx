@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
       </div>
 
       {/* Ramadan Lanterns Decoration */}
-      <RamadanLanterns />
+      <RamadanLanterns hideOnScroll={isScrolled || location.pathname !== '/'} />
     </>
   );
 };
