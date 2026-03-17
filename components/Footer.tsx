@@ -17,18 +17,43 @@ export const Footer: React.FC<FooterProps> = ({ content: t, lang }) => {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 mb-8 md:mb-10 text-xs font-bold uppercase tracking-[0.15em] text-brand-charcoal">
-                    <Link to="/" className="hover:text-brand-green">{t.nav.home}</Link>
-                    <Link to="/about" className="hover:text-brand-green">{t.nav.about}</Link>
-                    <Link to="/services" className="hover:text-brand-green">{t.nav.services}</Link>
-                    <Link to="/projects" className="hover:text-brand-green">{t.nav.projects}</Link>
-                    <Link to="/contact" className="hover:text-brand-green">{t.nav.contact}</Link>
+                    <Link to="/" className="hover:text-brand-green transition-colors">{t.nav.home}</Link>
+                    <Link to="/about" className="hover:text-brand-green transition-colors">{t.nav.about}</Link>
+                    <Link to="/services" className="hover:text-brand-green transition-colors">{t.nav.services}</Link>
+                    <Link to="/projects" className="hover:text-brand-green transition-colors">{t.nav.projects}</Link>
+                    <Link to="/contact" className="hover:text-brand-green transition-colors">{t.nav.contact}</Link>
                 </div>
 
-                <div className="flex items-center justify-center gap-2 mb-2">
-                    <MapPin size={18} className="text-brand-green" />
-                    <p className="font-medium">{t.footer.address}</p>
+                <div className="flex flex-col items-center gap-6 mb-10">
+                    <div className="flex items-center justify-center gap-3 text-brand-gray">
+                        <MapPin size={18} className="text-brand-green shrink-0" />
+                        <p className="font-medium text-sm md:text-base max-w-md">{t.footer.address}</p>
+                    </div>
+
+                    {t.social && (
+                        <div className="flex items-center justify-center gap-4">
+                            {t.social.facebook && (
+                                <a href={t.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center hover:bg-brand-green hover:text-white hover:border-brand-green transition-all" aria-label="Facebook">
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+                                </a>
+                            )}
+                            {t.social.linkedin && (
+                                <a href={t.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center hover:bg-brand-green hover:text-white hover:border-brand-green transition-all" aria-label="LinkedIn">
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" /></svg>
+                                </a>
+                            )}
+                            {t.social.instagram && (
+                                <a href={t.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center hover:bg-brand-green hover:text-white hover:border-brand-green transition-all" aria-label="Instagram">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" /></svg>
+                                </a>
+                            )}
+                        </div>
+                    )}
                 </div>
-                <p className="opacity-70 text-sm">{t.footer.rights}</p>
+
+                <div className="pt-8 border-t border-gray-200/60 max-w-4xl mx-auto">
+                    <p className="text-gray-400 text-xs md:text-sm font-medium">{t.footer.rights}</p>
+                </div>
             </div>
         </footer>
     );

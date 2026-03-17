@@ -52,7 +52,17 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12">
-                        {t.services.items.map((service, idx) => (
+                        {[...t.services.items.slice(0, 2), ...((t.fireSystems ? [({
+                            title: lang === 'ar' ? 'أنظمة الحريق' : 'Fire Systems',
+                            description: lang === 'ar'
+                                ? 'خدمات مراجعة واعتماد وتصميم أنظمة الإنذار والإطفاء، مع دعم التقديم للدفاع المدني والمتابعة لضمان الامتثال والسلامة.'
+                                : 'Independent review and compliance support for fire alarm & firefighting systems—design, authority submissions, and site follow-up for safer facilities.',
+                            iconName: 'ShieldCheck',
+                            details: {
+                                en: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• Standards: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}\n\n• Leadership: ${t.fireSystems.leadership.name} (${t.fireSystems.leadership.role})`,
+                                ar: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• المعايير: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}\n\n• القيادة: ${t.fireSystems.leadership.name} (${t.fireSystems.leadership.role})`,
+                            }
+                        } as any)] : [])), ...t.services.items.slice(2)].map((service: any, idx) => (
                             <div
                                 key={idx}
                                 className={`group relative h-[450px] md:h-[500px] flip-card reveal-trigger stagger-${idx + 1} ${flippedIndex === idx ? 'is-flipped' : ''}`}
@@ -90,7 +100,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                             <p className="text-white leading-relaxed text-sm md:text-lg font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first">
                                                 {service.description}
                                             </p>
-                                            
+
                                             <div className="pt-6 flex items-center gap-3 text-brand-green text-sm md:text-base font-bold group-hover:translate-x-2 transition-transform">
                                                 <span>{lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
                                                 <div className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center">
@@ -106,7 +116,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                     <div className="flip-card-back h-full bg-white p-8 md:p-12 border-2 border-brand-green/30 shadow-2xl flex flex-col cursor-pointer overflow-hidden">
                                         {/* Background pattern */}
                                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(170,213,70,0.05)_0%,transparent_100%)] pointer-events-none"></div>
-                                        
+
                                         <div className="relative z-10 h-full flex flex-col">
                                             <div className="flex items-center gap-4 mb-8">
                                                 <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center border border-brand-green/20">
@@ -149,6 +159,54 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                         ))}
                     </div>
 
+                    <div className="mt-14 md:mt-20 max-w-6xl mx-auto">
+                        <div className="flex items-end justify-between gap-6 mb-6 md:mb-8">
+                            <div>
+                                <div className="inline-flex items-center justify-center px-4 py-1.5 mb-3 rounded-full border border-white/15 bg-white/5 text-xs font-semibold tracking-[0.25em] uppercase text-brand-green">
+                                    {lang === 'ar' ? 'صور من التنفيذ' : 'FIELD HIGHLIGHTS'}
+                                </div>
+                                <h2 className="text-2xl md:text-4xl font-black text-white">
+                                    {lang === 'ar' ? 'لقطات من إدارة المخلفات' : 'Waste Management in Practice'}
+                                </h2>
+                            </div>
+                            <div className="hidden md:block text-sm font-bold text-gray-300 max-w-sm text-right">
+                                {lang === 'ar'
+                                    ? 'صور واقعية من بعض الأعمال الميدانية لدعم الثقة ووضوح الخبرة.'
+                                    : 'Real field photos that reflect hands-on experience and build trust.'}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            {[
+                                {
+                                    src: "/صورة لعملية ادارة مخلفات بيئية 1.png",
+                                    alt: lang === 'ar' ? 'صورة لعملية إدارة مخلفات بيئية' : 'Waste management field photo'
+                                },
+                                {
+                                    src: "/صورة لعملية ادارة مخلفات بيئية 2.png",
+                                    alt: lang === 'ar' ? 'صورة لمخرجات/مخلفات ضمن عملية الإدارة' : 'Waste materials during handling'
+                                },
+                                {
+                                    src: "/صورة لعملية ادارة مخلفات بيئية 3.png",
+                                    alt: lang === 'ar' ? 'صورة لمخلفات/منتجات معالجة ضمن عملية الإدارة' : 'Processed materials / handled waste'
+                                }
+                            ].map((img, i) => (
+                                <div
+                                    key={i}
+                                    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:border-brand-green/40 transition-all duration-500"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-br from-brand-green/10 via-transparent to-brand-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                                    <img
+                                        src={img.src}
+                                        alt={img.alt}
+                                        className="w-full h-56 md:h-52 object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -163,36 +221,36 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                             <div className="inline-flex items-center justify-center px-4 py-1.5 mb-4 rounded-full border border-brand-green/20 bg-brand-green/5 text-xs font-semibold tracking-[0.25em] uppercase text-brand-green">
                                 {lang === 'ar' ? 'القطاعات' : 'INDUSTRIES'}
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black text-brand-charcoal mb-4 relative inline-block">
+                            <h2 className="text-4xl md:text-6xl font-black text-brand-charcoal mb-6 relative inline-block">
                                 {t.industries.title}
-                                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-brand-green rounded-full"></span>
+                                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-2 bg-brand-green rounded-full"></span>
                             </h2>
-                            <p className="mt-4 text-sm md:text-base text-brand-gray font-medium">
+                            <p className="mt-6 text-lg md:text-2xl text-brand-gray font-bold max-w-3xl mx-auto">
                                 {lang === 'ar'
                                     ? `نخدم منشآت صناعية وخدمية عبر ${t.industries.items.length} قطاعات رئيسية.`
                                     : `Serving industrial and governmental clients across ${t.industries.items.length} key sectors.`}
                             </p>
                         </div>
 
-                        <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
                             {t.industries.items.map((item, idx) => {
                                 const Icon = industryIcons[idx % industryIcons.length];
                                 return (
                                     <div
                                         key={idx}
-                                        className="group relative rounded-[2rem] border border-gray-100/70 bg-white/90 px-4 py-5 md:px-5 md:py-7 shadow-sm hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)] hover:border-brand-green/40 transition-all duration-500"
+                                        className="group relative rounded-[2.5rem] border-2 border-gray-100 bg-white px-6 py-8 md:px-8 md:py-10 shadow-lg hover:-translate-y-3 hover:shadow-2xl hover:border-brand-green/40 transition-all duration-500"
                                     >
-                                        <div className="flex flex-col items-center text-center gap-3">
+                                        <div className="flex flex-col items-center text-center gap-5">
                                             <div className="relative">
-                                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-green/30 to-brand-emerald/20 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"></div>
-                                                <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-brand-light flex items-center justify-center text-brand-green shadow-sm">
-                                                    <Icon size={26} strokeWidth={1.5} />
+                                                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-brand-green/30 to-brand-emerald/20 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                                                <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-[2rem] bg-brand-light flex items-center justify-center text-brand-green shadow-inner">
+                                                    <Icon size={36} strokeWidth={1.5} />
                                                 </div>
                                             </div>
-                                            <h3 className="font-bold text-brand-charcoal text-xs sm:text-sm md:text-base leading-snug group-hover:text-brand-green transition-colors duration-300">
+                                            <h3 className="font-black text-brand-charcoal text-base md:text-xl leading-tight group-hover:text-brand-green transition-colors duration-300">
                                                 {item}
                                             </h3>
-                                            <span className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-brand-green/70 uppercase">
+                                            <span className="text-xs md:text-sm font-black tracking-[0.3em] text-brand-green/50 uppercase">
                                                 {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                             </span>
                                         </div>
@@ -245,7 +303,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                     {t.contact.address && (
                                         <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t.contact.address)}`} target="_blank" rel="noreferrer" className="flex items-start gap-4 mt-2">
                                             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
-                                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 6.5 11 6.5 11s6.5-5.75 6.5-11c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/></svg>
+                                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 6.5 11 6.5 11s6.5-5.75 6.5-11c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z" /></svg>
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{lang === 'ar' ? 'العنوان' : 'Address'}</span>

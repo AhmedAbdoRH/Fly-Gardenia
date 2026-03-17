@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ContentData } from '../types';
 import { Calendar, MapPin, Target, User, CheckCircle2, FileText, Building2, Globe, Briefcase, Landmark, ArrowUpRight, ArrowRight } from 'lucide-react';
 
-const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: number }) => {
+const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: number, key?: any }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -51,11 +51,11 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                     {/* Background decorative elements */}
                     <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-green/20 via-transparent to-transparent"></div>
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-                    
-                    <motion.div 
-                        style={{ 
-                            transformStyle: "preserve-3d", 
-                            transform: "translateZ(50px)" 
+
+                    <motion.div
+                        style={{
+                            transformStyle: "preserve-3d",
+                            transform: "translateZ(50px)"
                         }}
                         className="relative z-10 w-full h-full flex items-center justify-center"
                     >
@@ -63,19 +63,19 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                             <div className="relative group/book h-full w-full flex items-center justify-center">
                                 {/* Book Shadow/Glow */}
                                 <div className="absolute inset-0 bg-brand-green/20 blur-[60px] rounded-full scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                                
-                                <img 
-                                    src={study.image} 
-                                    alt={study.title} 
+
+                                <img
+                                    src={study.image}
+                                    alt={study.title}
                                     className="max-w-full max-h-full object-contain shadow-[20px_20px_60px_rgba(0,0,0,0.5)] rounded-sm transform group-hover:scale-105 group-hover:-rotate-2 transition-all duration-700 relative z-10 border border-white/10"
                                 />
-                                
+
                                 {/* Reflection effect */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20"></div>
                             </div>
                         )}
                     </motion.div>
-                    
+
                     <div style={{ transform: "translateZ(80px)" }} className="absolute top-4 md:top-8 left-4 md:left-8 z-20">
                         <span className="bg-brand-green text-brand-charcoal px-3 md:px-4 py-1 md:py-1.5 rounded-full text-[9px] md:text-xs font-black uppercase tracking-widest shadow-lg">
                             {study.category}
@@ -93,7 +93,7 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                             <div className="h-[px] w-6 md:w-10 bg-brand-green/30"></div>
                         </div>
                         <h3 className="text-2xl md:text-4xl font-black text-brand-charcoal mb-4 md:mb-8 leading-tight">{study.title}</h3>
-                        
+
                         <div className="flex flex-wrap gap-4 md:gap-8 mb-6 md:mb-10">
                             <div className="flex items-center gap-3 md:gap-4 text-brand-gray group-hover:text-brand-charcoal transition-colors">
                                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-green/10 flex items-center justify-center shrink-0 border border-brand-green/20">
@@ -127,7 +127,7 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                             <p className="text-brand-gray text-xs md:text-sm italic font-medium leading-relaxed">"{study.participation}"</p>
                         </div>
                     </div>
-                    
+
                     {study.details && (
                         <div className="relative">
                             <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-4">
@@ -140,8 +140,8 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                                 {study.details.map((detail, dIdx) => (
-                                    <motion.div 
-                                        key={dIdx} 
+                                    <motion.div
+                                        key={dIdx}
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
@@ -162,7 +162,7 @@ const CaseStudyCard = ({ study, lang, idx }: { study: any, lang: string, idx: nu
     );
 };
 
-const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, idx: number }) => {
+const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, idx: number, key?: any }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -190,7 +190,7 @@ const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, i
     };
 
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -209,11 +209,11 @@ const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, i
                 {/* Decorative background */}
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-green/10 via-transparent to-transparent"></div>
-                
+
                 <motion.div
-                    style={{ 
-                        transformStyle: "preserve-3d", 
-                        transform: "translateZ(30px)" 
+                    style={{
+                        transformStyle: "preserve-3d",
+                        transform: "translateZ(30px)"
                     }}
                     className="h-48 md:h-72 w-full relative z-10 flex items-center justify-center"
                 >
@@ -221,9 +221,9 @@ const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, i
                         <div className="relative group/project-book h-full flex items-center justify-center">
                             {/* Glow */}
                             <div className="absolute inset-0 bg-brand-green/20 blur-[40px] rounded-full scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                            
-                            <img 
-                                src={project.image} 
+
+                            <img
+                                src={project.image}
                                 alt={project.name}
                                 className="max-h-full max-w-full object-contain shadow-[10px_10px_30px_rgba(0,0,0,0.4)] rounded-sm group-hover:scale-110 group-hover:-rotate-1 transition-all duration-700 border border-white/10"
                             />
@@ -235,7 +235,7 @@ const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, i
                         </div>
                     )}
                 </motion.div>
-                
+
                 <div style={{ transform: "translateZ(50px)" }} className="absolute top-3 left-3 z-20 bg-brand-green text-brand-charcoal px-2.5 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-lg">
                     {project.date}
                 </div>
@@ -247,7 +247,7 @@ const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, i
                     <h4 className="font-black text-base md:text-2xl text-brand-charcoal mb-3 md:mb-6 group-hover:text-brand-green transition-colors leading-tight">
                         {project.name}
                     </h4>
-                    
+
                     <div className="space-y-2.5 md:space-y-4 mb-4 md:mb-8">
                         <div className="flex items-center gap-3 md:gap-4 text-brand-gray font-bold">
                             <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-brand-green/10 transition-colors">
@@ -273,6 +273,11 @@ const ProjectListItem = ({ project, lang, idx }: { project: any, lang: string, i
     );
 };
 
+interface ProjectsProps {
+    content: ContentData;
+    lang: string;
+}
+
 export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
     const t = content;
 
@@ -285,7 +290,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
             {/* Introduction & Approach */}
             <section className="pt-32 pb-24 md:pt-48 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
-                
+
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center mb-20">
                         <span className="text-brand-green font-bold tracking-[0.2em] uppercase text-sm mb-4 block animate-fade-up opacity-0" style={{ animationDelay: '0.1s' }}>
@@ -307,7 +312,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                         <div className="lg:col-span-5 bg-brand-charcoal text-white p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group animate-fade-up opacity-0" style={{ animationDelay: '0.5s' }}>
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -mr-32 -mt-32 transition-all duration-700 group-hover:bg-brand-green/20"></div>
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-emerald/10 rounded-full blur-3xl -ml-32 -mb-32 transition-all duration-700 group-hover:bg-brand-emerald/20"></div>
-                            
+
                             <h3 className="text-3xl font-bold mb-10 flex items-center gap-4 relative z-10">
                                 <div className="w-12 h-12 rounded-2xl bg-brand-green flex items-center justify-center text-brand-charcoal shadow-lg shadow-brand-green/20">
                                     <Target className="w-6 h-6" />
@@ -341,40 +346,14 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                 </div>
             </section>
 
-            {/* Case Studies Section */}
-            {t.projects.caseStudies && (
-                <section className="py-24 bg-slate-50 relative">
-                    <div className="container mx-auto px-4">
-                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                            <div>
-                                <span className="text-brand-green font-bold tracking-wider uppercase text-sm mb-2 block">
-                                    {lang === 'ar' ? 'قصص نجاح' : 'Success Stories'}
-                                </span>
-                                <h2 className="text-3xl md:text-5xl font-black text-brand-charcoal">{t.projects.caseStudiesTitle}</h2>
-                            </div>
-                            <div className="hidden md:block w-1/3 h-px bg-gray-200 mb-4"></div>
-                        </div>
-
-                        <div className="space-y-20">
-                            {t.projects.caseStudies.map((study, idx) => (
-                                <CaseStudyCard key={idx} study={study} lang={lang} idx={idx} />
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
             {/* Project Lists Section */}
             {t.projects.projectLists && (
                 <section className="py-24 bg-white relative">
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-[0.4]"></div>
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="text-center mb-20">
-                            <span className="text-brand-green font-bold tracking-wider uppercase text-sm mb-3 block">
-                                {lang === 'ar' ? 'سجل المشاريع' : 'Project Portfolio'}
-                            </span>
-                            <h2 className="text-4xl md:text-5xl font-black text-brand-charcoal">
-                                {lang === 'ar' ? 'قائمة المشاريع المنجزة' : 'Completed Projects'}
+                            <h2 className="text-4xl md:text-6xl font-black text-brand-charcoal">
+                                {lang === 'ar' ? 'مشاريعنا' : 'Our Projects'}
                             </h2>
                         </div>
 
@@ -403,6 +382,42 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                 </section>
             )}
 
+            {/* Case Studies (Integrated as Our Project Examples) */}
+            {t.projects.caseStudies && (
+                <section className="py-24 bg-slate-50 relative">
+                    <div className="container mx-auto px-4">
+                        <div className="relative">
+                            <div className="flex items-center gap-6 mb-12">
+                                <div className="w-16 h-16 rounded-[1.5rem] bg-brand-green text-brand-charcoal flex items-center justify-center shadow-2xl shadow-brand-green/20 shrink-0 border-2 border-brand-charcoal/10">
+                                    <CheckCircle2 className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal relative">
+                                    {t.projects.caseStudiesTitle}
+                                    <span className="absolute -bottom-4 right-0 w-full h-1.5 bg-brand-green rounded-full opacity-20"></span>
+                                </h3>
+                            </div>
+
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+                                {t.projects.caseStudies.map((study, idx) => (
+                                    <ProjectListItem
+                                        key={idx}
+                                        project={{
+                                            name: study.title,
+                                            client: study.objective,
+                                            location: study.location,
+                                            date: study.period,
+                                            image: study.image
+                                        }}
+                                        lang={lang}
+                                        idx={idx}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* Summary Table Section */}
             {t.projects.summaryTable && (
                 <section className="py-24 bg-brand-light/30">
@@ -413,7 +428,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                                 {t.projects.summaryTableTitle}
                             </h2>
                         </div>
-                        
+
                         <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 border border-white/50 overflow-hidden">
                             <div className="overflow-x-auto">
                                 <table className="w-full text-left border-collapse">
@@ -452,7 +467,7 @@ export const Projects: React.FC<ProjectsProps> = ({ content, lang }) => {
                     {/* Background decorations */}
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse-slow"></div>
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-emerald/5 rounded-full blur-[120px] -ml-64 -mb-64 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-                    
+
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="text-center mb-20">
                             <h2 className="text-3xl md:text-5xl font-black mb-6">{t.projects.partnersTitle}</h2>

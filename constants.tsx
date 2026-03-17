@@ -6,7 +6,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       home: "Home",
       about: "About Us",
       services: "Services",
-      projects: "Experience",
+      fireSystems: "Fire Systems",
+      projects: "Our Projects",
       contact: "Contact",
       langLabel: "العربية"
     },
@@ -18,8 +19,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "Carbon Footprint & CBAM Reporting",
         "Quality Management Systems"
       ],
-      subtitle: "",
-      cta: "Explore Our Services"
+      subtitle: "Science .. Experience .. Legislation",
+      cta: "Request Consultation"
     },
     about: {
       title: "About Gardenia",
@@ -33,68 +34,59 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       missionText: "To provide integrated consulting solutions that help facilities achieve compliance, reduce impact, and transition toward cleaner development aligned with international standards.",
       policiesTitle: "Policies & Objectives",
       policiesItems: [
-          "Full commitment to national standards and international and regional agreements.",
-          "Providing distinguished services that achieve customer satisfaction and fulfill their environmental commitments.",
-          "Promoting the green economy through the application of Cleaner Production mechanisms.",
-          "Adopting Green Chemistry technologies and mechanisms to reduce pollution and climate change.",
-          "Supporting sustainability, reducing emissions, and calculating, managing, and reducing the carbon footprint of various facilities (Carbon Footprint & CBAM).",
-          "Building the capacity of industrial cadres of engineers and technicians in the fields of environmental management and occupational safety and security through specialized training programs according to the nature of each industry.",
-          "Assessing the environmental and social impacts of various projects (Environmental Social Impact Assessment)."
-        ],
-        specializationsTitle: "Our Specializations",
-        specializationsItems: [
-          "Preparation of Environmental and Social Impact Assessment (ESIA) studies.",
-          "Waste management (solid/hazardous) of all types (solid, liquid, and gaseous emissions).",
-          "Preparation of environmental records and records of hazardous materials and waste for various facilities.",
-          "Preparation of environmental compliance and sanitation plans for factories, companies, and various facilities.",
-          "Providing integrated solutions for water and industrial wastewater treatment.",
-          "Setting technical specifications and preparing reports for safety and security systems.",
-          "Setting technical specifications for X-Ray and Metal Gate baggage and metal detection devices.",
-          "Setting technical specifications for fire fighting and alarm systems.",
-          "Preparation of sustainability, carbon footprint, and CBAM reports for various sectors.",
-          "Preparation of economic and social impact studies for various activities.",
-          "Preparation of periodic coal reports for cement factories with consulting services to reduce gaseous emissions and Fuel Mix."
-        ],
-        addedValueTitle: "Value Added",
-        addedValueItems: [
-          "More than 25 years of practical experience in the field of environmental work and environmental consulting.",
-          "A team of environmental work experts, university professors specializing in environmental engineering, and certified consultants from the Ministry and the Environmental Affairs Agency in various fields of environmental work.",
-          "Extensive experience in many local and international projects in the fields of pollution control, waste management, environmental impact assessment, and environmental management studies.",
-          "Cooperation with international organizations (World Bank, GEF, USAID, JICA, UNDP, KfW, CIDA)."
-        ],
-        expertsTitle: "Our Experts",
-        expertsIntro: "The company relies on an elite group of experts, consultants, and university professors specialized in various environmental fields.",
-        expertsItems: [
-          "The team is led by Consultant Engineer Prof. Dr. Asmaa Sayed Hammouda, with extensive experience in environmental work with the Egyptian Ministry of Environment, EEAA, and international organizations.",
-          "Broad experience in national and international projects funded by major donors.",
-          "Safety, security, and firefighting consultants certified by the Syndicate of Engineers with extensive experience working with the Civil Defense Authority."
-        ],
-        drAsmaaTitle: "Prof. Dr. Asmaa Hammouda's Profile",
-        drAsmaaBio: [
-          "Professor of Chemical Engineering, Environmental Engineering, and Materials Engineering.",
-          "Head of the Department of Environmental Science and Industrial Development – Faculty of Postgraduate Studies for Advanced Sciences – Beni Suef University (2017-Present).",
-          "Director – Department of Environmental Science & Industrial Development (2017-Present).",
-          "Faculty member at the Faculty of Postgraduate Studies for Advanced Sciences, Beni Suef University (2013-Present).",
-          "Board member of the JICA Alumni Association (Since 2024).",
-          "Adjunct Professor – German International University (2024–2025).",
-          "Advisor to the Egyptian Minister of Environment (2012–2013).",
-          "Director of EIA for Industrial Projects at the Egyptian Environmental Affairs Agency (2007-2013).",
-          "Certified Consultant (EEAA) in: Hazardous Waste Management, ESIA Preparation & Review, and Pollution Abatement & Environmental Sanitation.",
-          "Consultant Engineer (Syndicate of Engineers) in Environmental Management since 2015.",
-          "Deputy Project Manager for JICA-funded PCBs Management Project (2005-2007).",
-          "Coordinator for National Environmental Inspection Plans at EEAA (1999-2005).",
-          "Over 28 years of international experience (USA, Canada, Japan, India, Thailand, Germany)."
-        ],
-        methodologyTitle: "How We Work",
-        methodologyText: [
-          "Studying the facility's situation and understanding its activity.",
-          "Identifying environmental and regulatory requirements and gaps.",
-          "Developing practical solutions that suit operational capabilities.",
-          "Preparing accurate and reliable reports.",
-          "Providing follow-up and technical support when needed.",
-          "Achieving effective compliance without negatively impacting workflow."
-        ]
-      },
+        "Full commitment to national standards and international and regional agreements.",
+        "Providing distinguished services that achieve customer satisfaction and fulfill their environmental commitments.",
+        "Promoting the green economy through the application of Cleaner Production mechanisms.",
+        "Adopting Green Chemistry technologies and mechanisms to reduce pollution and climate change.",
+        "Supporting sustainability, reducing emissions, and calculating, managing, and reducing the carbon footprint of various facilities (Carbon Footprint & CBAM).",
+        "Building the capacity of industrial cadres of engineers and technicians in the fields of environmental management and occupational safety and security through specialized training programs according to the nature of each industry.",
+        "Assessing the environmental and social impacts of various projects (Environmental Social Impact Assessment)."
+      ],
+      specializationsTitle: "Our Specializations",
+      specializationsItems: [
+        "Preparation of Environmental and Social Impact Assessment (ESIA) studies.",
+        "Waste management (solid/hazardous) of all types (solid, liquid, and gaseous emissions).",
+        "Preparation of environmental records and records of hazardous materials and waste for various facilities.",
+        "Preparation of environmental compliance and sanitation plans for factories, companies, and various facilities.",
+        "Providing integrated solutions for water and industrial wastewater treatment.",
+        "Setting technical specifications and preparing reports for safety and security systems.",
+        "Setting technical specifications for X-Ray and Metal Gate baggage and metal detection devices.",
+        "Setting technical specifications for fire fighting and alarm systems.",
+        "Preparation of sustainability, carbon footprint, and CBAM reports for various sectors.",
+        "Preparation of economic and social impact studies for various activities.",
+        "Preparation of periodic coal reports for cement factories with consulting services to reduce gaseous emissions and Fuel Mix."
+      ],
+      addedValueTitle: "Why Gardenia?",
+      addedValueItems: [
+        "An integrated model bridging academic expertise, governmental practice, and field application to deliver legislatively compliant and executable environmental solutions.",
+        "Providing practical solutions for environmental risk management and opportunities for environmental improvement at appropriate economic costs, beyond just paperwork.",
+        "Deep understanding of specialized environmental legislation and studies through a scientific-applied approach that effectively links science, law, and engineering.",
+        "Protecting projects, investments, and corporate reputation through environmental compliance, which we consider a strategic advantage rather than an administrative burden."
+      ],
+      expertsTitle: "Our Experts",
+      expertsIntro: "The company relies on an elite group of experts, consultants, and university professors specialized in various environmental fields.",
+      expertsItems: [
+        "The team is led by Consultant Engineer Prof. Dr. Asmaa Sayed Hammouda, with extensive experience in environmental work with the Egyptian Ministry of Environment, EEAA, and international organizations.",
+        "Broad experience in national and international projects funded by major donors.",
+        "Safety, security, and firefighting consultants certified by the Syndicate of Engineers with extensive experience working with the Civil Defense Authority."
+      ],
+      drAsmaaTitle: "Prof. Dr. Asmaa Hammouda's Profile",
+      drAsmaaBio: [
+        "Professor of Chemical Engineering, Environmental Engineering, and Materials Engineering.",
+        "Head of the Department of Environmental Science and Industrial Development – Faculty of Postgraduate Studies for Advanced Sciences – Beni Suef University (2017-Present).",
+        "Director – Department of Environmental Science & Industrial Development (2017-Present).",
+        "Faculty member at the Faculty of Postgraduate Studies for Advanced Sciences, Beni Suef University (2013-Present).",
+        "Board member of the JICA Alumni Association (Since 2024).",
+        "Adjunct Professor – German International University (2024–2025).",
+        "Advisor to the Egyptian Minister of Environment (2012–2013).",
+        "Director of EIA for Industrial Projects at the Egyptian Environmental Affairs Agency (2007-2013).",
+        "Certified Consultant (EEAA) in: Hazardous Waste Management, ESIA Preparation & Review, and Pollution Abatement & Environmental Sanitation.",
+        "Consultant Engineer (Syndicate of Engineers) in Environmental Management since 2015.",
+        "Deputy Project Manager for JICA-funded PCBs Management Project (2005-2007).",
+        "Coordinator for National Environmental Inspection Plans at EEAA (1999-2005).",
+        "Over 28 years of international experience (USA, Canada, Japan, India, Thailand, Germany)."
+      ]
+    },
     values: {
       title: "Our Values",
       description: "Our values guide every aspect of our work and shape our relationships with clients.",
@@ -102,18 +94,18 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         { title: "Compliance & Integrity", description: "Dedicated to full compliance with regulations while minimizing operational disruptions.", iconName: "Compliance" },
         { title: "Practical Solutions", description: "Delivering implementable solutions tailored to each factory’s conditions.", iconName: "Practical" },
         { title: "Sustainability", description: "Environmental protection is an opportunity to enhance efficiency and reduce costs.", iconName: "Sustainability" },
-        { title: "Quality & Accuracy", description: "Upholding the highest standards of scientific accuracy in all studies.", iconName: "Quality" },
+        { title: "Quality & Accuracy", description: "Upholding the highest standards of accuracy in all studies.", iconName: "Quality" },
         { title: "Long-Term Partnership", description: "Supporting clients from planning through ongoing operations.", iconName: "Partnership" },
         { title: "Capacity Building", description: "Empowering industrial teams to ensure long-term performance.", iconName: "Training" }
       ]
     },
     services: {
       title: "Our Services",
-      description: "Gardenia for Environmental and Scientific Consulting aims to provide integrated consulting solutions to industry in its various sectors, institutions, bodies, and government agencies in the fields of environmental management, pollution control, waste management of all kinds, and environmental and social impact assessment.",
+      description: "Gardenia for Environmental Consulting aims to provide integrated consulting solutions to industry in its various sectors, institutions, bodies, and government agencies in the fields of environmental management, pollution control, waste management of all kinds, and environmental and social impact assessment (ESIA). We help factories and establishments achieve compliance, reduce impacts, and transition toward sustainable development through specialized scientific and technical services.",
       items: [
         {
           title: "Environmental & Social Impact Assessment (ESIA)",
-          description: "We prepare ESIA studies for industrial and development projects, ensuring compliance with local and international environmental laws and requirements.",
+          description: "We prepare environmental and social impact assessment studies for industrial and development projects, ensuring compliance with local and international environmental laws and requirements, and helping obtain necessary approvals before construction, operation, or expansion.",
           iconName: "FileText",
           details: {
             en: "• Preparation of ESIA studies for factories, companies, and various facilities.\n• Ensuring compliance with local and international standards.\n• Facilitating necessary approvals before construction, operation, or expansion.",
@@ -184,6 +176,353 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           }
         }
       ]
+    },
+    fireSystems: {
+      hero: {
+        tag: "Fire Systems",
+        title: "Fire Alarm & Firefighting Systems",
+        subtitle: "Independent consultancy ensuring compliance, safety, and engineering integrity."
+      },
+      profile: {
+        title: "Company Profile",
+        text: "Gardenia for Consultancy is a professional engineering consultancy firm specializing in Fire Alarm and Firefighting Systems. The company provides independent consultancy services to governmental authorities, civil defense, industrial facilities, consultants, and developers, ensuring full compliance with international standards and local regulations."
+      },
+      vision: {
+        title: "Vision",
+        text: "To be a trusted consultancy partner in fire protection systems, recognized for engineering excellence, compliance, and safety leadership."
+      },
+      mission: {
+        title: "Mission",
+        text: "To deliver safe, compliant, and efficient fire protection consultancy services that safeguard lives, assets, and facilities."
+      },
+      scope: {
+        title: "Scope of Services",
+        items: [
+          {
+            title: "Fire Alarm System Design Review",
+            description: "Reviewing and validating fire alarm system designs to ensure full compliance and performance.",
+            iconName: "FileText"
+          },
+          {
+            title: "Firefighting System Design & Evaluation",
+            description: "Technical evaluation of firefighting systems for code compliance and operational reliability.",
+            iconName: "ShieldCheck"
+          },
+          {
+            title: "Authority Submission Support",
+            description: "Preparation and coordination of documentation for authority approvals and civil defense submissions.",
+            iconName: "FolderOpen"
+          },
+          {
+            title: "Site Supervision & Inspection",
+            description: "On-site supervision, inspections, and compliance checks during installation and execution.",
+            iconName: "Users"
+          },
+          {
+            title: "Testing & Commissioning Review",
+            description: "Review of testing, commissioning, and handover documentation to verify system readiness.",
+            iconName: "Award"
+          },
+          {
+            title: "Compliance & Risk Assessment",
+            description: "Risk assessment and compliance verification against applicable codes and regulations.",
+            iconName: "Compliance"
+          }
+        ]
+      },
+      standards: {
+        title: "Standards & Codes",
+        items: [
+          "NFPA Standards",
+          "EN Standards",
+          "Local Civil Defense regulations"
+        ]
+      },
+      leadership: {
+        title: "Engineering Leadership",
+        name: "Eng. Khaled Eid Mohamed Ibrahim",
+        role: "Senior Fire Protection Consultant",
+        summary: "Senior engineer with extensive experience in fire alarm and firefighting systems, safety management, and quality assurance across major national infrastructure projects."
+      },
+      sectors: {
+        title: "Sectors Served",
+        items: [
+          "Governmental Projects",
+          "Civil Defense & Public Facilities",
+          "Industrial Plants & Factories",
+          "Commercial & Residential Buildings",
+          "Infrastructure & Transportation Projects"
+        ]
+      },
+      why: {
+        title: "Why Gardenia",
+        items: [
+          "Independent professional consultancy",
+          "Strong compliance-driven approach",
+          "Extensive site and authority coordination experience",
+          "Commitment to safety and engineering integrity"
+        ]
+      },
+      cv: {
+        title: "Professional Profile",
+        contactLabel: "Contact Details",
+        contact: {
+          name: "Khaled Eid Mohamed Ibrahim",
+          location: "New Cairo, Cairo, Egypt",
+          phone: "(+2) 01021938285",
+          emails: ["khaled_eid1188@yahoo.com", "khaled@gardenia.eg"]
+        },
+        sections: [
+          {
+            title: "Profile",
+            items: [
+              "33 years' experience in health and safety, quality control systems, and fire alarm and fire systems consultancy.",
+              "21 years as an engineer in Egyptian Military of Defence (MOD).",
+              "12 years in Egyptian National Authority for Tunnels (NAT) as consultant of fire systems and security systems (metal gate devices and X-ray devices).",
+              "IRCA Certified Auditor in Occupational Health and Safety.",
+              "Consultant of Safety and Security Systems by Egyptian Engineers Syndicate.",
+              "Expertise in: fire fighting systems, fire alarm systems and interfaces, security systems (X-ray and metal gate), occupational health and safety, and quality control systems.",
+              "Electro-mechanical works for military production companies and metro projects, including quality and safety systems, documentation, training, audits, root-cause analysis, accident reduction, work permits, safety plans, emergency plans, and safety evacuation."
+            ]
+          },
+          {
+            title: "Detailed Experience",
+            items: [
+              "Egyptian National Authority for Tunnels (NAT) - 12 years:",
+              "General Manager Works in Greater Cairo Metro fire systems (fire detection and firefighting systems, fire alarm systems and interfaces).",
+              "Security systems including X-ray systems and metal gate systems.",
+              "Establish the safety plan for projects.",
+              "Establish the evacuation plan.",
+              "Prepare, revise, and update activity plans.",
+              "Schedule safety induction for managers, supervisors, and workers.",
+              "Investigate and analyze accidents and incidents.",
+              "Schedule safety project activities.",
+              "Update management on legal requirements on health, safety, and welfare, codes of practice, and safety literature.",
+              "Improve existing working methods and introduce new developments.",
+              "Perform daily site inspections.",
+              "Promote safety awareness, inspect work areas, correct unsafe practices.",
+              "Provide and ensure proper use of protective and safety equipment.",
+              "Plan and implement safety audits.",
+              "Participate in production meetings.",
+              "Keep contact with local organizations.",
+              "Organize firefighting and first aider trainings.",
+              "Ensure safety and environment posters campaigns.",
+              "Egyptian Military of Defence (MOD) - 21 years:",
+              "Responsible for establishing quality control systems, safety plans, and safety evacuation for projects in military production companies.",
+              "Responsible for continual improvement of procedures and processes affecting production quality.",
+              "Responsible for auditing to ensure system progress and control problems and risks.",
+              "Responsible for realizing operational safety factors during all activities.",
+              "Develop with operation planning department the overall operational plan for projects.",
+              "Develop rules, handbooks, policies, and procedures for operation.",
+              "Responsible for regulation, training, staffing, timetabling, and degraded mode operation."
+            ]
+          },
+          {
+            title: "Skills",
+            items: [
+              "Operation Training",
+              "Quality behavior",
+              "Process improvement",
+              "Presentation skills",
+              "Team building",
+              "PMP"
+            ]
+          },
+          {
+            title: "Management",
+            items: [
+              "HSE",
+              "Computer software",
+              "Team player",
+              "Research and development",
+              "Maintenance activities"
+            ]
+          },
+          {
+            title: "Accomplishments",
+            items: [
+              "Statistical Analysis: Performed data collection and statistical analysis that resulted in sound recommendations adopted for project improvement.",
+              "Presentation: Created presentation materials for different topics (HSE, Quality, etc.).",
+              "Project Management: Supervised production efforts to ensure projects were completed to company standards on time and within budget.",
+              "Research and Development: Managed R&D requirements to find solutions for obsolete components and maintain high reliability.",
+              "Strategic Management: Supervised and directed 250 employees on a maintenance project, improving yield and company revenue.",
+              "Customer Satisfaction: Built strong relationships and communication with customers to maintain satisfaction."
+            ]
+          },
+          {
+            title: "Professional Experience",
+            items: [
+              "Recent Position: Consultant Engineer - National Authority for Tunnels (NAT), Egypt.",
+              "HSE Manager (2016-Present).",
+              "NAT (2013-2016).",
+              "Establish, manage, and monitor standards, processes, communications, training, and systems to ensure HSE effectiveness across the transport organization in Egypt with top management support.",
+              "Maintain NAT IFR rate and take necessary action to improve it to meet objectives.",
+              "Perform induction and professional training.",
+              "Develop and maintain systems to measure performance against established standards.",
+              "Monitor performance and take necessary action to communicate, advise, and assist based on performance levels.",
+              "Integrate standards created by external bodies within internal quality management systems.",
+              "Report on changes in standards and performance against standards.",
+              "Manage staff according to company standards (appraisals, discipline, training, development).",
+              "Manage departmental performance against targets and budgets within policies and standards.",
+              "Provide adequate first-aid and welfare facilities and support.",
+              "Provide suitable and current information and supervision concerning health and safety policies and practices.",
+              "Assess risks to health and safety and implement measures from assessments.",
+              "Manage all safety programs and occupational health activities; coordinate inspections and investigations aligned to HSE plans.",
+              "Arrange training programs to build competencies for identifying and rectifying unsafe acts and conditions.",
+              "Plan and organize audits, prepare and review audit reports, and follow up on corrective and preventive measures.",
+              "Conduct hazard identification and risk assessment studies and coordinate mitigation plans.",
+              "Plan and coordinate safety, firefighting, and emergency response drills for all personnel.",
+              "Inspect safety and firefighting equipment, signage, and emergency exit provisions.",
+              "Enforce OHS rules through patrols and compliance by company and subcontractors.",
+              "Prepare management and statutory reports on safety statistics (accident rate, severity rate, frequency rate, lost time) for root-cause analysis and corrective actions.",
+              "Egyptian Military of Defense (MOD) - Jul 1992 to Jan 2013.",
+              "Chief Branch of QHSE in Egyptian Quality Agency of Armed Forces (QAAF) - 2002-2013.",
+              "Ensure and enforce QHSE management system effectiveness across military production factories with top management support.",
+              "Delegated from Project Manager for quality topics at each project level; ensures quality and carries out necessary actions.",
+              "Ensure Project Manager visibility on quality aspects of projects.",
+              "Represent Project Manager before the customer for quality.",
+              "Monitor Q indicators of various work packages.",
+              "Define and deploy internal processes for project quality management system.",
+              "Ensure customer satisfaction within contract framework.",
+              "Ensure conformity of products/services and QA processes.",
+              "Ensure quality performance management and improvement action plans.",
+              "Ensure visibility on project issues and corresponding process issues.",
+              "Drive reductions in cost of non-quality and deploy business excellence culture.",
+              "Develop and implement quality management strategy and plans.",
+              "Develop and maintain systems to establish standards for activities and products.",
+              "Develop and maintain systems to measure performance against standards.",
+              "Monitor performance and take necessary actions for communication and assistance.",
+              "Integrate standards created by external bodies within internal quality management systems.",
+              "Establish communication strategy for quality awareness across departments.",
+              "Plan and manage departmental activities according to budgets, timescales, and activities.",
+              "Report on changes in standards and performance against standards.",
+              "Manage staff according to company standards (appraisals, discipline, training, development).",
+              "Manage departmental performance against targets and budgets within policies and standards.",
+              "Liaise with customers and suppliers on quality issues.",
+              "Ensure suitable health and safety policy, safe workplace, and safe plant/machinery.",
+              "Ensure safe movement, storage, and use of articles and substances.",
+              "Provide first-aid and welfare facilities.",
+              "Provide information and supervision on H&S policies and practices.",
+              "Assess risks and implement measures.",
+              "Provide emergency procedures, safety signs, and incident reporting.",
+              "Liaise with authorities and assist audits and remedial actions.",
+              "Ensure workplace satisfies H&S welfare requirements.",
+              "Control exposure to hazardous substances and other risks.",
+              "Surveillance and reporting on H&S practices and systems.",
+              "Recruitment, selection, management, and development of H&S staff.",
+              "Project Manager (1997-2002):",
+              "Responsible for all project execution and deliverables.",
+              "Responsible for financial and sales activities.",
+              "Follow project activity plans.",
+              "Execute preventive, corrective, overhauling, and online maintenance activities.",
+              "Plan project staffing, training, organization, and schedules.",
+              "Manage spare parts, obsolescence, and R&D.",
+              "Manage train software.",
+              "Customer relations and satisfaction.",
+              "Sustain target margin for maintenance project and improve GM by variation order.",
+              "Ensure monthly payments on time without penalties.",
+              "Gather data for performance contract preparation.",
+              "Deploy HSE and quality according to organization standards.",
+              "Manage overall project scope of work and maximize standardization.",
+              "Deliver on time and maintain required availability and performance.",
+              "Maximize profit.",
+              "Organize and deploy team; define OBS and interfaces.",
+              "Ensure effective reporting and timely documentation.",
+              "Manage risk and opportunity action plans.",
+              "Manage contract management with customer and suppliers.",
+              "Maintain high customer satisfaction through communication and liaison.",
+              "Maintenance Team Leader and Quality Manager (1992-1997):",
+              "Ensure correct execution of corrective and preventive maintenance activities.",
+              "Manage site maintenance plan and meet objectives within timescales.",
+              "Manage operational team to meet maintenance targets.",
+              "Manage operations to ensure safe work and compliance.",
+              "Coach and develop individuals through appraisal and training.",
+              "Communicate via meetings, briefings, KPIs.",
+              "Participate in continuous improvement culture within metro projects.",
+              "Manage staff availability and training requirements.",
+              "Manage attendance per policies and procedures.",
+              "Participate in emergency on-call roster.",
+              "Manage team's daily work to meet contractual targets.",
+              "Supervise team performance and handle disciplinary issues.",
+              "Ensure compliance with ISO standards and quality procedures.",
+              "Communicate proactively using toolbox talks and team briefs.",
+              "Carry out maintenance duties and act as a continuous improvement facilitator.",
+              "Execute and deliver testing and commissioning activities.",
+              "Prepare test planning and completion timeframe.",
+              "Coordinate T&C works and timeslots.",
+              "Organize customer contacts and administer anomalies.",
+              "Prepare and report solutions related to the project.",
+              "Ensure completion of testing per plan and commissioning to customer satisfaction.",
+              "Analyze tests to be performed and comment on installation test reports.",
+              "Carry out testing as per procedures and prepare test reports.",
+              "Ensure technical safety of systems from erection to handover.",
+              "Coordinate engineering support for accreditation and registration.",
+              "Factory test software, function test, and integration.",
+              "Function and integration tests, PTO and EWP."
+            ]
+          },
+          {
+            title: "Education and Training",
+            items: [
+              "B.Sc. of Engineering, Communication Department, Military Technical College, Cairo, Egypt (1992).",
+              "Training course: Expert in implementation of occupational health & safety management systems - TUV Rheinland.",
+              "Training course: OH & MS Auditor/Lead Auditor based on OHSAS 18001:2007 - IRCA (URS Egypt).",
+              "Training course: Approved QMS Auditor/Lead Auditor - IRCA (AJA Academy, Egypt).",
+              "Training course: Understanding & implementing ISO/IEC 17021:2011 - Egyptian Accreditation Council.",
+              "Training course: ISO/IEC 17025 Internal Auditor - Egyptian Accreditation Council.",
+              "Training course: Total Quality Management Estimation of Uncertainty of Testing Results - National Institute of Standards.",
+              "Training course: Designing Quality Systems according to ISO/IEC 17025/2005 - National Institute of Standards.",
+              "Training course: Information Security Management System (ISMS) - Egyptian Society for Quality.",
+              "Training course: Malcolm Baldrige National Award - American Supplier Institute International.",
+              "Training course: Risk Management - Target Group for Performance Improvement.",
+              "Training program: Principles of modern electronics and calibration.",
+              "Training program: Monitor and ensure quality, safety, and environment - Armament Authority of the Armed Forces.",
+              "Training program: Total Quality Management - Armament Authority of the Armed Forces.",
+              "Training program: Lean Management - National Institute for Quality."
+            ]
+          },
+          {
+            title: "Professional Membership",
+            items: [
+              "Egyptian Society for Quality",
+              "Federation of Arab Engineers",
+              "IRCA Membership",
+              "Egyptian Syndicate of Engineers in Egypt",
+              "Consultant of Safety and Security Systems by Egyptian Engineers Syndicate"
+            ]
+          },
+          {
+            title: "Professional Training",
+            items: [
+              "2024 - Firefighting control panel (Canada).",
+              "2023 - Smoke systems (UAE).",
+              "2022 - Firefighting pump (USA).",
+              "2021 - Signaling systems (France).",
+              "2020 - Inspection SCADA System for Kozzika workshop Line 1 (Alstom-India).",
+              "2017 - Inspection for Elevators Line 3 Phase 4 Part 1 (Kone-Finland).",
+              "2015 - Visiting Metro Paris Line 13 and Line 14 (France).",
+              "2012 - Main Maintenance and Repair training course (China).",
+              "2011 - Certified Auditor QMS 9001/2008 (IRCA-UK).",
+              "2010 - Certified Auditor OHSAS 18001/2007 (IRCA-UK).",
+              "2010 - Total Quality Management Conference (USA).",
+              "2009 - Main Maintenance and Repair training course (Russia).",
+              "2006 - Site Level Maintenance and Repair training course (USA).",
+              "2002 - Main Maintenance and Repair training course (USA).",
+              "1999 - Site Level Maintenance and Repair training course (USA)."
+            ]
+          },
+          {
+            title: "Additional Information",
+            items: [
+              "Date of Birth: 22 Feb. 1970",
+              "Languages: Arabic & English",
+              "Nationality: Egyptian",
+              "Driving License: Egyptian",
+              "Software: MS Office, Internet"
+            ]
+          }
+        ]
+      }
     },
     industries: {
       title: "Industries We Serve",
@@ -267,52 +606,52 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "Environmental & Social Impact Assessments (ESIA)",
           projects: [
-            { 
-              name: "ESIA for Interior Ministry Officers Housing Complex (24 Buildings)", 
-              client: "Al-Walaa Cooperative Society", 
-              location: "Beni Suef", 
+            {
+              name: "ESIA for Interior Ministry Officers Housing Complex (24 Buildings)",
+              client: "Al-Walaa Cooperative Society",
+              location: "Beni Suef",
               date: "2025",
               image: "/studies/study-19.png"
             },
-            { 
-              name: "ESIA (Form B) for Marine Intake - Salt Works Expansion", 
-              client: "Amr Ibrahim Al-Hattab Salt Trading", 
-              location: "Red Sea (Ras Ghareb)", 
+            {
+              name: "ESIA (Form B) for Marine Intake - Salt Works Expansion",
+              client: "Amr Ibrahim Al-Hattab Salt Trading",
+              location: "Red Sea (Ras Ghareb)",
               date: "2021",
               image: "/studies/study-18.png"
             },
-            { 
-              name: "ESIA (Form B) for Hazardous (Medical) Waste Incinerator", 
-              client: "Al-Salam Factory (CLEAN)", 
-              location: "Cairo (Al-Salam City)", 
+            {
+              name: "ESIA (Form B) for Hazardous (Medical) Waste Incinerator",
+              client: "Al-Salam Factory (CLEAN)",
+              location: "Cairo (Al-Salam City)",
               date: "2019",
               image: "/studies/study-17.png"
             },
-            { 
-              name: "ESIA (Form B) for Hazardous (Medical) Waste Incinerator", 
-              client: "Dar Al-Mona Resort for Medical Services", 
-              location: "Giza", 
+            {
+              name: "ESIA (Form B) for Hazardous (Medical) Waste Incinerator",
+              client: "Dar Al-Mona Resort for Medical Services",
+              location: "Giza",
               date: "2019",
               image: "/studies/study-16.png"
             },
-            { 
-              name: "ESIA (Form B) for Hazardous/Solid Waste Transport", 
-              client: "New Valley Environmental Services", 
-              location: "Giza to Alexandria", 
+            {
+              name: "ESIA (Form B) for Hazardous/Solid Waste Transport",
+              client: "New Valley Environmental Services",
+              location: "Giza to Alexandria",
               date: "2017",
               image: "/studies/study-15.png"
             },
-            { 
-              name: "ESIA (Form B) for 6th of October Landfill Operation & Safe Burial", 
-              client: "New Valley Environmental Services", 
-              location: "Giza", 
+            {
+              name: "ESIA (Form B) for 6th of October Landfill Operation & Safe Burial",
+              client: "New Valley Environmental Services",
+              location: "Giza",
               date: "2018",
               image: "/studies/study-14.png"
             },
-            { 
-              name: "ESIA (Category C) for Carbon Black Production", 
-              client: "Borg Al-Arab for Development & Investment", 
-              location: "Beni Suef (Heavy Industry Zone)", 
+            {
+              name: "ESIA (Category C) for Carbon Black Production",
+              client: "Borg Al-Arab for Development & Investment",
+              location: "Beni Suef (Heavy Industry Zone)",
               date: "2013",
               image: "/studies/study-13.png"
             }
@@ -321,52 +660,59 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "Industrial Development Authority (IDA) Technical Files",
           projects: [
-            { 
-              name: "Environmental Study for Fertilizer Industry", 
-              client: "Al-Taknia for Fertilizers", 
-              location: "Bayad Al-Arab Industrial Zone", 
+            {
+              name: "Environmental Study for Fertilizer Industry",
+              client: "Al-Taknia for Fertilizers",
+              location: "Bayad Al-Arab Industrial Zone",
               date: "2023",
               image: "/studies/study-12.png"
             },
-            { 
-              name: "Environmental File for Medical Food", 
-              client: "Nitramed International", 
-              location: "10th of Ramadan City", 
+            {
+              name: "Environmental File for Medical Food",
+              client: "Nitramed International",
+              location: "10th of Ramadan City",
               date: "2022",
               image: "/studies/study-11.png"
             },
-            { 
-              name: "Technical File", 
-              client: "Nitrapharm International", 
-              location: "10th of Ramadan City", 
+            {
+              name: "Technical File",
+              client: "Nitrapharm International",
+              location: "10th of Ramadan City",
               date: "2020",
               image: "/studies/study-10.png"
             },
-            { 
-              name: "Environmental File for Ready-Mix Concrete Station", 
-              client: "Concrete Plus for Engineering", 
-              location: "New Alamein City", 
-              date: "2020",
-              image: "/studies/study-9.png"
+            {
+              name: "Initial Environmental Impact Assessment for the Project of Carbon Black",
+              client: "Borg El-Arab Company for Development & Investment (SAE)",
+              location: "Banysweaf Governorate",
+              date: "Production Capacity 70 Thousand Tons per Year",
+              image: "/studies/study-25.png"
             },
-            { 
-              name: "Technical File for Ready-Mix Concrete Station", 
-              client: "Concrete Plus for Engineering", 
-              location: "New Alamein City", 
+            {
+              name: "Environmental File for Ready-Mix Concrete Station",
+              client: "Concrete Plus for Engineering",
+              location: "New Alamein City",
               date: "2020",
-              image: "/studies/study-8.png"
+              image: "/studies/study-24.png"
             },
-            { 
-              name: "Environmental File for Corrugated Cardboard Manufacturing", 
-              client: "Sealed Air", 
-              location: "10th of Ramadan City", 
+            {
+              name: "Technical File for Ready-Mix Concrete Station",
+              client: "Concrete Plus for Engineering",
+              location: "New Alamein City",
+              date: "2020",
+              image: "/studies/study-23.png"
+            },
+            {
+              name: "Environmental File for Corrugated Cardboard Manufacturing",
+              client: "Sealed Air",
+              location: "10th of Ramadan City",
               date: "2018",
-              image: "/studies/study-7.png"
+              image: "/studies/study-22.png"
             },
-            { 
-              name: "Technical File for Paints & Chemicals Industry", 
-              client: "International Islamic Co. for Paints", 
-              location: "10th of Ramadan City", 
+            {
+              name: "Technical File for Paints & Chemicals Industry",
+              client: "International Islamic Co. for Paints",
+              location: "10th of Ramadan City",
               date: "2018",
               image: "/studies/study-6.png"
             }
@@ -375,17 +721,17 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "Fire Alarm & Fighting System Inspection Reports",
           projects: [
-            { 
-              name: "Fire Alarm & Fighting System Description (Scaffolding & Metal Formwork Warehouse)", 
-              client: "Pioneers for Industries", 
-              location: "6th of October City", 
+            {
+              name: "Fire Alarm & Fighting System Description (Scaffolding & Metal Formwork Warehouse)",
+              client: "Pioneers for Industries",
+              location: "6th of October City",
               date: "2020",
               image: "/studies/study-5.png"
             },
-            { 
-              name: "Fire Alarm & Fighting System Description (Foam & Plastic Packaging Factory)", 
-              client: "Misr El Hegaz for Pipe Fittings", 
-              location: "10th of Ramadan City", 
+            {
+              name: "Fire Alarm & Fighting System Description (Foam & Plastic Packaging Factory)",
+              client: "Misr El Hegaz for Pipe Fittings",
+              location: "10th of Ramadan City",
               date: "2020",
               image: "/studies/study-4.png"
             }
@@ -394,24 +740,24 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "Boiler Validity & Engineering Inspection Reports",
           projects: [
-            { 
-              name: "Boiler Validity Report (No. 90800400)", 
-              client: "Feedmix Egypt (Animal Feed)", 
-              location: "Beni Suef (Medium Industry Zone)", 
+            {
+              name: "Boiler Validity Report (No. 90800400)",
+              client: "Feedmix Egypt (Animal Feed)",
+              location: "Beni Suef (Medium Industry Zone)",
               date: "2018",
               image: "/studies/study-3.png"
             },
-            { 
-              name: "Boiler Validity Report (No. 3186)", 
-              client: "Beni Suef Animal Feed", 
-              location: "Beni Suef (Bayad Al-Arab)", 
+            {
+              name: "Boiler Validity Report (No. 3186)",
+              client: "Beni Suef Animal Feed",
+              location: "Beni Suef (Bayad Al-Arab)",
               date: "2018",
               image: "/studies/study-2.png"
             },
-            { 
-              name: "Boiler Validity Report (No. 21152)", 
-              client: "Quality Pack (Inks & Packaging)", 
-              location: "Fayoum (Kom Oshim)", 
+            {
+              name: "Boiler Validity Report (No. 21152)",
+              client: "Quality Pack (Inks & Packaging)",
+              location: "Fayoum (Kom Oshim)",
               date: "2018",
               image: "/studies/study-1.png"
             }
@@ -446,8 +792,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       subtitle: "We are ready to support your facility at every step toward environmental compliance.",
       emailLabel: "Email",
       phoneLabel: "Phone",
-      phoneNumbers: ["+2 01067096677"],
-      emails: ["info@gardenia.eg"],
+      phoneNumbers: ["+2-01067096677", "+2-01096677671"],
+      emails: ["info@gardeniaec.com"],
       address: "Compound Ashgar Darna - Building A5 - 1st Floor - Maadi - Cairo",
       sendButton: "Send Message",
       formName: "Your Name",
@@ -457,6 +803,11 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     footer: {
       rights: "All rights reserved Gardenia Environmental Consulting © 2026",
       address: "Compound Ashgar Darna - Building A5 - 1st Floor - Maadi - Cairo"
+    },
+    social: {
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+      instagram: "https://instagram.com"
     }
   },
   ar: {
@@ -464,7 +815,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       home: "الرئيسية",
       about: "من نحن",
       services: "خدماتنا",
-      projects: "خبراتنا",
+      fireSystems: "أنظمة الحريق",
+      projects: "نماذج مشروعاتنا",
       contact: "تواصل معنا",
       langLabel: "English"
     },
@@ -476,7 +828,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "تقارير البصمة الكربونية وCBAM",
         "نظم إدارة الجودة"
       ],
-      subtitle: "",
+      subtitle: "علم .. خبرة .. تشريع",
       cta: "تعرف على خدماتنا"
     },
     about: {
@@ -488,70 +840,48 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       visionTitle: "رؤيتنا",
       visionText: "نسعى لأن نكون من الشركات الرائدة إقليمياً في مجال الاستشارات البيئية، والشريك الموثوق للمصانع في تحقيق الامتثال البيئي والتنمية الصناعية النظيفة.",
       missionTitle: "رسالتنا",
-      missionText: "تقديم حلول واستشارات بيئية وعلمية متكاملة تساعد المصانع على الالتزام بالقوانين، وتقليل التأثيرات السلبية، ودعم التحول نحو الاستدامة.",
+      missionText: "تقديم حلول واستشارات بيئية متكاملة تساعد المصانع على الالتزام بالقوانين، وتقليل التأثيرات السلبية، ودعم التحول نحو الاستدامة.",
       policiesTitle: "السياسات والأهداف",
       policiesItems: [
-          "الالتزام الكامل بالمعايير الوطنية والاتفاقيات الدولية والاقليمية.",
-          "تقديم خدمات متميزة تحقق رضا العملاء وتفي بالتزامتهم البيئية.",
-          "تعزيز الاقتصاد الأخضر عبر تطبيق اليات الانتاج الانظف المسئول Cleaner Production",
-          "تبني تكنولوجيات واليات الكيمياء الخضراء Green Chemistry للحد من التلوث والتغيرات المناخية .",
-          "دعم الاستدامة وتقليل الانبعاثات وحساب وادارة وخفض البصمة الكربونية للمنشات المختلفة (Carbon Footprint & CBAM)",
-          "بناء قدرات الكوادر الصناعية من المهندسين والفنين في مجالات الادارة البيئية والامن والسلامة المهنية عبر برامج تدريبية متخصصة طبقا لطبيعة كل صناعة .",
-          "تقييم الاثار البيئية والاجتماعية للمشاريع المختلفة Environmental Social Impact Assessment"
-        ],
-        specializationsTitle: "تخصصات الشركة",
-        specializationsItems: [
-          "إعداد دراسات تقييم الأثر البيئي والاجتماعي.",
-          "إدارة المخلفات (الصلبة/الخطرة) بكافة انواعها ( الصلبة والسائلة والانبعاثات الغازية).",
-          "إعداد السجلات البيئية وسجلات المواد والمخلفات الخطرة للمنشات المختلفة.",
-          "إعداد خطط التوافق والاصحاح البيئي للمصانع والشركات والمنشات المختلفة.",
-          "تقديم حلول متكاملة لمعالجة المياه والصرف الصناعي.",
-          "وضع المواصفات الفنية واعداد التقارير الخاصة بانظمة السلامة والامان",
-          "وضع المواصفات الفنية لاجهزة الكشف عن الحقائب والكشف عن المعادن X-Ray and Metal Gate",
-          "وضع المواصفات الفنية الخاصة بأنظمة مكافحة وانذار الحريق",
-          "اعداد تقارير الاستدامة والبصمة الكربونية وCBAM للقطاعات المختلفة",
-          "اعداد دراسات الاثر الاقتصادي والاجتماعي للانشطة المختلفة",
-          "اعداد التقارير الدورية للفحم لمصانع الاسمنت مع تقديم خدمات استشارية للحد من الانبعاثات الغازية و Fuel Mix"
-        ],
-        addedValueTitle: "القيمة المضافة",
-        addedValueItems: [
-          "أكثر من 25 عامًا خبرة عملية في مجال العمل البيئي والاستشارات البيئية.",
-          "فريق من خبراء العمل البيئي والأساتذة الجامعيين المتخصصين في الهندسة البيئية والاستشاريين المعتمدين من وزارة وجهاز شئون البيئة في مجالات العمل البيئي المختلفة.",
-          "خبرة واسعة في العديد من المشاريع المحلية والدولية في مجالات الحد من التلوث وادارة المخلفات وتقييم الاثر البيئي ودراسات الادارة البيئية.",
-          "تعاون مع منظمات عالمية (World Bank, GEF, USAID, JICA, UNDP, KfW, CIDA)."
-        ],
-        expertsTitle: "الكوادر والخبراء",
-        expertsIntro: "تعتمد الشركة على نخبة من الخبراء والاستشاريين وأساتذة الجامعات المتخصصين في المجالات البيئية المختلفة.",
-        expertsItems: [
-          "يترأس فريق العمل استشاري مهندس الأستاذة الدكتورة أسماء سيد حموده، والتي لها خبرة طويلة ومتنوعة في مجال العمل البيئي مع جهاز شئون البيئة ووزارة البيئة وجهات دولية.",
-          "خبرات واسعة في مشاريع وطنية ودولية بتمويل من جهات مانحة كبرى.",
-          "استشاريو السلامة والأمن ومكافحة الحريق معتمدون من نقابة المهندسين ولهم خبرة طويلة في العمل مع هيئة الحماية المدنية."
-        ],
-        drAsmaaTitle: "أ.د/ أسماء حمودة",
-        drAsmaaBio: [
-          "أستاذ الهندسة الكيميائية والهندسة البيئية وهندسة المواد.",
-          "رئيس قسم العلوم البيئية والتنمية الصناعية – كلية الدراسات العليا للعلوم المتقدمة – جامعة بني سويف (2017 - حتى الآن).",
-          "Director – Department of Environmental Science & Industrial Development (2017-Present).",
-          "عضو هيئة تدريس بكلية الدراسات العليا للعلوم المتقدمة بجامعة بني سويف (2013 - حتى الآن).",
-          "عضو مجلس إدارة جمعية أصدقاء الجايكا اليابانية (منذ 2024).",
-          "أستاذ زائر بالجامعة الألمانية الدولية (2024–2025).",
-          "مستشار وزير البيئة المصري (2012–2013).",
-          "مدير إدارة تقييم الأثر البيئي للمشروعات الصناعية بجهاز شئون البيئة المصري (2007-2013).",
-          "استشاري معتمد من وزارة البيئة في: إدارة المخلفات الخطرة، إعداد ومراجعة دراسات تقييم الأثر البيئي، ودراسات الحد من التلوث والاصحاح البيئي.",
-          "استشاري مهندس من نقابة المهندسين المصرية في مجالات الإدارة البيئية منذ عام 2015.",
-          "نائب مدير مشروع إدارة المواد الخطرة (PCBs) الممول من JICA (2005-2007).",
-          "منسق ومسئول إعداد خطط التفتيش البيئي لجمهورية مصر العربية بجهاز شئون البيئة (1999-2005).",
-          "أكثر من 28 عامًا خبرة دولية في مجال العمل البيئي وإدارة المخلفات (الولايات المتحدة، كندا، اليابان، الهند، تايلاند، ألمانيا)."
-        ],
-        methodologyTitle: "منهجية العمل",
-        methodologyText: [
-          "دراسة وضع المنشأة وفهم نشاطها.",
-          "تحديد المتطلبات والفجوات البيئية والتنظيمية.",
-          "تطوير حلول عملية تتناسب مع الإمكانيات التشغيلية.",
-          "إعداد تقارير دقيقة وقابلة للاعتماد.",
-          "توفير المتابعة والدعم الفني عند الحاجة.",
-          "تحقيق التزام فعال دون التأثير السلبي على سير العمل."
-        ]
+        "الالتزام الكامل بالمعايير الوطنية والاتفاقيات الدولية والاقليمية.",
+        "تقديم خدمات متميزة تحقق رضا العملاء وتفي بالتزامتهم البيئية.",
+        "تعزيز الاقتصاد الأخضر عبر تطبيق اليات الانتاج الانظف المسئول Cleaner Production",
+        "تبني تكنولوجيات واليات الكيمياء الخضراء Green Chemistry للحد من التلوث والتغيرات المناخية .",
+        "دعم الاستدامة وتقليل الانبعاثات وحساب وادارة وخفض البصمة الكربونية للمنشات المختلفة (Carbon Footprint & CBAM)",
+        "بناء قدرات الكوادر الصناعية من المهندسين والفنين في مجالات الادارة البيئية والامن والسلامة المهنية عبر برامج تدريبية متخصصة طبقا لطبيعة كل صناعة .",
+        "تقييم الاثار البيئية والاجتماعية للمشاريع المختلفة Environmental Social Impact Assessment"
+      ],
+      specializationsTitle: "تخصصات الشركة",
+      specializationsItems: [
+        "إعداد دراسات تقييم الأثر البيئي والاجتماعي.",
+        "إدارة المخلفات (الصلبة/الخطرة) بكافة انواعها ( الصلبة والسائلة والانبعاثات الغازية).",
+        "إعداد السجلات البيئية وسجلات المواد والمخلفات الخطرة للمنشات المختلفة.",
+        "إعداد خطط التوافق والاصحاح البيئي للمصانع والشركات والمنشات المختلفة.",
+        "تقديم حلول متكاملة لمعالجة المياه والصرف الصناعي.",
+        "وضع المواصفات الفنية واعداد التقارير الخاصة بانظمة السلامة والامان",
+        "وضع المواصفات الفنية لاجهزة الكشف عن الحقائب والكشف عن المعادن X-Ray and Metal Gate",
+        "وضع المواصفات الفنية الخاصة بأنظمة مكافحة وانذار الحريق",
+        "اعداد تقارير الاستدامة والبصمة الكربونية وCBAM للقطاعات المختلفة",
+        "اعداد دراسات الاثر الاقتصادي والاجتماعي للانشطة المختلفة",
+        "اعداد التقارير الدورية للفحم لمصانع الاسمنت مع تقديم خدمات استشارية للحد من الانبعاثات الغازية و Fuel Mix"
+      ],
+      addedValueTitle: "لماذا نحن؟",
+      addedValueItems: [
+        "نموذج متكامل يدمج بين الخبرة الأكاديمية والممارسة الحكومية والتطبيق العملي، لتقديم حلول بيئية متوافقة تشريعياً وقابلة للتنفيذ.",
+        "تاريخ حافل بالمشاريع الناجحة مع جهات حكومية ومنظمات دولية كبرى.",
+        "تقديم حلول عملية في إدارة المخاطر البيئية وفرص تحسين الوضع البيئي بتكلفة اقتصادية ملائمة وليس مجرد إعداد مستندات.",
+        "فهم عميق للتشريعات والدراسات البيئية المتخصصة بأسلوب علمي تطبيقي يربط فعلياً بين العلم والقانون والهندسة.",
+        "حماية المشروعات والاستثمارات والسمعة المؤسسية من خلال الالتزام البيئي الذي نعتبره ميزة استراتيجية وليس عبئاً إدارياً.",
+        "فريق عمل متكامل من الاستشاريين والخبراء المعتمدين دولياً وفي مصر."
+      ],
+      expertsTitle: "الكوادر والخبراء",
+      expertsIntro: "تعتمد الشركة على نخبة من الخبراء والاستشاريين وأساتذة الجامعات المتخصصين في المجالات البيئية المختلفة.",
+      expertsItems: [
+        "يترأس فريق العمل استشاري مهندس الأستاذة الدكتورة أسماء سيد حموده، والتي لها خبرة طويلة ومتنوعة في مجال العمل البيئي مع جهاز شئون البيئة ووزارة البيئة وجهات دولية.",
+        "خبرات واسعة في مشاريع وطنية ودولية بتمويل من جهات مانحة كبرى.",
+        "استشاريو السلامة والأمن ومكافحة الحريق معتمدون من نقابة المهندسين ولهم خبرة طويلة في العمل مع هيئة الحماية المدنية."
+      ],
+      drAsmaaTitle: "أ.د/ أسماء حمودة"
     },
     values: {
       title: "قيمنا",
@@ -560,9 +890,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         { title: "الالتزام والامتثال", description: "نلتزم بتطبيق القوانين البيئية بدقة ونساعد عملاءنا على تحقيق الامتثال الكامل.", iconName: "Compliance" },
         { title: "الحلول العملية", description: "نقدم حلول بيئية عملية قابلة للتطبيق مع مراعاة طبيعة نشاط كل مصنع.", iconName: "Practical" },
         { title: "الاستدامة", description: "نؤمن أن حماية البيئة فرصة لتحسين الكفاءة التشغيلية وتقليل التكاليف.", iconName: "Sustainability" },
-        { title: "الجودة والدقة", description: "نحرص على أعلى معايير الجودة والدقة العلمية في كل دراسة وتقرير.", iconName: "Quality" },
+        { title: "الجودة والدقة", description: "نحرص على أعلى معايير الجودة والدقة في كل دراسة وتقرير.", iconName: "Quality" },
         { title: "الشراكة طويلة المدى", description: "لسنا مجرد استشاري، بل شريك استراتيجي يدعم العميل من التخطيط حتى التشغيل.", iconName: "Partnership" },
-        { title: "بناء القدرات", description: "نهتم بتدريب وتأهيل فرق العمل الصناعية لضمان استمرارية الأنظمة.", iconName: "Training" }
       ]
     },
     services: {
@@ -597,8 +926,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           }
         },
         {
-          title: "حساب البصمة الكربونية والاستدامة لـ CBAM",
-          description: "نقدم خدمات قياس وتحليل البصمة الكربونية للمنشآت الصناعية والبصمة الكربونية للمنتج وتقارير الاستدامة ومشاريع خفض البصمة الكربونية، ووضع خطط خفض الانبعاثات، لمساعدة المصانع على الاستعداد لتطبيق آلية CBAM والالتزام بمتطلبات التصدير للأسواق الأوروبية.",
+          title: "حساب البصمة الكربونية والاستدامة والية تعديل حدود الكربون (CBAM)",
+          description: "نقدم قياس وتحليل البصمة الكربونية للمنشآت والمنتجات، وإعداد تقارير وخطط خفض الانبعاثات لدعم متطلبات CBAM والتصدير لأوروبا.",
           iconName: "Leaf",
           details: {
             en: "• Carbon footprint reports for facilities and products (CFP/CBAM).\n• Sustainability reports and emission reduction projects.\n• Preparation for CBAM compliance and European export requirements.",
@@ -634,7 +963,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         },
         {
           title: "برامج تدريب وتأهيل للكوادر الصناعية",
-          description: "نقدم برامج تدريب متخصصة للعاملين والإدارات الفنية داخل المصانع، تشمل اعداد دراسات تقييم الاثر البيئي والاجتماعي. اعداد السجل البيئي وسجل الكزاد والمخلفات الخطرة. ، إدارة المخلفات، أنظمة الجودة، السلامة المهنية، والبصمة الكربونية، لضمان استمرارية تطبيق الأنظمة بكفاءة.",
+          description: "نقدم برامج تدريب متخصصة للعاملين والإدارات الفنية داخل المصانع، تشمل إعداد السجلات البيئية وسجلات المواد والمخلفات الخطرة، وإدارة المخلفات، وأنظمة الجودة، والسلامة المهنية، والبصمة الكربونية، لضمان استمرارية تطبيق الأنظمة بكفاءة.",
           iconName: "Users",
           details: {
             en: "• Training on environmental compliance and pollution control.\n• Waste management and quality systems training.\n• Capacity building for engineers and technical teams.",
@@ -642,6 +971,354 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           }
         }
       ]
+    },
+
+    fireSystems: {
+      hero: {
+        tag: "أنظمة الحريق",
+        title: "أنظمة إنذار ومكافحة الحريق",
+        subtitle: "استشارات مستقلة تضمن الامتثال والسلامة والنزاهة الهندسية."
+      },
+      profile: {
+        title: "نبذة عن الشركة",
+        text: "جاردينيا للاستشارات شركة استشارية هندسية متخصصة في أنظمة إنذار ومكافحة الحريق. تقدم خدمات استشارية مستقلة للجهات الحكومية والدفاع المدني والمنشآت الصناعية والاستشاريين والمطورين بما يضمن الالتزام الكامل بالمعايير الدولية واللوائح المحلية."
+      },
+      vision: {
+        title: "الرؤية",
+        text: "أن نكون الشريك الاستشاري الموثوق في أنظمة الحماية من الحريق، والمعروف بالتميز الهندسي والالتزام والريادة في السلامة."
+      },
+      mission: {
+        title: "الرسالة",
+        text: "تقديم خدمات استشارية آمنة ومتوافقة وفعالة في مجال الحماية من الحريق بما يحفظ الأرواح والأصول والمنشآت."
+      },
+      scope: {
+        title: "نطاق الخدمات",
+        items: [
+          {
+            title: "مراجعة تصميم أنظمة الإنذار",
+            description: "مراجعة واعتماد تصميمات أنظمة إنذار الحريق لضمان الكفاءة والامتثال.",
+            iconName: "FileText"
+          },
+          {
+            title: "تصميم وتقييم أنظمة المكافحة",
+            description: "تقييم فني لأنظمة مكافحة الحريق لتحقيق الالتزام بالكود والاعتمادية التشغيلية.",
+            iconName: "ShieldCheck"
+          },
+          {
+            title: "دعم تقديمات الجهات",
+            description: "إعداد وتنسيق المستندات اللازمة لاعتمادات الجهات والدفاع المدني.",
+            iconName: "FolderOpen"
+          },
+          {
+            title: "الإشراف والمراجعة بالموقع",
+            description: "إشراف ميداني وفحوصات مطابقة أثناء التنفيذ والتركيب.",
+            iconName: "Users"
+          },
+          {
+            title: "مراجعة الاختبارات والتشغيل",
+            description: "مراجعة اختبارات التشغيل والتسليم للتحقق من جاهزية الأنظمة.",
+            iconName: "Award"
+          },
+          {
+            title: "تقييم الامتثال والمخاطر",
+            description: "تقييم المخاطر والتحقق من الالتزام باللوائح والأكواد المعتمدة.",
+            iconName: "Compliance"
+          }
+        ]
+      },
+      standards: {
+        title: "المعايير والأكواد",
+        items: [
+          "معايير NFPA",
+          "معايير EN",
+          "اشتراطات الدفاع المدني المحلية"
+        ]
+      },
+      leadership: {
+        title: "القيادة الهندسية",
+        name: "م. خالد عيد محمد إبراهيم",
+        role: "استشاري أول للحماية من الحريق",
+        summary: "مهندس خبير في أنظمة إنذار ومكافحة الحريق وإدارة السلامة وضمان الجودة، مع خبرة واسعة في مشروعات البنية التحتية القومية."
+      },
+      sectors: {
+        title: "القطاعات المخدومة",
+        items: [
+          "المشروعات الحكومية",
+          "الدفاع المدني والمرافق العامة",
+          "المصانع والمنشآت الصناعية",
+          "المباني التجارية والسكنية",
+          "مشروعات البنية التحتية والنقل"
+        ]
+      },
+      why: {
+        title: "لماذا جاردينيا",
+        items: [
+          "استشارات مستقلة بمهنية عالية",
+          "منهج التزام صارم بالمعايير واللوائح",
+          "خبرة واسعة في التنسيق الميداني ومع الجهات",
+          "التزام راسخ بالسلامة والنزاهة الهندسية"
+        ]
+      },
+      cv: {
+        title: "السيرة المهنية",
+        contactLabel: "بيانات الاتصال",
+        contact: {
+          name: "خالد عيد محمد إبراهيم",
+          location: "القاهرة الجديدة، القاهرة، مصر",
+          phone: "(+2) 01021938285",
+          emails: ["khaled_eid1188@yahoo.com", "khaled@gardenia.eg"]
+        },
+        sections: [
+          {
+            title: "الملف الشخصي",
+            items: [
+              "خبرة 33 عامًا في الصحة والسلامة ونظم ضبط الجودة والاستشارات في أنظمة إنذار ومكافحة الحريق.",
+              "21 عامًا مهندسًا في القوات المسلحة المصرية (وزارة الدفاع).",
+              "12 عامًا بالهيئة القومية للأنفاق NAT كمستشار لأنظمة الحريق وأنظمة الأمن (بوابات كشف المعادن وأجهزة الأشعة السينية).",
+              "مدقق معتمد IRCA في الصحة والسلامة المهنية.",
+              "استشاري أنظمة السلامة والأمن بنقابة المهندسين المصرية.",
+              "خبرات في: أنظمة مكافحة الحريق، أنظمة إنذار الحريق وتكاملها، أنظمة الأمن (أشعة سينية وبوابات معدنية)، السلامة والصحة المهنية، ونظم ضبط الجودة.",
+              "أعمال كهروميكانيكية لشركات الإنتاج الحربي ومشروعات المترو تشمل نظم الجودة والسلامة والتوثيق والتدريب والتدقيق وتحليل الأسباب الجذرية وتقليل الحوادث وتصاريح العمل وخطط السلامة والطوارئ والإخلاء."
+            ]
+          },
+          {
+            title: "الخبرات التفصيلية",
+            items: [
+              "الهيئة القومية للأنفاق (NAT) - 12 عامًا:",
+              "مدير عام الأعمال في أنظمة الحريق بمترو القاهرة الكبرى (الكشف والإطفاء وأنظمة إنذار الحريق وتكاملها).",
+              "أنظمة الأمن بما في ذلك أجهزة الأشعة السينية وبوابات كشف المعادن.",
+              "إعداد خطة السلامة للمشروعات.",
+              "إعداد خطة الإخلاء.",
+              "إعداد خطط الأنشطة ومراجعتها وتحديثها.",
+              "تنظيم برامج التوعية والسلامة للمديرين والمشرفين والعمال.",
+              "التحقيق وتحليل الحوادث والوقائع.",
+              "جدولة أنشطة السلامة للمشروع.",
+              "تحديث الإدارة بالمتطلبات القانونية للصحة والسلامة والرفاهية وأكواد الممارسة ومراجع السلامة.",
+              "تحسين أساليب العمل الحالية وإدخال التطويرات الجديدة.",
+              "إجراء التفتيشات اليومية بالموقع.",
+              "تعزيز الوعي بالسلامة وتصحيح الممارسات غير الآمنة.",
+              "توفير وضمان الاستخدام السليم لمعدات الوقاية والسلامة.",
+              "تخطيط وتنفيذ مراجعات السلامة.",
+              "المشاركة في اجتماعات الإنتاج.",
+              "التواصل مع الجهات والمنظمات المحلية.",
+              "تنظيم تدريبات الإطفاء والإسعافات الأولية.",
+              "تنفيذ حملات ملصقات السلامة والبيئة.",
+              "وزارة الدفاع المصرية (MOD) - 21 عامًا:",
+              "المسؤولية عن إنشاء نظم ضبط الجودة وخطط السلامة وخطط الإخلاء لمشروعات شركات الإنتاج الحربي.",
+              "التحسين المستمر للإجراءات والعمليات المؤثرة في جودة الإنتاج.",
+              "المراجعة والتدقيق للتأكد من تقدم النظام والتحكم في المشكلات والمخاطر.",
+              "تحقيق عوامل السلامة التشغيلية أثناء جميع الأنشطة.",
+              "تطوير الخطة التشغيلية العامة مع إدارة التخطيط للمشروعات.",
+              "تطوير اللوائح والكتيبات والسياسات والإجراءات التشغيلية.",
+              "المسؤولية عن التنظيم والتدريب والموارد البشرية والجداول التشغيلية ووضع التشغيل المتدهور."
+            ]
+          },
+          {
+            title: "المهارات",
+            items: [
+              "تدريب التشغيل",
+              "سلوك الجودة",
+              "تحسين العمليات",
+              "مهارات العرض",
+              "بناء الفريق",
+              "PMP"
+            ]
+          },
+          {
+            title: "الإدارة",
+            items: [
+              "الصحة والسلامة والبيئة HSE",
+              "برامج الحاسب",
+              "العمل الجماعي",
+              "البحث والتطوير",
+              "أنشطة الصيانة"
+            ]
+          },
+          {
+            title: "الإنجازات",
+            items: [
+              "التحليل الإحصائي: جمع البيانات وتحليلها وصولا لتوصيات معتمدة لتحسين المشروعات.",
+              "العروض التقديمية: إعداد مواد تقديمية لموضوعات مختلفة (HSE، الجودة، وغيرها).",
+              "إدارة المشروعات: الإشراف على جهود الإنتاج لضمان الالتزام بالمعايير والوقت والميزانية.",
+              "البحث والتطوير: إدارة متطلبات البحث لإيجاد حلول للمكونات القديمة والحفاظ على الاعتمادية.",
+              "الإدارة الاستراتيجية: الإشراف على 250 موظفا في مشروع صيانة نتج عنه تحسين الإنتاجية وزيادة الإيرادات.",
+              "رضا العملاء: بناء علاقات قوية وتواصل فعال للحفاظ على رضا العملاء."
+            ]
+          },
+          {
+            title: "الخبرات المهنية",
+            items: [
+              "المنصب الحالي: مهندس استشاري - الهيئة القومية للأنفاق (NAT) مصر.",
+              "مدير HSE (2016-حتى الآن).",
+              "NAT (2013-2016).",
+              "تأسيس وإدارة ومتابعة المعايير والعمليات والتواصل والتدريب والأنظمة لضمان فاعلية نظام HSE على مستوى هيئة النقل.",
+              "الحفاظ على معدل IFR للهيئة واتخاذ الإجراءات اللازمة لتحسينه.",
+              "تنفيذ برامج التعريف والتدريب المهني.",
+              "تطوير أنظمة قياس الأداء مقابل المعايير المحددة.",
+              "مراقبة الأداء واتخاذ الإجراءات اللازمة للتواصل والنصح والمساعدة.",
+              "دمج المعايير الصادرة عن الجهات الخارجية ضمن أنظمة الجودة الداخلية.",
+              "إعداد التقارير حول التغيرات في المعايير والأداء.",
+              "إدارة العاملين وفقا لمعايير الشركة (تقييم، انضباط، تدريب، تطوير).",
+              "إدارة أداء القسم وفق الأهداف والميزانيات والسياسات.",
+              "توفير الإسعافات الأولية ومرافق الرفاهية المناسبة.",
+              "توفير المعلومات والإشراف الملائمين لسياسات وممارسات الصحة والسلامة.",
+              "تقييم المخاطر وتنفيذ الإجراءات اللازمة.",
+              "إدارة برامج السلامة والصحة المهنية وتنسيق التفتيشات والتحقيقات.",
+              "تنظيم برامج تدريبية لبناء كفاءات العاملين في اكتشاف وتصحيح المخاطر.",
+              "تخطيط وتنظيم المراجعات وإعداد التقارير ومتابعة الإجراءات التصحيحية والوقائية.",
+              "إجراء دراسات تحديد المخاطر وتقييمها وتنسيق خطط التخفيف.",
+              "تنسيق تدريبات السلامة والإطفاء والاستجابة للطوارئ لكافة العاملين بالمواقع.",
+              "تفتيش معدات السلامة والإطفاء واللافتات ومخارج الطوارئ.",
+              "تطبيق لوائح السلامة المهنية من خلال الجولات الميدانية.",
+              "إعداد تقارير إحصائية للحوادث ومعدلات الشدة والتكرار وفقدان الوقت لتحليل الأسباب الجذرية.",
+              "القوات المسلحة المصرية (MOD) - يوليو 1992 حتى يناير 2013.",
+              "رئيس فرع QHSE بالوكالة المصرية للجودة بالقوات المسلحة (QAAF) - 2002-2013.",
+              "ضمان فاعلية نظام QHSE في مصانع الإنتاج الحربي بدعم الإدارة العليا.",
+              "تفويض من مدير المشروع لملفات الجودة على مختلف مستويات المشروع.",
+              "ضمان رؤية مدير المشروع لكافة جوانب الجودة.",
+              "تمثيل مدير المشروع أمام العميل في موضوعات الجودة.",
+              "متابعة مؤشرات الجودة لحزم العمل المختلفة.",
+              "تعريف وتطبيق العمليات الداخلية لنظام إدارة جودة المشروع.",
+              "ضمان رضا العملاء في إطار العقد.",
+              "ضمان مطابقة المنتجات والخدمات وعمليات ضمان الجودة.",
+              "ضمان إدارة أداء الجودة وخطط التحسين.",
+              "توفير رؤية لمشكلات المشروع والعمليات المقابلة.",
+              "خفض تكلفة عدم الجودة ونشر ثقافة التميز المؤسسي.",
+              "تطوير وتنفيذ استراتيجية وخطط إدارة الجودة.",
+              "تطوير أنظمة وضع معايير الأنشطة والمنتجات.",
+              "تطوير أنظمة قياس الأداء مقابل المعايير.",
+              "مراقبة الأداء واتخاذ الإجراءات اللازمة للتواصل والمساعدة.",
+              "دمج معايير الجهات الخارجية ضمن أنظمة الجودة الداخلية.",
+              "وضع استراتيجية اتصال لرفع الوعي بالجودة.",
+              "تخطيط وإدارة أنشطة القسم وفقا للميزانيات والجداول.",
+              "إعداد تقارير عن تغييرات المعايير والأداء.",
+              "إدارة العاملين وفقا لمعايير الشركة (تقييم، انضباط، تدريب، تطوير).",
+              "إدارة أداء القسم وفق الأهداف والميزانيات.",
+              "التنسيق مع العملاء والموردين فيما يخص قضايا الجودة.",
+              "ضمان سياسة ملائمة للصحة والسلامة وبيئة عمل آمنة.",
+              "ضمان سلامة المعدات والآلات والحركة والتخزين والاستخدام.",
+              "توفير مرافق الإسعافات الأولية والرفاهية.",
+              "توفير الإشراف والمعلومات بشأن سياسات وممارسات الصحة والسلامة.",
+              "تقييم المخاطر وتنفيذ الإجراءات الوقائية.",
+              "توفير إجراءات الطوارئ ولافتات السلامة والتبليغ عن الحوادث.",
+              "التواصل مع الجهات المعنية والمساعدة في المراجعات والإجراءات العلاجية.",
+              "ضمان متطلبات بيئة العمل من تهوية وحرارة وإضاءة وخدمات صحية.",
+              "التحكم في التعرض للمواد الخطرة والمخاطر الكهربائية والضوضاء والإشعاع والأحمال.",
+              "مراقبة ومتابعة ممارسات وأنظمة الصحة والسلامة.",
+              "توظيف واختيار وإدارة وتطوير العاملين بالصحة والسلامة.",
+              "مدير مشروع (1997-2002):",
+              "المسؤولية عن تنفيذ وتسليم جميع مخرجات المشروع.",
+              "المسؤولية عن الأنشطة المالية والبيعية.",
+              "متابعة خطط الأنشطة بالمشروع.",
+              "تنفيذ أعمال الصيانة الوقائية والتصحيحية والعمرة والصيانة عبر الإنترنت.",
+              "تخطيط القوى العاملة والتدريب والتنظيم والجداول.",
+              "إدارة قطع الغيار والتقادم والبحث والتطوير.",
+              "إدارة برامج القطارات.",
+              "علاقات العملاء ورضاهم.",
+              "تحقيق هامش الربح المستهدف لمشروع الصيانة وتحسين الربحية بأوامر التغيير.",
+              "ضمان التحصيل الشهري دون غرامات.",
+              "جمع البيانات اللازمة لعقد الأداء.",
+              "تطبيق HSE والجودة وفق معايير المؤسسة.",
+              "إدارة نطاق العمل بالكامل وتعظيم التوحيد القياسي.",
+              "الالتزام بالتسليم في الوقت وتحقيق الجاهزية المطلوبة.",
+              "تعظيم الربح.",
+              "تنظيم ونشر الفريق وتحديد OBS والواجهات.",
+              "ضمان التقارير الفعالة وتسليم الوثائق في الوقت المناسب.",
+              "إدارة المخاطر والفرص وخططها.",
+              "إدارة العقود مع العميل والموردين.",
+              "الحفاظ على رضا العملاء من خلال التواصل الفعال.",
+              "قائد فريق الصيانة ومدير الجودة (1992-1997):",
+              "ضمان التنفيذ الصحيح لأعمال الصيانة الوقائية والتصحيحية.",
+              "إدارة خطة الصيانة بالموقع وتحقيق الأهداف ضمن الجداول الزمنية.",
+              "إدارة فريق التشغيل لضمان تحقيق أهداف الصيانة.",
+              "إدارة العمليات لضمان السلامة والالتزام باللوائح.",
+              "تطوير الأفراد عبر التقييم والتدريب.",
+              "التواصل عبر الاجتماعات والـKPIs واللقاءات.",
+              "المشاركة في ثقافة التحسين المستمر بمشروعات المترو.",
+              "إدارة توفر العاملين واحتياجات التدريب.",
+              "إدارة حضور العاملين وفق السياسات.",
+              "المشاركة في نظام الطوارئ بنظام المناوبة.",
+              "إدارة خطة العمل اليومية للفريق لتحقيق الأهداف التعاقدية.",
+              "الإشراف على أداء الفريق ومعالجة القضايا الانضباطية.",
+              "ضمان الالتزام بمعايير ISO وإجراءات الجودة.",
+              "التواصل الاستباقي عبر اجتماعات السلامة.",
+              "تنفيذ أعمال الصيانة والقيام بدور ميسر للتحسين المستمر.",
+              "تنفيذ وتسليم أنشطة الاختبار والتشغيل.",
+              "إعداد خطة الاختبارات وإطار الزمن.",
+              "تنسيق أعمال الاختبار والتشغيل والمواعيد.",
+              "تنظيم تواصل العملاء وإدارة الشواذ.",
+              "إعداد التقارير والحلول المتعلقة بالمشروع.",
+              "ضمان إتمام الاختبارات حسب الخطة والتشغيل وفق رضا العميل.",
+              "تحليل الاختبارات المطلوبة ومراجعة تقارير الاختبارات التركيبية.",
+              "تنفيذ الاختبارات وفق الإجراءات وإعداد التقارير.",
+              "ضمان السلامة الفنية للأنظمة حتى التسليم.",
+              "تنسيق الدعم الهندسي للاعتماد والتسجيل.",
+              "اختبارات المصنع والوظائف والتكامل.",
+              "اختبارات الوظيفة والتكامل وPTO وEWP."
+            ]
+          },
+          {
+            title: "التعليم والتدريب",
+            items: [
+              "بكالوريوس هندسة، قسم الاتصالات، الكلية الفنية العسكرية، القاهرة، مصر (1992).",
+              "دورة: خبير في تطبيق أنظمة إدارة الصحة والسلامة المهنية - TUV Rheinland.",
+              "دورة: مدقق/مدقق رئيسي OHSAS 18001:2007 - IRCA (URS Egypt).",
+              "دورة: مدقق/مدقق رئيسي QMS معتمد - IRCA (AJA Academy, Egypt).",
+              "دورة: فهم وتطبيق ISO/IEC 17021:2011 - المجلس المصري للاعتماد.",
+              "دورة: مدقق داخلي ISO/IEC 17025 - المجلس المصري للاعتماد.",
+              "دورة: تقدير عدم اليقين في نتائج الاختبارات - المعهد القومي للمواصفات.",
+              "دورة: تصميم نظم الجودة وفق ISO/IEC 17025/2005 - المعهد القومي للمواصفات.",
+              "دورة: نظام إدارة أمن المعلومات ISMS - الجمعية المصرية للجودة.",
+              "دورة: جائزة مالكوم بالدريج الوطنية - American Supplier Institute International.",
+              "دورة: إدارة المخاطر - Target Group for Performance Improvement.",
+              "برنامج تدريبي: مبادئ الإلكترونيات الحديثة والمعايرة.",
+              "برنامج تدريبي: متابعة وضمان الجودة والسلامة والبيئة - هيئة التسليح بالقوات المسلحة.",
+              "برنامج تدريبي: إدارة الجودة الشاملة - هيئة التسليح بالقوات المسلحة.",
+              "برنامج تدريبي: الإدارة الرشيقة - المعهد القومي للجودة."
+            ]
+          },
+          {
+            title: "العضويات المهنية",
+            items: [
+              "الجمعية المصرية للجودة",
+              "اتحاد المهندسين العرب",
+              "عضوية IRCA",
+              "نقابة المهندسين المصرية",
+              "استشاري أنظمة السلامة والأمن بنقابة المهندسين المصرية"
+            ]
+          },
+          {
+            title: "التدريب المهني",
+            items: [
+              "2024 - لوحة تحكم مكافحة الحريق (كندا).",
+              "2023 - أنظمة الدخان (الإمارات).",
+              "2022 - مضخات مكافحة الحريق (الولايات المتحدة).",
+              "2021 - أنظمة الإشارات (فرنسا).",
+              "2020 - فحص نظام SCADA لورشة Kozzika الخط 1 (Alstom-India).",
+              "2017 - فحص المصاعد الخط 3 المرحلة 4 الجزء 1 (Kone-Finland).",
+              "2015 - زيارة مترو باريس الخط 13 والخط 14 (فرنسا).",
+              "2012 - دورة الصيانة والإصلاح الرئيسية (الصين).",
+              "2011 - مدقق معتمد QMS 9001/2008 (IRCA-UK).",
+              "2010 - مدقق معتمد OHSAS 18001/2007 (IRCA-UK).",
+              "2010 - مؤتمر إدارة الجودة الشاملة (الولايات المتحدة).",
+              "2009 - دورة الصيانة والإصلاح الرئيسية (روسيا).",
+              "2006 - دورة الصيانة والإصلاح مستوى الموقع (الولايات المتحدة).",
+              "2002 - دورة الصيانة والإصلاح الرئيسية (الولايات المتحدة).",
+              "1999 - دورة الصيانة والإصلاح مستوى الموقع (الولايات المتحدة)."
+            ]
+          },
+          {
+            title: "معلومات إضافية",
+            items: [
+              "تاريخ الميلاد: 22 فبراير 1970",
+              "اللغات: العربية والإنجليزية",
+              "الجنسية: مصري",
+              "رخصة القيادة: مصرية",
+              "البرامج: MS Office, Internet"
+            ]
+          }
+        ]
+      }
     },
     industries: {
       title: "القطاعات التي نخدمها",
@@ -653,22 +1330,26 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "البلاستيك والتعبئة والتغليف",
         "الطاقة والمرافق",
         "المشروعات الصناعية الجديدة",
-        "الجهات الحكومية"
+        "الجهات الحكومية والمنظمات الدولية"
       ]
     },
     whyUs: {
-      title: "لماذا جاردينيا؟",
+      title: "لماذا نحن؟",
       items: [
-        "أكثر من 20 عاماً من الخبرة",
-        "فريق متخصص من خبراء معتمدين",
-        "فهم قوي للاشتراطات القانونية",
-        "حلول تطبيقية وليست مجرد تقارير",
-        "سجل مشروعات مع جهات دولية",
-        "دعم كامل من التخطيط حتى التشغيل"
+        "أكثر من 20 عاماً من الخبرة في العمل البيئي",
+        "فريق متخصص من خبراء استشاريين معتمدين",
+        "فهم عميق للاشتراطات القانونية والتشريعية",
+        "تقديم حلول تطبيقية واقعية وليست مجرد تقارير",
+        "سجل حافل من المشاريع مع جهات وطنية ودولية",
+        "نموذج متكامل يدمج بين الخبرة الأكاديمية والممارسة الحكومية والتطبيق العملي",
+        "تاريخ حافل بالمشاريع الناجحة مع جهات حكومية ومنظمات دولية كبرى",
+        "فهم عميق للتشريعات والدراسات البيئية المتخصصة بأسلوب علمي تطبيقي",
+        "حماية المشروعات والاستثمارات والسمعة المؤسسية من خلال الالتزام البيئي",
+        "دعم فني كامل من مرحلة التخطيط حتى التشغيل"
       ]
     },
     projects: {
-      title: "خبراتنا ومشاريعنا",
+      title: "مشاريعنا",
       description: "",
       items: [
         "إدارة المخلفات الصلبة والخطرة (POPs, IWEX)",
@@ -685,113 +1366,139 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "شراكة استراتيجية مع العملاء والجهات التنظيمية",
         "الالتزام بأفضل الممارسات الدولية"
       ],
-      caseStudiesTitle: "نماذج من الحالات الدراسية",
+      caseStudiesTitle: "نماذج مشروعاتنا",
       caseStudies: [
         {
-          title: "SUSTAINABLE PERSISTENT ORGANIC POLLUTANTS (POPS) MANAGEMENT PROJECT (SPMP)",
+          title: "مشروع الإدارة المستدامة للملوثات العضوية الثابتة (SPMP)",
           period: "2017–2020",
-          location: "محافظة الجيزة (منطقة الصف) ومحافظة أسيوط",
-          objective: "إعداد دراسات متخصصة للتربة والمياه والهواء وتقييم الأثر البيئي والاجتماعي وإعداد دراسات تحليل المخاطر الكمية والنوعية للإدارة المتكاملة والتخلص من المخلفات الخطرة (المبيدات المحظورة والمهجورة) بمواقع مخازن المخلفات.",
-          participation: "د. أسماء حمودة، والتي عملت كاستشاري بيئي للمشروع، وقامت بإعداد دراسة تقييم الأثر البيئي والاجتماعي لإعادة تعبئة المبيدات بمحافظة أسيوط.",
+          location: "محافظة الجيزة (الصف) ومحافظة أسيوط",
+          objective: "إجراء دراسات متخصصة للتربة والمياه والهواء، وتقييم الأثر البيئي والاجتماعي، وتحليل المخاطر للإدارة المتكاملة والتخلص من المخلفات الخطرة.",
+          participation: "شاركت أ.د/ أسماء حمودة كاستشاري بيئي رئيسي للمشروع.",
           image: "/studies/study-20.png",
           category: "إدارة المخلفات"
         },
         {
-          title: "The Industrial Waste Exchange (IWEX) Project",
+          title: "مشروع تبادل المخلفات الصناعية (IWEX)",
           period: "2017–2019",
           location: "مدينة 6 أكتوبر الصناعية",
-          objective: "مساعدة الصناعات على تبادل وإعادة استخدام المخلفات الصناعية من خلال قاعدة بيانات ومنصة إلكترونية لربط المصانع، مما يقلل النفايات ويعزز الاقتصاد الدائري.",
-          participation: "د. أسماء حمودة، والتي عملت كخبير بيئي بالمشروع.",
+          objective: "مساعدة الصناعات في تبادل وإعادة استخدام المخلفات الصناعية من خلال قاعدة بيانات إلكترونية، مما يقلل من النفايات ويعزز الاقتصاد الدائري.",
+          participation: "شاركت أ.د/ أسماء حمودة كخبير بيئي.",
           image: "/studies/study-4.png",
           details: [
-            "زيارات ميدانية وتجميع بيانات لعدد 812 مصنعاً.",
-            "إعداد الأدلة الإرشادية لأنواع المخلفات وطرق تدويرها.",
-            "تدريب الكوادر في أعمال التدقيق البيئي وإدارة المخلفات.",
+            "زيارات ميدانية وجمع بيانات لـ 812 مصنعاً.",
+            "إعداد دلائل استرشادية لأنواع المخلفات وطرق تدويرها.",
+            "تدريب الكوادر على التفتيش البيئي ومراجعة المخلفات.",
             "تصميم قاعدة بيانات لتبادل المخلفات بين القطاعات الصناعية."
           ],
           category: "الاقتصاد الدائري"
         },
         {
-          title: "تحويل مخلفات البلاستيك إلى طاقة (Plastic to Fuel - P2F)",
+          title: "تحويل المخلفات إلى طاقة (Plastic to Fuel - P2F)",
           period: "2016–2018",
-          location: "جامعة بني سويف (بتمويل من أكاديمية البحث العلمي والتكنولوجيا)",
-          objective: "البحث في التحلل الحفزي النانوي لمخلفات البولي بروبيلين (PP) والبولي إيثيلين (PE) لإنتاج الوقود من خلال عمليات التحلل الحراري والتغويز.",
-          participation: "أ.د أسماء حمودة، الباحث الرئيسي للمشروع، قامت بصياغة الفكرة وتطبيق المشروع وعمل نموذج أولي لمفاعل تحويل المخلفات.",
+          location: "جامعة بني سويف (بتمويل من أكاديمية البحث العلمي)",
+          objective: "البحث في التحلل الحفزي لمخلفات البلاستيك لإنتاج الوقود من خلال عمليات التحليل الحراري والتغويز.",
+          participation: "أ.د/ أسماء حمودة كانت الباحث الرئيسي (PI) وصاحبة الفكرة ومصممة المفاعل التجريبي.",
           image: "/studies/study-2.png",
           category: "الابتكار والبحث العلمي"
         }
       ],
       projectLists: [
         {
+          categoryTitle: "الإدارة المتكاملة للمخلفات الصلبة والخطرة",
+          projects: [
+            {
+              name: "SUSTAINABLE PERSISTENT ORGANIC POLLUTANTS (POPS) MANAGEMENT PROJECT (SPMP)",
+              client: "GEF / EEAA",
+              location: "محافظة الجيزة ومحافظة أسيوط",
+              date: "2017–2020",
+              image: "/studies/study-20.png"
+            },
+            {
+              name: "The Industrial Waste Exchange (IWEX) Project",
+              client: "African Development Bank (AfDB)",
+              location: "مدينة 6 أكتوبر الصناعية",
+              date: "2017–2019",
+              image: "/studies/study-4.png"
+            },
+            {
+              name: "تحويل مخلفات البلاستيك إلى طاقة (Plastic to Fuel - P2F)",
+              client: "أكاديمية البحث العلمي والتكنولوجيا",
+              location: "جامعة بني سويف",
+              date: "2016–2018",
+              image: "/studies/study-2.png"
+            }
+          ]
+        },
+        {
           categoryTitle: "دراسات تقييم الأثر البيئي والاجتماعي (ESIA)",
           projects: [
-            { 
-              name: "تقييم الأثر البيئي (ب محددة) لمشروع كومباوند سكني (10 فدان)", 
-              client: "جمعية الولاء التعاونية للبناء والإسكان", 
-              location: "بني سويف", 
+            {
+              name: "تقييم الأثر البيئي (ب محددة) لمشروع كومباوند سكني (10 فدان)",
+              client: "جمعية الولاء التعاونية للبناء والإسكان",
+              location: "بني سويف",
               date: "2025",
               image: "/studies/study-19.png"
             },
-            { 
-              name: "تقييم الأثر البيئي (ب محددة) لمأخذ بحري لمشروع توسعات ملاحة (رأس غارب)", 
-              client: "شركة عمرو إبراهيم الحطاب لتجارة الملح", 
-              location: "البحر الأحمر", 
+            {
+              name: "تقييم الأثر البيئي (ب محددة) لمأخذ بحري لمشروع توسعات ملاحة (رأس غارب)",
+              client: "شركة عمرو إبراهيم الحطاب لتجارة الملح",
+              location: "البحر الأحمر",
               date: "2021",
               image: "/studies/study-18.png"
             },
-            { 
-              name: "تقييم الأثر البيئي (ب محددة) لمشروع محرقة مخلفات طبية (مصنع سماد السلام)", 
-              client: "مصنع السلام (الهيئة العامة للنظافة)", 
-              location: "القاهرة (مدينة السلام)", 
+            {
+              name: "تقييم الأثر البيئي (ب محددة) لمشروع محرقة مخلفات طبية (مصنع سماد السلام)",
+              client: "مصنع السلام (الهيئة العامة للنظافة)",
+              location: "القاهرة (مدينة السلام)",
               date: "2019",
               image: "/studies/study-17.png"
             },
-            { 
-              name: "تقييم الأثر البيئي (ب محددة) لمشروع محرقة مخلفات طبية (منتجع دار المنى)", 
-              client: "منتجع دار المنى للتأهيل والخدمات الطبية", 
-              location: "الجيزة", 
+            {
+              name: "تقييم الأثر البيئي (ب محددة) لمشروع محرقة مخلفات طبية (منتجع دار المنى)",
+              client: "منتجع دار المنى للتأهيل والخدمات الطبية",
+              location: "الجيزة",
               date: "2019",
               image: "/studies/study-16.png"
             },
-            { 
-              name: "تقييم الأثر البيئي (ب محددة) لنقل المخلفات الصلبة والخطرة", 
-              client: "مؤسسة نيوفالي للخدمات البيئية", 
-              location: "من الجيزة إلى الإسكندرية", 
+            {
+              name: "تقييم الأثر البيئي (ب محددة) لنقل المخلفات الصلبة والخطرة",
+              client: "مؤسسة نيوفالي للخدمات البيئية",
+              location: "من الجيزة إلى الإسكندرية",
               date: "2017",
               image: "/studies/study-15.png"
             },
-            { 
-              name: "تقييم الأثر البيئي (ب محددة) لتشغيل وتطوير مقلب مدينة 6 أكتوبر", 
-              client: "مؤسسة نيوفالي للخدمات البيئية", 
-              location: "الجيزة", 
+            {
+              name: "تقييم الأثر البيئي (ب محددة) لتشغيل وتطوير مقلب مدينة 6 أكتوبر",
+              client: "مؤسسة نيوفالي للخدمات البيئية",
+              location: "الجيزة",
               date: "2018",
               image: "/studies/study-14.png"
             },
-            { 
-              name: "نموذج (ب) لتقييم التأثير البيئي لتصنيع منتجات الكرتون المضلع", 
-              client: "شركة سيلدك (Sealed Air)", 
-              location: "العاشر من رمضان", 
+            {
+              name: "نموذج (ب) لتقييم التأثير البيئي لتصنيع منتجات الكرتون المضلع",
+              client: "شركة سيلدك (Sealed Air)",
+              location: "العاشر من رمضان",
               date: "2018",
-              image: "/studies/study-7.png"
+              image: "/studies/study-22.png"
             },
-            { 
-              name: "تقييم الأثر البيئي والاجتماعي لإعادة تعبئة المبيدات (مخزن الصف)", 
-              client: "مشروع إدارة الملوثات العضوية الثابتة (POPs) - EEAA", 
-              location: "الجيزة (الصف)", 
+            {
+              name: "تقييم الأثر البيئي والاجتماعي لإعادة تعبئة المبيدات (مخزن الصف)",
+              client: "مشروع إدارة الملوثات العضوية الثابتة (POPs) - EEAA",
+              location: "الجيزة (الصف)",
               date: "2018",
               image: "/studies/study-21.png"
             },
-            { 
-              name: "تقييم الأثر البيئي والاجتماعي لإعادة تعبئة المبيدات (مخزن أسيوط)", 
-              client: "مشروع إدارة الملوثات العضوية الثابتة (POPs) - EEAA", 
-              location: "أسيوط", 
+            {
+              name: "تقييم الأثر البيئي والاجتماعي لإعادة تعبئة المبيدات (مخزن أسيوط)",
+              client: "مشروع إدارة الملوثات العضوية الثابتة (POPs) - EEAA",
+              location: "أسيوط",
               date: "2018",
               image: "/studies/study-20.png"
             },
-            { 
-              name: "تقييم الأثر البيئي والاجتماعي (ج) لمشروع إنتاج الكربون الأسود", 
-              client: "شركة برج العرب للتنمية والاستثمار", 
-              location: "بني سويف (منطقة الصناعات الثقيلة)", 
+            {
+              name: "تقييم الأثر البيئي والاجتماعي (ج) لمشروع إنتاج الكربون الأسود",
+              client: "شركة برج العرب للتنمية والاستثمار",
+              location: "بني سويف (منطقة الصناعات الثقيلة)",
               date: "2013",
               image: "/studies/study-13.png"
             }
@@ -800,52 +1507,59 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "ملفات هيئة التنمية الصناعية (الملف البيئي والفني)",
           projects: [
-            { 
-              name: "الدراسة البيئية لصناعة الأسمدة (إضافة نشاط كبريتات ماغنسيوم وبوتاسيوم)", 
-              client: "شركة التقنية لصناعة الأسمدة", 
-              location: "منطقة بياض العرب الصناعية", 
+            {
+              name: "الدراسة البيئية لصناعة الأسمدة (إضافة نشاط كبريتات ماغنسيوم وبوتاسيوم)",
+              client: "شركة التقنية لصناعة الأسمدة",
+              location: "منطقة بياض العرب الصناعية",
               date: "2023",
               image: "/studies/study-12.png"
             },
-            { 
-              name: "الملف البيئي للأغذية الطبية (تعبئة وتجارة مكملات غذائية وألبان أطفال)", 
-              client: "شركة نيتراميد إنترناشيونال", 
-              location: "العاشر من رمضان", 
+            {
+              name: "الملف البيئي للأغذية الطبية (تعبئة وتجارة مكملات غذائية وألبان أطفال)",
+              client: "شركة نيتراميد إنترناشيونال",
+              location: "العاشر من رمضان",
               date: "2022",
               image: "/studies/study-11.png"
             },
-            { 
-              name: "الملف الفني (إنتاج مكملات غذائية وألبان أطفال)", 
-              client: "شركة نيترافارم إنترناشيونال", 
-              location: "العاشر من رمضان", 
+            {
+              name: "الملف الفني (إنتاج مكملات غذائية وألبان أطفال)",
+              client: "شركة نيترافارم إنترناشيونال",
+              location: "العاشر من رمضان",
               date: "2020",
               image: "/studies/study-10.png"
             },
-            { 
-              name: "الدراسة البيئية لمحطة خلط خرسانة جاهزة", 
-              client: "شركة كونكريت بلاس للهندسة", 
-              location: "مدينة العلمين الجديدة", 
-              date: "2020",
-              image: "/studies/study-9.png"
+            {
+              name: "الدراسة البيئية لمشروع إنتاج الكربون الأسود",
+              client: "شركة برج العرب للتنمية والإستثمار ش م م",
+              location: "محافظة بني سويف",
+              date: "الطاقة الإنتاجية: ٧٠ ألف طن سنوياً",
+              image: "/studies/study-25.png"
             },
-            { 
-              name: "الملف الفني لمحطة خلط خرسانة جاهزة", 
-              client: "شركة كونكريت بلاس للهندسة", 
-              location: "مدينة العلمين الجديدة", 
+            {
+              name: "الدراسة البيئية لمحطة خلط خرسانة جاهزة",
+              client: "شركة كونكريت بلاس للهندسة",
+              location: "مدينة العلمين الجديدة",
               date: "2020",
-              image: "/studies/study-8.png"
+              image: "/studies/study-24.png"
             },
-            { 
-              name: "الملف البيئي لتصنيع منتجات الكرتون المضلع", 
-              client: "شركة سيلدك (Sealed Air)", 
-              location: "العاشر من رمضان", 
+            {
+              name: "الملف الفني لمحطة خلط خرسانة جاهزة",
+              client: "شركة كونكريت بلاس للهندسة",
+              location: "مدينة العلمين الجديدة",
+              date: "2020",
+              image: "/studies/study-23.png"
+            },
+            {
+              name: "الملف البيئي لتصنيع منتجات الكرتون المضلع",
+              client: "شركة سيلدك (Sealed Air)",
+              location: "العاشر من رمضان",
               date: "2018",
-              image: "/studies/study-7.png"
+              image: "/studies/study-22.png"
             },
-            { 
-              name: "الملف الفني لتصنيع البويات والصناعات الكيماوية", 
-              client: "الشركة الإسلامية الدولية للبويات", 
-              location: "العاشر من رمضان", 
+            {
+              name: "الملف الفني لتصنيع البويات والصناعات الكيماوية",
+              client: "الشركة الإسلامية الدولية للبويات",
+              location: "العاشر من رمضان",
               date: "2018",
               image: "/studies/study-6.png"
             }
@@ -854,17 +1568,17 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "تقارير فحص أنظمة الحريق والإنذار",
           projects: [
-            { 
-              name: "تقرير وصف أنظمة الإنذار ومكافحة الحريق (مخزن السقالات والشدات المعدنية)", 
-              client: "شركة بايونيرز للصناعات", 
-              location: "السادس من أكتوبر", 
+            {
+              name: "تقرير وصف أنظمة الإنذار ومكافحة الحريق (مخزن السقالات والشدات المعدنية)",
+              client: "شركة بايونيرز للصناعات",
+              location: "السادس من أكتوبر",
               date: "2020",
               image: "/studies/study-5.png"
             },
-            { 
-              name: "تقرير وصف أنظمة الإنذار ومكافحة الحريق (مصنع عبوات الفوم والبلاستيك)", 
-              client: "شركة مصر الحجاز لصناعات وصلات المواسير", 
-              location: "العاشر من رمضان", 
+            {
+              name: "تقرير وصف أنظمة الإنذار ومكافحة الحريق (مصنع عبوات الفوم والبلاستيك)",
+              client: "شركة مصر الحجاز لصناعات وصلات المواسير",
+              location: "العاشر من رمضان",
               date: "2020",
               image: "/studies/study-4.png"
             }
@@ -873,24 +1587,24 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         {
           categoryTitle: "تقارير هندسية لفحص وصلاحية الغلايات",
           projects: [
-            { 
-              name: "تقرير صلاحية غلاية", 
-              client: "مصنع فيدميكس إيجيبت للأعلاف", 
-              location: "بني سويف", 
+            {
+              name: "تقرير صلاحية غلاية",
+              client: "مصنع فيدميكس إيجيبت للأعلاف",
+              location: "بني سويف",
               date: "2018",
               image: "/studies/study-3.png"
             },
-            { 
-              name: "تقرير صلاحية غلاية", 
-              client: "شركة بني سويف للأعلاف الحيوانية", 
-              location: "بني سويف", 
+            {
+              name: "تقرير صلاحية غلاية",
+              client: "شركة بني سويف للأعلاف الحيوانية",
+              location: "بني سويف",
               date: "2018",
               image: "/studies/study-2.png"
             },
-            { 
-              name: "تقرير صلاحية غلاية", 
-              client: "مصنع كواليتي باك للأحبار", 
-              location: "الفيوم", 
+            {
+              name: "تقرير صلاحية غلاية",
+              client: "مصنع كواليتي باك للأحبار",
+              location: "الفيوم",
               date: "2018",
               image: "/studies/study-1.png"
             }
@@ -913,7 +1627,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         { project: "Support for Environmental Assessment and Management (SEAM) / EEAA", years: "1999-2005", funding: "funded by the UK (DFID)" },
         { project: "Facility for Financing Environmental Protection in Industry", years: "1997-1999", funding: "KfW بنك التعمير الألماني" }
       ],
-      partnersTitle: "العملاء والشركاء",
+      partnersTitle: "شركاؤنا",
       partners: {
         government: ["وزارة البيئة", "جهاز شئون البيئة (EEAA)", "هيئة التنمية الصناعية"],
         international: ["البنك الدولي", "GEF", "USAID", "UNDP", "JICA", "DANIDA", "FINNAIDA", "CIDA", "AfDB", "KfW", "DFID"],
@@ -921,7 +1635,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       }
     },
     partners: {
-      title: "شركاء وعملاء",
+      title: "شركاؤنا",
       government: ["وزارة البيئة – EEAA"],
       international: ["World Bank", "GEF", "USAID", "UNDP", "JICA", "DANIDA", "FINNIDA", "CIDA"],
       industries: ["الأسمنت", "الكيماويات", "البترول", "النسيج", "الأغذية", "الطاقة"]
@@ -931,10 +1645,10 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       subtitle: "نحن هنا لدعم مصنعك في كل خطوة نحو الامتثال البيئي والاستدامة.",
       emailLabel: "البريد الإلكتروني",
       phoneLabel: "الهاتف",
-      phoneNumbers: ["+2 01067096677"],
-      emails: ["info@gardenia.eg"],
+      phoneNumbers: ["+2-01067096677", "+201096677671"],
+      emails: ["info@gardeniaec.com"],
       address: "كمبوند أشجار دارنا - عمارة A5 الدور الأول - المعادي - القاهرة",
-      sendButton: "إرسال الرسالة",
+      sendButton: "طلب استشارة",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
       formMessage: "كيف يمكننا مساعدتك؟"
@@ -942,6 +1656,11 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     footer: {
       rights: "جميع الحقوق محفوظة جاردينيا للاستشارات البيئية © 2026",
       address: "كمبوند أشجار دارنا - عمارة A5 الدور الأول - المعادي - القاهرة"
+    },
+    social: {
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+      instagram: "https://instagram.com"
     }
   }
 };

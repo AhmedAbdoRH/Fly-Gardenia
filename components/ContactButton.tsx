@@ -47,8 +47,8 @@ export const ContactButton: React.FC = () => {
 
         {/* Contact Options Panel - Same as Hero dropdown */}
         {isOpen && (
-          <div className={`absolute bottom-full left-0 mb-4 w-80 bg-black/40 backdrop-blur-3xl rounded-3xl shadow-3xl z-50 overflow-hidden border border-white/20 animate-fade-in-down transition-all duration-500 ease-out`} style={{boxShadow:'0 20px 40px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1)'}}>
-            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-brand-green/30 rounded-full blur-3xl opacity-70 pointer-events-none" style={{filter:'blur(32px)'}}></div>
+          <div className={`absolute bottom-full left-0 mb-4 w-80 bg-black/40 backdrop-blur-3xl rounded-3xl shadow-3xl z-50 overflow-hidden border border-white/20 animate-fade-in-down transition-all duration-500 ease-out`} style={{ boxShadow: '0 20px 40px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1)' }}>
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-brand-green/30 rounded-full blur-3xl opacity-70 pointer-events-none" style={{ filter: 'blur(32px)' }}></div>
             <div className="p-4 divide-y divide-white/15">
               <a href={`tel:${phoneDigits}`} className="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-brand-green/20 hover:scale-[1.03] transition-all group/item">
                 <div className="w-12 h-12 rounded-xl bg-brand-green/30 flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-green/50 transition-colors group-hover/item:scale-110">
@@ -56,7 +56,7 @@ export const ContactButton: React.FC = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-extrabold text-white text-base group-hover/item:text-brand-green transition-colors">اتصال مباشر</div>
-                  <div className="text-xs text-gray-200/60">اتصل بنا مباشرة</div>
+                  <div className="text-xs text-gray-200/60 font-mono" dir="ltr">01067096677 - 01096677671</div>
                 </div>
               </a>
               <a href={`https://wa.me/${phoneDigits.replace(/\+/g, '')}`} target="_blank" rel="noreferrer" className="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-green-900/30 hover:scale-[1.03] transition-all group/item">
@@ -65,7 +65,7 @@ export const ContactButton: React.FC = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-extrabold text-white text-base group-hover/item:text-green-300 transition-colors">تواصل من خلال واتساب</div>
-                  <div className="text-xs text-gray-200/60">رسالة فورية</div>
+                  <div className="text-xs text-gray-200/60 font-mono" dir="ltr">01067096677</div>
                 </div>
               </a>
               <a href={`mailto:${email}`} className="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-blue-900/30 hover:scale-[1.03] transition-all group/item">
@@ -74,7 +74,7 @@ export const ContactButton: React.FC = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-extrabold text-white text-base group-hover/item:text-blue-300 transition-colors">مراسلة من خلال الايميل</div>
-                  <div className="text-xs text-gray-200/60">أرسل لنا بريداً إلكترونياً</div>
+                  <div className="text-xs text-gray-200/60 font-mono">info@gardeniaec.com</div>
                 </div>
               </a>
             </div>

@@ -25,8 +25,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
             <section className="relative pt-32 pb-8 md:pt-48 md:pb-12 watercolor-bg overflow-hidden">
                 {/* Dynamic Background Elements */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <motion.div 
-                        animate={{ 
+                    <motion.div
+                        animate={{
                             scale: [1, 1.3, 1],
                             rotate: [0, 45, 0],
                             opacity: [0.4, 0.6, 0.4]
@@ -34,8 +34,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                         className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#d4ff70]/20 rounded-full blur-[120px]"
                     />
-                    <motion.div 
-                        animate={{ 
+                    <motion.div
+                        animate={{
                             scale: [1.3, 1, 1.3],
                             rotate: [0, -45, 0],
                             opacity: [0.3, 0.5, 0.3]
@@ -61,27 +61,27 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                 transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
                                 className="absolute inset-[-100px] md:inset-[-160px] border-[1px] border-[#d4ff70]/20 rounded-full border-dashed"
                             />
-                            
+
                             {/* Enhanced Central Glow - Slower pulse */}
-                            <motion.div 
-                                animate={{ 
+                            <motion.div
+                                animate={{
                                     scale: [1.5, 1.8, 1.5],
                                     opacity: [0.3, 0.5, 0.3]
                                 }}
-                                transition={{ 
+                                transition={{
                                     duration: 8,
                                     repeat: Infinity,
                                     ease: "easeInOut"
                                 }}
                                 className="absolute inset-0 bg-[#d4ff70]/30 blur-[100px] rounded-full"
                             />
-                            
+
                             {/* Floating Logo Container - Slower and more dramatic */}
                             <motion.div
-                                animate={{ 
+                                animate={{
                                     y: [0, -25, 0],
                                 }}
-                                transition={{ 
+                                transition={{
                                     duration: 10,
                                     repeat: Infinity,
                                     ease: "easeInOut"
@@ -149,8 +149,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                     {t.about.introText}
                                 </p>
                             )}
-                            <a 
-                                href="#services" 
+                            <a
+                                href="#services"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/#services';
@@ -246,55 +246,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                         </div>
                     )}
 
-                    {/* Added Value Section */}
-                    {t.about.addedValueTitle && (
-                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
-                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-xl relative overflow-hidden">
-                                <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-brand-emerald/10 flex items-center justify-center">
-                                        <Quote className="w-7 h-7 text-brand-emerald" />
-                                    </div>
-                                    {t.about.addedValueTitle}
-                                </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    {t.about.addedValueItems?.map((item, idx) => (
-                                        <div key={idx} className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-emerald/30 hover:shadow-lg transition-all duration-300">
-                                            <p className="text-brand-gray text-lg leading-relaxed font-medium text-justify">
-                                                {item}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    )}
 
-                    {/* Experts Section */}
-                    {t.about.expertsTitle && (
-                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
-                            <div className="bg-brand-dark text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green to-brand-emerald"></div>
-                                <h3 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-brand-green/20 flex items-center justify-center">
-                                        <Users className="w-7 h-7 text-brand-green" />
-                                    </div>
-                                    {t.about.expertsTitle}
-                                </h3>
-                                <p className="text-xl text-gray-300 mb-10 leading-relaxed font-medium">
-                                    {t.about.expertsIntro}
-                                </p>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    {t.about.expertsItems?.map((item, idx) => (
-                                        <div key={idx} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-green/40 hover:bg-white/10 transition-all duration-300">
-                                            <p className="text-gray-200 leading-relaxed">
-                                                {item}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    )}
 
                     {/* Dr. Asmaa Profile Section */}
                     {t.about.drAsmaaTitle && (
@@ -307,20 +259,20 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             {/* Animated background frames */}
                                             <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
                                             <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
-                                            
+
                                             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
                                                 {/* Premium Background for the Photo */}
                                                 <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
                                                 <div className="absolute top-0 right-0 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                                                
+
                                                 {/* Abstract Decorative Lines */}
                                                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                                                     <div className="absolute top-10 left-10 w-full h-full border-2 border-brand-green rounded-full"></div>
                                                 </div>
 
-                                                <img 
-                                                    src="/Dr. Asmaa Hammouda.png" 
-                                                    alt="Dr. Asmaa Hammouda" 
+                                                <img
+                                                    src="/Dr. Asmaa Hammouda.png"
+                                                    alt="Dr. Asmaa Hammouda"
                                                     className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
                                                 />
                                             </div>
@@ -362,41 +314,118 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 </div>
                                             ))}
                                         </div>
+
+                                        <div className="mt-10">
+                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                                {[
+                                                    {
+                                                        src: "/صورة تذكارية لدكتور اسماء اثناء تواجدها امام احد المصانع.png",
+                                                        alt: lang === 'ar' ? 'صورة ميدانية أمام أحد المصانع' : 'On-site photo at a facility'
+                                                    },
+                                                    {
+                                                        src: "/صورة لدكتور اسماء اثناء تنفيذ احد المشاريع.png",
+                                                        alt: lang === 'ar' ? 'صورة أثناء تنفيذ أحد المشاريع' : 'During project execution'
+                                                    },
+                                                    {
+                                                        src: "/صورة لدكتور اسماء داخل احد الاجتماعات البيئية.png",
+                                                        alt: lang === 'ar' ? 'صورة داخل أحد الاجتماعات البيئية' : 'Environmental meeting'
+                                                    }
+                                                ].map((img, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="group relative overflow-hidden rounded-2xl border border-brand-green/15 bg-brand-light shadow-lg hover:shadow-2xl transition-all duration-500"
+                                                    >
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-brand-green/10 via-transparent to-brand-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                                                        <img
+                                                            src={img.src}
+                                                            alt={img.alt}
+                                                            className={`w-full h-44 md:h-40 object-cover group-hover:scale-[1.04] transition-transform duration-700 ${i === 2 ? 'object-left' : ''}`}
+                                                            loading="lazy"
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
+                                                <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-green/10 rounded-full blur-[90px] pointer-events-none"></div>
+                                                <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
+
+                                                <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+                                                    <div className="mb-6">
+                                                        <h4 className="text-2xl md:text-3xl font-black text-brand-charcoal mb-2">
+                                                            {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa Hammouda'}
+                                                        </h4>
+                                                        <p className="text-base md:text-xl text-brand-green font-bold">
+                                                            {lang === 'ar' ? 'أستاذ الهندسة الكيميائية والبيئية' : 'Professor of Chemical & Environmental Engineering'}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="relative mb-6 md:mb-8">
+                                                        <Quote className={`absolute -top-6 ${lang === 'ar' ? '-left-6' : '-right-6'} w-12 h-12 text-brand-green/10 ${lang === 'ar' ? '' : '-scale-x-100'}`} />
+                                                        <p className="text-lg md:text-2xl text-brand-gray leading-relaxed font-medium italic relative z-10">
+                                                            {lang === 'ar'
+                                                                ? 'نعمل على تقديم حلول استشارية تجمع بين الدقة العلمية والخبرة العملية لدعم التنمية الصناعية المستدامة.'
+                                                                : 'We work to provide consulting solutions that combine scientific accuracy with practical experience to support sustainable industrial development.'}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className={`flex flex-wrap gap-4 md:gap-6 ${lang === 'ar' ? 'justify-start flex-row-reverse' : ''}`}>
+                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
+                                                            <div className="absolute inset-0 bg-brand-green/5 translate-y-full group-hover/badge:translate-y-0 transition-transform duration-300"></div>
+                                                            <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center relative z-10">
+                                                                <Award className="w-5 h-5 text-brand-green" />
+                                                            </div>
+                                                            <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+                                                                <p className="text-[10px] text-brand-green font-black uppercase tracking-widest mb-0.5">
+                                                                    {lang === 'ar' ? 'اعتماد دولي' : 'International Certification'}
+                                                                </p>
+                                                                <p className="font-black text-brand-charcoal">
+                                                                    {lang === 'ar' ? 'مستشار وزير البيئة الأسبق' : 'Former Advisor to Minister'}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                                            <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
+                                                                <CheckCircle className="w-5 h-5 text-brand-green" />
+                                                            </div>
+                                                            <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
+                                                                <p className="text-xs text-brand-gray font-bold uppercase tracking-wider">
+                                                                    {lang === 'ar' ? 'الخبرة العملية' : 'Expertise'}
+                                                                </p>
+                                                                <p className="font-black text-brand-charcoal">
+                                                                    {lang === 'ar' ? '٢٨+ عاماً من الخبرة' : '28+ Years of Experience'}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Integrated Experts Section */}
+                                        {t.about.expertsTitle && (
+                                            <div className="mt-12 pt-12 border-t border-gray-100">
+                                                <h4 className="text-2xl font-bold text-brand-charcoal mb-6 flex items-center gap-3">
+                                                    <Users className="w-6 h-6 text-brand-green" />
+                                                    {t.about.expertsTitle}
+                                                </h4>
+                                                <div className="grid grid-cols-1 gap-4">
+                                                    {t.about.expertsItems?.map((item, idx) => (
+                                                        <div key={idx} className="p-5 rounded-2xl bg-brand-light border border-brand-green/10 hover:border-brand-green transition-all duration-300">
+                                                            <p className="text-brand-gray font-medium leading-relaxed">
+                                                                {item}
+                                                            </p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     )}
-                </div>
-            </section>
-
-            {/* Methodology Section */}
-            <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
-                <div className="container mx-auto">
-                    <div className="max-w-5xl mx-auto reveal-trigger">
-                        <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-brand-green/10">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
-                                    <svg className="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-2xl md:text-4xl font-bold text-brand-charcoal">
-                                    {t.about.methodologyTitle}
-                                </h3>
-                            </div>
-                            <div className="space-y-4">
-                                {t.about.methodologyText?.map((item, idx) => (
-                                    <div key={idx} className="flex gap-4 items-start group">
-                                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                        <p className="text-brand-gray text-lg leading-relaxed font-medium text-justify group-hover:text-brand-charcoal transition-colors">
-                                            {item}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -437,7 +466,6 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     </div>
                 </div>
             </section>
-
 
             {/* Services Modal (triggered from CTA) */}
             {showServicesModal && (
@@ -488,7 +516,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                         )}
                     </div>
                 </div>
-            )}
+            )
+            }
 
             {/* Why Us Section */}
             <section className="py-20 md:py-32 bg-gray-50/50">
@@ -520,6 +549,6 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     </div>
                 </div>
             </section>
-        </div>
+        </div >
     );
 };

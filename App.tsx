@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { CONTENT } from './constants';
 import { Language } from './types';
 import { Header } from './components/Header';
@@ -22,7 +22,7 @@ const ScrollToTop = () => {
 };
 
 const AppContent: React.FC = () => {
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLang] = useState<Language>('ar');
 
   const toggleLang = () => {
     setLang(prev => prev === 'en' ? 'ar' : 'en');
@@ -60,6 +60,7 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<Home content={t} lang={lang} />} />
           <Route path="/about" element={<About content={t} lang={lang} />} />
           <Route path="/services" element={<Services content={t} lang={lang} />} />
+          <Route path="/fire-systems" element={<Navigate to="/services" replace />} />
           <Route path="/projects" element={<Projects content={t} lang={lang} />} />
           <Route path="/contact" element={<Contact content={t} lang={lang} />} />
         </Routes>
