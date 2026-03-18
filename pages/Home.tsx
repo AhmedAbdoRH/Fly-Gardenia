@@ -230,98 +230,146 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                 </div>
             </section>
 
-            {/* Leadership Section - Dr. Asmaa Highlight */}
+            {/* Leadership Team Section - Compact Cards */}
             <section className="py-24 md:py-32 bg-brand-light relative overflow-hidden">
                 {/* Decorative background elements */}
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-green/5 to-transparent"></div>
                 <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-green/10 rounded-full blur-[100px]"></div>
 
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 max-w-6xl mx-auto">
-                        {/* Image Side */}
-                        <div className="w-full lg:w-5/12 flex justify-center reveal-trigger">
-                            <div className="relative group">
-                                {/* Animated background frames */}
-                                <div className="absolute inset-0 bg-brand-green/20 rounded-[3rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
-                                <div className="absolute inset-0 bg-brand-dark/5 rounded-[3rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
-                                
-                                <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-[450px] md:h-[450px] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl z-10">
-                                    {/* Premium Background for the Photo */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
-                                    <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-brand-green/10 rounded-full blur-3xl -mr-16 -mt-16 md:-mr-20 md:-mt-20"></div>
-                                    <div className="absolute bottom-0 left-0 w-32 h-32 md:w-48 md:h-48 bg-brand-emerald/5 rounded-full blur-2xl -ml-8 -mb-8 md:-ml-10 md:-mb-10"></div>
-                                    
-                                    {/* Abstract Decorative Lines */}
-                                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-                                        <div className="absolute top-10 left-10 w-full h-full border-2 border-brand-green rounded-full"></div>
-                                        <div className="absolute top-20 left-20 w-full h-full border-2 border-brand-green rounded-full"></div>
-                                    </div>
+                    {/* Section Header */}
+                    <div className="text-center mb-16 reveal-trigger">
+                        <span className="text-brand-green font-bold tracking-wider uppercase text-xs md:text-sm mb-4 block">{lang === 'ar' ? 'الفريق المتخصص' : 'Our Expert Team'}</span>
+                        <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 leading-tight">
+                            {lang === 'ar' ? 'قيادة علمية خبيرة' : 'Expert Scientific Leadership'}
+                        </h2>
+                    </div>
 
-                                    <img 
-                                        src="/Dr. Asmaa Hammouda.png" 
-                                        alt="Dr. Asmaa Hammouda" 
-                                        className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
-                                    />
+                    {/* Team Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                        {/* Dr. Asmaa Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20"
+                        >
+                            {/* Card Background Glow */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            {/* Image Section */}
+                            <div className="relative h-64 md:h-72 overflow-hidden bg-brand-dark">
+                                <img 
+                                    src="/Dr. Asmaa Hammouda.png" 
+                                    alt="Dr. Asmaa Hammouda" 
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
+                                {/* Badge */}
+                                <div className="absolute top-4 right-4 bg-brand-green text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                                    {lang === 'ar' ? 'المؤسس' : 'Founder'}
                                 </div>
                             </div>
-                        </div>
-                        
-                        {/* Content Side */}
-                        <div className={`w-full lg:w-7/12 reveal-trigger ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
-                            <div className={`flex items-center gap-3 mb-6 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                <div className="w-16 h-[2px] bg-brand-green"></div>
-                                <span className="text-brand-green font-black tracking-widest uppercase text-xs md:text-sm">
-                                    {lang === 'ar' ? 'قيادة علمية خبيرة' : 'Expert Scientific Leadership'}
-                                </span>
-                            </div>
-                            
-                            <div className="mb-8">
-                                <h2 className="text-4xl md:text-6xl font-black text-brand-dark mb-2 leading-[1.1]">
-                                    {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa Hammouda'}
-                                </h2>
-                                <p className="text-xl md:text-2xl text-brand-green font-bold">
-                                    {lang === 'ar' ? 'أستاذ الهندسة الكيميائية والبيئية' : 'Professor of Chemical & Environmental Engineering'}
-                                </p>
-                            </div>
-                            
-                            <div className="relative mb-12">
-                                <Quote className={`absolute -top-8 ${lang === 'ar' ? '-left-8' : '-right-8'} w-16 h-16 text-brand-green/10 ${lang === 'ar' ? '' : '-scale-x-100'}`} />
-                                <p className="text-2xl md:text-3xl text-brand-gray leading-relaxed font-medium italic relative z-10">
+
+                            {/* Content Section */}
+                            <div className="p-8 relative z-10">
+                                <h3 className="text-2xl font-black text-brand-dark mb-1">
+                                    {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa'}
+                                </h3>
+                                <p className="text-brand-green font-bold text-sm md:text-base mb-4 leading-tight">
                                     {lang === 'ar' 
-                                        ? 'نعمل على تقديم حلول استشارية تجمع بين الدقة العلمية والخبرة العملية لدعم التنمية الصناعية المستدامة.'
-                                        : 'We work to provide consulting solutions that combine scientific accuracy with practical experience to support sustainable industrial development.'}
+                                        ? 'أستاذ الهندسة الكيميائية والبيئية'
+                                        : 'Professor of Chemical & Environmental Engineering'}
                                 </p>
-                            </div>
-                            
-                            <div className={`flex flex-wrap gap-6 mb-12 ${lang === 'ar' ? 'justify-start flex-row-reverse' : ''}`}>
-                                <div className="bg-white px-8 py-5 rounded-[2rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
-                                    <div className="absolute inset-0 bg-brand-green/5 translate-y-full group-hover/badge:translate-y-0 transition-transform duration-300"></div>
-                                    <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center relative z-10">
-                                        <Award className="w-5 h-5 text-brand-green" />
+
+                                {/* Experience Highlights */}
+                                <div className="space-y-2 mb-6">
+                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                        <span>{lang === 'ar' ? '٢٨+ سنة خبرة دولية' : '28+ Years International Experience'}</span>
                                     </div>
-                                    <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
-                                        <p className="text-[10px] text-brand-green font-black uppercase tracking-widest mb-0.5">
-                                            {lang === 'ar' ? 'اعتماد دولي' : 'International Certification'}
-                                        </p>
-                                        <p className="font-black text-brand-charcoal">{lang === 'ar' ? 'مستشار وزير البيئة الأسبق' : 'Former Advisor to Minister'}</p>
+                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                        <span>{lang === 'ar' ? 'مستشار وزير البيئة الأسبق' : 'Former Advisor to Minister'}</span>
                                     </div>
-                                </div>
-                                <div className="bg-white px-8 py-5 rounded-[2rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
-                                    <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
-                                        <CheckCircle className="w-5 h-5 text-brand-green" />
-                                    </div>
-                                    <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
-                                        <p className="text-xs text-brand-gray font-bold uppercase tracking-wider">{lang === 'ar' ? 'الخبرة العملية' : 'Expertise'}</p>
-                                        <p className="font-black text-brand-charcoal">{lang === 'ar' ? '٢٨+ عاماً من الخبرة' : '28+ Years of Experience'}</p>
+                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                        <span>{lang === 'ar' ? 'قيادة قسم الدراسات البيئية - جامعة بني سويف' : 'Head of Environmental Science Department'}</span>
                                     </div>
                                 </div>
+
+                                {/* CTA Button */}
+                                <Link 
+                                    to="/about" 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:gap-4 transition-all group/link w-full justify-center py-3 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                >
+                                    <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
+                                    <ArrowRight size={16} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </Link>
                             </div>
-                            
-                            <Link to="/about" className={`inline-flex items-center gap-4 bg-brand-dark text-white px-10 py-5 rounded-full font-bold hover:bg-brand-green transition-all group ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                {lang === 'ar' ? 'عرض السيرة الذاتية الكاملة' : 'View Full Profile'}
-                                <ArrowRight size={22} className={`transition-transform group-hover:translate-x-2 ${lang === 'ar' ? 'rotate-180 group-hover:-translate-x-2' : ''}`} />
-                            </Link>
-                        </div>
+                        </motion.div>
+
+                        {/* Dr. Khaled Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20"
+                        >
+                            {/* Card Background Glow */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            {/* Image Section */}
+                            <div className="relative h-64 md:h-72 overflow-hidden bg-gradient-to-br from-brand-green to-brand-dark flex items-center justify-center">
+                                <div className="text-center">
+                                    <div className="w-32 h-32 rounded-full border-4 border-white mx-auto mb-4 flex items-center justify-center bg-white/10">
+                                        <Building2 className="w-16 h-16 text-white" />
+                                    </div>
+                                    <p className="text-white font-bold text-sm">{lang === 'ar' ? 'خبير أمان وحماية من الحريق' : 'Fire & Safety Expert'}</p>
+                                </div>
+                                {/* Badge */}
+                                <div className="absolute top-4 right-4 bg-white text-brand-green px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                                    {lang === 'ar' ? 'متخصص' : 'Specialist'}
+                                </div>
+                            </div>
+
+                            {/* Content Section */}
+                            <div className="p-8 relative z-10">
+                                <h3 className="text-2xl font-black text-brand-dark mb-1">
+                                    {lang === 'ar' ? 'م/ خالد عيد' : 'Eng. Khaled Eid'}
+                                </h3>
+                                <p className="text-brand-green font-bold text-sm md:text-base mb-4 leading-tight">
+                                    {lang === 'ar' 
+                                        ? 'متخصص حماية من الحريق والأمان'
+                                        : 'Fire Protection & Safety Consultant'}
+                                </p>
+
+                                {/* Experience Highlights */}
+                                <div className="space-y-2 mb-6">
+                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                        <span>{lang === 'ar' ? '٣٣+ سنة خبرة متخصصة' : '33+ Years Specialized Experience'}</span>
+                                    </div>
+                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                        <span>{lang === 'ar' ? 'رئيس الأنظمة الأمنية - الهيئة القومية للأنفاق' : 'Head of Fire Systems, Former'}</span>
+                                    </div>
+                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                        <span>{lang === 'ar' ? 'معتمد من نقابة المهندسين المصريين' : 'Syndicate of Engineers Certified'}</span>
+                                    </div>
+                                </div>
+
+                                {/* CTA Button */}
+                                <Link 
+                                    to="/fire-systems" 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:gap-4 transition-all group/link w-full justify-center py-3 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                >
+                                    <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
+                                    <ArrowRight size={16} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </Link>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>

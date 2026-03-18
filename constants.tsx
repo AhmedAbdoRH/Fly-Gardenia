@@ -85,6 +85,19 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "Deputy Project Manager for JICA-funded PCBs Management Project (2005-2007).",
         "Coordinator for National Environmental Inspection Plans at EEAA (1999-2005).",
         "Over 28 years of international experience (USA, Canada, Japan, India, Thailand, Germany)."
+      ],
+      drKhaledTitle: "Eng. Khaled Eid Mohamed Ibrahim - Fire Protection & Safety Consultant",
+      drKhaledBio: [
+        "Senior Fire Protection & Occupational Safety Consultant with 33 years of experience.",
+        "Leadership in firefighting and alarm systems, safety management, and quality assurance.",
+        "Head of Fire Systems, Security Systems, and Safety (National Authority for Tunnels) - 12 years.",
+        "Chief of Quality, Health, Safety & Environment (Egyptian Military of Defence) - 21 years.",
+        "IRCA Certified Auditor in Occupational Health & Safety (OHSAS 18001:2007).",
+        "Certified Consultant by the Egyptian Syndicate of Engineers in Safety and Security Systems.",
+        "Extensive expertise in fire alarm system design, firefighting system evaluation, and compliance verification.",
+        "Advanced international training in fire control panels, smoke systems, firefighting pumps, and signaling systems (2024-2021).",
+        "Proven experience in major national infrastructure projects - Metro, highways, government facilities.",
+        "Strategic partnership with Civil Defense Authority and government agencies on fire protection and safety compliance."
       ]
     },
     values: {
@@ -881,7 +894,20 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "خبرات واسعة في مشاريع وطنية ودولية بتمويل من جهات مانحة كبرى.",
         "استشاريو السلامة والأمن ومكافحة الحريق معتمدون من نقابة المهندسين ولهم خبرة طويلة في العمل مع هيئة الحماية المدنية."
       ],
-      drAsmaaTitle: "أ.د/ أسماء حمودة"
+      drAsmaaTitle: "أ.د/ أسماء حمودة",
+      drKhaledTitle: "م. خالد عيد محمد إبراهيم",
+      drKhaledBio: [
+        "استشاري أول أنظمة الحماية من الحريق والسلامة المهنية.",
+        "خبرة 33 عاماً في الصحة والسلامة المهنية ونظم ضبط الجودة وأنظمة إنذار ومكافحة الحريق.",
+        "قيادة فريق الدفاع المدني والسلامة والأمن بالهيئة القومية للأنفاق (12 عاماً).",
+        "مسؤول الجودة والسلامة بوزارة الدفاع المصرية (21 عاماً) - القوات المسلحة وشركات الإنتاج الحربي.",
+        "مراجع معتمد IRCA في الصحة والسلامة المهنية (OHSAS 18001/2007).",
+        "استشاري معتمد من نقابة المهندسين المصرية في أنظمة السلامة والأمن.",
+        "خبرة واسعة في تصميم وتقييم أنظمة الحريق والإطفاء والإنذار.",
+        "تدريب دولي متقدم في أنظمة الحريق والألواح التحكمية والدخان والمضخات (كندا، الولايات المتحدة، الإمارات، فرنسا).",
+        "خبرة في مشاريع البنية التحتية القومية - المترو والطرق والجسور والمشاريع الحكومية.",
+        "قيادة فريق متخصص وشراكات مع الجهات الحكومية والدفاع المدني."
+      ]
     },
     values: {
       title: "قيمنا",

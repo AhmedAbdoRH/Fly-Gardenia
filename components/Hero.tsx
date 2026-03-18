@@ -55,10 +55,25 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
 
       <div className="container relative z-20 mx-auto pt-32 md:pt-40 pb-48 md:pb-64">
         <div className="max-w-4xl">
-          <div className="overflow-hidden mb-4 md:mb-6">
-            <div className="flex items-center gap-3 md:gap-4 animate-fade-up opacity-0" style={{ animationDelay: '0.1s' }}>
-              <div className="h-[2px] w-8 md:w-12 bg-brand-emerald"></div>
-              <span className="text-brand-emerald font-bold tracking-[0.15em] uppercase text-xs md:text-sm font-sans">Est. 2008</span>
+          {/* Experience & Founded Labels */}
+          <div className="overflow-hidden mb-10 md:mb-14">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-6 animate-fade-up opacity-0" style={{ animationDelay: '0.1s' }}>
+              {/* Founded Badge */}
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="h-[2px] w-8 md:w-12 bg-brand-emerald"></div>
+                <span className="text-brand-emerald font-bold tracking-[0.15em] uppercase text-xs md:text-sm font-sans">Est. 2008</span>
+              </div>
+              
+              {/* Experience Badge */}
+              <div className="flex items-center gap-3 md:gap-4 border-l border-brand-emerald/30 pl-3 md:pl-6">
+                <div className="relative inline-flex items-center gap-2 px-4 md:px-5 py-2 rounded-full bg-brand-green/10 border border-brand-green/40 backdrop-blur-sm hover:border-brand-green/60 transition-all group">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                  <span className="text-brand-green font-bold tracking-wider uppercase text-xs md:text-sm relative z-10">
+                    +18 {lang === 'ar' ? 'سنة خبرة' : 'Years Experience'}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 

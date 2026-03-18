@@ -426,6 +426,209 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                             </div>
                         </div>
                     )}
+
+                    {/* Dr. Khaled Profile Section */}
+                    {t.about.drKhaledTitle && (
+                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                                    {/* Profile Image/Badge */}
+                                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                                        <div className="relative group">
+                                            {/* Animated background frames */}
+                                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10 bg-gradient-to-br from-brand-green to-brand-dark flex items-center justify-center">
+                                                <div className="text-center">
+                                                    <div className="w-32 h-32 rounded-full bg-white/20 mx-auto mb-4 flex items-center justify-center">
+                                                        <Award className="w-16 h-16 text-white" />
+                                                    </div>
+                                                    <p className="text-white font-bold text-sm">{lang === 'ar' ? 'خبير أمان وحماية من الحريق' : 'Fire & Safety Expert'}</p>
+                                                </div>
+                                            </div>
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                                {lang === 'ar' ? 'م/ خالد عيد' : 'Eng. Khaled Eid'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-12 w-full space-y-4">
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Award className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'معتمد من نقابة المهندسين' : 'Syndicate of Engineers Certified'}
+                                                </span>
+                                            </div>
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Briefcase className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'خبرة ٣٣+ سنة' : '33+ Years Experience'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Bio Content */}
+                                    <div className="w-full lg:w-2/3">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                                <BookOpen className="w-7 h-7 text-brand-green" />
+                                            </div>
+                                            {t.about.drKhaledTitle}
+                                        </h3>
+                                        <div className="space-y-4">
+                                            {t.about.drKhaledBio?.map((item, idx) => (
+                                                <div key={idx} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                        {item}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-10">
+                                            <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
+                                                <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-green/10 rounded-full blur-[90px] pointer-events-none"></div>
+                                                <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
+
+                                                <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+                                                    <div className="mb-6">
+                                                        <h4 className="text-2xl md:text-3xl font-black text-brand-charcoal mb-2">
+                                                            {lang === 'ar' ? 'م/ خالد عيد محمد إبراهيم' : 'Eng. Khaled Eid Mohamed Ibrahim'}
+                                                        </h4>
+                                                        <p className="text-base md:text-xl text-brand-green font-bold">
+                                                            {lang === 'ar' ? 'متخصص حماية من الحريق والأمان الصناعي' : 'Fire Protection & Industrial Safety Consultant'}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="relative mb-6 md:mb-8">
+                                                        <Quote className={`absolute -top-6 ${lang === 'ar' ? '-left-6' : '-right-6'} w-12 h-12 text-brand-green/10 ${lang === 'ar' ? '' : '-scale-x-100'}`} />
+                                                        <p className="text-lg md:text-2xl text-brand-gray leading-relaxed font-medium italic relative z-10">
+                                                            {lang === 'ar'
+                                                                ? 'الأمان والحماية من الحريق هي أساس أي منشأة آمنة وفعالة. نعمل على تطبيق أعلى معايير السلامة الدولية.'
+                                                                : 'Fire protection and safety are the foundation of any safe and effective facility. We implement the highest international safety standards.'}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className={`flex flex-wrap gap-4 md:gap-6 ${lang === 'ar' ? 'justify-start flex-row-reverse' : ''}`}>
+                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
+                                                            <div className="absolute inset-0 bg-brand-green/5 translate-y-full group-hover/badge:translate-y-0 transition-transform duration-300"></div>
+                                                            <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center relative z-10">
+                                                                <Award className="w-5 h-5 text-brand-green" />
+                                                            </div>
+                                                            <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+                                                                <p className="text-[10px] text-brand-green font-black uppercase tracking-widest mb-0.5">
+                                                                    {lang === 'ar' ? 'خبرة عملية' : 'Practical Experience'}
+                                                                </p>
+                                                                <p className="font-black text-brand-charcoal">
+                                                                    {lang === 'ar' ? '٣٣+ سنة متخصصة' : '33+ Years Specialized'}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                                            <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
+                                                                <CheckCircle className="w-5 h-5 text-brand-green" />
+                                                            </div>
+                                                            <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
+                                                                <p className="text-xs text-brand-gray font-bold uppercase tracking-wider">
+                                                                    {lang === 'ar' ? 'الاعتماد' : 'Certification'}
+                                                                </p>
+                                                                <p className="font-black text-brand-charcoal">
+                                                                    {lang === 'ar' ? 'نقابة المهندسين المصريين' : 'Syndicate Certified'}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Specializations & Expertise Grid */}
+                                            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                {[
+                                                    {
+                                                        title: lang === 'ar' ? 'أنظمة إنذار وإطفاء الحريق' : 'Fire Alarm & Firefighting Systems',
+                                                        description: lang === 'ar' ? 'تصميم وتنفيذ أنظمة الكشف عن الحريق والإطفاء والإنذار' : 'Design & implementation of detection, extinguishing & alarm systems'
+                                                    },
+                                                    {
+                                                        title: lang === 'ar' ? 'إدارة الأمان والسلامة' : 'Safety & Health Management',
+                                                        description: lang === 'ar' ? 'وضع سياسات وخطط الأمان الصناعي (OHSAS 18001)' : 'Developing industrial safety policies & plans (OHSAS 18001)'
+                                                    },
+                                                    {
+                                                        title: lang === 'ar' ? 'أنظمة الأمان والحماية' : 'Security Systems',
+                                                        description: lang === 'ar' ? 'تصميم أنظمة الأمان المتقدمة والكاميرات المراقبة' : 'Advanced security systems & surveillance design'
+                                                    },
+                                                    {
+                                                        title: lang === 'ar' ? 'التدقيق والامتثال' : 'Auditing & Compliance',
+                                                        description: lang === 'ar' ? 'تقييم الامتثال للمعايير الدولية والقوانين المحلية' : 'Assessing compliance with international standards & local laws'
+                                                    }
+                                                ].map((spec, idx) => (
+                                                    <div key={idx} className="p-4 rounded-2xl bg-white border border-brand-green/10 hover:border-brand-green/30 hover:shadow-lg transition-all group">
+                                                        <h5 className="font-bold text-brand-green mb-2 text-sm md:text-base group-hover:text-brand-dark transition-colors">{spec.title}</h5>
+                                                        <p className="text-xs md:text-sm text-brand-gray leading-relaxed">{spec.description}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            {/* Major Projects & Achievements */}
+                                            <div className="mt-8">
+                                                <h4 className="text-xl font-bold text-brand-charcoal mb-6 flex items-center gap-3">
+                                                    <div className="w-1.5 h-6 rounded-full bg-brand-green"></div>
+                                                    {lang === 'ar' ? 'المشاريع البارزة والإنجازات' : 'Major Projects & Achievements'}
+                                                </h4>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    {[
+                                                        {
+                                                            name: lang === 'ar' ? 'مترو الأنفاق المصري' : 'Egyptian Metro',
+                                                            role: lang === 'ar' ? 'استشاري أمان وحماية من الحريق' : 'Safety & Fire Protection Consultant'
+                                                        },
+                                                        {
+                                                            name: lang === 'ar' ? 'الطرق السريعة والكباري' : 'Highways & Bridges',
+                                                            role: lang === 'ar' ? 'تصميم وتقييم أنظمة الأمان' : 'Safety Systems Design & Assessment'
+                                                        },
+                                                        {
+                                                            name: lang === 'ar' ? 'المنشآت الحكومية' : 'Government Facilities',
+                                                            role: lang === 'ar' ? 'تطبيق معايير الأمان الدولية' : 'International Safety Standards Implementation'
+                                                        },
+                                                        {
+                                                            name: lang === 'ar' ? 'هيئة النفق - رئيس الأنظمة الأمنية' : 'National Authority for Tunnels',
+                                                            role: lang === 'ar' ? 'قيادة فريق الأمان لمدة ١٢ سنة' : 'Led Safety Team for 12 Years'
+                                                        }
+                                                    ].map((project, idx) => (
+                                                        <div key={idx} className="p-4 rounded-2xl bg-brand-light border-l-4 border-brand-green hover:shadow-md transition-all">
+                                                            <p className="font-bold text-brand-charcoal mb-1">{project.name}</p>
+                                                            <p className="text-sm text-brand-green font-medium">{project.role}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            {/* Key Credentials */}
+                                            <div className="mt-8">
+                                                <h4 className="text-xl font-bold text-brand-charcoal mb-6 flex items-center gap-3">
+                                                    <div className="w-1.5 h-6 rounded-full bg-brand-green"></div>
+                                                    {lang === 'ar' ? 'الاعتمادات والشهادات' : 'Credentials & Certifications'}
+                                                </h4>
+                                                <div className="space-y-3">
+                                                    {[
+                                                        lang === 'ar' ? '✓ معتمد من نقابة المهندسين المصريين في أنظمة الأمان والحماية من الحريق' : '✓ Certified by Egyptian Syndicate of Engineers in Fire Safety & Security Systems',
+                                                        lang === 'ar' ? '✓ مدقق معتمد IRCA في الصحة والأمان المهني (OHSAS 18001:2007)' : '✓ IRCA Certified Auditor in Occupational Health & Safety (OHSAS 18001:2007)',
+                                                        lang === 'ar' ? '✓ تدريبات دولية متقدمة في لوحات التحكم بالحريق وأنظمة الدخان وأنظمة الإطفاء' : '✓ Advanced International Training: Fire Control Panels, Smoke Systems, Firefighting Equipment',
+                                                        lang === 'ar' ? '✓ شراكة استراتيجية مع الدفاع المدني والجهات الحكومية' : '✓ Strategic Partnership with Civil Defense Authority & Government Agencies'
+                                                    ].map((cred, idx) => (
+                                                        <div key={idx} className="flex gap-3 p-3 rounded-lg bg-white border border-brand-green/10 text-sm md:text-base text-brand-charcoal">
+                                                            <span className="text-brand-green font-bold flex-shrink-0">✓</span>
+                                                            <span>{cred.replace('✓ ', '')}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
 

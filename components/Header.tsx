@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Language, ContentData } from '../types';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import RamadanLanterns from './RamadanLanterns';
 
 interface HeaderProps {
   lang: Language;
@@ -130,8 +129,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, toggleLang, content }) => 
         </nav>
       </div>
 
-      {/* Ramadan Lanterns Decoration */}
-      <RamadanLanterns hideOnScroll={isScrolled || location.pathname !== '/'} />
+
     </>
   );
 };
