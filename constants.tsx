@@ -805,7 +805,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       subtitle: "We are ready to support your facility at every step toward environmental compliance.",
       emailLabel: "Email",
       phoneLabel: "Phone & WhatsApp",
-      phoneNumbers: ["+201096677671", "+201067096677"],
+      phoneNumbers: ["+201067096677", "+201096677671"],
       emails: ["info@gardeniaec.com"],
       address: "Maadi - Cairo",
       sendButton: "Send Message",
