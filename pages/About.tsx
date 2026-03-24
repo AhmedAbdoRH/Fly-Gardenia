@@ -4,6 +4,8 @@ import { Target, Eye, Quote, CheckCircle, Users, Award, BookOpen, Briefcase } fr
 import { ContentData, ServiceItem } from '../types';
 import { TypeWriter } from '../components/TypeWriter';
 import { getIcon } from '../components/Icons';
+import { PartnersSection } from '../components/PartnersSection';
+import { CertificatesSection } from '../components/CertificatesSection';
 
 interface AboutProps {
     content: ContentData;
@@ -439,13 +441,21 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
                                             <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
 
-                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10 bg-gradient-to-br from-brand-green to-brand-dark flex items-center justify-center">
-                                                <div className="text-center">
-                                                    <div className="w-32 h-32 rounded-full bg-white/20 mx-auto mb-4 flex items-center justify-center">
-                                                        <Award className="w-16 h-16 text-white" />
-                                                    </div>
-                                                    <p className="text-white font-bold text-sm">{lang === 'ar' ? 'خبير أمان وحماية من الحريق' : 'Fire & Safety Expert'}</p>
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                                {/* Premium Background for the Photo */}
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                                <div className="absolute top-0 right-0 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+
+                                                {/* Abstract Decorative Lines */}
+                                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                                                    <div className="absolute top-10 left-10 w-full h-full border-2 border-brand-green rounded-full"></div>
                                                 </div>
+
+                                                <img
+                                                    src="/eng khaled.webp"
+                                                    alt="Eng. Khaled Eid"
+                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                />
                                             </div>
                                             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
                                                 {lang === 'ar' ? 'م/ خالد عيد' : 'Eng. Khaled Eid'}
@@ -752,6 +762,9 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     </div>
                 </div>
             </section>
+
+            <PartnersSection lang={lang} />
+            <CertificatesSection lang={lang} />
         </div >
     );
 };

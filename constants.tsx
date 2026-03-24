@@ -804,10 +804,10 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "Contact Us",
       subtitle: "We are ready to support your facility at every step toward environmental compliance.",
       emailLabel: "Email",
-      phoneLabel: "Phone",
-      phoneNumbers: ["+2-01067096677", "+2-01096677671"],
+      phoneLabel: "Phone & WhatsApp",
+      phoneNumbers: ["+201096677671", "+201067096677"],
       emails: ["info@gardeniaec.com"],
-      address: "Compound Ashgar Darna - Building A5 - 1st Floor - Maadi - Cairo",
+      address: "Maadi - Cairo",
       sendButton: "Send Message",
       formName: "Your Name",
       formEmail: "Your Email",
@@ -815,7 +815,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     footer: {
       rights: "All rights reserved Gardenia Environmental Consulting © 2026",
-      address: "Compound Ashgar Darna - Building A5 - 1st Floor - Maadi - Cairo"
+      address: "Maadi - Cairo"
     },
     social: {
       facebook: "https://facebook.com",
@@ -922,7 +922,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     services: {
       title: "خدماتنا",
-      description: "تستهدف جاردينيا للاستشارات البيئية والعلمية تقديم حلول استشارية متكاملة للصناعة بقطاعاتها المختلفة والمؤسسات والهيئات والجهات الحكومية في مجلات الادارة البيئية والحد من التلوث وادارة المخلفات بجميع انواعها وتقييم الاثر البيئي والاجتماعي.",
+      description: "تستهدف جاردينيا للاستشارات البيئية تقديم حلول استشارية متكاملة للصناعة بقطاعاتها المختلفة والمؤسسات والهيئات والجهات الحكومية في مجالات الإدارة البيئية والحد من التلوث وإدارة المخلفات وتقييم الأثر البيئي والاجتماعي.",
       items: [
         {
           title: "دراسات تقييم الأثر البيئي والاجتماعي (ESIA)",
@@ -1670,10 +1670,10 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "تواصل معنا",
       subtitle: "نحن هنا لدعم مصنعك في كل خطوة نحو الامتثال البيئي والاستدامة.",
       emailLabel: "البريد الإلكتروني",
-      phoneLabel: "الهاتف",
-      phoneNumbers: ["+2-01067096677", "+201096677671"],
+      phoneLabel: "الهاتف وواتساب",
+      phoneNumbers: ["201067096677+", "201096677671+"],
       emails: ["info@gardeniaec.com"],
-      address: "كمبوند أشجار دارنا - عمارة A5 الدور الأول - المعادي - القاهرة",
+      address: "المعادي - القاهرة",
       sendButton: "طلب استشارة",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
@@ -1681,7 +1681,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     footer: {
       rights: "جميع الحقوق محفوظة جاردينيا للاستشارات البيئية © 2026",
-      address: "كمبوند أشجار دارنا - عمارة A5 الدور الأول - المعادي - القاهرة"
+      address: "المعادي - القاهرة"
     },
     social: {
       facebook: "https://facebook.com",
