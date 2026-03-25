@@ -4,7 +4,7 @@ import { getIcon } from '../components/Icons';
 import { Mail, Phone, CheckCircle, Target, Eye, HandHeart, ArrowRight, Quote, Building2, Award } from 'lucide-react';
 import { TypeWriter } from '../components/TypeWriter';
 import { ContentData } from '../types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CONTENT } from '../constants';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
@@ -13,7 +13,7 @@ interface HomeProps {
     lang: string;
 }
 
-const ProjectCard = ({ project, idx, variants, lang }: { project: any, idx: number, variants: any, lang: string }) => {
+const ProjectCard: React.FC<{ project: any; idx: number; variants: any; lang: string }> = ({ project, idx, variants, lang }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -118,6 +118,7 @@ const ProjectCard = ({ project, idx, variants, lang }: { project: any, idx: numb
 };
 
 export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
+    const navigate = useNavigate();
     const [projectIndex, setProjectIndex] = useState(0);
     const allProjects = t.projects.projectLists?.[0]?.projects || [];
     const totalGroups = Math.ceil(allProjects.length / 4);
@@ -246,19 +247,20 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                     </div>
 
                     {/* Team Cards Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
                         {/* Dr. Asmaa Card */}
                         <motion.div 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20"
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20 cursor-pointer"
+                            onClick={() => navigate('/about#dr-asmaa')}
                         >
                             {/* Card Background Glow */}
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                             {/* Image Section */}
-                            <div className="relative h-64 md:h-72 overflow-hidden bg-brand-dark">
+                            <div className="relative h-64 overflow-hidden bg-brand-dark">
                                 <img 
                                     src="/Dr. Asmaa Hammouda.png" 
                                     alt="Dr. Asmaa Hammouda" 
@@ -266,46 +268,41 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
                                 {/* Badge */}
-                                <div className="absolute top-4 right-4 bg-brand-green text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
                                     {lang === 'ar' ? 'المؤسس' : 'Founder'}
                                 </div>
                             </div>
 
                             {/* Content Section */}
-                            <div className="p-8 relative z-10">
-                                <h3 className="text-2xl font-black text-brand-dark mb-1">
+                            <div className="p-6 relative z-10">
+                                <h3 className="text-xl font-black text-brand-dark mb-1">
                                     {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa'}
                                 </h3>
-                                <p className="text-brand-green font-bold text-sm md:text-base mb-4 leading-tight">
+                                <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
                                     {lang === 'ar' 
                                         ? 'أستاذ الهندسة الكيميائية والبيئية'
-                                        : 'Professor of Chemical & Environmental Engineering'}
+                                        : 'Professor of Chemical Engineering'}
                                 </p>
 
                                 {/* Experience Highlights */}
-                                <div className="space-y-2 mb-6">
-                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                <div className="space-y-2 mb-6 h-24">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
                                         <span>{lang === 'ar' ? '٢٨+ سنة خبرة دولية' : '28+ Years International Experience'}</span>
                                     </div>
-                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
                                         <span>{lang === 'ar' ? 'مستشار وزير البيئة الأسبق' : 'Former Advisor to Minister'}</span>
-                                    </div>
-                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
-                                        <span>{lang === 'ar' ? 'قيادة قسم الدراسات البيئية - جامعة بني سويف' : 'Head of Environmental Science Department'}</span>
                                     </div>
                                 </div>
 
                                 {/* CTA Button */}
-                                <Link 
-                                    to="/about" 
-                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:gap-4 transition-all group/link w-full justify-center py-3 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                <div 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-xs hover:gap-4 transition-all group/link w-full justify-center py-2.5 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
                                 >
                                     <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
-                                    <ArrowRight size={16} className={lang === 'ar' ? 'rotate-180' : ''} />
-                                </Link>
+                                    <ArrowRight size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </div>
                             </div>
                         </motion.div>
 
@@ -314,67 +311,154 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20"
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20 cursor-pointer"
+                            onClick={() => navigate('/about#eng-khaled')}
                         >
-                            {/* Card Background Glow */}
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            {/* Image Section */}
-                            <div className="relative h-64 md:h-72 overflow-hidden">
-                                {/* Premium Background for the Photo */}
+                            <div className="relative h-64 overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
-                                <div className="absolute top-0 right-0 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-
-                                {/* Abstract Decorative Lines */}
-                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-                                    <div className="absolute top-10 left-10 w-full h-full border-2 border-brand-green rounded-full"></div>
-                                </div>
-
                                 <img
-                                    src="/eng khaled.webp"
+                                    src="/eng khaled.png"
                                     alt="Eng. Khaled Eid"
-                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                    className="w-full h-full object-cover scale-110 translate-y-4 group-hover:scale-115 group-hover:translate-y-2 transition-transform duration-1000 ease-out relative z-10"
                                 />
-                                {/* Badge */}
-                                <div className="absolute top-4 right-4 bg-white text-brand-green px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-                                    {lang === 'ar' ? 'متخصص' : 'Specialist'}
+                                <div className="absolute top-4 right-4 bg-white text-brand-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-brand-green/10">
+                                    {lang === 'ar' ? 'استشاري' : 'Consultant'}
                                 </div>
                             </div>
 
-                            {/* Content Section */}
-                            <div className="p-8 relative z-10">
-                                <h3 className="text-2xl font-black text-brand-dark mb-1">
+                            <div className="p-6 relative z-10">
+                                <h3 className="text-xl font-black text-brand-dark mb-1">
                                     {lang === 'ar' ? 'م/ خالد عيد' : 'Eng. Khaled Eid'}
                                 </h3>
-                                <p className="text-brand-green font-bold text-sm md:text-base mb-4 leading-tight">
+                                <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
                                     {lang === 'ar' 
-                                        ? 'متخصص حماية من الحريق والأمان'
-                                        : 'Fire Protection & Safety Consultant'}
+                                        ? 'استشاري حماية من الحريق'
+                                        : 'Fire Protection Consultant'}
                                 </p>
 
-                                {/* Experience Highlights */}
-                                <div className="space-y-2 mb-6">
-                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
+                                <div className="space-y-2 mb-6 h-24">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
                                         <span>{lang === 'ar' ? '٣٣+ سنة خبرة متخصصة' : '33+ Years Specialized Experience'}</span>
                                     </div>
-                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
-                                        <span>{lang === 'ar' ? 'رئيس الأنظمة الأمنية - الهيئة القومية للأنفاق' : 'Head of Fire Systems, Former'}</span>
-                                    </div>
-                                    <div className={`flex items-center gap-2 text-sm text-brand-gray ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></div>
-                                        <span>{lang === 'ar' ? 'معتمد من نقابة المهندسين المصريين' : 'Syndicate of Engineers Certified'}</span>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'الهيئة القومية للأنفاق - سابقاً' : 'National Authority for Tunnels'}</span>
                                     </div>
                                 </div>
 
-                                {/* CTA Button */}
-                                <Link 
-                                    to="/fire-systems" 
-                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:gap-4 transition-all group/link w-full justify-center py-3 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                <div 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-xs hover:gap-4 transition-all group/link w-full justify-center py-2.5 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
                                 >
                                     <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
-                                    <ArrowRight size={16} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                    <ArrowRight size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Eng. Ayman Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20 cursor-pointer"
+                            onClick={() => navigate('/about#eng-ayman')}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                                <img
+                                    src="/Ayman Hassan Refaei.png"
+                                    alt="Eng. Ayman Hassan"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
+                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                                    {lang === 'ar' ? 'خبير' : 'Expert'}
+                                </div>
+                            </div>
+
+                            <div className="p-6 relative z-10">
+                                <h3 className="text-xl font-black text-brand-dark mb-1">
+                                    {lang === 'ar' ? 'م/ أيمن حسن' : 'Eng. Ayman Hassan'}
+                                </h3>
+                                <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
+                                    {lang === 'ar' 
+                                        ? 'خبير مشروعات المترو والسكك الحديدية'
+                                        : 'Rail & Metro Systems Expert'}
+                                </p>
+
+                                <div className="space-y-2 mb-6 h-24">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? '٢٦+ سنة خبرة MEP' : '26+ Years MEP Experience'}</span>
+                                    </div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'مترو دبي والدوحة والقاهرة' : 'Dubai, Doha & Cairo Metro'}</span>
+                                    </div>
+                                </div>
+
+                                <div 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-xs hover:gap-4 transition-all group/link w-full justify-center py-2.5 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                >
+                                    <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
+                                    <ArrowRight size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Eng. Ahmed Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20 cursor-pointer"
+                            onClick={() => navigate('/about#eng-ahmed')}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                                <img
+                                    src="/Ahmed Mohamed Mehesen.png"
+                                    alt="Eng. Ahmed Mohamed"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
+                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                                    {lang === 'ar' ? 'خبير ميكانيكا' : 'Mech. Expert'}
+                                </div>
+                            </div>
+
+                            <div className="p-6 relative z-10">
+                                <h3 className="text-xl font-black text-brand-dark mb-1">
+                                    {lang === 'ar' ? 'م/ أحمد محيسن' : 'Eng. Ahmed Mehesen'}
+                                </h3>
+                                <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
+                                    {lang === 'ar' 
+                                        ? 'استشاري دعم فني ميكانيكي'
+                                        : 'Mechanical Tech. Support'}
+                                </p>
+
+                                <div className="space-y-2 mb-6 h-24">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? '٢٠+ سنة خبرة فنية' : '20+ Years Technical Experience'}</span>
+                                    </div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'مشروعات LRT وجامعة الملك فيصل' : 'LRT & King Faisal Univ. Projects'}</span>
+                                    </div>
+                                </div>
+
+                                <Link 
+                                    to="/about" 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-xs hover:gap-4 transition-all group/link w-full justify-center py-2.5 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                >
+                                    <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
+                                    <ArrowRight size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
                                 </Link>
                             </div>
                         </motion.div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Target, Eye, Quote, CheckCircle, Users, Award, BookOpen, Briefcase } from 'lucide-react';
 import { ContentData, ServiceItem } from '../types';
@@ -17,9 +18,21 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
     const [showServicesModal, setShowServicesModal] = useState(false);
     const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
+    const location = useLocation();
+
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        if (location.hash) {
+            const id = location.hash.substring(1);
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 300);
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [location]);
 
     return (
         <div className="min-h-screen">
@@ -252,7 +265,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
 
                     {/* Dr. Asmaa Profile Section */}
                     {t.about.drAsmaaTitle && (
-                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                        <div id="dr-asmaa" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
                             <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
                                 <div className="flex flex-col lg:flex-row gap-12 items-start">
                                     {/* Profile Image/Badge */}
@@ -354,9 +367,6 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
 
                                                 <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
                                                     <div className="mb-6">
-                                                        <h4 className="text-2xl md:text-3xl font-black text-brand-charcoal mb-2">
-                                                            {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa Hammouda'}
-                                                        </h4>
                                                         <p className="text-base md:text-xl text-brand-green font-bold">
                                                             {lang === 'ar' ? 'أستاذ الهندسة الكيميائية والبيئية' : 'Professor of Chemical & Environmental Engineering'}
                                                         </p>
@@ -431,7 +441,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
 
                     {/* Dr. Khaled Profile Section */}
                     {t.about.drKhaledTitle && (
-                        <div className="mt-16 max-w-6xl mx-auto reveal-trigger">
+                        <div id="eng-khaled" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
                             <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
                                 <div className="flex flex-col lg:flex-row gap-12 items-start">
                                     {/* Profile Image/Badge */}
@@ -452,7 +462,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 </div>
 
                                                 <img
-                                                    src="/eng khaled.webp"
+                                                    src="/eng khaled.png"
                                                     alt="Eng. Khaled Eid"
                                                     className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
                                                 />
@@ -503,9 +513,6 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
 
                                                 <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
                                                     <div className="mb-6">
-                                                        <h4 className="text-2xl md:text-3xl font-black text-brand-charcoal mb-2">
-                                                            {lang === 'ar' ? 'م/ خالد عيد محمد إبراهيم' : 'Eng. Khaled Eid Mohamed Ibrahim'}
-                                                        </h4>
                                                         <p className="text-base md:text-xl text-brand-green font-bold">
                                                             {lang === 'ar' ? 'متخصص حماية من الحريق والأمان الصناعي' : 'Fire Protection & Industrial Safety Consultant'}
                                                         </p>
@@ -631,6 +638,178 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                             <span>{cred.replace('✓ ', '')}</span>
                                                         </div>
                                                     ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Eng. Ayman Profile Section */}
+                    {t.about.engAymanTitle && (
+                        <div id="eng-ayman" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                                        <div className="relative group">
+                                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                                <img
+                                                    src="/Ayman Hassan Refaei.png"
+                                                    alt="Eng. Ayman Hassan Refaei"
+                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                />
+                                            </div>
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                                {lang === 'ar' ? 'م/ أيمن حسن رفاعي' : 'Eng. Ayman Hassan Refaei'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-12 w-full space-y-4">
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Award className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'خبير مشروعات النقل السككي' : 'Rail & Metro Projects Expert'}
+                                                </span>
+                                            </div>
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Briefcase className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'خبرة ٢٦+ سنة' : '26+ Years Experience'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full lg:w-2/3">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                                <BookOpen className="w-7 h-7 text-brand-green" />
+                                            </div>
+                                            {t.about.engAymanTitle}
+                                        </h3>
+                                        <div className="space-y-4">
+                                            {t.about.engAymanBio?.map((item, idx) => (
+                                                <div key={idx} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                        {item}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-10">
+                                            <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
+                                                <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-green/10 rounded-full blur-[90px] pointer-events-none"></div>
+                                                <div className="relative z-10">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        {[
+                                                            {
+                                                                title: lang === 'ar' ? 'مشروعات عالمية' : 'Global Projects',
+                                                                desc: lang === 'ar' ? 'مترو دبي، ترام دبي، مترو الدوحة' : 'Dubai Metro, Dubai Tram, Doha Metro'
+                                                            },
+                                                            {
+                                                                title: lang === 'ar' ? 'المشروعات القومية' : 'National Projects',
+                                                                desc: lang === 'ar' ? 'مترو القاهرة الخط ٣ و ٤' : 'Greater Cairo Metro Lines 3 & 4'
+                                                            }
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
+                                                                <h4 className="font-bold text-brand-green text-sm mb-1">{item.title}</h4>
+                                                                <p className="text-brand-gray text-xs">{item.desc}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Eng. Ahmed Profile Section */}
+                    {t.about.engAhmedTitle && (
+                        <div id="eng-ahmed" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                                        <div className="relative group">
+                                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                                <img
+                                                    src="/Ahmed Mohamed Mehesen.png"
+                                                    alt="Eng. Ahmed Mohamed Mehesen"
+                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                />
+                                            </div>
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                                {lang === 'ar' ? 'م/ أحمد محمد محيسن' : 'Eng. Ahmed Mohamed Mehesen'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-12 w-full space-y-4">
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Award className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'أخصائي دعم فني MEP' : 'MEP Technical Specialist'}
+                                                </span>
+                                            </div>
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Briefcase className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'خبرة ٢٠+ سنة' : '20+ Years Experience'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full lg:w-2/3">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                                <BookOpen className="w-7 h-7 text-brand-green" />
+                                            </div>
+                                            {t.about.engAhmedTitle}
+                                        </h3>
+                                        <div className="space-y-4">
+                                            {t.about.engAhmedBio?.map((item, idx) => (
+                                                <div key={idx} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                        {item}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-10">
+                                            <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
+                                                <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
+                                                <div className="relative z-10">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        {[
+                                                            {
+                                                                title: lang === 'ar' ? 'البنية التحتية' : 'Infrastructure',
+                                                                desc: lang === 'ar' ? 'محطات المعالجة، شبكات المياه، أنظمة RO' : 'Treatment Plants, Water Networks, RO Systems'
+                                                            },
+                                                            {
+                                                                title: lang === 'ar' ? 'دعم المشروعات' : 'Project Support',
+                                                                desc: lang === 'ar' ? 'مستودع بدر للقطار الخفيف، جامعة فيصل' : 'LRT Badr Depot, Faisal University'
+                                                            }
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
+                                                                <h4 className="font-bold text-brand-green text-sm mb-1">{item.title}</h4>
+                                                                <p className="text-brand-gray text-xs">{item.desc}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

@@ -98,6 +98,27 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "Advanced international training in fire control panels, smoke systems, firefighting pumps, and signaling systems (2024-2021).",
         "Proven experience in major national infrastructure projects - Metro, highways, government facilities.",
         "Strategic partnership with Civil Defense Authority and government agencies on fire protection and safety compliance."
+      ],
+      engAhmedTitle: "Eng. Ahmed Mohamed Mehesen Profile",
+      engAhmedBio: [
+        "Senior Mechanical Engineer with 20 years of experience in project management and technical support.",
+        "Leadership in mechanical utilities for major projects (LRT Badr Depot, King Faisal University).",
+        "Expertise in HVAC, Firefighting, Plumbing, and Depot Maintenance Equipment.",
+        "Technical support for large-scale infrastructure projects including hospital infrastructure and residential buildings.",
+        "Extensive experience in maintenance and operation of chilled water systems, treatment plants, and RO units.",
+        "Supervision of supply and installation of plumbing, HVAC, and firefighting systems for massive residential complexes.",
+        "Proven track record in managing sewage pump stations and desalination plants.",
+        "BSc in Mechanical Engineering, Cairo University (2004)."
+      ],
+      engAymanTitle: "Eng. Ayman Hassan Refaei Profile",
+      engAymanBio: [
+        "Senior Mechanical Engineer with over 26 years of expertise in MEP design and construction.",
+        "Core experience in multi-billion dollar rail projects including Dubai Metro, Dubai Tram, and Doha Metro.",
+        "Senior Mechanical Engineer at National Authority for Tunnels (NAT) for Greater Cairo Metro Lines 3 and 4.",
+        "Expertise in MEP Testing & Commissioning, Interface Management, and Design Review.",
+        "FAT (Factory Acceptance Test) attendance globally (Germany, France, Finland, Spain).",
+        "Technical leadership in coordination between MEP and Civil designs for major transportation hubs.",
+        "Bachelor's degree in Mechanical Engineering, Helwan University (1999)."
       ]
     },
     values: {
@@ -907,6 +928,27 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "تدريب دولي متقدم في أنظمة الحريق والألواح التحكمية والدخان والمضخات (كندا، الولايات المتحدة، الإمارات، فرنسا).",
         "خبرة في مشاريع البنية التحتية القومية - المترو والطرق والجسور والمشاريع الحكومية.",
         "قيادة فريق متخصص وشراكات مع الجهات الحكومية والدفاع المدني."
+      ],
+      engAhmedTitle: "م/ أحمد محمد محيسن",
+      engAhmedBio: [
+        "استشاري مهندس ميكانيكا بخبرة 20 عاماً في الإشراف الهندسي والدعم الفني.",
+        "كبير مهندسي الميكانيكا لمشروع القطار الكهربائي الخفيف LRT (مستودع بدر).",
+        "مهندس دعم فني لمشاريع جامعة الملك فيصل (أنظمة HVAC، الحريق، السباكة، والمصاعد).",
+        "خبير في تصميم ومراجعة مواصفات أنظمة MEP للمستشفيات والمجمعات السكنية الكبرى.",
+        "خبرة في تشغيل وصيانة محطات معالجة الصرف والتحلية (RO) وشبكات البنية التحتية.",
+        "إشراف كامل على توريد وتركيب الأنظمة الميكانيكية للمجمعات السكنية الكبرى (أكثر من 280 فيلا).",
+        "إدارة ودراسة مشروعات محطات الرفع ومعالجة المياه والتحلية.",
+        "بكالوريوس الهندسة الميكانيكية، جامعة القاهرة (2004)."
+      ],
+      engAymanTitle: "م/ أيمن حسن رفاعي",
+      engAymanBio: [
+        "استشاري أول ميكانيكا بخبرة تزيد عن 26 عاماً في تصميم وتنفيذ مشروعات MEP.",
+        "خبير متخصص في مشروعات السكك الحديدية والمترو (مترو دبي، ترام دبي، مترو الدوحة).",
+        "كبير مهندسي الميكانيكا بالهيئة القومية للأنفاق (NAT) لمشروعات مترو القاهرة الخط 3 و4.",
+        "متخصص في مراجعة التصميمات الهندسية (Concept/Detail Design) لجميع الأنظمة الميكانيكية.",
+        "حضور اختبارات القبول بالمصانع (FAT) دولياً في ألمانيا وفرنسا وفنلندا وإسبانيا.",
+        "خبير في اختبارات التشغيل والتسليم (Testing & Commissioning) للمشروعات القومية الكبرى.",
+        "بكالوريوس الهندسة الميكانيكية، جامعة حلوان (1999)."
       ]
     },
     values: {
