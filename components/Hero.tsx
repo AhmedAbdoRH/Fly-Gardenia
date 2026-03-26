@@ -61,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
               {/* Founded Badge */}
               <div className="flex items-center gap-3 md:gap-4">
                 <div className="h-[2px] w-8 md:w-12 bg-brand-emerald"></div>
-                <span className="text-brand-emerald font-bold tracking-[0.15em] uppercase text-xs md:text-sm font-sans">Est. 2008</span>
+                <span className="text-white font-bold tracking-[0.15em] uppercase text-xs md:text-sm font-sans">Est. 2008</span>
               </div>
               
               {/* Experience Badge */}
@@ -69,8 +69,8 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
                 <div className="relative inline-flex items-center gap-2 px-4 md:px-5 py-2 rounded-full bg-brand-green/10 border border-brand-green/40 backdrop-blur-sm hover:border-brand-green/60 transition-all group">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
-                  <span className="text-brand-green font-bold tracking-wider uppercase text-xs md:text-sm relative z-10">
-                    +18 {lang === 'ar' ? 'سنة خبرة' : 'Years Experience'}
+                  <span className="text-white font-bold tracking-wider uppercase text-xs md:text-sm relative z-10">
+                    +25 {lang === 'ar' ? 'سنة خبرة' : 'Years Experience'}
                   </span>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ content, lang }) => {
                       duration: 0.8,
                       ease: [0.4, 0, 0.2, 1]
                     }}
-                    className="block text-brand-emerald py-1 drop-shadow-lg"
+                    className="block text-white py-1 drop-shadow-lg"
                   >
                     {content.titleSuffixes[suffixIndex]}
                   </motion.span>

@@ -6,12 +6,23 @@ interface CertificatesSectionProps {
 }
 
 export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang = 'ar' }) => {
-    // Generate 12 dummy vertical certificates (3 per page = 4 pages)
-    const allCerts = Array.from({ length: 12 }, (_, i) => ({
-        id: i,
-        title: lang === 'ar' ? `شهادة اعتماد افتراضية رقم ${i + 1}` : `Dummy Certificate #${i + 1}`,
-        desc: lang === 'ar' ? 'صورة طولية للشهادة حتى يتم إضافة صور الشهادات الحقيقية' : 'Vertical certificate placeholder until real ones are provided',
-    }));
+    // Real certificates from public/cer/ folder
+    const allCerts = [
+        { id: 0, title: lang === 'ar' ? 'شهادة بيئية 1' : 'Environmental Certificate 1', image: '/cer/لقطة شاشة 2026-03-26 123716.png' },
+        { id: 1, title: lang === 'ar' ? 'شهادة بيئية 2' : 'Environmental Certificate 2', image: '/cer/لقطة شاشة 2026-03-26 123731.png' },
+        { id: 2, title: lang === 'ar' ? 'شهادة الجودة 1' : 'Quality Certificate 1', image: '/cer/لقطة شاشة 2026-03-26 123754.png' },
+        { id: 3, title: lang === 'ar' ? 'شهادة الجودة 2' : 'Quality Certificate 2', image: '/cer/لقطة شاشة 2026-03-26 123804.png' },
+        { id: 4, title: lang === 'ar' ? 'شهادة السلامة 1' : 'Safety Certificate 1', image: '/cer/لقطة شاشة 2026-03-26 123810.png' },
+        { id: 5, title: lang === 'ar' ? 'شهادة السلامة 2' : 'Safety Certificate 2', image: '/cer/لقطة شاشة 2026-03-26 123819.png' },
+        { id: 6, title: lang === 'ar' ? 'شهادة الاعتماد 1' : 'Accreditation Certificate 1', image: '/cer/لقطة شاشة 2026-03-26 123852.png' },
+        { id: 7, title: lang === 'ar' ? 'شهادة الاعتماد 2' : 'Accreditation Certificate 2', image: '/cer/لقطة شاشة 2026-03-26 123900.png' },
+        { id: 8, title: lang === 'ar' ? 'شهادة دولية 1' : 'International Certificate 1', image: '/cer/لقطة شاشة 2026-03-26 123906.png' },
+        { id: 9, title: lang === 'ar' ? 'شهادة دولية 2' : 'International Certificate 2', image: '/cer/لقطة شاشة 2026-03-26 123917.png' },
+        { id: 10, title: lang === 'ar' ? 'شهادة معايير' : 'Standards Certificate', image: '/cer/لقطة شاشة 2026-03-26 123924.png' },
+        { id: 11, title: lang === 'ar' ? 'شهادة اعتماد محلية' : 'Local Accreditation', image: '/cer/لقطة شاشة 2026-03-26 123935.png' },
+        { id: 12, title: lang === 'ar' ? 'شهادة بيئية متقدمة' : 'Advanced Environmental', image: '/cer/لقطة شاشة 2026-03-26 124313.png' },
+        { id: 13, title: lang === 'ar' ? 'شهادة التميز' : 'Excellence Award', image: '/cer/لقطة شاشة 2026-03-26 124317.png' },
+    ];
 
     const [page, setPage] = useState(0);
     const ITEMS_PER_PAGE = window.innerWidth < 768 ? 1 : 3; // roughly 1 on mobile, 3 on desktop
@@ -52,7 +63,7 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
 
             <div className="container mx-auto px-6 max-w-6xl relative z-10">
                 {/* Carousel container */}
-                <div className="min-h-[500px] flex items-center justify-center relative">
+                <div className="flex items-center justify-center relative">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={page}
@@ -65,36 +76,16 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
                             {visibleCerts.map((cert) => (
                                 <div
                                     key={cert.id}
-                                    className="group relative bg-white rounded-3xl p-6 shadow-xl shadow-brand-green/5 border border-brand-green/10 hover:shadow-2xl hover:border-brand-green transition-all duration-500 overflow-hidden flex flex-col items-center text-center"
+                                    className="group relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden p-4 bg-white"
                                 >
-                                    {/* Abstract corner decoration */}
-                                    <div className="absolute -top-12 -right-12 w-24 h-24 bg-brand-green/20 rounded-full blur-xl group-hover:bg-brand-green/30 transition-colors"></div>
-
-                                    {/* Dummy Vertical Image Placeholder */}
-                                    <div className="w-[85%] aspect-[2/3] bg-brand-light rounded-2xl mb-8 relative flex items-center justify-center overflow-hidden border border-brand-green/20 group-hover:border-brand-green/40 shadow-inner group-hover:-translate-y-2 transition-transform duration-500">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-brand-charcoal/[0.02] to-brand-green/[0.05]"></div>
-                                        
-                                        {/* Stylized frame inside certificate */}
-                                        <div className="absolute inset-4 border border-dashed border-brand-green/40 rounded-xl flex flex-col items-center justify-center p-4">
-                                            <div className="w-16 h-16 rounded-full bg-brand-green/10 flex items-center justify-center mb-4 pb-1">
-                                                <span className="text-brand-green text-3xl font-serif font-black">🏅</span>
-                                            </div>
-                                            <div className="h-1 w-12 bg-brand-green/30 mb-4 rounded-full"></div>
-                                            <div className="h-1.5 w-[80%] bg-brand-gray/20 mb-2 rounded-full"></div>
-                                            <div className="h-1.5 w-[60%] bg-brand-gray/20 mb-6 rounded-full"></div>
-                                            <div className="h-4 w-12 bg-brand-green/20 rounded-full absolute bottom-8 right-8"></div>
-                                            <div className="h-4 w-4 bg-brand-green/20 rounded-full absolute bottom-8 left-8"></div>
-                                        </div>
+                                    {/* Real Certificate Image */}
+                                    <div className="w-full rounded-lg relative overflow-hidden shadow-lg group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center bg-brand-light">
+                                        <img 
+                                            src={cert.image} 
+                                            alt={cert.title}
+                                            className="w-full object-contain"
+                                        />
                                     </div>
-
-                                    <h3 className="text-xl font-bold text-brand-charcoal mb-3 line-clamp-2">
-                                        {cert.title}
-                                    </h3>
-                                    <p className="text-brand-gray text-sm leading-relaxed mb-4 flex-grow">
-                                        {cert.desc}
-                                    </p>
-                                    
-                                    <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-brand-green/20 to-transparent mt-auto"></div>
                                 </div>
                             ))}
                         </motion.div>
