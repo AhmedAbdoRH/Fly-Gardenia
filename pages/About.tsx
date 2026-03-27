@@ -818,6 +818,93 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                             </div>
                         </div>
                     )}
+
+                    {/* Eng. Bassam Profile Section */}
+                    {t.about.engBassamTitle && (
+                        <div id="eng-bassam" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                                        <div className="relative group">
+                                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                                <img
+                                                    src="/Bassam Soultan.png"
+                                                    alt="Eng. Bassam Soultan"
+                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
+                                                />
+                                            </div>
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                                {lang === 'ar' ? 'م/ بسام سلطان فريد' : 'Eng. Bassam Soultan'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-12 w-full space-y-4">
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Award className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'استشاري هندسة قوى كهربائية' : 'Electrical Power Consultant'}
+                                                </span>
+                                            </div>
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Briefcase className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'خبرة ١٧+ سنة' : '17+ Years Experience'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full lg:w-2/3">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                                <BookOpen className="w-7 h-7 text-brand-green" />
+                                            </div>
+                                            {t.about.engBassamTitle}
+                                        </h3>
+                                        <div className="space-y-4">
+                                            {t.about.engBassamBio?.map((item, idx) => (
+                                                <div key={idx} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                        {item}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-10">
+                                            <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
+                                                <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
+                                                <div className="relative z-10">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        {[
+                                                            {
+                                                                title: lang === 'ar' ? 'مجال التخصص' : 'Area of Expertise',
+                                                                desc: lang === 'ar' ? 'محطات المحولات، شبكات الجهد المتوسط، أنظمة الجر' : 'Substations, MV Networks, Traction Systems'
+                                                            },
+                                                            {
+                                                                title: lang === 'ar' ? 'مشروعات قومية' : 'National Projects',
+                                                                desc: lang === 'ar' ? 'مترو القاهرة الخط ٣' : 'Greater Cairo Metro Line 3'
+                                                            }
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
+                                                                <h4 className="font-bold text-brand-green text-sm mb-1">{item.title}</h4>
+                                                                <p className="text-brand-gray text-xs">{item.desc}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
 

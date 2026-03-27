@@ -462,6 +462,59 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 </Link>
                             </div>
                         </motion.div>
+
+                        {/* Eng. Bassam Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20 cursor-pointer"
+                            onClick={() => navigate('/about#eng-bassam')}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                                <img
+                                    src="/Bassam Soultan.png"
+                                    alt="Eng. Bassam Soultan"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
+                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                                    {lang === 'ar' ? 'خبير قوى كهربائية' : 'Power Expert'}
+                                </div>
+                            </div>
+
+                            <div className="p-6 relative z-10">
+                                <h3 className="text-xl font-black text-brand-dark mb-1">
+                                    {lang === 'ar' ? 'م/ بسام سلطان' : 'Eng. Bassam Soultan'}
+                                </h3>
+                                <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
+                                    {lang === 'ar' 
+                                        ? 'استشاري قوى كهربائية'
+                                        : 'Electrical Power Consultant'}
+                                </p>
+
+                                <div className="space-y-2 mb-6 h-24">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? '١٧+ سنة خبرة فنية' : '17+ Years Technical Experience'}</span>
+                                    </div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'الهيئة القومية للأنفاق (NAT)' : 'National Authority for Tunnels'}</span>
+                                    </div>
+                                </div>
+
+                                <div 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-xs hover:gap-4 transition-all group/link w-full justify-center py-2.5 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                >
+                                    <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
+                                    <ArrowRight size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>

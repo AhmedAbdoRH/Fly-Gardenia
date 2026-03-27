@@ -56,6 +56,14 @@ export interface ContentData {
     expertsItems?: string[];
     drAsmaaTitle?: string;
     drAsmaaBio?: string[];
+    drKhaledTitle?: string;
+    drKhaledBio?: string[];
+    engAhmedTitle?: string;
+    engAhmedBio?: string[];
+    engAymanTitle?: string;
+    engAymanBio?: string[];
+    engBassamTitle?: string;
+    engBassamBio?: string[];
   };
   values: {
     title: string;

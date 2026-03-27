@@ -6,14 +6,32 @@ interface PartnersSectionProps {
 }
 
 export const PartnersSection: React.FC<PartnersSectionProps> = ({ lang = 'ar' }) => {
-    // We create an array of 20 items
-    const partners = Array.from({ length: 20 }, (_, i) => ({
-        id: i,
-        name: `Partner ${i + 1}`,
-    }));
+    const logos = [
+        '/logos/image1.png',
+        '/logos/image2.png',
+        '/logos/image3.png',
+        '/logos/image4.jpeg',
+        '/logos/image5.jpeg',
+        '/logos/image6.jpeg',
+        '/logos/image7.png',
+        '/logos/image8.png',
+        '/logos/image9.png',
+        '/logos/image10.png',
+        '/logos/image11.png',
+        '/logos/image12.png',
+        '/logos/image13.png',
+        '/logos/image14.png',
+        '/logos/image15.png',
+        '/logos/image16.jpeg',
+        '/logos/image17.jpeg',
+        '/logos/image18.jpeg',
+    ];
+
+    // Filter out any empty or invalid paths
+    const validLogos = logos.filter(logo => logo && logo.trim() !== '');
 
     // Duplicate array to create a seamless infinite scroll effect
-    const scrollItems = [...partners, ...partners];
+    const scrollItems = [...validLogos, ...validLogos];
 
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden relative border-y border-brand-green/10">
@@ -33,52 +51,44 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ lang = 'ar' })
             {/* Marquee Container */}
             <div className="relative w-full max-w-full overflow-hidden flex items-center">
                 {/* Gradient Masks for fading effect at the edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-white to-transparent z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-white to-transparent z-10"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
-                <motion.div
-                    className="flex gap-8 md:gap-12 items-center w-max"
-                    animate={{
-                        x: [0, -100 * partners.length + "%"], // Scroll half the duplicated width
-                    }}
-                    transition={{
-                        repeat: Infinity,
-                        ease: "linear",
-                        duration: 40, // Adjust speed (higher is slower)
-                    }}
-                    style={{
-                        // To perfectly loop, we need to translate by exactly 50% of the total duplicated width.
-                        // However, with framer-motion x: ["0%", "-50%"] is relative to the element's width.
-                        width: 'max-content'
-                    }}
-                >
-                    {/* The trick: Animate to x: "-50%" of the total width */}
-                </motion.div>
-            </div>
-            
-            {/* The actual marquee implementation with "-50%" */}
-            <div className="relative w-full overflow-hidden">
-                <motion.div
-                    animate={{ x: lang === 'ar' ? ["0%", "50%"] : ["0%", "-50%"] }} // Adjust direction based on RTL/LTR if needed, but standard is left stream
-                    transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
-                    className="flex w-max gap-8 md:gap-16 px-4"
-                >
-                    {scrollItems.map((partner, idx) => (
-                        <div 
-                            key={`${partner.id}-${idx}`}
-                            className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-full bg-brand-light border-2 border-brand-green/20 shadow-lg flex flex-col items-center justify-center p-4 hover:border-brand-green hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent pointer-events-none"></div>
-                            {/* Dummy Logo Representation */}
-                            <div className="w-12 h-12 md:w-16 md:h-16 mb-2 rounded-full border border-dashed border-brand-green/50 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                                <span className="text-brand-green font-black text-xl md:text-2xl">L{partner.id + 1}</span>
+                {/* The actual marquee implementation with "-50%" */}
+                <div className="relative w-full overflow-hidden">
+                    <motion.div
+                        animate={{ x: lang === 'ar' ? ["0%", "50%"] : ["0%", "-50%"] }} // Adjust direction based on RTL/LTR if needed, but standard is left stream
+                        transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
+                        className="flex w-max gap-8 md:gap-16 px-4"
+                    >
+                        {scrollItems.map((logo, idx) => (
+                            <div 
+                                key={`logo-${idx}`}
+                                className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-full bg-white border-2 border-brand-green/30 shadow-lg flex items-center justify-center p-4 hover:border-brand-green hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group relative overflow-hidden"
+                            >
+                                {/* Subtle gradient overlay on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+                                
+                                <img 
+                                    src={logo} 
+                                    alt={`Partner Logo ${idx}`} 
+                                    className="w-full h-full object-contain transition-all duration-500 relative z-10" 
+                                    style={{
+                                        filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
+                                    }}
+                                    onError={(e) => {
+                                        const target = e.currentTarget;
+                                        target.style.opacity = '0.3';
+                                        target.style.filter = 'grayscale(100%)';
+                                    }}
+                                />
+                                
+                                {/* Subtle shine effect on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-full"></div>
                             </div>
-                            <span className="text-brand-gray text-xs md:text-sm font-bold group-hover:text-brand-charcoal transition-colors">
-                                {lang === 'ar' ? 'لوجو الشركة' : 'Company Logo'}
-                            </span>
-                        </div>
-                    ))}
-                </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

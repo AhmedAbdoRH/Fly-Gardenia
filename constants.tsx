@@ -119,6 +119,16 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "FAT (Factory Acceptance Test) attendance globally (Germany, France, Finland, Spain).",
         "Technical leadership in coordination between MEP and Civil designs for major transportation hubs.",
         "Bachelor's degree in Mechanical Engineering, Helwan University (1999)."
+      ],
+      engBassamTitle: "Eng. Bassam Soultan Faried Profile",
+      engBassamBio: [
+        "Senior Electrical Engineer with 17 years of experience in design, testing, and commissioning of electrical power systems.",
+        "Extensive expertise in MV, LV, MEP, 220KV/66KV GIS and AIS switchgears, and power distribution networks.",
+        "Senior Electrical Engineer at National Authority for Tunnels (NAT), reviewing electromechanical designs for major rail projects.",
+        "Testing and Commissioning Engineer at SEC (Saudi Arabia) for major 132/13.8 KV substations.",
+        "Expert in load flow, short-circuit, protective relay coordination, and traction power systems.",
+        "Deep knowledge of IEC, EN, NFPA, and IEEE standards for electrical and traction power design.",
+        "Bachelor's degree in Electrical Power and Machines Engineering, Fayoum University (2007)."
       ]
     },
     values: {
