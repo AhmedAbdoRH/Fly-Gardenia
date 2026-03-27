@@ -78,13 +78,30 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
                                     key={cert.id}
                                     className="group relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden p-4 bg-white"
                                 >
-                                    {/* Real Certificate Image */}
-                                    <div className="w-full rounded-lg relative overflow-hidden shadow-lg group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center bg-brand-light">
+                                    {/* Real Certificate Image with Lowered Quality & Watermark */}
+                                    <div 
+                                        className="w-full rounded-lg relative overflow-hidden shadow-lg group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center bg-brand-light select-none"
+                                        onContextMenu={(e) => e.preventDefault()}
+                                    >
                                         <img 
                                             src={cert.image} 
                                             alt={cert.title}
-                                            className="w-full object-contain"
+                                            className="w-full object-contain filter blur-[1.5px] opacity-90 contrast-75 sepia-[20%] pointer-events-none"
+                                            draggable="false"
                                         />
+                                        
+                                        {/* Repeating Text Watermark Layer for extra protection */}
+                                        <div className="absolute inset-0 pointer-events-none opacity-50 flex items-center justify-center overflow-hidden mix-blend-overlay">
+                                            <div className="grid grid-cols-2 gap-8 -rotate-45 scale-150 transform-gpu opacity-40">
+                                                {Array.from({ length: 12 }).map((_, i) => (
+                                                    <span key={i} className="text-3xl font-black text-gray-500 tracking-widest uppercase">GARDENIA</span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Optical Noise/Scanline Overlay to disrupt pictures taken by phone screens */}
+                                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none filter contrast-200"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent background-size-[100%_4px] pointer-events-none opacity-30 mix-blend-overlay"></div>
                                     </div>
                                 </div>
                             ))}
