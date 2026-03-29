@@ -832,7 +832,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
                                                 <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
                                                 <img
-                                                    src="/Bassam Soultan.png"
+                                                    src="/eng bassam.png"
                                                     alt="Eng. Bassam Soultan"
                                                     className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
                                                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}

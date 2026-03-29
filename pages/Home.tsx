@@ -316,14 +316,14 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            <div className="relative h-64 overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                            <div className="relative h-64 overflow-hidden bg-brand-dark">
                                 <img
                                     src="/eng khaled.png"
                                     alt="Eng. Khaled Eid"
-                                    className="w-full h-full object-cover scale-110 translate-y-4 group-hover:scale-115 group-hover:translate-y-2 transition-transform duration-1000 ease-out relative z-10"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
-                                <div className="absolute top-4 right-4 bg-white text-brand-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-brand-green/10">
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
+                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
                                     {lang === 'ar' ? 'استشاري' : 'Consultant'}
                                 </div>
                             </div>
@@ -475,7 +475,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
 
                             <div className="relative h-64 overflow-hidden bg-brand-dark">
                                 <img
-                                    src="/Bassam Soultan.png"
+                                    src="/eng bassam.png"
                                     alt="Eng. Bassam Soultan"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
