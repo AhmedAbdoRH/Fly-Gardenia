@@ -676,7 +676,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
 
                 <div className="container mx-auto relative z-10 reveal-trigger">
                     <div className="bg-white md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
-                        <div className="md:w-5/12 bg-brand-dark text-white p-8 md:p-16 flex flex-col justify-between relative">
+                        <div className="md:w-1/2 bg-brand-dark text-white p-8 md:p-16 flex flex-col justify-between relative">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/20 rounded-full blur-[80px] pointer-events-none"></div>
 
                             <div className="relative z-10">
@@ -691,7 +691,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.emailLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold">{em}</span>
+                                                <span className="text-lg md:text-xl font-bold break-all">{em}</span>
                                             </div>
                                         </a>
                                     ))}
@@ -714,7 +714,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 6.5 11 6.5 11s6.5-5.75 6.5-11c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/></svg>
                                             </div>
                                             <div>
-                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">العنوان</span>
+                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.addressLabel}</span>
                                                 <span className="text-lg md:text-xl font-bold">{t.contact.address}</span>
                                             </div>
                                         </div>
@@ -723,7 +723,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                             </div>
                         </div>
 
-                        <div className="md:w-7/12 p-6 md:p-16 bg-white">
+                        <div className="md:w-1/2 p-6 md:p-16 bg-white">
                             <form className="space-y-6 md:space-y-8" onSubmit={(e) => {
                                 e.preventDefault();
                                 window.open(`https://wa.me/201067096677?text=${encodeURIComponent('طلب استشارة من الموقع')}`, '_blank');

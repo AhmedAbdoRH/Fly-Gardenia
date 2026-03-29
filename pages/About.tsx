@@ -180,7 +180,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                     {/* Vision & Mission Cards Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto reveal-trigger stagger-1">
                         {/* Vision Card */}
-                        <div className="group relative bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl shadow-gray-200/60 transition-all duration-500 border border-brand-green/10 overflow-hidden flex flex-col md:flex-row gap-6 items-start">
+                        <div className="group relative bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl shadow-gray-200/60 transition-all duration-500 border border-brand-green/10 flex flex-col lg:flex-row gap-6 items-start h-full">
                             <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-brand-light to-transparent rounded-bl-[100%]"></div>
                             <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center transition-all duration-500 shrink-0 shadow-lg scale-110 rotate-3 z-10">
                                 <Eye className="w-8 h-8" strokeWidth={1.5} />
@@ -196,7 +196,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                         </div>
 
                         {/* Mission Card */}
-                        <div className="group relative bg-[#1a1a1a] p-8 md:p-10 rounded-[2rem] shadow-2xl transition-all duration-500 border border-brand-emerald/20 overflow-hidden text-white flex flex-col md:flex-row gap-6 items-start">
+                        <div className="group relative bg-[#1a1a1a] p-8 md:p-10 rounded-[2rem] shadow-2xl transition-all duration-500 border border-brand-emerald/20 text-white flex flex-col lg:flex-row gap-6 items-start h-full">
                             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-green/20 rounded-full blur-[80px] pointer-events-none"></div>
                             <div className="w-16 h-16 rounded-2xl bg-brand-emerald text-white flex items-center justify-center transition-all duration-500 shrink-0 shadow-2xl scale-110 -rotate-3 backdrop-blur-sm z-10">
                                 <Target className="w-8 h-8" strokeWidth={1.5} />

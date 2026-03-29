@@ -197,3 +197,7 @@
 .text-justify {
     text-align: justify;
 }
+
+[dir="ltr"] .text-justify {
+    text-align: left;
+}

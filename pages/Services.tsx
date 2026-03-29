@@ -63,54 +63,56 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                 ar: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• المعايير: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}\n\n• القيادة: ${t.fireSystems.leadership.name} (${t.fireSystems.leadership.role})`,
                             }
                         } as any)] : [])), ...t.services.items.slice(2)].map((service: any, idx) => (
-                            <div
-                                key={idx}
-                                className={`group relative h-[450px] md:h-[500px] flip-card reveal-trigger stagger-${idx + 1} ${flippedIndex === idx ? 'is-flipped' : ''}`}
-                                onClick={() => setFlippedIndex(flippedIndex === idx ? null : idx)}
-                            >
-                                <div className="flip-card-inner">
-                                    {/* Front Side */}
-                                    <div className="flip-card-front h-full bg-white/5 backdrop-blur-xl p-8 md:p-10 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col cursor-pointer hover:bg-white/10 transition-all duration-700">
-                                        {/* Layered Premium Glows */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.1] via-transparent to-brand-green/[0.15] pointer-events-none"></div>
-                                        <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.25] rounded-full blur-[100px] pointer-events-none"></div>
+                                <div
+                                    key={idx}
+                                    className={`group relative h-[520px] md:h-[580px] flip-card reveal-trigger stagger-${idx + 1} ${flippedIndex === idx ? 'is-flipped' : ''}`}
+                                    onClick={() => setFlippedIndex(flippedIndex === idx ? null : idx)}
+                                >
+                                    <div className="flip-card-inner">
+                                        {/* Front Side */}
+                                        <div className="flip-card-front h-full bg-white/5 backdrop-blur-xl p-8 md:p-10 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col cursor-pointer hover:bg-white/10 transition-all duration-700">
+                                            {/* Layered Premium Glows */}
+                                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/[0.1] via-transparent to-brand-green/[0.15] pointer-events-none"></div>
+                                            <div className="absolute -top-32 -left-32 w-80 h-80 bg-brand-green/[0.25] rounded-full blur-[100px] pointer-events-none"></div>
 
-                                        {/* Background Watermark Icon */}
-                                        <div className="absolute -bottom-16 -right-16 w-96 h-96 text-brand-green/[0.03] group-hover:text-brand-green/[0.06] transition-all duration-1000 transform group-hover:scale-110 group-hover:-rotate-12 pointer-events-none z-0">
-                                            {getIcon(service.iconName, "w-full h-full stroke-[0.3]")}
-                                        </div>
+                                            {/* Background Watermark Icon */}
+                                            <div className="absolute -bottom-16 -right-16 w-96 h-96 text-brand-green/[0.03] group-hover:text-brand-green/[0.06] transition-all duration-1000 transform group-hover:scale-110 group-hover:-rotate-12 pointer-events-none z-0">
+                                                {getIcon(service.iconName, "w-full h-full stroke-[0.3]")}
+                                            </div>
 
-                                        {/* Header: Glass Icon & Number */}
-                                        <div className="flex justify-between items-start mb-10 relative z-20">
-                                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 transition-all duration-700 scale-110 group-hover:scale-125 group-hover:bg-white/30">
-                                                <div className="relative z-10 transform transition-transform duration-1000 group-hover:rotate-[360deg]">
-                                                    {getIcon(service.iconName, "w-8 h-8 md:w-10 md:h-10")}
+                                            {/* Header: Glass Icon & Number */}
+                                            <div className="flex justify-between items-start mb-10 relative z-20">
+                                                <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 transition-all duration-700 scale-110 group-hover:scale-125 group-hover:bg-white/30">
+                                                    <div className="relative z-10 transform transition-transform duration-1000 group-hover:rotate-[360deg]">
+                                                        {getIcon(service.iconName, "w-8 h-8 md:w-10 md:h-10")}
+                                                    </div>
+                                                </div>
+                                                <span className="text-5xl md:text-6xl font-black text-white/10 group-hover:text-white/30 transition-colors duration-700 pointer-events-none select-none">
+                                                    {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                                                </span>
+                                            </div>
+
+                                            {/* Content */}
+                                            <div className="flex-grow flex flex-col justify-between relative z-20 overflow-hidden">
+                                                <div className="space-y-4">
+                                                    <h3 className="text-xl md:text-3xl font-bold text-brand-green tracking-tight drop-shadow-[0_0_8px_rgba(170,213,70,0.3)] leading-tight">
+                                                        {service.title}
+                                                    </h3>
+                                                    <p className="text-white leading-relaxed text-sm md:text-lg font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first line-clamp-6 md:line-clamp-8">
+                                                        {service.description}
+                                                    </p>
+                                                </div>
+
+                                                <div className="pt-6 flex items-center gap-3 text-brand-green text-sm md:text-base font-bold group-hover:translate-x-2 transition-transform mt-auto">
+                                                    <span>{lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
+                                                    <div className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center">
+                                                        <span className={`text-xs transition-transform duration-500 ${lang === 'ar' ? 'rotate-180' : ''}`}>→</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <span className="text-5xl md:text-6xl font-black text-white/10 group-hover:text-white/30 transition-colors duration-700 pointer-events-none select-none">
-                                                {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
-                                            </span>
+
+                                            <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-brand-green via-brand-emerald to-transparent transform scale-x-100 transition-all duration-700 origin-left"></div>
                                         </div>
-
-                                        {/* Content */}
-                                        <div className="flex-grow space-y-4 relative z-20">
-                                            <h3 className="text-xl md:text-3xl font-bold text-brand-green tracking-tight drop-shadow-[0_0_8px_rgba(170,213,70,0.3)] leading-tight">
-                                                {service.title}
-                                            </h3>
-                                            <p className="text-white leading-relaxed text-sm md:text-lg font-medium opacity-90 group-hover:opacity-100 transition-opacity uppercase-first">
-                                                {service.description}
-                                            </p>
-
-                                            <div className="pt-6 flex items-center gap-3 text-brand-green text-sm md:text-base font-bold group-hover:translate-x-2 transition-transform">
-                                                <span>{lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
-                                                <div className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center">
-                                                    <span className={`text-xs transition-transform duration-500 ${lang === 'ar' ? 'rotate-180' : ''}`}>→</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-brand-green via-brand-emerald to-transparent transform scale-x-100 transition-all duration-700 origin-left"></div>
-                                    </div>
 
                                     {/* Back Side */}
                                     <div className="flip-card-back h-full bg-white p-8 md:p-12 border-2 border-brand-green/30 shadow-2xl flex flex-col cursor-pointer overflow-hidden">
@@ -268,7 +270,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
 
                 <div className="container mx-auto relative z-10 reveal-trigger">
                     <div className="bg-white md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
-                        <div className="md:w-5/12 bg-brand-dark text-white p-8 md:p-16 flex flex-col justify-between relative">
+                        <div className="md:w-1/2 bg-brand-dark p-10 md:p-16 text-white relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/20 rounded-full blur-[80px] pointer-events-none"></div>
 
                             <div className="relative z-10">
@@ -283,7 +285,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.emailLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold">{em}</span>
+                                                <span className="text-lg md:text-xl font-bold break-all">{em}</span>
                                             </div>
                                         </a>
                                     ))}
@@ -306,7 +308,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 6.5 11 6.5 11s6.5-5.75 6.5-11c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z" /></svg>
                                             </div>
                                             <div>
-                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{lang === 'ar' ? 'العنوان' : 'Address'}</span>
+                                                <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.addressLabel}</span>
                                                 <span className="text-lg md:text-xl font-bold">{t.contact.address}</span>
                                             </div>
                                         </a>
@@ -327,7 +329,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                             </div>
                         </div>
 
-                        <div className="md:w-7/12 p-6 md:p-16 bg-white">
+                        <div className="md:w-1/2 p-6 md:p-16 bg-white">
                             <form className="space-y-6 md:space-y-8" onSubmit={(e) => {
                                 e.preventDefault();
                                 window.open(`https://wa.me/201067096677?text=${encodeURIComponent('طلب استشارة من الموقع')}`, '_blank');

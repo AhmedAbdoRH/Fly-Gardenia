@@ -234,7 +234,7 @@ export const FireSystems: React.FC<FireSystemsProps> = ({ content, lang }) => {
                     <div className="space-y-3">
                       <p className="text-sm uppercase tracking-widest text-brand-gray">{lang === 'ar' ? 'البريد الإلكتروني' : 'Email'}</p>
                       {t.cv.contact.emails.map((email, idx) => (
-                        <a key={idx} className="flex items-center gap-3 text-brand-charcoal font-semibold" href={`mailto:${email}`}>
+                        <a key={idx} className="flex items-center gap-3 text-brand-charcoal font-semibold break-all" href={`mailto:${email}`}>
                           <Mail className="w-4 h-4 text-brand-green" />
                           {email}
                         </a>
@@ -267,7 +267,7 @@ export const FireSystems: React.FC<FireSystemsProps> = ({ content, lang }) => {
 
         <div className="container mx-auto relative z-10 reveal-trigger">
           <div className="bg-white md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
-            <div className="md:w-5/12 bg-brand-dark text-white p-8 md:p-16 flex flex-col justify-between relative">
+            <div className="md:w-1/2 bg-brand-dark text-white p-8 md:p-16 flex flex-col justify-between relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/20 rounded-full blur-[80px] pointer-events-none"></div>
 
               <div className="relative z-10">
@@ -282,7 +282,7 @@ export const FireSystems: React.FC<FireSystemsProps> = ({ content, lang }) => {
                       </div>
                       <div>
                         <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{content.contact.emailLabel}</span>
-                        <span className="text-lg md:text-xl font-bold">{em}</span>
+                        <span className="text-lg md:text-xl font-bold break-all">{em}</span>
                       </div>
                     </a>
                   ))}
@@ -302,7 +302,7 @@ export const FireSystems: React.FC<FireSystemsProps> = ({ content, lang }) => {
               </div>
             </div>
 
-            <div className="md:w-7/12 p-8 md:p-16">
+            <div className="md:w-1/2 p-8 md:p-16">
               <h3 className="text-2xl md:text-4xl font-black text-brand-charcoal mb-8">
                 {lang === 'ar' ? 'تواصل معنا' : 'Get in Touch'}
               </h3>

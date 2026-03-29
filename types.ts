@@ -195,6 +195,7 @@ export interface ContentData {
     phoneLabel: string;
     phoneNumbers?: string[];
     emails?: string[];
+    addressLabel?: string;
     address?: string;
     sendButton: string;
     formName: string;
