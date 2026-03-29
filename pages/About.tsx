@@ -342,7 +342,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                         alt: lang === 'ar' ? 'صورة أثناء تنفيذ أحد المشاريع' : 'During project execution'
                                                     },
                                                     {
-                                                        src: "/صورة لدكتور اسماء داخل احد الاجتماعات البيئية.png",
+                                                        src: "/صورة لدكتور اسماء داخل احد الاجتماعات البيئية.jpg",
                                                         alt: lang === 'ar' ? 'صورة داخل أحد الاجتماعات البيئية' : 'Environmental meeting'
                                                     }
                                                 ].map((img, i) => (
