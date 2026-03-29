@@ -133,11 +133,11 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                                         {lang === 'ar' ? 'نطاق الخدمة' : 'Service Scope'}
                                                     </h4>
                                                     <div className="space-y-3">
-                                                        {(lang === 'ar' ? service.details?.ar : service.details?.en)?.split('\n').map((line, i) => (
+                                                        {(lang === 'ar' ? service.details?.ar : service.details?.en)?.split('\n').filter((line: string) => line.trim() !== '').map((line: string, i: number) => (
                                                             <div key={i} className="flex gap-3 items-start group/line">
                                                                 <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0 group-hover/line:scale-150 transition-transform"></div>
                                                                 <p className="text-brand-gray text-sm md:text-base leading-relaxed font-medium group-hover/line:text-brand-charcoal transition-colors text-justify">
-                                                                    {line.replace('• ', '')}
+                                                                    {line.replace(/^[•\s]+/, '')}
                                                                 </p>
                                                             </div>
                                                         ))}
@@ -285,7 +285,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.emailLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold break-all">{em}</span>
+                                                <span className="text-sm md:text-xl font-bold break-all">{em}</span>
                                             </div>
                                         </a>
                                     ))}
@@ -297,7 +297,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.phoneLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold">{p}</span>
+                                                <span className="text-base md:text-xl font-bold">{p}</span>
                                             </div>
                                         </a>
                                     ))}
@@ -309,7 +309,7 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.addressLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold">{t.contact.address}</span>
+                                                <span className="text-base md:text-xl font-bold">{t.contact.address}</span>
                                             </div>
                                         </a>
                                     )}

@@ -282,7 +282,7 @@ export const FireSystems: React.FC<FireSystemsProps> = ({ content, lang }) => {
                       </div>
                       <div>
                         <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{content.contact.emailLabel}</span>
-                        <span className="text-lg md:text-xl font-bold break-all">{em}</span>
+                        <span className="text-sm md:text-xl font-bold break-all">{em}</span>
                       </div>
                     </a>
                   ))}
@@ -294,7 +294,7 @@ export const FireSystems: React.FC<FireSystemsProps> = ({ content, lang }) => {
                       </div>
                       <div>
                         <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{content.contact.phoneLabel}</span>
-                        <span className="text-lg md:text-xl font-bold">{p}</span>
+                        <span className="text-base md:text-xl font-bold">{p}</span>
                       </div>
                     </a>
                   ))}

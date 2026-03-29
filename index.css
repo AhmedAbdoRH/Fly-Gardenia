@@ -201,3 +201,11 @@
 [dir="ltr"] .text-justify {
     text-align: left;
 }
+
+[dir="rtl"] .text-justify {
+    text-align: justify;
+    text-justify: auto;
+    text-align-last: start;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+}

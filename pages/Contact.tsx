@@ -43,7 +43,7 @@ export const Contact: React.FC<ContactProps> = ({ content, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.emailLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold break-all">{em}</span>
+                                                <span className="text-sm md:text-xl font-bold break-all">{em}</span>
                                             </div>
                                         </a>
                                     ))}
@@ -75,7 +75,7 @@ export const Contact: React.FC<ContactProps> = ({ content, lang }) => {
                                             </div>
                                             <div>
                                                 <span className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">{t.contact.addressLabel}</span>
-                                                <span className="text-lg md:text-xl font-bold">{t.contact.address}</span>
+                                                <span className="text-base md:text-xl font-bold">{t.contact.address}</span>
                                             </div>
                                         </a>
                                     )}
@@ -104,21 +104,30 @@ export const Contact: React.FC<ContactProps> = ({ content, lang }) => {
                         <div className="md:w-1/2 p-6 md:p-16 bg-white">
                             <form className="space-y-6 md:space-y-8" onSubmit={(e) => {
                                 e.preventDefault();
-                                window.open(`https://wa.me/201067096677?text=${encodeURIComponent('طلب استشارة من الموقع')}`, '_blank');
+                                const form = e.target as HTMLFormElement;
+                                const name = (form.elements.namedItem('contact-name') as HTMLInputElement)?.value || '';
+                                const email = (form.elements.namedItem('contact-email') as HTMLInputElement)?.value || '';
+                                const message = (form.elements.namedItem('contact-message') as HTMLTextAreaElement)?.value || '';
+                                
+                                const whatsappMessage = lang === 'ar' 
+                                    ? `طلب استشارة من الموقع:\n\n*الاسم:* ${name}\n*البريد:* ${email}\n*الرسالة:* ${message}`
+                                    : `Consultation Request from Website:\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+                                
+                                window.open(`https://wa.me/201067096677?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
                             }}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                     <div>
                                         <label htmlFor="contact-name" className="block text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">{t.contact.formName}</label>
-                                        <input id="contact-name" type="text" className="w-full py-3 border-b-2 border-gray-200 bg-transparent focus:border-brand-green focus:ring-0 outline-none font-medium text-lg rounded-none transition-colors" />
+                                        <input id="contact-name" name="contact-name" type="text" className="w-full py-3 border-b-2 border-gray-200 bg-transparent focus:border-brand-green focus:ring-0 outline-none font-medium text-lg rounded-none transition-colors" />
                                     </div>
                                     <div>
                                         <label htmlFor="contact-email" className="block text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">{t.contact.formEmail}</label>
-                                        <input id="contact-email" type="email" className="w-full py-3 border-b-2 border-gray-200 bg-transparent focus:border-brand-green focus:ring-0 outline-none font-medium text-lg rounded-none transition-colors" />
+                                        <input id="contact-email" name="contact-email" type="email" className="w-full py-3 border-b-2 border-gray-200 bg-transparent focus:border-brand-green focus:ring-0 outline-none font-medium text-lg rounded-none transition-colors" />
                                     </div>
                                 </div>
                                 <div>
                                     <label htmlFor="contact-message" className="block text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">{t.contact.formMessage}</label>
-                                    <textarea id="contact-message" rows={4} className="w-full py-3 border-b-2 border-gray-200 bg-transparent focus:border-brand-green focus:ring-0 outline-none font-medium text-lg resize-none rounded-none transition-colors"></textarea>
+                                    <textarea id="contact-message" name="contact-message" rows={4} className="w-full py-3 border-b-2 border-gray-200 bg-transparent focus:border-brand-green focus:ring-0 outline-none font-medium text-lg resize-none rounded-none transition-colors"></textarea>
                                 </div>
 
                                 <div className="pt-4">

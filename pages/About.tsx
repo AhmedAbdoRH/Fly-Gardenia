@@ -227,7 +227,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                     {t.about.policiesItems?.map((item, idx) => (
                                         <div key={idx} className="flex gap-4 items-start group">
                                             <div className="mt-1.5 w-2 h-2 rounded-full bg-brand-green shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
-                                            <p className="text-brand-gray text-lg leading-relaxed font-medium group-hover:text-brand-charcoal transition-colors">
+                                            <p className="text-brand-charcoal text-lg leading-relaxed font-medium text-justify">
                                                 {item}
                                             </p>
                                         </div>
@@ -249,9 +249,9 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
                                     {t.about.specializationsItems?.map((item, idx) => (
-                                        <div key={idx} className="flex gap-4 items-start group">
+                                        <div key={idx} className="flex gap-4 items-start">
                                             <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                            <p className="text-gray-300 text-lg leading-relaxed group-hover:text-white transition-colors">
+                                            <p className="text-gray-200 text-lg leading-relaxed font-medium text-justify">
                                                 {item}
                                             </p>
                                         </div>
@@ -323,7 +323,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             {t.about.drAsmaaBio?.map((item, idx) => (
                                                 <div key={idx} className="flex gap-4 items-start group">
                                                     <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">
                                                         {item}
                                                     </p>
                                                 </div>
@@ -381,8 +381,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                         </p>
                                                     </div>
 
-                                                    <div className={`flex flex-wrap gap-4 md:gap-6 ${lang === 'ar' ? 'justify-start flex-row-reverse' : ''}`}>
-                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                        <div className="bg-white px-6 py-4 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
                                                             <div className="absolute inset-0 bg-brand-green/5 translate-y-full group-hover/badge:translate-y-0 transition-transform duration-300"></div>
                                                             <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center relative z-10">
                                                                 <Award className="w-5 h-5 text-brand-green" />
@@ -391,21 +391,21 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                                 <p className="text-[10px] text-brand-green font-black uppercase tracking-widest mb-0.5">
                                                                     {lang === 'ar' ? 'اعتماد دولي' : 'International Certification'}
                                                                 </p>
-                                                                <p className="font-black text-brand-charcoal">
+                                                                <p className="font-black text-brand-charcoal text-sm">
                                                                     {lang === 'ar' ? 'مستشار وزير البيئة الأسبق' : 'Former Advisor to Minister'}
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                                        <div className="bg-white px-6 py-4 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
                                                             <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
                                                                 <CheckCircle className="w-5 h-5 text-brand-green" />
                                                             </div>
                                                             <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
-                                                                <p className="text-xs text-brand-gray font-bold uppercase tracking-wider">
+                                                                <p className="text-[10px] text-brand-gray font-bold uppercase tracking-widest mb-0.5">
                                                                     {lang === 'ar' ? 'الخبرة العملية' : 'Expertise'}
                                                                 </p>
-                                                                <p className="font-black text-brand-charcoal">
+                                                                <p className="font-black text-brand-charcoal text-sm">
                                                                     {lang === 'ar' ? '٢٨+ عاماً من الخبرة' : '28+ Years of Experience'}
                                                                 </p>
                                                             </div>
@@ -425,7 +425,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <div className="grid grid-cols-1 gap-4">
                                                     {t.about.expertsItems?.map((item, idx) => (
                                                         <div key={idx} className="p-5 rounded-2xl bg-brand-light border border-brand-green/10 hover:border-brand-green transition-all duration-300">
-                                                            <p className="text-brand-gray font-medium leading-relaxed">
+                                                            <p className="text-brand-gray font-medium leading-relaxed text-justify">
                                                                 {item}
                                                             </p>
                                                         </div>
@@ -499,7 +499,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             {t.about.drKhaledBio?.map((item, idx) => (
                                                 <div key={idx} className="flex gap-4 items-start group">
                                                     <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">
                                                         {item}
                                                     </p>
                                                 </div>
@@ -527,8 +527,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                         </p>
                                                     </div>
 
-                                                    <div className={`flex flex-wrap gap-4 md:gap-6 ${lang === 'ar' ? 'justify-start flex-row-reverse' : ''}`}>
-                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                        <div className="bg-white px-6 py-4 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow relative overflow-hidden group/badge">
                                                             <div className="absolute inset-0 bg-brand-green/5 translate-y-full group-hover/badge:translate-y-0 transition-transform duration-300"></div>
                                                             <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center relative z-10">
                                                                 <Award className="w-5 h-5 text-brand-green" />
@@ -537,21 +537,21 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                                 <p className="text-[10px] text-brand-green font-black uppercase tracking-widest mb-0.5">
                                                                     {lang === 'ar' ? 'خبرة عملية' : 'Practical Experience'}
                                                                 </p>
-                                                                <p className="font-black text-brand-charcoal">
+                                                                <p className="font-black text-brand-charcoal text-sm">
                                                                     {lang === 'ar' ? '٣٣+ سنة متخصصة' : '33+ Years Specialized'}
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                                        <div className="bg-white px-6 py-4 rounded-[1.75rem] shadow-sm border border-brand-green/10 flex items-center gap-4 hover:shadow-md transition-shadow">
                                                             <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
                                                                 <CheckCircle className="w-5 h-5 text-brand-green" />
                                                             </div>
                                                             <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
-                                                                <p className="text-xs text-brand-gray font-bold uppercase tracking-wider">
+                                                                <p className="text-[10px] text-brand-gray font-bold uppercase tracking-widest mb-0.5">
                                                                     {lang === 'ar' ? 'الاعتماد' : 'Certification'}
                                                                 </p>
-                                                                <p className="font-black text-brand-charcoal">
+                                                                <p className="font-black text-brand-charcoal text-sm">
                                                                     {lang === 'ar' ? 'نقابة المهندسين المصريين' : 'Syndicate Certified'}
                                                                 </p>
                                                             </div>
@@ -696,7 +696,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             {t.about.engAymanBio?.map((item, idx) => (
                                                 <div key={idx} className="flex gap-4 items-start group">
                                                     <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">
                                                         {item}
                                                     </p>
                                                 </div>
@@ -707,7 +707,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
                                                 <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-green/10 rounded-full blur-[90px] pointer-events-none"></div>
                                                 <div className="relative z-10">
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                         {[
                                                             {
                                                                 title: lang === 'ar' ? 'مشروعات عالمية' : 'Global Projects',
@@ -719,8 +719,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                             }
                                                         ].map((item, i) => (
                                                             <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
-                                                                <h4 className="font-bold text-brand-green text-sm mb-1">{item.title}</h4>
-                                                                <p className="text-brand-gray text-xs">{item.desc}</p>
+                                                                <h4 className="font-bold text-brand-green text-[10px] uppercase tracking-widest mb-1">{item.title}</h4>
+                                                                <p className="text-brand-charcoal font-black text-sm">{item.desc}</p>
                                                             </div>
                                                         ))}
                                                     </div>
@@ -782,7 +782,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             {t.about.engAhmedBio?.map((item, idx) => (
                                                 <div key={idx} className="flex gap-4 items-start group">
                                                     <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">
                                                         {item}
                                                     </p>
                                                 </div>
@@ -793,7 +793,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
                                                 <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
                                                 <div className="relative z-10">
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                         {[
                                                             {
                                                                 title: lang === 'ar' ? 'البنية التحتية' : 'Infrastructure',
@@ -805,8 +805,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                             }
                                                         ].map((item, i) => (
                                                             <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
-                                                                <h4 className="font-bold text-brand-green text-sm mb-1">{item.title}</h4>
-                                                                <p className="text-brand-gray text-xs">{item.desc}</p>
+                                                                <h4 className="font-bold text-brand-green text-[10px] uppercase tracking-widest mb-1">{item.title}</h4>
+                                                                <p className="text-brand-charcoal font-black text-sm">{item.desc}</p>
                                                             </div>
                                                         ))}
                                                     </div>
@@ -869,7 +869,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             {t.about.engBassamBio?.map((item, idx) => (
                                                 <div key={idx} className="flex gap-4 items-start group">
                                                     <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
-                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors">
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">
                                                         {item}
                                                     </p>
                                                 </div>
@@ -880,7 +880,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
                                                 <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
                                                 <div className="relative z-10">
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                         {[
                                                             {
                                                                 title: lang === 'ar' ? 'مجال التخصص' : 'Area of Expertise',
@@ -892,8 +892,8 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                             }
                                                         ].map((item, i) => (
                                                             <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
-                                                                <h4 className="font-bold text-brand-green text-sm mb-1">{item.title}</h4>
-                                                                <p className="text-brand-gray text-xs">{item.desc}</p>
+                                                                <h4 className="font-bold text-brand-green text-[10px] uppercase tracking-widest mb-1">{item.title}</h4>
+                                                                <p className="text-brand-charcoal font-black text-sm">{item.desc}</p>
                                                             </div>
                                                         ))}
                                                     </div>
@@ -1020,7 +1020,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                         <div className="w-12 h-12 rounded-full bg-brand-green/10 flex items-center justify-center shrink-0 group-hover:bg-brand-green group-hover:scale-110 transition-all duration-300">
                                             <CheckCircle className="w-6 h-6 text-brand-green group-hover:text-white transition-colors" />
                                         </div>
-                                        <span className="text-lg md:text-xl font-medium text-gray-200 group-hover:text-white transition-colors">{item}</span>
+                                        <span className="text-lg md:text-xl font-medium text-gray-200 group-hover:text-white transition-colors text-justify">{item}</span>
                                     </li>
                                 ))}
                             </ul>
