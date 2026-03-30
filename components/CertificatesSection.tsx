@@ -86,12 +86,23 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
                                         <img 
                                             src={cert.image} 
                                             alt={cert.title}
-                                            className="w-full object-contain filter blur-[1.5px] opacity-90 contrast-75 sepia-[20%] pointer-events-none"
+                                            className="w-full object-contain pointer-events-none"
                                             draggable="false"
                                         />
                                         
+                                        {/* Progressive Blur Overlay - Strong at bottom, clear at top half */}
+                                        <div 
+                                            className="absolute inset-0 pointer-events-none z-10"
+                                            style={{
+                                                backdropFilter: 'blur(20px)',
+                                                WebkitBackdropFilter: 'blur(20px)',
+                                                maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)',
+                                                WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)'
+                                            }}
+                                        />
+                                        
                                         {/* Repeating Text Watermark Layer for extra protection */}
-                                        <div className="absolute inset-0 pointer-events-none opacity-50 flex items-center justify-center overflow-hidden mix-blend-overlay">
+                                        <div className="absolute inset-0 pointer-events-none opacity-40 flex items-center justify-center overflow-hidden mix-blend-overlay z-20">
                                             <div className="grid grid-cols-2 gap-8 -rotate-45 scale-150 transform-gpu opacity-40">
                                                 {Array.from({ length: 12 }).map((_, i) => (
                                                     <span key={i} className="text-3xl font-black text-gray-500 tracking-widest uppercase">GARDENIA</span>
@@ -100,8 +111,8 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
                                         </div>
 
                                         {/* Optical Noise/Scanline Overlay to disrupt pictures taken by phone screens */}
-                                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none filter contrast-200"></div>
-                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent background-size-[100%_4px] pointer-events-none opacity-30 mix-blend-overlay"></div>
+                                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none filter contrast-200 z-30"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent pointer-events-none opacity-20 mix-blend-overlay z-40"></div>
                                     </div>
                                 </div>
                             ))}
