@@ -86,13 +86,13 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
                                         <img 
                                             src={cert.image} 
                                             alt={cert.title}
-                                            className="w-full object-contain pointer-events-none"
+                                            className="w-full object-contain pointer-events-none transition-all duration-700 group-hover:blur-2xl group-hover:opacity-20 group-hover:scale-105"
                                             draggable="false"
                                         />
                                         
                                         {/* Progressive Blur Overlay - Strong at bottom, clear at top half */}
                                         <div 
-                                            className="absolute inset-0 pointer-events-none z-10"
+                                            className="absolute inset-0 pointer-events-none z-10 transition-opacity duration-500 group-hover:opacity-0"
                                             style={{
                                                 backdropFilter: 'blur(20px)',
                                                 WebkitBackdropFilter: 'blur(20px)',
@@ -100,9 +100,21 @@ export const CertificatesSection: React.FC<CertificatesSectionProps> = ({ lang =
                                                 WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)'
                                             }}
                                         />
+
+                                        {/* Protection Overlay on Hover */}
+                                        <div className="absolute inset-0 z-50 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center bg-brand-light/40 backdrop-blur-xl">
+                                            <div className="w-12 h-12 rounded-full bg-brand-green/20 flex items-center justify-center mb-3">
+                                                <svg className="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-brand-charcoal font-bold text-sm px-4 text-center">
+                                                {lang === 'ar' ? 'محتوى محمي بحقوق الطبع والنشر' : 'Copyright Protected Content'}
+                                            </span>
+                                        </div>
                                         
                                         {/* Repeating Text Watermark Layer for extra protection */}
-                                        <div className="absolute inset-0 pointer-events-none opacity-40 flex items-center justify-center overflow-hidden mix-blend-overlay z-20">
+                                        <div className="absolute inset-0 pointer-events-none opacity-40 flex items-center justify-center overflow-hidden mix-blend-overlay z-20 transition-opacity duration-500 group-hover:opacity-10">
                                             <div className="grid grid-cols-2 gap-8 -rotate-45 scale-150 transform-gpu opacity-40">
                                                 {Array.from({ length: 12 }).map((_, i) => (
                                                     <span key={i} className="text-3xl font-black text-gray-500 tracking-widest uppercase">GARDENIA</span>
