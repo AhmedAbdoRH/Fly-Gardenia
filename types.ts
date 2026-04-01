@@ -64,6 +64,8 @@ export interface ContentData {
     engAymanBio?: string[];
     engBassamTitle?: string;
     engBassamBio?: string[];
+    engAmrTitle?: string;
+    engAmrBio?: string[];
   };
   values: {
     title: string;

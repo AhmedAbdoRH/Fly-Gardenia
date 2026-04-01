@@ -6,7 +6,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       home: "Home",
       about: "About Us",
       services: "Services",
-      fireSystems: "Fire Systems",
+      fireSystems: "Fire Fighting & Alarm Systems",
       projects: "Our Projects",
       contact: "Contact",
       langLabel: "العربية"
@@ -26,8 +26,8 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "About Gardenia",
       mainText: "Who We Are?",
       tagline: "Environmental Consulting Partner Supporting Industrial Decision-Making",
-      subText: "Gardenia for Environmental Consulting is an environmental consulting firm working with factories, various economic establishments, and government agencies to provide solutions that support environmental compliance, improve performance, and reduce risks. We are committed to providing clear studies and reports based on experience and local and international standards, focusing on practical results that help facilities make informed decisions and implement them efficiently.",
-      introText: "Since 2008, Gardenia has been working as a trusted consulting partner in implementing environmental projects with factories and government agencies, relying on a participatory approach that focuses on practical solutions, knowledge transfer, and applying international best practices to achieve real environmental compliance and sustainability.",
+      subText: "جاردينيا للاستشارات البيئية هي شركة استشارية بيئية تعمل مع المصانع، ومختلف المنشآت الاقتصادية، والجهات الحكومية لتقديم حلول تدعم الامتثال البيئي، وتحسين الأداء، وتقليل المخاطر. نلتزم بتقديم دراسات وتقارير واضحة مبنية على الخبرة والمعايير المحلية والدولية، مع تركيز على النتائج العملية التي تساعد المنشآت على اتخاذ قرارات مستنيرة وتنفيذها بكفاءة.",
+      introText: "منذ عام 2008، تعمل جاردينيا كشريك استشاري موثوق في تنفيذ مشروعات بيئية مع المصانع والجهات الحكومية، معتمدة على نهج تشاركي يركز على الحلول العملية، نقل المعرفة، وتطبيق أفضل الممارسات الدولية لتحقيق التزام بيئي واستدامة حقيقية.",
       visionTitle: "Our Vision",
       visionText: "To be a leading regional firm in environmental consulting and a trusted partner for achieving compliance and sustainable industrial development.",
       missionTitle: "Our Mission",
@@ -80,7 +80,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "Adjunct Professor – German International University (2024–2025).",
         "Advisor to the Egyptian Minister of Environment (2012–2013).",
         "Director of EIA for Industrial Projects at the Egyptian Environmental Affairs Agency (2007-2013).",
-        "Certified Consultant (EEAA) in: Hazardous Waste Management, ESIA Preparation & Review, and Pollution Abatement & Environmental Sanitation.",
+        "استشاري معتمد جهاز شؤون البيئة المصري في: إدارة المخلفات الخطرة، إعداد ومراجعة دراسات تقييم الأثر البيئي، وتقليل التلوث والإصحاح البيئي.",
         "Consultant Engineer (Syndicate of Engineers) in Environmental Management since 2015.",
         "Deputy Project Manager for JICA-funded PCBs Management Project (2005-2007).",
         "Coordinator for National Environmental Inspection Plans at EEAA (1999-2005).",
@@ -129,6 +129,15 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "Expert in load flow, short-circuit, protective relay coordination, and traction power systems.",
         "Deep knowledge of IEC, EN, NFPA, and IEEE standards for electrical and traction power design.",
         "Bachelor's degree in Electrical Power and Machines Engineering, Fayoum University (2007)."
+      ],
+      engAmrTitle: "Eng. Amr Hassan Zaki Elfki Profile",
+      engAmrBio: [
+        "Senior Telecommunication Engineer with over 17 years of experience in design, testing, and commissioning of rail communication subsystems.",
+        "Extensive expertise in multiservice networks (OT), cybersecurity, TETRA radio, CCTV, and public address systems.",
+        "Senior Engineer at National Authority for Tunnels (NAT), reviewing tender documents for major projects like Cairo Metro Line 3 & 4, Monorail, and High-Speed Rail.",
+        "Proven track record in requirement and interface management for complex telecom activities.",
+        "International experience with factory tests and specialized training in Italy and China for advanced rail subsystems.",
+        "BSc in Telecommunication Engineering, Helwan University (2008), ranked 10th in department."
       ]
     },
     values: {
@@ -193,12 +202,12 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           }
         },
         {
-          title: "Safety & Firefighting Systems",
-          description: "Design and implementation of fire fighting and alarm systems, and occupational health and safety plans.",
+          title: "Safety & Security Systems for Airports, Metro & Railways",
+          description: "Consultancy services for security devices including baggage detection, X-ray machines, and metal gates for airports, metro stations, and railways.",
           iconName: "ShieldCheck",
           details: {
-            en: "• Preparation of Firefighting & Fire Alarm reports.\n• Implementation of fire systems approved by Civil Defense.\n• Boiler inspection and safety specifications.",
-            ar: "• إعداد تقارير أنظمة مكافحة وانذار الحريق.\n• تنفيذ أنظمة الحريق المعتمدة من الدفاع المدني.\n• فحص الغلايات ووضع مواصفات السلامة."
+            en: "• Boiler inspection and safety specifications.\n• Implementation of baggage detection systems with X-ray machines.\n• Implementation of metal gate detection systems.",
+            ar: "• فحص الغلايات ووضع مواصفات السلامة.\n• تنفيذ أنظمة الكشف عن الحقائق بأجهزة الإكس راي.\n• تنفيذ أنظمة البوابات المعدنية للكشف عن المعادن."
           }
         },
         {
@@ -223,7 +232,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
     },
     fireSystems: {
       hero: {
-        tag: "Fire Systems",
+        tag: "Fire Fighting & Alarm Systems",
         title: "Fire Alarm & Firefighting Systems",
         subtitle: "Independent consultancy ensuring compliance, safety, and engineering integrity."
       },
@@ -826,7 +835,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       ],
       partnersTitle: "Our Clients & Partners",
       partners: {
-        government: ["Ministry of Environment", "EEAA", "Industrial Development Authority (IDA)"],
+        government: ["Ministry of Environment", "Egyptian Environmental Affairs Agency", "National Authority for Tunnels"],
         international: ["World Bank", "GEF", "USAID", "UNDP", "JICA", "DANIDA", "FINNAIDA", "CIDA", "AfDB", "KfW", "DFID"],
         industrial: ["Cement", "Chemicals", "Petroleum", "Textile", "Food & Beverages", "Energy"]
       }
@@ -860,7 +869,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       home: "الرئيسية",
       about: "من نحن",
       services: "خدماتنا",
-      fireSystems: "أنظمة الحريق",
+      fireSystems: "أنظمة مكافحة الحريق والإنذار",
       projects: "نماذج مشروعاتنا",
       contact: "تواصل معنا",
       langLabel: "English"
@@ -880,7 +889,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       title: "من نحن",
       mainText: "من نحن؟",
       tagline: "شريك استشاري بيئي يدعم القرار الصناعي",
-      subText: "Gardenia for Environmental Consulting شركة استشارات بيئية تعمل مع المصانع والمنشات الاقتصادية المختلفة والجهات الحكومية لتقديم حلول تدعم الامتثال البيئي وتحسين الأداء وتقليل المخاطر. نلتزم بتقديم دراسات وتقارير واضحة مبنية على الخبرة والمعايير المحلية والدولية، مع تركيز على النتائج العملية التي تساعد المنشآت على اتخاذ قرارات صحيحة وتنفيذها بكفاءة.",
+      subText: "جاردينيا هي شركة للإستشارات البيئية تعمل مع المصانع والمنشآت الاقتصادية المختلفة والجهات الحكومية لتقديم حلول تدعم الامتثال البيئي وتحسين الأداء وتقليل المخاطر. نلتزم بتقديم دراسات وتقارير واضحة مبنية على الخبرة والمعايير المحلية والدولية، مع تركيز على النتائج العملية التي تساعد المنشآت على اتخاذ قرارات مستنيرة وتنفيذها بكفاءة.",
       introText: "منذ عام 2008، تعمل جاردينيا كشريك استشاري موثوق في تنفيذ مشروعات بيئية مع المصانع والجهات الحكومية، معتمدة على نهج تشاركي يركز على الحلول العملية، نقل المعرفة، وتطبيق أفضل الممارسات الدولية لتحقيق التزام بيئي واستدامة حقيقية.",
       visionTitle: "رؤيتنا",
       visionText: "نسعى لأن نكون من الشركات الرائدة إقليمياً في مجال الاستشارات البيئية، والشريك الموثوق للمصانع في تحقيق الامتثال البيئي والتنمية الصناعية النظيفة.",
@@ -924,19 +933,19 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       expertsItems: [
         "يترأس فريق العمل استشاري مهندس الأستاذة الدكتورة أسماء سيد حموده، والتي لها خبرة طويلة ومتنوعة في مجال العمل البيئي مع جهاز شئون البيئة ووزارة البيئة وجهات دولية.",
         "خبرات واسعة في مشاريع وطنية ودولية بتمويل من جهات مانحة كبرى.",
-        "استشاريو السلامة والأمن ومكافحة الحريق معتمدون من نقابة المهندسين ولهم خبرة طويلة في العمل مع هيئة الحماية المدنية."
+        "استشاريو السلامة والأمان ومكافحة الحريق معتمدون من نقابة المهندسين ولهم خبرة طويلة في العمل مع هيئة الحماية المدنية."
       ],
       drAsmaaTitle: "أ.د/ أسماء حمودة",
       drKhaledTitle: "م. خالد عيد محمد إبراهيم",
       drKhaledBio: [
-        "استشاري أول أنظمة الحماية من الحريق والسلامة المهنية.",
+        "استشاري أنظمة إنذار ومكافحة الحريق والسلامة المهنية.",
         "خبرة 33 عاماً في الصحة والسلامة المهنية ونظم ضبط الجودة وأنظمة إنذار ومكافحة الحريق.",
-        "قيادة فريق الدفاع المدني والسلامة والأمن بالهيئة القومية للأنفاق (12 عاماً).",
+        "قيادة فريق الدفاع المدني والسلامة والأمان بالهيئة القومية للأنفاق (12 عاماً).",
         "مسؤول الجودة والسلامة بوزارة الدفاع المصرية (21 عاماً) - القوات المسلحة وشركات الإنتاج الحربي.",
         "مراجع معتمد IRCA في الصحة والسلامة المهنية (OHSAS 18001/2007).",
-        "استشاري معتمد من نقابة المهندسين المصرية في أنظمة السلامة والأمن.",
+        "استشاري معتمد من نقابة المهندسين.",
         "خبرة واسعة في تصميم وتقييم أنظمة الحريق والإطفاء والإنذار.",
-        "تدريب دولي متقدم في أنظمة الحريق والألواح التحكمية والدخان والمضخات (كندا، الولايات المتحدة، الإمارات، فرنسا).",
+        "تدريب دولي متقدم في أنظمة مكافحة الحريق ولوحات التحكم وأنظمة سحب الدخان ومضخات الحريق من كندا والولايات المتحدة والإمارات وفرنسا وألمانيا وإيطاليا.",
         "خبرة في مشاريع البنية التحتية القومية - المترو والطرق والجسور والمشاريع الحكومية.",
         "قيادة فريق متخصص وشراكات مع الجهات الحكومية والدفاع المدني."
       ],
@@ -965,11 +974,20 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       engBassamBio: [
         "استشاري مهندس قوى كهربائية بخبرة 17 عاماً في تصميم وفحص واختبار أنظمة القوى الكهربائية.",
         "خبرة واسعة في شبكات الجهد المتوسط والمنخفض وأنظمة MEP ومحطات المحولات 220KV/66KV (GIS & AIS).",
-        "كبير مهندسي الكهرباء بالهيئة القومية للأنفاق (NAT) لمراجعة التصميمات الكهروميكانيكية لمشروعات النقل الكبرى.",
+        "كبير مهندسي الكهرباء بمشاريع مترو الأنفاق (NAT) لمراجعة التصميمات الكهروميكانيكية لمشروعات النقل الكبرى.",
         "مهندس اختبارات وتشغيل بشركة الكهرباء السعودية (SEC) لمحطات المحولات الرئيسية 132/13.8 KV.",
         "خبير في دراسات الأحمال (Load Flow)، وقصر الدائرة (Short-Circuit)، وتنسيق الوقاية، وأنظمة القوى للجر الكهربائي.",
         "دراية كاملة بالمعايير الدولية IEC، EN، NFPA، وIEEE الخاصة بتصميمات القوى والجر الكهربائي.",
         "بكالوريوس هندسة القوى والآلات الكهربائية، جامعة الفيوم (2007)."
+      ],
+      engAmrTitle: "م/ عمرو حسن زكي الفقي",
+      engAmrBio: [
+        "استشاري مهندس اتصالات سكة حديد بخبرة تزيد عن 17 عاماً في التصميم والاختبار والتشغيل لأنظمة الاتصالات.",
+        "خبير متخصص في الشبكات متعددة الخدمات (MSN)، والأمن السيبراني، وأنظمة الراديو TETRA، والكاميرات (CCTV).",
+        "كبير مهندسي الهيئة القومية للأنفاق (NAT)، ومسؤول عن مراجعة مستندات الطرح لمشروعات المترو والقطار الكهربائي والمونوريل.",
+        "خبرة واسعة في إدارة المتطلبات والواجهات (Interface Management) لأنظمة الاتصالات المعقدة.",
+        "حضور اختبارات القبول بالمصانع (FAT) وتدريبات دولية في إيطاليا والصين على أحدث أنظمة اتصالات السكك الحديدية.",
+        "بكالوريوس هندسة الاتصالات والإلكترونيات، جامعة حلوان (2008)، بتقدير جيد جداً وترتيب العاشر على الدفعة."
       ]
     },
     values: {
@@ -1033,12 +1051,12 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           }
         },
         {
-          title: "أنظمة السلامة المهنية ومكافحة الحريق",
-          description: "نقدم خدمات تصميم ومراجعة وتنفيذ أنظمة مكافحة الحريق والإنذار، بالإضافة إلى إعداد خطط السلامة والصحة المهنية، وفحص الغلايات، بما يضمن بيئة عمل آمنة متوافقة مع الاشتراطات القانونية.",
+          title: "أنظمة السلامة والأجهزة الأمنية بالمطارات ومحطات المترو والسكك الحديدية",
+          description: "نقدم خدمات استشارية في الأجهزة الأمنية الخاصة بالكشف عن الحقائب/ أجهزة X-ray /البوابات المعدنية (الكشف عن المعادن) Metal gate",
           iconName: "ShieldCheck",
           details: {
-            en: "• Preparation of Firefighting & Fire Alarm reports.\n• Implementation of fire systems approved by Civil Defense.\n• Boiler inspection and safety specifications.",
-            ar: "• إعداد تقارير أنظمة مكافحة وانذار الحريق.\n• تنفيذ أنظمة الحريق المعتمدة من الدفاع المدني.\n• فحص الغلايات ووضع مواصفات السلامة."
+            en: "• Boiler inspection and safety specifications.\n• Implementation of baggage detection systems with X-ray machines.\n• Implementation of metal gate detection systems.",
+            ar: "• فحص الغلايات ووضع مواصفات السلامة.\n• تنفيذ أنظمة الكشف عن الحقائق بأجهزة الإكس راي.\n• تنفيذ أنظمة البوابات المعدنية للكشف عن المعادن."
           }
         },
         {
@@ -1064,7 +1082,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
 
     fireSystems: {
       hero: {
-        tag: "أنظمة الحريق",
+        tag: "أنظمة مكافحة الحريق والإنذار",
         title: "أنظمة إنذار ومكافحة الحريق",
         subtitle: "استشارات مستقلة تضمن الامتثال والسلامة والنزاهة الهندسية."
       },
@@ -1084,23 +1102,18 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         title: "نطاق الخدمات",
         items: [
           {
-            title: "مراجعة تصميم أنظمة الإنذار",
-            description: "مراجعة واعتماد تصميمات أنظمة إنذار الحريق لضمان الكفاءة والامتثال.",
+            title: "تصميم وتقييم ومراجعة أنظمة الإنذار وأنظمة مكافحة الحريق",
+            description: "تصميم وتقييم شامل لأنظمة الإنذار ومكافحة الحريق لضمان الكفاءة والامتثال.",
             iconName: "FileText"
           },
           {
-            title: "تصميم وتقييم أنظمة المكافحة",
-            description: "تقييم فني لأنظمة مكافحة الحريق لتحقيق الالتزام بالكود والاعتمادية التشغيلية.",
-            iconName: "ShieldCheck"
-          },
-          {
-            title: "دعم تقديمات الجهات",
-            description: "إعداد وتنسيق المستندات اللازمة لاعتمادات الجهات والدفاع المدني.",
+            title: "مراجعة التقارير الخاصة بالدفاع المدني",
+            description: "إعداد ومراجعة التقارير المقدمة للدفاع المدني لضمان الموافقة والاعتماد.",
             iconName: "FolderOpen"
           },
           {
-            title: "الإشراف والمراجعة بالموقع",
-            description: "إشراف ميداني وفحوصات مطابقة أثناء التنفيذ والتركيب.",
+            title: "متابعة التنفيذ بالموقع",
+            description: "إشراف ميداني ومتابعة التنفيذ والتركيب لضمان الجودة والمطابقة.",
             iconName: "Users"
           },
           {
@@ -1118,15 +1131,13 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       standards: {
         title: "المعايير والأكواد",
         items: [
-          "معايير NFPA",
-          "معايير EN",
-          "اشتراطات الدفاع المدني المحلية"
+          "المعايير الدولية والمحلية واشتراطات الدفاع المدني (معايير NFPA ومعايير EN)"
         ]
       },
       leadership: {
         title: "القيادة الهندسية",
         name: "م. خالد عيد محمد إبراهيم",
-        role: "استشاري أول للحماية من الحريق",
+        role: "استشاري أنظمة إنذار ومكافحة الحريق",
         summary: "مهندس خبير في أنظمة إنذار ومكافحة الحريق وإدارة السلامة وضمان الجودة، مع خبرة واسعة في مشروعات البنية التحتية القومية."
       },
       sectors: {
@@ -1165,7 +1176,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
               "21 عامًا مهندسًا في القوات المسلحة المصرية (وزارة الدفاع).",
               "12 عامًا بالهيئة القومية للأنفاق NAT كمستشار لأنظمة الحريق وأنظمة الأمن (بوابات كشف المعادن وأجهزة الأشعة السينية).",
               "مدقق معتمد IRCA في الصحة والسلامة المهنية.",
-              "استشاري أنظمة السلامة والأمن بنقابة المهندسين المصرية.",
+              "استشاري معتمد من نقابة المهندسين المصرية.",,
               "خبرات في: أنظمة مكافحة الحريق، أنظمة إنذار الحريق وتكاملها، أنظمة الأمن (أشعة سينية وبوابات معدنية)، السلامة والصحة المهنية، ونظم ضبط الجودة.",
               "أعمال كهروميكانيكية لشركات الإنتاج الحربي ومشروعات المترو تشمل نظم الجودة والسلامة والتوثيق والتدريب والتدقيق وتحليل الأسباب الجذرية وتقليل الحوادث وتصاريح العمل وخطط السلامة والطوارئ والإخلاء."
             ]
@@ -1373,7 +1384,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
               "اتحاد المهندسين العرب",
               "عضوية IRCA",
               "نقابة المهندسين المصرية",
-              "استشاري أنظمة السلامة والأمن بنقابة المهندسين المصرية"
+              "استشاري معتمد من نقابة المهندسين المصرية"
             ]
           },
           {
@@ -1655,7 +1666,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
           ]
         },
         {
-          categoryTitle: "تقارير فحص أنظمة الحريق والإنذار",
+          categoryTitle: "تقارير فحص أنظمة مكافحة الحريق والإنذار",
           projects: [
             {
               name: "تقرير وصف أنظمة الإنذار ومكافحة الحريق (مخزن السقالات والشدات المعدنية)",
@@ -1718,14 +1729,14 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       ],
       partnersTitle: "شركاؤنا",
       partners: {
-        government: ["وزارة البيئة", "جهاز شئون البيئة (EEAA)", "هيئة التنمية الصناعية"],
+        government: ["وزارة البيئة", "جهاز شؤون البيئة المصري", "الهيئة القومية للأنفاق - سابقاً"],
         international: ["البنك الدولي", "GEF", "USAID", "UNDP", "JICA", "DANIDA", "FINNAIDA", "CIDA", "AfDB", "KfW", "DFID"],
         industrial: ["الأسمنت", "الكيماويات", "البترول", "النسيج", "الأغذية", "الطاقة"]
       }
     },
     partners: {
       title: "شركاؤنا",
-      government: ["وزارة البيئة – EEAA"],
+      government: ["وزارة البيئة – جهاز شؤون البيئة المصري"],
       international: ["World Bank", "GEF", "USAID", "UNDP", "JICA", "DANIDA", "FINNIDA", "CIDA"],
       industries: ["الأسمنت", "الكيماويات", "البترول", "النسيج", "الأغذية", "الطاقة"]
     },

@@ -53,14 +53,14 @@ export const Services: React.FC<ServicesProps> = ({ content, lang }) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12">
                         {[...t.services.items.slice(0, 2), ...((t.fireSystems ? [({
-                            title: lang === 'ar' ? 'أنظمة الحريق' : 'Fire Systems',
+                            title: lang === 'ar' ? 'أنظمة مكافحة الحريق والإنذار' : 'Fire Fighting & Alarm Systems',
                             description: lang === 'ar'
                                 ? 'خدمات مراجعة واعتماد وتصميم أنظمة الإنذار والإطفاء، مع دعم التقديم للدفاع المدني والمتابعة لضمان الامتثال والسلامة.'
                                 : 'Independent review and compliance support for fire alarm & firefighting systems—design, authority submissions, and site follow-up for safer facilities.',
                             iconName: 'ShieldCheck',
                             details: {
-                                en: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• Standards: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}\n\n• Leadership: ${t.fireSystems.leadership.name} (${t.fireSystems.leadership.role})`,
-                                ar: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• المعايير: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}\n\n• القيادة: ${t.fireSystems.leadership.name} (${t.fireSystems.leadership.role})`,
+                                en: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• Standards: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}`,
+                                ar: `• ${t.fireSystems.scope.items.slice(0, 4).map(i => i.title).join('\n• ')}\n\n• المعايير: ${t.fireSystems.standards.items.slice(0, 3).join(' • ')}`,
                             }
                         } as any)] : [])), ...t.services.items.slice(2)].map((service: any, idx) => (
                                 <div

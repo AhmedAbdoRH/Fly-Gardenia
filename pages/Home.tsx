@@ -186,7 +186,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
             <section className="py-24 md:py-32 bg-white overflow-hidden">
                 <div className="container mx-auto px-4 mb-12 text-center">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-brand-green font-bold tracking-wider mb-4 uppercase reveal-trigger">{t.about.title}</h2>
+                        <h2 className="text-2xl md:text-3xl text-brand-green font-bold tracking-wider mb-4 uppercase reveal-trigger">{t.about.title}</h2>
                         <h3 className="text-4xl md:text-5xl font-black text-brand-dark mb-4 leading-tight reveal-trigger stagger-1">
                             {lang === 'ar' ? 'نحن نبني مستقبلاً مستداماً' : 'Building a Sustainable Future'}
                         </h3>
@@ -240,14 +240,14 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                 <div className="container mx-auto px-4">
                     {/* Section Header */}
                     <div className="text-center mb-16 reveal-trigger">
-                        <span className="text-brand-green font-bold tracking-wider uppercase text-xs md:text-sm mb-4 block">{lang === 'ar' ? 'الفريق المتخصص' : 'Our Expert Team'}</span>
+                        <span className="text-brand-green font-bold tracking-wider uppercase text-xs md:text-sm mb-4 block">{lang === 'ar' ? 'تعرف على مستشارينا وفريق العمل' : 'Meet Our Consultants & Team'}</span>
                         <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 leading-tight">
                             {lang === 'ar' ? 'قيادة علمية خبيرة' : 'Expert Scientific Leadership'}
                         </h2>
                     </div>
 
                     {/* Team Cards Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
                         {/* Dr. Asmaa Card */}
                         <motion.div 
                             initial={{ opacity: 0, y: 20 }}
@@ -260,17 +260,13 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                             {/* Image Section */}
-                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                            <div className="relative aspect-square overflow-hidden bg-brand-dark">
                                 <img 
                                     src="/Dr. Asmaa Hammouda.png" 
                                     alt="Dr. Asmaa Hammouda" 
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
-                                {/* Badge */}
-                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                    {lang === 'ar' ? 'المؤسس' : 'Founder'}
-                                </div>
                             </div>
 
                             {/* Content Section */}
@@ -281,11 +277,27 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
                                     {lang === 'ar' 
                                         ? 'أستاذ الهندسة الكيميائية والبيئية'
-                                        : 'Professor of Chemical Engineering'}
+                                        : 'Professor of Chemical & Environmental Engineering'}
                                 </p>
 
+                                {/* Specializations */}
+                                <div className="space-y-2 mb-6 h-20">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'استشاري تقييم الأثر البيئي وإدارة المخلفات' : 'Environmental Impact Assessment & Waste Management Consultant'}</span>
+                                    </div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'استشاري ومدقق بصمة كربونية' : 'Carbon Footprint Consultant & Auditor'}</span>
+                                    </div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'أستاذ الهندسة الكيميائية والبيئية' : 'Professor of Chemical & Environmental Engineering'}</span>
+                                    </div>
+                                </div>
+
                                 {/* Experience Highlights */}
-                                <div className="space-y-2 mb-6 h-24">
+                                <div className="space-y-2 mb-6">
                                     <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
                                         <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
                                         <span>{lang === 'ar' ? '٢٨+ سنة خبرة دولية' : '28+ Years International Experience'}</span>
@@ -316,16 +328,13 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                            <div className="relative aspect-square overflow-hidden bg-brand-dark">
                                 <img
                                     src="/eng khaled.png"
                                     alt="Eng. Khaled Eid"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
-                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                    {lang === 'ar' ? 'استشاري' : 'Consultant'}
-                                </div>
                             </div>
 
                             <div className="p-6 relative z-10">
@@ -334,18 +343,18 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 </h3>
                                 <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
                                     {lang === 'ar' 
-                                        ? 'استشاري حماية من الحريق'
+                                        ? 'استشاري أنظمة الإنذار ومكافحة الحريق'
                                         : 'Fire Protection Consultant'}
                                 </p>
 
                                 <div className="space-y-2 mb-6 h-24">
                                     <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
                                         <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
-                                        <span>{lang === 'ar' ? '٣٣+ سنة خبرة متخصصة' : '33+ Years Specialized Experience'}</span>
+                                        <span>{lang === 'ar' ? '٣٣ سنة خبرة متخصصة' : '33 Years Specialized Experience'}</span>
                                     </div>
                                     <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
                                         <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
-                                        <span>{lang === 'ar' ? 'الهيئة القومية للأنفاق - سابقاً' : 'National Authority for Tunnels'}</span>
+                                        <span>{lang === 'ar' ? 'مشروعات مترو الأنفاق' : 'Metro Projects Expert'}</span>
                                     </div>
                                 </div>
 
@@ -368,16 +377,13 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                            <div className="relative aspect-square overflow-hidden bg-brand-dark">
                                 <img
                                     src="/Ayman Hassan Refaei.png"
                                     alt="Eng. Ayman Hassan"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
-                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                    {lang === 'ar' ? 'خبير' : 'Expert'}
-                                </div>
                             </div>
 
                             <div className="p-6 relative z-10">
@@ -420,16 +426,13 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                            <div className="relative aspect-square overflow-hidden bg-brand-dark">
                                 <img
                                     src="/Ahmed Mohamed Mehesen.png"
                                     alt="Eng. Ahmed Mohamed"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
-                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                    {lang === 'ar' ? 'خبير ميكانيكا' : 'Mech. Expert'}
-                                </div>
                             </div>
 
                             <div className="p-6 relative z-10">
@@ -473,17 +476,14 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            <div className="relative h-64 overflow-hidden bg-brand-dark">
+                            <div className="relative aspect-square overflow-hidden bg-brand-dark">
                                 <img
                                     src="/eng bassam.png"
                                     alt="Eng. Bassam Soultan"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
-                                <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                    {lang === 'ar' ? 'خبير قوى كهربائية' : 'Power Expert'}
-                                </div>
                             </div>
 
                             <div className="p-6 relative z-10">
@@ -494,6 +494,56 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                     {lang === 'ar' 
                                         ? 'استشاري قوى كهربائية'
                                         : 'Electrical Power Consultant'}
+                                </p>
+
+                                <div className="space-y-2 mb-6 h-24">
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? '١٧+ سنة خبرة فنية' : '17+ Years Technical Experience'}</span>
+                                    </div>
+                                    <div className={`flex items-start gap-2 text-xs text-brand-gray ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0 mt-1"></div>
+                                        <span>{lang === 'ar' ? 'الهيئة القومية للأنفاق (NAT)' : 'National Authority for Tunnels'}</span>
+                                    </div>
+                                </div>
+
+                                <div 
+                                    className={`inline-flex items-center gap-2 text-brand-green font-bold text-xs hover:gap-4 transition-all group/link w-full justify-center py-2.5 px-4 rounded-lg bg-brand-green/5 hover:bg-brand-green hover:text-white ${lang === 'ar' ? 'flex-row-reverse' : ''}`}
+                                >
+                                    <span>{lang === 'ar' ? 'المزيد' : 'Read More'}</span>
+                                    <ArrowRight size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Eng. Amr Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            className="reveal-trigger group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border-2 border-white hover:border-brand-green/20 cursor-pointer"
+                            onClick={() => navigate('/about#eng-amr')}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            <div className="relative aspect-square overflow-hidden bg-brand-dark">
+                                <img
+                                    src="/eng amr.png"
+                                    alt="Eng. Amr Hassan"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40"></div>
+                            </div>
+
+                            <div className="p-6 relative z-10">
+                                <h3 className="text-xl font-black text-brand-dark mb-1">
+                                    {lang === 'ar' ? 'م/ عمرو حسن' : 'Eng. Amr Hassan'}
+                                </h3>
+                                <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
+                                    {lang === 'ar' 
+                                        ? 'استشاري اتصالات سكة حديد'
+                                        : 'Rail Telecommunication Expert'}
                                 </p>
 
                                 <div className="space-y-2 mb-6 h-24">

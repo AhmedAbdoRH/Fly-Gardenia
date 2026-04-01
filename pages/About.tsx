@@ -288,7 +288,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <img
                                                     src="/Dr. Asmaa Hammouda.png"
                                                     alt="Dr. Asmaa Hammouda"
-                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                    className="w-full h-full object-cover scale-110 translate-y-12 group-hover:scale-115 group-hover:translate-y-8 transition-transform duration-1000 ease-out relative z-10"
                                                 />
                                             </div>
                                             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
@@ -299,7 +299,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
                                                 <Award className="w-6 h-6 text-brand-green" />
                                                 <span className="font-bold text-brand-charcoal text-sm">
-                                                    {lang === 'ar' ? 'استشاري معتمد (EEAA)' : 'Certified Consultant (EEAA)'}
+                                                    {lang === 'ar' ? 'استشاري معتمد جهاز شؤون البيئة المصري' : 'Certified Consultant by Egyptian Environmental Affairs Agency'}
                                                 </span>
                                             </div>
                                             <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
@@ -342,7 +342,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                         alt: lang === 'ar' ? 'صورة أثناء تنفيذ أحد المشاريع' : 'During project execution'
                                                     },
                                                     {
-                                                        src: "/صورة لدكتور اسماء داخل احد الاجتماعات البيئية.jpg",
+                                                        src: "/صورة لدكتور اسماء داخل احد الاجتماعات البيئية.jpeg",
                                                         alt: lang === 'ar' ? 'صورة داخل أحد الاجتماعات البيئية' : 'Environmental meeting'
                                                     }
                                                 ].map((img, i) => (
@@ -464,7 +464,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <img
                                                     src="/eng khaled.png"
                                                     alt="Eng. Khaled Eid"
-                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                    className="w-full h-full object-cover scale-110 translate-y-12 group-hover:scale-115 group-hover:translate-y-8 transition-transform duration-1000 ease-out relative z-10"
                                                 />
                                             </div>
                                             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
@@ -475,7 +475,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                             <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
                                                 <Award className="w-6 h-6 text-brand-green" />
                                                 <span className="font-bold text-brand-charcoal text-sm">
-                                                    {lang === 'ar' ? 'معتمد من نقابة المهندسين' : 'Syndicate of Engineers Certified'}
+                                                    {lang === 'ar' ? 'استشاري أنظمة الإنذار ومكافحة الحريق' : 'Fire Alarm & Fighting Systems Consultant'}
                                                 </span>
                                             </div>
                                             <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
@@ -514,7 +514,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <div className={`relative z-10 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
                                                     <div className="mb-6">
                                                         <p className="text-base md:text-xl text-brand-green font-bold">
-                                                            {lang === 'ar' ? 'متخصص حماية من الحريق والأمان الصناعي' : 'Fire Protection & Industrial Safety Consultant'}
+                                                            {lang === 'ar' ? 'متخصص أنظمة إنذار ومكافحة الحريق والأمان الصناعي' : 'Fire Alarm & Fighting Systems & Industrial Safety Consultant'}
                                                         </p>
                                                     </div>
 
@@ -597,7 +597,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                     {[
                                                         {
                                                             name: lang === 'ar' ? 'مترو الأنفاق المصري' : 'Egyptian Metro',
-                                                            role: lang === 'ar' ? 'استشاري أمان وحماية من الحريق' : 'Safety & Fire Protection Consultant'
+                                                            role: lang === 'ar' ? 'استشاري أنظمة إنذار ومكافحة الحريق' : 'Fire Alarm & Fighting Systems Consultant'
                                                         },
                                                         {
                                                             name: lang === 'ar' ? 'الطرق السريعة والكباري' : 'Highways & Bridges',
@@ -628,9 +628,9 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 </h4>
                                                 <div className="space-y-3">
                                                     {[
-                                                        lang === 'ar' ? '✓ معتمد من نقابة المهندسين المصريين في أنظمة الأمان والحماية من الحريق' : '✓ Certified by Egyptian Syndicate of Engineers in Fire Safety & Security Systems',
+                                                        lang === 'ar' ? '✓ معتمد من نقابة المهندسين المصريين في أنظمة الإنذار ومكافحة الحريق وأنظمة الكشف عن الحقائب والبوابات المعدنية' : '✓ Certified by Egyptian Syndicate of Engineers in Fire Alarm & Fighting Systems and Baggage & Metal Gates Detection Systems',
                                                         lang === 'ar' ? '✓ مدقق معتمد IRCA في الصحة والأمان المهني (OHSAS 18001:2007)' : '✓ IRCA Certified Auditor in Occupational Health & Safety (OHSAS 18001:2007)',
-                                                        lang === 'ar' ? '✓ تدريبات دولية متقدمة في لوحات التحكم بالحريق وأنظمة الدخان وأنظمة الإطفاء' : '✓ Advanced International Training: Fire Control Panels, Smoke Systems, Firefighting Equipment',
+                                                        lang === 'ar' ? '✓ تدريبات دولية متقدمة في أنظمة مكافحة الحريق ولوحات التحكم وأنظمة سحب الدخان ومضخات الحريق من كندا والولايات المتحدة والإمارات وفرنسا وألمانيا وإيطاليا' : '✓ Advanced International Training: Fire Fighting Systems, Control Panels, Smoke Extraction Systems & Fire Pumps from Canada, USA, UAE, France, Germany & Italy',
                                                         lang === 'ar' ? '✓ شراكة استراتيجية مع الدفاع المدني والجهات الحكومية' : '✓ Strategic Partnership with Civil Defense Authority & Government Agencies'
                                                     ].map((cred, idx) => (
                                                         <div key={idx} className="flex gap-3 p-3 rounded-lg bg-white border border-brand-green/10 text-sm md:text-base text-brand-charcoal">
@@ -662,7 +662,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <img
                                                     src="/Ayman Hassan Refaei.png"
                                                     alt="Eng. Ayman Hassan Refaei"
-                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                    className="w-full h-full object-cover scale-110 translate-y-12 group-hover:scale-115 group-hover:translate-y-8 transition-transform duration-1000 ease-out relative z-10"
                                                 />
                                             </div>
                                             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
@@ -748,7 +748,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <img
                                                     src="/Ahmed Mohamed Mehesen.png"
                                                     alt="Eng. Ahmed Mohamed Mehesen"
-                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                    className="w-full h-full object-cover object-top scale-100 translate-y-4 group-hover:scale-105 group-hover:translate-y-2 transition-transform duration-1000 ease-out relative z-10"
                                                 />
                                             </div>
                                             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
@@ -834,7 +834,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                 <img
                                                     src="/eng bassam.png"
                                                     alt="Eng. Bassam Soultan"
-                                                    className="w-full h-full object-cover scale-110 translate-y-6 group-hover:scale-115 group-hover:translate-y-4 transition-transform duration-1000 ease-out relative z-10"
+                                                    className="w-full h-full object-cover scale-110 translate-y-12 group-hover:scale-115 group-hover:translate-y-8 transition-transform duration-1000 ease-out relative z-10"
                                                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
                                                 />
                                             </div>
@@ -889,6 +889,93 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                             {
                                                                 title: lang === 'ar' ? 'مشروعات قومية' : 'National Projects',
                                                                 desc: lang === 'ar' ? 'مترو القاهرة الخط ٣' : 'Greater Cairo Metro Line 3'
+                                                            }
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
+                                                                <h4 className="font-bold text-brand-green text-[10px] uppercase tracking-widest mb-1">{item.title}</h4>
+                                                                <p className="text-brand-charcoal font-black text-sm">{item.desc}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Eng. Amr Profile Section */}
+                    {t.about.engAmrTitle && (
+                        <div id="eng-amr" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                                        <div className="relative group">
+                                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+
+                                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                                <img
+                                                    src="/eng amr.png"
+                                                    alt="Eng. Amr Hassan"
+                                                    className="w-full h-full object-cover scale-110 translate-y-12 group-hover:scale-115 group-hover:translate-y-8 transition-transform duration-1000 ease-out relative z-10"
+                                                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo-gardenia.png'; }}
+                                                />
+                                            </div>
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                                {lang === 'ar' ? 'م/ عمرو حسن زكي الفقي' : 'Eng. Amr Hassan Zaki Elfki'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-12 w-full space-y-4">
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Award className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'استشاري اتصالات سكة حديد' : 'Rail Telecommunication Consultant'}
+                                                </span>
+                                            </div>
+                                            <div className="p-4 rounded-xl bg-brand-light border border-brand-green/20 flex items-center gap-4">
+                                                <Briefcase className="w-6 h-6 text-brand-green" />
+                                                <span className="font-bold text-brand-charcoal text-sm">
+                                                    {lang === 'ar' ? 'خبرة ١٧+ سنة' : '17+ Years Experience'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full lg:w-2/3">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                                <BookOpen className="w-7 h-7 text-brand-green" />
+                                            </div>
+                                            {t.about.engAmrTitle}
+                                        </h3>
+                                        <div className="space-y-4">
+                                            {t.about.engAmrBio?.map((item, idx) => (
+                                                <div key={idx} className="flex gap-4 items-start group">
+                                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">
+                                                        {item}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-10">
+                                            <div className="mt-8 md:mt-10 rounded-[2rem] border border-brand-green/15 bg-brand-light/60 backdrop-blur-sm p-6 md:p-8 relative overflow-hidden">
+                                                <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[90px] pointer-events-none"></div>
+                                                <div className="relative z-10">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                        {[
+                                                            {
+                                                                title: lang === 'ar' ? 'مجال التخصص' : 'Area of Expertise',
+                                                                desc: lang === 'ar' ? 'أنظمة اتصالات السكك الحديدية، الأمن السيبراني، إدارة الواجهات' : 'Rail Telecom Systems, Cybersecurity, Interface Management'
+                                                            },
+                                                            {
+                                                                title: lang === 'ar' ? 'مشروعات قومية' : 'National Projects',
+                                                                desc: lang === 'ar' ? 'مترو القاهرة الخط ٣ و ٤، المونوريل، القطار السريع' : 'Greater Cairo Metro Line 3 & 4, Monorail, High-Speed Rail'
                                                             }
                                                         ].map((item, i) => (
                                                             <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
