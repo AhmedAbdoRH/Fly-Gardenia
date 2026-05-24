@@ -138,6 +138,44 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "Proven track record in requirement and interface management for complex telecom activities.",
         "International experience with factory tests and specialized training in Italy and China for advanced rail subsystems.",
         "BSc in Telecommunication Engineering, Helwan University (2008), ranked 10th in department."
+      ],
+      engSayedTitle: "Eng. Sayed Ahmed Sayed Profile",
+      engSayedBio: [
+        "MSc in Science - Ain Shams University.",
+        "Diploma in GHG Emissions Calculations - EOS/2025.",
+        "Diploma in Radiation - 2023.",
+        "NOISH Certified.",
+        "EEAA Certified Specialist in Environmental Management Systems.",
+        "Previous experience in consulting offices in Environmental Impact Assessment, Waste Management, and Environmental Management Systems implementation."
+      ],
+      drSamaaTitle: "Dr. Samaa Ahmed Mohamed Profile",
+      drSamaaBio: [
+        "PhD in Nanotechnology and Laser Sciences.",
+        "Certified EIA Specialist by EEAA.",
+        "Consultant in GHG and Carbon Footprint (Product & Facility)."
+      ],
+      drMohamedShehataTitle: "Dr. Mohamed Mahmoud Ahmed Shehata Profile",
+      drMohamedShehataBio: [
+        "PhD in Inorganic and Analytical Chemistry.",
+        "Certified Consultant by EEAA for Environmental Impact Assessment.",
+        "Board Member - Center for Environmental Studies and Research, Assiut University.",
+        "Supervisor of Environmental Division - Faculty of Sugar Technology and Integrated Industries, Assiut University.",
+        "Environmental Advisor to New Valley University.",
+        "Environmental Advisor to Assiut University Hospitals."
+      ],
+      drAhmedSalahTitle: "Dr. Ahmed Salah El-Din Tawfiq Profile",
+      drAhmedSalahBio: [
+        "MSc in Environmental Sciences - Assiut University.",
+        "Certified Consultant by EEAA for Solid, Liquid, and Gaseous Waste Management.",
+        "Occupational Safety and Health Manager - Assiut University Hospitals.",
+        "Former Quality Manager - Coca-Cola Assiut."
+      ],
+      drMohamedAbuElSaudTitle: "Asst. Prof. Dr. Mohamed Abu El-Saud Abdel Zaher Profile",
+      drMohamedAbuElSaudBio: [
+        "BSc in Science - Minia University.",
+        "Assistant Professor of Inorganic Chemistry - Faculty of Postgraduate Studies for Advanced Sciences, Beni Suef University.",
+        "EEAA Certified Specialist for Self-Monitoring and Monitoring Networks Management.",
+        "Former Quality Manager - White Cement Company, Minia."
       ]
     },
     values: {
@@ -988,6 +1026,44 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
         "خبرة واسعة في إدارة المتطلبات والواجهات (Interface Management) لأنظمة الاتصالات المعقدة.",
         "حضور اختبارات القبول بالمصانع (FAT) وتدريبات دولية في إيطاليا والصين على أحدث أنظمة اتصالات السكك الحديدية.",
         "بكالوريوس هندسة الاتصالات والإلكترونيات، جامعة حلوان (2008)، بتقدير جيد جداً وترتيب العاشر على الدفعة."
+      ],
+      engSayedTitle: "م/ سيد احمد سيد",
+      engSayedBio: [
+        "ماجستير العلوم - جامعة عين شمس.",
+        "دبلوم في حسابات انبعاثات الغازات الدفيئة من الهيئة العامة المصرية للمواصفات والجودة /2025.",
+        "دبلومة في الإشعاع 2023.",
+        "NOISH certified.",
+        "اخصائي معتمد من وزارة البيئة في تطبيق نظم الإدارة البيئية.",
+        "خبرة سابقة في العمل في المكاتب الاستشارية في مجال تقييم الأثر البيئي وإدارة المخلفات وتطبيق نظم الإدارة البيئية."
+      ],
+      drSamaaTitle: "د/ سماء احمد محمد",
+      drSamaaBio: [
+        "دكتوراه في علوم النانوتكنولوجي والليزر.",
+        "اخصائي تقييم الأثر البيئي المعتمد من وزارة البيئة.",
+        "استشاري في GHG والبصمة الكربونية للمنتج والمنشأة."
+      ],
+      drMohamedShehataTitle: "د/ محمد محمود أحمد شحاتة",
+      drMohamedShehataBio: [
+        "دكتوراه فى الكيمياء غير العضوية والتحليلية.",
+        "استشاري معتمد من جهاز شئون البيئة لتقييم الأثر البيئي للمشروعات.",
+        "عضو مجلس إدارة مركز الدراسات والبحوث البيئية - جامعة أسيوط.",
+        "مشرف الشعبة البيئية – كلية تكنولوجيا صناعة السكر والصناعات التكاملية – جامعة أسيوط.",
+        "المستشار البيئي لجامعة الوادى الجديد.",
+        "المستشار البيئي لمستشفيات جامعة أسيوط."
+      ],
+      drAhmedSalahTitle: "د/ احمد صلاح الدين توفيق",
+      drAhmedSalahBio: [
+        "ماجستير العلوم البيئية - جامعة أسيوط.",
+        "استشاري معتمد من جهاز شئون البيئة لإدارة المخلفات الصلبة والسائلة والغازية.",
+        "مدير السلامة والصحة المهنية - مستشفيات جامعة أسيوط.",
+        "مدير إدارة الجودة – كوكاكولا أسيوط سابقاً."
+      ],
+      drMohamedAbuElSaudTitle: "أ.مساعد دكتور/ محمد ابو السعود عبد الظاهر",
+      drMohamedAbuElSaudBio: [
+        "بكالوريوس العلوم جامعة المنيا.",
+        "أستاذ مساعد كيمياء غير عضوية بكلية الدراسات العليا للعلوم المتقدمة - جامعة بني سويف.",
+        "اخصائي معتمد من جهاز شئون البيئة لأعمال الرصد الذاتي وإدارة شبكات الرصد.",
+        "مدير الجودة بشركة الأسمنت الأبيض بالمنيا سابقاً."
       ]
     },
     values: {

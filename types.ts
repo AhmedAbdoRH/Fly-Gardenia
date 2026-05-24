@@ -10,6 +10,14 @@ export interface ServiceItem {
   };
 }
 
+export interface ConsultantItem {
+  name: string;
+  qualification: string;
+  experience: string;
+  position: string;
+  image?: string;
+}
+
 export interface ValueItem {
   title: string;
   description: string;
@@ -51,6 +59,9 @@ export interface ContentData {
     addedValueItems?: string[];
     methodologyTitle?: string;
     methodologyText?: string[];
+    consultantsTitle?: string;
+    consultantsSubtitle?: string;
+    consultantsItems?: ConsultantItem[];
     expertsTitle?: string;
     expertsIntro?: string;
     expertsItems?: string[];
@@ -66,6 +77,16 @@ export interface ContentData {
     engBassamBio?: string[];
     engAmrTitle?: string;
     engAmrBio?: string[];
+    engSayedTitle?: string;
+    engSayedBio?: string[];
+    drSamaaTitle?: string;
+    drSamaaBio?: string[];
+    drMohamedShehataTitle?: string;
+    drMohamedShehataBio?: string[];
+    drAhmedSalahTitle?: string;
+    drAhmedSalahBio?: string[];
+    drMohamedAbuElSaudTitle?: string;
+    drMohamedAbuElSaudBio?: string[];
   };
   values: {
     title: string;

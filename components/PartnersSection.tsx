@@ -25,6 +25,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ lang = 'ar' })
         '/logos/image16.jpeg',
         '/logos/image17.jpeg',
         '/logos/image18.jpeg',
+        '/logos/image19.jpg',
     ];
 
     // Filter out any empty or invalid paths

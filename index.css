@@ -204,8 +204,50 @@
 
 [dir="rtl"] .text-justify {
     text-align: justify;
-    text-justify: auto;
+    text-justify: distribute;
     text-align-last: start;
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern", "liga", "clig", "calt";
+    word-spacing: 0em;
+    letter-spacing: 0em;
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+/* Improved Arabic text justification */
+[dir="rtl"] {
+    text-align: right;
+    text-justify: distribute;
+    word-spacing: 0em;
+    letter-spacing: 0em;
+}
+
+/* Better kashida handling for Arabic text */
+body[dir="rtl"], [dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] div, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+    text-justify: distribute;
+    word-spacing: 0.05em;
+    letter-spacing: 0;
+    line-height: 1.8;
+}
+
+/* Disable text-justify on mobile for better Arabic text spacing */
+@media (max-width: 768px) {
+    [dir="rtl"] .text-justify,
+    [dir="rtl"] p.text-justify,
+    [dir="rtl"] span.text-justify,
+    [dir="rtl"] div.text-justify {
+        text-align: right !important;
+        text-justify: none !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+    }
+
+    [dir="rtl"] p,
+    [dir="rtl"] span,
+    [dir="rtl"] li {
+        text-align: right !important;
+        text-justify: none !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+    }
 }

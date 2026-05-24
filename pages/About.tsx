@@ -291,7 +291,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                     className="w-full h-full object-cover scale-110 translate-y-12 group-hover:scale-115 group-hover:translate-y-8 transition-transform duration-1000 ease-out relative z-10"
                                                 />
                                             </div>
-                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-4 md:px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20 text-sm md:text-base">
                                                 {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa Hammouda'}
                                             </div>
                                         </div>
@@ -801,7 +801,7 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                                                             },
                                                             {
                                                                 title: lang === 'ar' ? 'دعم المشروعات' : 'Project Support',
-                                                                desc: lang === 'ar' ? 'مستودع بدر للقطار الخفيف، جامعة فيصل' : 'LRT Badr Depot, Faisal University'
+                                                                desc: lang === 'ar' ? 'مستودع بدر للقطار الخفيف، جامعة الملك فيصل' : 'LRT Badr Depot, King Faisal University'
                                                             }
                                                         ].map((item, i) => (
                                                             <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-brand-green/10">
@@ -992,6 +992,221 @@ export const About: React.FC<AboutProps> = ({ content, lang }) => {
                             </div>
                         </div>
                     )}
+
+    {/* Eng. Sayed Profile Section */}
+    {t.about.engSayedTitle && (
+        <div id="eng-sayed" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                <img
+                                    src="/سيد احمد.png"
+                                    alt="Eng. Sayed Ahmed"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
+                                />
+                            </div>
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                {lang === 'ar' ? 'م/ سيد احمد سيد' : 'Eng. Sayed Ahmed'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-2/3">
+                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                <BookOpen className="w-7 h-7 text-brand-green" />
+                            </div>
+                            {t.about.engSayedTitle}
+                        </h3>
+                        <div className="space-y-4">
+                            {t.about.engSayedBio?.map((item, idx) => (
+                                <div key={idx} className="flex gap-4 items-start group">
+                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )}
+
+    {/* Dr. Samaa Profile Section */}
+    {t.about.drSamaaTitle && (
+        <div id="dr-samaa" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                <img
+                                    src="/سماء.png"
+                                    alt="Dr. Samaa Ahmed"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
+                                />
+                            </div>
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                {lang === 'ar' ? 'د/ سماء احمد' : 'Dr. Samaa Ahmed'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-2/3">
+                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                <BookOpen className="w-7 h-7 text-brand-green" />
+                            </div>
+                            {t.about.drSamaaTitle}
+                        </h3>
+                        <div className="space-y-4">
+                            {t.about.drSamaaBio?.map((item, idx) => (
+                                <div key={idx} className="flex gap-4 items-start group">
+                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )}
+
+    {/* Dr. Mohamed Shehata Profile Section */}
+    {t.about.drMohamedShehataTitle && (
+        <div id="dr-mohamed-shehata" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                <img
+                                    src="/د محمد محمود.png"
+                                    alt="Dr. Mohamed Shehata"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
+                                />
+                            </div>
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                {lang === 'ar' ? 'د/ محمد محمود شحاتة' : 'Dr. Mohamed Shehata'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-2/3">
+                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                <BookOpen className="w-7 h-7 text-brand-green" />
+                            </div>
+                            {t.about.drMohamedShehataTitle}
+                        </h3>
+                        <div className="space-y-4">
+                            {t.about.drMohamedShehataBio?.map((item, idx) => (
+                                <div key={idx} className="flex gap-4 items-start group">
+                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )}
+
+    {/* Dr. Ahmed Salah Profile Section */}
+    {t.about.drAhmedSalahTitle && (
+        <div id="dr-ahmed-salah" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                <img
+                                    src="/احمد صلاح.png"
+                                    alt="Dr. Ahmed Salah"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
+                                />
+                            </div>
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                {lang === 'ar' ? 'د/ احمد صلاح' : 'Dr. Ahmed Salah'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-2/3">
+                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                <BookOpen className="w-7 h-7 text-brand-green" />
+                            </div>
+                            {t.about.drAhmedSalahTitle}
+                        </h3>
+                        <div className="space-y-4">
+                            {t.about.drAhmedSalahBio?.map((item, idx) => (
+                                <div key={idx} className="flex gap-4 items-start group">
+                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )}
+
+    {/* Dr. Mohamed Abu El-Saud Profile Section */}
+    {t.about.drMohamedAbuElSaudTitle && (
+        <div id="dr-mohamed-abuelsaud" className="mt-16 max-w-6xl mx-auto reveal-trigger scroll-mt-24">
+            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-brand-green/20 shadow-2xl relative overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                    <div className="w-full lg:w-1/3 flex flex-col items-center">
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-brand-green/20 rounded-[2.5rem] rotate-6 group-hover:rotate-3 transition-transform duration-700"></div>
+                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl z-10">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-green/10"></div>
+                                <img
+                                    src="/محمد ابو السعود.png"
+                                    alt="Dr. Mohamed Abu El-Saud"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
+                                />
+                            </div>
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap z-20">
+                                {lang === 'ar' ? 'د/ محمد ابو السعود' : 'Dr. Mohamed Abu El-Saud'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-2/3">
+                        <h3 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-8 flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                                <BookOpen className="w-7 h-7 text-brand-green" />
+                            </div>
+                            {t.about.drMohamedAbuElSaudTitle}
+                        </h3>
+                        <div className="space-y-4">
+                            {t.about.drMohamedAbuElSaudBio?.map((item, idx) => (
+                                <div key={idx} className="flex gap-4 items-start group">
+                                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></div>
+                                    <p className="text-brand-gray text-lg leading-relaxed group-hover:text-brand-charcoal transition-colors text-justify">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )}
                 </div>
             </section>
 

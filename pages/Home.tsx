@@ -271,7 +271,7 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
 
                             {/* Content Section */}
                             <div className="p-6 relative z-10">
-                                <h3 className="text-xl font-black text-brand-dark mb-1">
+                                <h3 className="text-lg md:text-xl font-black text-brand-dark mb-1 whitespace-nowrap">
                                     {lang === 'ar' ? 'أ.د/ أسماء حمودة' : 'Prof. Dr. Asmaa'}
                                 </h3>
                                 <p className="text-brand-green font-bold text-xs mb-4 leading-tight">
@@ -565,6 +565,21 @@ export const Home: React.FC<HomeProps> = ({ content: t, lang }) => {
                                 </div>
                             </div>
                         </motion.div>
+                    </div>
+
+                    {/* View Full Team Button */}
+                    <div className="mt-16 text-center">
+                        <button
+                            onClick={() => navigate('/about#dr-asmaa')}
+                            className="inline-flex items-center gap-4 bg-brand-green text-white px-12 py-5 rounded-full font-black text-lg transition-all duration-300 hover:bg-brand-dark shadow-lg shadow-brand-green/20 hover:scale-105"
+                        >
+                            <span className="tracking-tight">
+                                {lang === 'ar' ? 'الاطلاع على كامل الفريق' : 'View Full Team'}
+                            </span>
+                            <div className="flex items-center justify-center w-8 h-8 bg-white/20 rounded-full">
+                                <ArrowRight size={22} className={`${lang === 'ar' ? 'rotate-180' : ''}`} />
+                            </div>
+                        </button>
                     </div>
                 </div>
             </section>
