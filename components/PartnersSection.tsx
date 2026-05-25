@@ -74,9 +74,6 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ lang = 'ar' })
                                     src={logo} 
                                     alt={`Partner Logo ${idx}`} 
                                     className="w-full h-full object-contain transition-all duration-500 relative z-10" 
-                                    style={{
-                                        filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
-                                    }}
                                     onError={(e) => {
                                         const target = e.currentTarget;
                                         target.style.opacity = '0.3';
