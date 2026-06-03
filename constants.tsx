@@ -897,7 +897,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       address: "Maadi - Cairo"
     },
     social: {
-      facebook: "https://facebook.com",
+      facebook: "https://www.facebook.com/share/185yhxGLT3/",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com"
     }
@@ -1835,7 +1835,7 @@ export const CONTENT: Record<'en' | 'ar', ContentData> = {
       address: "المعادي - القاهرة"
     },
     social: {
-      facebook: "https://facebook.com",
+      facebook: "https://www.facebook.com/share/185yhxGLT3/",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com"
     }
